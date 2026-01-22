@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #000000; /* black */
+    --color-primary-foreground: #f2f2f2; /* soft white */
+    
+    /* Secondary Colors */
+    --color-secondary: #333333; /* dark gray */
+    --color-secondary-foreground: #f2f2f2; /* soft white */
+    
+    /* Accent Colors */
+    --color-accent: #D4AF37; /* metallic gold */
+    --color-accent-foreground: #000000; /* black */
+    
+    /* Background Colors */
+    --color-background: #000000; /* black */
+    --color-foreground: #f2f2f2; /* soft white */
+    
+    /* Surface Colors */
+    --color-card: #1c1c1c; /* dark gray */
+    --color-card-foreground: #f2f2f2; /* soft white */
+    
+    /* Popover Colors */
+    --color-popover: #1c1c1c; /* dark gray */
+    --color-popover-foreground: #f2f2f2; /* soft white */
+    
+    /* Muted Colors */
+    --color-muted: #1c1c1c; /* dark gray */
+    --color-muted-foreground: #cccccc; /* light gray */
+    
+    /* Border & Input */
+    --color-border: #333333; /* dark gray */
+    --color-input: #333333; /* dark gray */
+    --color-ring: #D4AF37; /* metallic gold */
+    
+    /* Semantic Colors */
+    --color-success: #228b22; /* green */
+    --color-success-foreground: #ffffff; /* white */
+    
+    --color-warning: #8b4513; /* brown */
+    --color-warning-foreground: #ffffff; /* white */
+    
+    --color-error: #dc143c; /* red */
+    --color-error-foreground: #ffffff; /* white */
+    
+    --color-destructive: #dc143c; /* red */
+    --color-destructive-foreground: #ffffff; /* white */
+    
+    /* Brand Specific Colors */
+    --color-brand-primary: #D4AF37; /* metallic gold */
+    --color-brand-secondary: #f2f2f2; /* soft white */
+    --color-conversion-accent: #D4AF37; /* metallic gold */
+    --color-trust-builder: #333333; /* dark gray */
+    --color-text-primary: #f2f2f2; /* soft white */
+    --color-text-secondary: #cccccc; /* light gray */
+    --color-cta: #D4AF37; /* metallic gold */
+    
+    /* Spacing */
+    --spacing-base: 1rem;
+    --spacing-standard: 2rem;
+    --spacing-section: 4rem;
+    
+    /* Border Radius */
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+}
