@@ -23,44 +23,44 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
   }, []);
 
   const officeInfo: OfficeInfo[] = [
-    {
-      title: 'Address',
-      icon: 'MapPinIcon',
-      details: [
-        'Calle de Serrano 45, 3rd Floor',
-        '28001 Madrid, Spain'
-      ]
-    },
-    {
-      title: 'Office Hours',
-      icon: 'ClockIcon',
-      details: [
-        'Monday - Friday: 9:00 - 18:00',
-        'Saturday: 10:00 - 14:00 (By Appointment)',
-        'Sunday: Closed'
-      ]
-    },
-    {
-      title: 'Parking & Access',
-      icon: 'TruckIcon',
-      details: [
-        'Street parking available',
-        'Public parking: 2 min walk',
-        'Metro: Serrano Station (Line 4)',
-        'Wheelchair accessible entrance'
-      ]
-    },
-    {
-      title: 'What to Expect',
-      icon: 'HomeModernIcon',
-      details: [
-        'Modern design studio environment',
-        'Private consultation rooms',
-        'Material & finish samples library',
-        'Coffee & refreshments provided'
-      ]
-    }
-  ];
+  {
+    title: 'Address',
+    icon: 'MapPinIcon',
+    details: [
+    'Calle de Serrano 45, 3rd Floor',
+    '28001 Madrid, Spain']
+
+  },
+  {
+    title: 'Office Hours',
+    icon: 'ClockIcon',
+    details: [
+    'Monday - Friday: 9:00 - 18:00',
+    'Saturday: 10:00 - 14:00 (By Appointment)',
+    'Sunday: Closed']
+
+  },
+  {
+    title: 'Parking & Access',
+    icon: 'TruckIcon',
+    details: [
+    'Street parking available',
+    'Public parking: 2 min walk',
+    'Metro: Serrano Station (Line 4)',
+    'Wheelchair accessible entrance']
+
+  },
+  {
+    title: 'What to Expect',
+    icon: 'HomeModernIcon',
+    details: [
+    'Modern design studio environment',
+    'Private consultation rooms',
+    'Material & finish samples library',
+    'Coffee & refreshments provided']
+
+  }];
+
 
   const handleVirtualTourClick = () => {
     if (!isHydrated) return;
@@ -81,8 +81,8 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
           <div className="space-y-6">
-            {officeInfo.map((info, index) => (
-              <div key={index} className="bg-card rounded-lg p-6 border border-border">
+            {officeInfo.map((info, index) =>
+            <div key={index} className="bg-card rounded-lg p-6 border border-border">
                 <div className="flex items-start space-x-4">
                   <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Icon name={info.icon as any} size={20} className="text-accent" />
@@ -92,16 +92,16 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
                       {info.title}
                     </h3>
                     <div className="space-y-1">
-                      {info.details.map((detail, idx) => (
-                        <p key={idx} className="font-body text-sm text-text-secondary">
+                      {info.details.map((detail, idx) =>
+                    <p key={idx} className="font-body text-sm text-text-secondary">
                           {detail}
                         </p>
-                      ))}
+                    )}
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
+            )}
           </div>
 
           <div className="space-y-6">
@@ -111,19 +111,19 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
                   width="100%"
                   height="100%"
                   loading="lazy"
-                  title="ArchiVision Studio Location"
+                  title="LCDREAM.ARQ Studio Location"
                   referrerPolicy="no-referrer-when-downgrade"
                   src="https://www.google.com/maps?q=40.4268,-3.6874&z=15&output=embed"
-                  className="border-0"
-                />
+                  className="border-0" />
+
               </div>
               <div className="p-4 bg-muted">
                 <a
                   href="https://maps.google.com/?q=40.4268,-3.6874"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center font-body text-sm font-body-semibold text-accent hover:text-accent/80 transition-smooth"
-                >
+                  className="inline-flex items-center font-body text-sm font-body-semibold text-accent hover:text-accent/80 transition-smooth">
+
                   <Icon name="MapIcon" size={16} className="mr-2" />
                   Open in Google Maps
                 </a>
@@ -133,10 +133,10 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
             <div className="bg-card rounded-lg overflow-hidden border border-border">
               <div className="relative aspect-video w-full overflow-hidden">
                 <AppImage
-                  src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg"
+                  src="https://img.rocket.new/generatedImages/rocket_gen_img_14bdd380d-1765352497190.png"
                   alt="Modern architectural studio interior with white walls, wooden floors, large windows, design materials on display tables, and contemporary furniture"
-                  className="w-full h-full object-cover"
-                />
+                  className="w-full h-full object-cover" />
+
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end">
                   <div className="p-6 w-full">
                     <h3 className="font-headline text-xl font-headline-semibold text-primary-foreground mb-2">
@@ -148,8 +148,8 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
                     <button
                       onClick={handleVirtualTourClick}
                       disabled={!isHydrated}
-                      className="inline-flex items-center px-4 py-2 font-cta text-sm font-cta-semibold text-primary bg-primary-foreground rounded-md transition-smooth hover:bg-primary-foreground/90 disabled:opacity-50"
-                    >
+                      className="inline-flex items-center px-4 py-2 font-cta text-sm font-cta-semibold text-primary bg-primary-foreground rounded-md transition-smooth hover:bg-primary-foreground/90 disabled:opacity-50">
+
                       <Icon name="PlayIcon" size={16} className="mr-2" />
                       {showVirtualTour ? 'Close Tour' : 'Start Virtual Tour'}
                     </button>
@@ -157,8 +157,8 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
                 </div>
               </div>
               
-              {showVirtualTour && (
-                <div className="p-6 bg-muted border-t border-border">
+              {showVirtualTour &&
+              <div className="p-6 bg-muted border-t border-border">
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3">
                       <Icon name="CameraIcon" size={20} className="text-accent flex-shrink-0 mt-0.5" />
@@ -195,7 +195,7 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
                     </div>
                   </div>
                 </div>
-              )}
+              }
             </div>
           </div>
         </div>
@@ -217,16 +217,16 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
             </div>
             <a
               href="tel:+34912345678"
-              className="inline-flex items-center px-6 py-3 font-cta text-sm font-cta-semibold text-accent-foreground bg-accent rounded-md transition-smooth hover:bg-accent/90 hover:shadow-architectural whitespace-nowrap"
-            >
+              className="inline-flex items-center px-6 py-3 font-cta text-sm font-cta-semibold text-accent-foreground bg-accent rounded-md transition-smooth hover:bg-accent/90 hover:shadow-architectural whitespace-nowrap">
+
               <Icon name="PhoneIcon" size={18} className="mr-2" />
               Call to Schedule
             </a>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default OfficeLocation;

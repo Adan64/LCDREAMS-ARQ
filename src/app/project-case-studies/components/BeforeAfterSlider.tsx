@@ -39,7 +39,7 @@ const BeforeAfterSlider = ({ beforeImage, beforeImageAlt, afterImage, afterImage
   return (
     <section className="py-16 lg:py-24 bg-muted">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <h2 className="font-headline text-3xl lg:text-4xl font-headline-bold text-primary mb-8 text-center">
+        <h2 className="text-3xl lg:text-4xl font-headline-bold mb-8 text-center text-[rgba(247,247,247,1)]">
           {title}
         </h2>
         

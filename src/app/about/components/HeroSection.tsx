@@ -20,7 +20,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
             Crafting Spaces That Transform Lives
           </h1>
           <p className="font-body text-xl lg:text-2xl text-lcdream-gray-light font-body-regular leading-relaxed max-w-3xl">
-            At ArchiVision, we believe architecture transcends mere construction—it's about creating experiences that enhance human life through the intersection of artistic vision and functional excellence.
+            At LCDREAM.ARQ, we believe architecture transcends mere construction—it's about creating experiences that enhance human life through the intersection of artistic vision and functional excellence.
           </p>
         </div>
       </div>

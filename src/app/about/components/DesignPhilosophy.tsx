@@ -43,10 +43,10 @@ const DesignPhilosophy = ({ className = '' }: DesignPhilosophyProps) => {
             Our Design Philosophy
           </span>
           <h2 className="font-headline text-4xl lg:text-5xl font-headline-bold text-lcdream-white mb-6 leading-tight">
-            At the heart of ArchiVision lies a commitment to creating spaces that are not just visually stunning, but deeply meaningful and functionally superior. Our philosophy is built on four core principles that guide every project.
+            At the heart of LCDREAM.ARQ lies a commitment to creating spaces that are not just visually stunning, but deeply meaningful and functionally superior. Our philosophy is built on four core principles that guide every project.
           </h2>
           <p className="font-body text-lg text-lcdream-gray-light font-body-regular leading-relaxed mb-8">
-            At the heart of ArchiVision lies a commitment to creating spaces that are not just visually stunning, but deeply meaningful and functionally superior. Our philosophy is built on four core principles that guide every project.
+            At the heart of LCDREAM.ARQ lies a commitment to creating spaces that are not just visually stunning, but deeply meaningful and functionally superior. Our philosophy is built on four core principles that guide every project.
           </p>
         </div>
 

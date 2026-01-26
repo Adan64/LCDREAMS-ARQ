@@ -40,7 +40,7 @@ const CTASection = () => {
                 Llámanos
               </div>
               <div className="font-body text-lg text-primary-foreground font-body-semibold">
-                +34 900 123 456
+                +595 971 954 037
               </div>
             </div>
 
@@ -50,7 +50,7 @@ const CTASection = () => {
                 Escríbenos
               </div>
               <div className="font-body text-lg text-primary-foreground font-body-semibold">
-                info@archivision.es
+                badan4074@gmail.com
               </div>
             </div>
 

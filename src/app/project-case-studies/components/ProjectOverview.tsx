@@ -52,7 +52,7 @@ const ProjectOverview = ({ challenge, solution, outcome, stats }: ProjectOvervie
                 <div className="w-16 h-16 bg-lcdream-gold/10 rounded-full flex items-center justify-center mb-6 border border-lcdream-gold/30">
                   <Icon name={stat.icon as any} size={32} className="text-lcdream-gold" />
                 </div>
-                <div className="font-headline text-2xl font-headline-bold text-primary mb-2">
+                <div className="font-headline text-2xl font-headline-bold text-white mb-2">
                   {stat.value}
                 </div>
                 <div className="font-body text-sm text-text-secondary">

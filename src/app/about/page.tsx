@@ -9,8 +9,8 @@ import SustainabilityCommitment from './components/SustainabilityCommitment';
 import CTASection from './components/CTASection';
 
 export const metadata: Metadata = {
-  title: 'About - ArchiVision',
-  description: 'Discover ArchiVision\'s design philosophy, meet our talented team, and explore our commitment to sustainable architecture. Learn about our awards, certifications, and approach to creating spaces that transform lives.',
+  title: 'About - LCDREAM.ARQ',
+  description: 'Discover LCDREAM.ARQ\'s design philosophy, meet our talented team, and explore our commitment to sustainable architecture. Learn about our awards, certifications, and approach to creating spaces that transform lives.',
 };
 
 export default function AboutPage() {

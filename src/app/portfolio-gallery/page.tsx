@@ -6,7 +6,7 @@ import Icon from '@/components/ui/AppIcon';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Galería de Proyectos - ArchiVision',
+  title: 'Galería de Proyectos - LCDREAM.ARQ',
   description: 'Explore nuestra colección de proyectos arquitectónicos excepcionales que abarcan diseño residencial, comercial, urbanismo y diseño interior, demostrando excelencia en cada detalle.',
 };
 
@@ -139,7 +139,7 @@ const PortfolioGalleryPage = () => {
                       className="text-accent"
                     />
                   </svg>
-                  <span className="font-headline text-2xl font-headline-bold">ArchiVision</span>
+                  <span className="font-headline text-2xl font-headline-bold">LCDREAM.ARQ</span>
                 </div>
                 <p className="font-body text-sm font-body-regular opacity-80">
                   Transformando espacios con visión y creatividad desde 2010.
@@ -184,13 +184,13 @@ const PortfolioGalleryPage = () => {
                   <li className="flex items-center space-x-2">
                     <Icon name="PhoneIcon" size={20} className="text-accent flex-shrink-0" />
                     <span className="font-body text-sm font-body-regular opacity-80">
-                      +34 912 345 678
+                      +595 971 954 037
                     </span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <Icon name="EnvelopeIcon" size={20} className="text-accent flex-shrink-0" />
                     <span className="font-body text-sm font-body-regular opacity-80">
-                      info@archivision.es
+                      info@lcdream.arq
                     </span>
                   </li>
                 </ul>
@@ -199,7 +199,7 @@ const PortfolioGalleryPage = () => {
 
             <div className="pt-8 border-t border-primary-foreground/20 text-center">
               <p className="font-body text-sm font-body-regular opacity-80">
-                &copy; {new Date().getFullYear()} ArchiVision. Todos los derechos reservados.
+                &copy; {new Date().getFullYear()} LCDREAM.ARQ. Todos los derechos reservados.
               </p>
             </div>
           </div>

@@ -14,9 +14,9 @@ interface ContactFooterProps {
 
 const ContactFooter = ({ className = '' }: ContactFooterProps) => {
   const socialLinks: SocialLink[] = [
-    { name: 'Instagram', icon: 'CameraIcon', href: 'https://instagram.com/archivision' },
-    { name: 'LinkedIn', icon: 'BriefcaseIcon', href: 'https://linkedin.com/company/archivision' },
-    { name: 'Pinterest', icon: 'PhotoIcon', href: 'https://pinterest.com/archivision' }
+    { name: 'Instagram', icon: 'CameraIcon', href: 'https://instagram.com/lcdream.arq' },
+    { name: 'LinkedIn', icon: 'BriefcaseIcon', href: 'https://linkedin.com/company/lcdream.arq' },
+    { name: 'Pinterest', icon: 'PhotoIcon', href: 'https://pinterest.com/lcdream.arq' }
   ];
 
   const currentYear = new Date().getFullYear();
@@ -27,7 +27,7 @@ const ContactFooter = ({ className = '' }: ContactFooterProps) => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="font-headline text-lg font-headline-semibold mb-4">
-              ArchiVision
+              LCDREAM.ARQ
             </h3>
             <p className="font-body text-sm text-primary-foreground/80 leading-relaxed">
               Transforming spaces with vision and creativity. Where function meets beauty to create extraordinary architectural experiences.
@@ -93,7 +93,7 @@ const ContactFooter = ({ className = '' }: ContactFooterProps) => {
         <div className="pt-8 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <p className="font-body text-sm text-primary-foreground/60">
-              &copy; {currentYear} ArchiVision. All rights reserved.
+              &copy; {currentYear} LCDREAM.ARQ. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <a

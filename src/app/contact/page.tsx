@@ -9,8 +9,8 @@ import FAQSection from './components/FAQSection';
 import ContactFooter from './components/ContactFooter';
 
 export const metadata: Metadata = {
-  title: 'Contact & Consultation - ArchiVision',
-  description: 'Get in touch with ArchiVision to discuss your architectural project. Schedule a consultation, visit our Madrid studio, or contact us via phone, email, or our online form. We respond within 24 hours.',
+  title: 'Contact & Consultation - LCDREAM.ARQ',
+  description: 'Get in touch with LCDREAM.ARQ to discuss your architectural project. Schedule a consultation, visit our Madrid studio, or contact us via phone, email, or our online form. We respond within 24 hours.',
 };
 
 export default function ContactPage() {

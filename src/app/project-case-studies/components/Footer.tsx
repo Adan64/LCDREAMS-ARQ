@@ -57,7 +57,7 @@ const Footer = () => {
                 />
               </svg>
               <span className="font-headline text-xl font-headline-bold">
-                ArchiVision
+LCDREAM.ARQ
               </span>
             </Link>
             <p className="font-body text-sm text-primary-foreground/70 leading-relaxed">
@@ -123,7 +123,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-primary-foreground/10">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="font-body text-sm text-primary-foreground/60">
-              © {currentYear} ArchiVision. Todos los derechos reservados.
+              © {currentYear} LCDREAM.ARQ. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6">
               <Link

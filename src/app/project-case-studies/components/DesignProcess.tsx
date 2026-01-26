@@ -56,7 +56,7 @@ const DesignProcess = ({ steps }: DesignProcessProps) => {
                   </span>
                 </div>
                 
-                <h3 className="font-headline text-2xl lg:text-3xl font-headline-bold text-primary mb-4">
+                <h3 className="font-headline text-2xl lg:text-3xl font-headline-bold mb-4 text-white">
                   {step.title}
                 </h3>
                 

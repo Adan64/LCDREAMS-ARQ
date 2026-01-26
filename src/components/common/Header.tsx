@@ -21,16 +21,16 @@ const Header = ({ className = '' }: HeaderProps) => {
   const pathname = usePathname();
 
   const navigationItems: NavigationItem[] = [
-    { label: 'Home', href: '/homepage' },
-    { label: 'Portfolio', href: '/portfolio-gallery' },
-    { label: 'Case Studies', href: '/project-case-studies' },
-    { label: 'Services', href: '/services' },
-    { label: 'About', href: '/about' },
-    { label: 'Resources', href: '/resources-blog' },
+    { label: 'Inicio', href: '/homepage' },
+    { label: 'Portafolio', href: '/portfolio-gallery' },
+    { label: 'Estudios de Caso', href: '/project-case-studies' },
+    { label: 'Servicios', href: '/services' },
+    { label: 'Acerca de', href: '/about' },
+    { label: 'Recursos', href: '/resources-blog' },
   ];
 
   const moreItems: NavigationItem[] = [
-    { label: 'Contact', href: '/contact' },
+    { label: 'Contacto', href: '/contact' },
   ];
 
   useEffect(() => {

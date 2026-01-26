@@ -39,9 +39,9 @@ const ContactMethods = ({ className = '' }: ContactMethodsProps) => {
       icon: 'EnvelopeIcon',
       title: 'Email',
       description: 'Send us a detailed message',
-      value: 'contact@archivision.es',
+      value: 'contact@lcdream.arq',
       action: 'Send Email',
-      href: 'mailto:contact@archivision.es'
+      href: 'mailto:contact@lcdream.arq'
     },
     {
       id: '3',

@@ -20,7 +20,7 @@ const ClientTestimonial = ({ clientName, clientRole, clientImage, clientImageAlt
     <section className="py-16 lg:py-24 bg-background">
       <div className="max-w-5xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl lg:text-4xl font-headline-bold text-primary mb-4">
+          <h2 className="font-headline text-3xl lg:text-4xl font-headline-bold mb-4 text-white">
             Testimonio del Cliente
           </h2>
         </div>

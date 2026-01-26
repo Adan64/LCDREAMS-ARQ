@@ -110,7 +110,7 @@ const FAQSection = ({ className = '' }: FAQSectionProps) => {
             Still have questions? We're here to help.
           </p>
           <a
-            href="mailto:contact@archivision.es"
+            href="mailto:contact@lcdream.arq"
             className="inline-flex items-center font-body text-base font-body-semibold text-accent hover:text-accent/80 transition-smooth"
           >
             <Icon name="EnvelopeIcon" size={18} className="mr-2" />

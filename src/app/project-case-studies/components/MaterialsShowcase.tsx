@@ -18,7 +18,7 @@ const MaterialsShowcase = ({ materials }: MaterialsShowcaseProps) => {
     <section className="py-16 lg:py-24 bg-muted">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
-          <h2 className="font-headline text-3xl lg:text-4xl font-headline-bold text-primary mb-4">
+          <h2 className="font-headline text-3xl lg:text-4xl font-headline-bold mb-4 text-white">
             Selección de Materiales
           </h2>
           <p className="font-body text-lg text-text-secondary max-w-3xl mx-auto">
@@ -38,7 +38,7 @@ const MaterialsShowcase = ({ materials }: MaterialsShowcaseProps) => {
               </div>
               
               <div className="p-6">
-                <h3 className="font-headline text-xl font-headline-bold text-primary mb-3">
+                <h3 className="font-headline text-xl font-headline-bold mb-3 text-yellow-300">
                   {material.name}
                 </h3>
                 

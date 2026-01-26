@@ -81,7 +81,7 @@ const ProjectCard = ({ project, onFavorite, isFavorited = false }: ProjectCardPr
           <h3 className="font-headline text-xl font-headline-bold text-primary group-hover:text-accent transition-smooth">
             {project.title}
           </h3>
-          <span className="font-body text-sm font-body-regular text-secondary whitespace-nowrap ml-4">
+          <span className="text-sm font-body-regular whitespace-nowrap ml-4 text-yellow-300 border-solid">
             {project.year}
           </span>
         </div>

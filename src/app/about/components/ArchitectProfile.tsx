@@ -20,19 +20,19 @@ const ArchitectProfile = ({ className = '' }: ArchitectProfileProps) => {
     name: "Elena Martínez",
     title: "Principal Architect & Founder",
     credentials: "M.Arch, LEED AP, AIA",
-    image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg",
+    image: "https://img.rocket.new/generatedImages/rocket_gen_img_16091a4bc-1763293415295.png",
     alt: "Professional portrait of Elena Martínez, Hispanic woman architect with dark hair in elegant black blazer standing in modern architectural studio",
     bio: [
-      "With over 15 years of experience in transforming spaces and creating architectural masterpieces, Elena Martínez founded ArchiVision with a singular vision: to design spaces that don't just shelter, but inspire and elevate the human experience.",
-      "Her approach combines rigorous technical expertise with an artist's eye for beauty, resulting in projects that are both functionally superior and aesthetically stunning. Elena's work has been recognized internationally, earning prestigious awards and features in leading architectural publications.",
-      "A passionate advocate for sustainable design, Elena integrates eco-friendly practices into every project, believing that responsible architecture is the only path forward for our built environment."
-    ],
+    "With over 15 years of experience in transforming spaces and creating architectural masterpieces, Elena Martínez founded LCDREAM.ARQ with a singular vision: to design spaces that don't just shelter, but inspire and elevate the human experience.",
+    "Her approach combines rigorous technical expertise with an artist's eye for beauty, resulting in projects that are both functionally superior and aesthetically stunning. Elena's work has been recognized internationally, earning prestigious awards and features in leading architectural publications.",
+    "A passionate advocate for sustainable design, Elena integrates eco-friendly practices into every project, believing that responsible architecture is the only path forward for our built environment."],
+
     specializations: [
-      "Sustainable Residential Design",
-      "Commercial Space Planning",
-      "Urban Regeneration Projects",
-      "LEED Certification Consulting"
-    ]
+    "Sustainable Residential Design",
+    "Commercial Space Planning",
+    "Urban Regeneration Projects",
+    "LEED Certification Consulting"]
+
   };
 
   return (
@@ -45,8 +45,8 @@ const ArchitectProfile = ({ className = '' }: ArchitectProfileProps) => {
                 src={architect.image}
                 alt={architect.alt}
                 fill
-                className="object-cover"
-              />
+                className="object-cover" />
+
             </div>
             <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-accent/10 rounded-lg -z-10"></div>
           </div>
@@ -65,11 +65,11 @@ const ArchitectProfile = ({ className = '' }: ArchitectProfileProps) => {
             </div>
 
             <div className="space-y-4 mb-8">
-              {architect.bio.map((paragraph, index) => (
-                <p key={index} className="font-body text-base font-body-regular text-text-primary leading-relaxed">
+              {architect.bio.map((paragraph, index) =>
+              <p key={index} className="font-body text-base font-body-regular text-text-primary leading-relaxed">
                   {paragraph}
                 </p>
-              ))}
+              )}
             </div>
 
             <div>
@@ -77,21 +77,21 @@ const ArchitectProfile = ({ className = '' }: ArchitectProfileProps) => {
                 Areas of Expertise
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {architect.specializations.map((spec, index) => (
-                  <div key={index} className="flex items-start space-x-2">
+                {architect.specializations.map((spec, index) =>
+                <div key={index} className="flex items-start space-x-2">
                     <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                     <span className="font-body text-sm font-body-regular text-text-primary">
                       {spec}
                     </span>
                   </div>
-                ))}
+                )}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ArchitectProfile;

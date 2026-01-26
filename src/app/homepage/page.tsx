@@ -10,8 +10,8 @@ import CTASection from './components/CTASection';
 import FooterSection from './components/FooterSection';
 
 export const metadata: Metadata = {
-  title: 'Homepage - ArchiVision',
-  description: 'ArchiVision es un estudio de arquitectura que transforma espacios con visión y creatividad, ofreciendo diseño residencial, arquitectura comercial y planificación urbana con excelencia profesional.',
+  title: 'Homepage - LCDREAM.ARQ',
+  description: 'LCDREAM.ARQ es un estudio de arquitectura que transforma espacios con visión y creatividad, ofreciendo diseño residencial, arquitectura comercial y planificación urbana con excelencia profesional.',
 };
 
 export default function Homepage() {
