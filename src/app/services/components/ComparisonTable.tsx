@@ -18,27 +18,27 @@ const ComparisonTable = ({ features }: ComparisonTableProps) => {
       <table className="w-full bg-card rounded-lg shadow-architectural">
         <thead>
           <tr className="border-b border-border">
-            <th className="px-6 py-4 text-left">
-              <span className="font-body text-sm font-body-semibold text-secondary uppercase tracking-wide">
+            <th className="px-6 py-4 text-left text-neutral-50">
+              <span className="text-sm font-body-semibold uppercase tracking-wide text-neutral-50">
                 Características
               </span>
             </th>
             <th className="px-6 py-4 text-center">
               <div className="space-y-1">
-                <span className="font-headline text-lg font-headline-bold text-primary block">Básico</span>
-                <span className="font-body text-xs font-body-regular text-secondary block">Proyectos pequeños</span>
+                <span className="text-lg font-headline-bold block text-[rgba(252,252,252,1)]">Básico</span>
+                <span className="text-xs font-body-regular block text-orange-100">Proyectos pequeños</span>
               </div>
             </th>
             <th className="px-6 py-4 text-center bg-accent/5">
               <div className="space-y-1">
                 <span className="font-headline text-lg font-headline-bold text-accent block">Estándar</span>
-                <span className="font-body text-xs font-body-regular text-secondary block">Más popular</span>
+                <span className="text-xs font-body-regular block text-orange-100">Más popular</span>
               </div>
             </th>
             <th className="px-6 py-4 text-center">
               <div className="space-y-1">
-                <span className="font-headline text-lg font-headline-bold text-primary block">Premium</span>
-                <span className="font-body text-xs font-body-regular text-secondary block">Proyectos complejos</span>
+                <span className="text-lg font-headline-bold block text-neutral-50">Premium</span>
+                <span className="text-xs font-body-regular block text-orange-100">Proyectos complejos</span>
               </div>
             </th>
           </tr>

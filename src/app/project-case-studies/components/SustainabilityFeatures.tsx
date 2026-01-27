@@ -18,7 +18,7 @@ const SustainabilityFeatures = ({ features, certifications }: SustainabilityFeat
     <section className="py-16 lg:py-24 bg-muted">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
-          <h2 className="font-headline text-3xl lg:text-4xl font-headline-bold text-primary mb-4">
+          <h2 className="text-3xl lg:text-4xl font-headline-bold mb-4 text-white">
             Compromiso con la Sostenibilidad
           </h2>
           <p className="font-body text-lg text-text-secondary max-w-3xl mx-auto">
@@ -27,15 +27,15 @@ const SustainabilityFeatures = ({ features, certifications }: SustainabilityFeat
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {features.map((feature, index) => (
-            <div key={index} className="bg-card rounded-lg p-8 shadow-architectural">
+          {features.map((feature, index) =>
+          <div key={index} className="bg-card rounded-lg p-8 shadow-architectural">
               <div className="flex items-start space-x-4">
                 <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
                   <Icon name={feature.icon as any} size={28} className="text-accent" />
                 </div>
                 
                 <div className="flex-1">
-                  <h3 className="font-headline text-xl font-headline-bold text-primary mb-2">
+                  <h3 className="font-headline text-xl font-headline-bold mb-2 text-white">
                     {feature.title}
                   </h3>
                   <p className="font-body text-sm text-text-secondary mb-3 leading-relaxed">
@@ -50,29 +50,29 @@ const SustainabilityFeatures = ({ features, certifications }: SustainabilityFeat
                 </div>
               </div>
             </div>
-          ))}
+          )}
         </div>
 
-        {certifications.length > 0 && (
-          <div className="bg-card rounded-lg p-8 text-center">
-            <h3 className="font-headline text-xl font-headline-bold text-primary mb-6">
+        {certifications.length > 0 &&
+        <div className="bg-card rounded-lg p-8 text-center">
+            <h3 className="font-headline text-xl font-headline-bold mb-6 text-neutral-50">
               Certificaciones y Reconocimientos
             </h3>
             <div className="flex flex-wrap justify-center gap-4">
-              {certifications.map((cert, index) => (
-                <div
-                  key={index}
-                  className="px-6 py-3 bg-accent/10 text-accent font-body text-sm font-body-semibold rounded-full"
-                >
+              {certifications.map((cert, index) =>
+            <div
+              key={index}
+              className="px-6 py-3 bg-accent/10 text-accent font-body text-sm font-body-semibold rounded-full">
+
                   {cert}
                 </div>
-              ))}
+            )}
             </div>
           </div>
-        )}
+        }
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default SustainabilityFeatures;

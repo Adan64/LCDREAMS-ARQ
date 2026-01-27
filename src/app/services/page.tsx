@@ -264,7 +264,7 @@ export default function ServicesPage() {
         <section className="py-20 lg:py-32">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
             <div className="text-center mb-16">
-              <h2 className="font-headline text-3xl lg:text-5xl font-headline-bold text-primary mb-6">
+              <h2 className="text-3xl lg:text-5xl font-headline-bold mb-6 text-white">
                 Nuestros Servicios
               </h2>
               <p className="font-body text-lg font-body-regular text-secondary max-w-3xl mx-auto">
@@ -294,7 +294,7 @@ export default function ServicesPage() {
                   </span>
                 </div>
 
-                <h2 className="font-headline text-3xl lg:text-4xl font-headline-bold text-primary mb-6">
+                <h2 className="text-3xl lg:text-4xl font-headline-bold mb-6 text-white">
                   Comprometidos con la excelencia
                 </h2>
 

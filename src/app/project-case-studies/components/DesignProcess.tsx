@@ -20,7 +20,7 @@ const DesignProcess = ({ steps }: DesignProcessProps) => {
     <section className="py-16 lg:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
-          <h2 className="font-headline text-3xl lg:text-4xl font-headline-bold text-primary mb-4">
+          <h2 className="text-3xl lg:text-4xl font-headline-bold mb-4 text-white">
             Proceso de Diseño
           </h2>
           <p className="font-body text-lg text-text-secondary max-w-3xl mx-auto">
@@ -29,20 +29,20 @@ const DesignProcess = ({ steps }: DesignProcessProps) => {
         </div>
 
         <div className="space-y-16">
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
-                index % 2 === 1 ? 'lg:grid-flow-dense' : ''
-              }`}
-            >
+          {steps.map((step, index) =>
+          <div
+            key={index}
+            className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
+            index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`
+            }>
+
               <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                 <div className="relative h-[300px] lg:h-[400px] rounded-lg overflow-hidden shadow-architectural">
                   <AppImage
-                    src={step.image}
-                    alt={step.imageAlt}
-                    className="w-full h-full object-cover"
-                  />
+                  src={step.image}
+                  alt={step.imageAlt}
+                  className="w-full h-full object-cover" />
+
                 </div>
               </div>
 
@@ -65,11 +65,11 @@ const DesignProcess = ({ steps }: DesignProcessProps) => {
                 </p>
               </div>
             </div>
-          ))}
+          )}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default DesignProcess;

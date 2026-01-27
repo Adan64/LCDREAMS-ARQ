@@ -68,9 +68,9 @@ const ServicesInteractive = ({
 }: ServicesInteractiveProps) => {
   return (
     <div className="space-y-24">
-      <section className="relative h-[50vh] lg:h-[60vh] w-full overflow-hidden bg-black">
+      <section className="relative w-full bg-black py-16 lg:py-24">
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-transparent" />
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 relative z-10">
           <span className="font-body text-sm font-body-semibold text-lcdream-gold uppercase tracking-wider mb-4 block">
             Nuestro Proceso de Trabajo
           </span>
@@ -83,19 +83,19 @@ const ServicesInteractive = ({
         </div>
 
         <div className="max-w-4xl mx-auto space-y-8">
-          {processSteps.map((step, index) => (
-            <ProcessStep
-              key={index}
-              {...step}
-              isLast={index === processSteps.length - 1}
-            />
-          ))}
+          {processSteps.map((step, index) =>
+          <ProcessStep
+            key={index}
+            {...step}
+            isLast={index === processSteps.length - 1} />
+
+          )}
         </div>
       </section>
 
       <section>
         <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl lg:text-4xl font-headline-bold text-primary mb-4">
+          <h2 className="text-3xl lg:text-4xl font-headline-bold mb-4 text-white">
             Comparación de Paquetes
           </h2>
           <p className="font-body text-lg font-body-regular text-secondary max-w-3xl mx-auto">
@@ -113,7 +113,7 @@ const ServicesInteractive = ({
 
       <section>
         <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl lg:text-4xl font-headline-bold text-primary mb-4">
+          <h2 className="text-3xl lg:text-4xl font-headline-bold mb-4 text-[rgba(252,252,252,1)]">
             Guías Descargables
           </h2>
           <p className="font-body text-lg font-body-regular text-secondary max-w-3xl mx-auto">
@@ -123,8 +123,8 @@ const ServicesInteractive = ({
 
         <DownloadableGuide guides={guides} />
       </section>
-    </div>
-  );
+    </div>);
+
 };
 
 export default ServicesInteractive;

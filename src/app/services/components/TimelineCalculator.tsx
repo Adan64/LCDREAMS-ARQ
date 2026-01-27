@@ -20,15 +20,15 @@ const TimelineCalculator = ({ projectTypes }: TimelineCalculatorProps) => {
   const [complexity, setComplexity] = useState<string>('medium');
 
   const calculateTimeline = () => {
-    const baseType = projectTypes.find(pt => pt.id === selectedType);
+    const baseType = projectTypes.find((pt) => pt.id === selectedType);
     if (!baseType) return 0;
 
     let timeline = baseType.baseTimeline;
-    
+
     const sizeMultiplier = projectSize / 100;
     timeline *= sizeMultiplier;
 
-    const complexityMultipliers: { [key: string]: number } = {
+    const complexityMultipliers: {[key: string]: number;} = {
       low: 0.8,
       medium: 1.0,
       high: 1.3
@@ -44,39 +44,37 @@ const TimelineCalculator = ({ projectTypes }: TimelineCalculatorProps) => {
     <div className="bg-card rounded-lg p-8 shadow-architectural">
       <div className="flex items-center space-x-3 mb-6">
         <Icon name="CalculatorIcon" size={32} className="text-accent" />
-        <h3 className="font-headline text-2xl font-headline-bold text-primary">
+        <h3 className="font-headline text-2xl font-headline-bold text-white">
           Calculadora de Plazos
         </h3>
       </div>
 
       <div className="space-y-6">
         <div>
-          <label className="block font-body text-sm font-body-semibold text-primary mb-3">
+          <label className="block font-body text-sm font-body-semibold mb-3 text-white">
             Tipo de Proyecto
           </label>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {projectTypes.map((type) => (
-              <button
-                key={type.id}
-                onClick={() => setSelectedType(type.id)}
-                className={`flex items-center space-x-3 p-4 rounded-lg border-2 transition-smooth ${
-                  selectedType === type.id
-                    ? 'border-accent bg-accent/10' :'border-border hover:border-accent/50'
-                }`}
-              >
+            {projectTypes.map((type) =>
+            <button
+              key={type.id}
+              onClick={() => setSelectedType(type.id)}
+              className={`flex items-center space-x-3 p-4 rounded-lg border-2 transition-smooth ${
+              selectedType === type.id ?
+              'border-accent bg-accent/10' : 'border-border hover:border-accent/50'}`
+              }>
+
                 <Icon name={type.icon as any} size={24} className={selectedType === type.id ? 'text-accent' : 'text-secondary'} />
-                <span className={`font-body text-sm font-body-regular ${
-                  selectedType === type.id ? 'text-primary' : 'text-secondary'
-                }`}>
+                <span className="text-white">
                   {type.name}
                 </span>
               </button>
-            ))}
+            )}
           </div>
         </div>
 
         <div>
-          <label className="block font-body text-sm font-body-semibold text-primary mb-3">
+          <label className="block font-body text-sm font-body-semibold mb-3 text-[rgba(252,252,252,1)]">
             Tamaño del Proyecto: {projectSize}m²
           </label>
           <input
@@ -86,57 +84,57 @@ const TimelineCalculator = ({ projectTypes }: TimelineCalculatorProps) => {
             step="10"
             value={projectSize}
             onChange={(e) => setProjectSize(Number(e.target.value))}
-            className="w-full h-2 bg-muted rounded-lg appearance-none cursor-pointer accent-accent"
-          />
+            className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-accent bg-white" />
+
           <div className="flex justify-between mt-2">
-            <span className="font-body text-xs font-body-regular text-secondary">50m²</span>
-            <span className="font-body text-xs font-body-regular text-secondary">500m²</span>
+            <span className="font-body text-xs font-body-regular text-white">50m²</span>
+            <span className="font-body text-xs font-body-regular text-white">500m²</span>
           </div>
         </div>
 
         <div>
-          <label className="block font-body text-sm font-body-semibold text-primary mb-3">
+          <label className="block text-sm font-body-semibold mb-3 text-white">
             Complejidad
           </label>
           <div className="grid grid-cols-3 gap-3">
             {[
-              { value: 'low', label: 'Baja' },
-              { value: 'medium', label: 'Media' },
-              { value: 'high', label: 'Alta' }
-            ].map((option) => (
-              <button
-                key={option.value}
-                onClick={() => setComplexity(option.value)}
-                className={`py-3 px-4 rounded-lg border-2 transition-smooth ${
-                  complexity === option.value
-                    ? 'border-accent bg-accent/10 text-primary' :'border-border text-secondary hover:border-accent/50'
-                }`}
-              >
-                <span className="font-body text-sm font-body-regular">{option.label}</span>
+            { value: 'low', label: 'Baja' },
+            { value: 'medium', label: 'Media' },
+            { value: 'high', label: 'Alta' }].
+            map((option) =>
+            <button
+              key={option.value}
+              onClick={() => setComplexity(option.value)}
+              className={`py-3 px-4 rounded-lg border-2 transition-smooth ${
+              complexity === option.value ?
+              'border-accent bg-accent/10 text-primary' : 'border-border text-secondary hover:border-accent/50'}`
+              }>
+
+                <span className="text-sm font-body-regular text-white">{option.label}</span>
               </button>
-            ))}
+            )}
           </div>
         </div>
 
         <div className="pt-6 border-t border-border">
           <div className="bg-accent/10 rounded-lg p-6 text-center">
-            <span className="font-body text-sm font-body-regular text-secondary block mb-2">
+            <span className="font-body text-sm font-body-regular block mb-2 text-orange-50">
               Duración Estimada
             </span>
             <span className="font-headline text-4xl font-headline-bold text-accent block mb-1">
               {estimatedWeeks}
             </span>
-            <span className="font-body text-base font-body-regular text-primary">
+            <span className="font-body text-base font-body-regular text-orange-50">
               semanas aproximadamente
             </span>
           </div>
-          <p className="font-body text-xs font-body-regular text-secondary text-center mt-4">
+          <p className="font-body text-xs font-body-regular text-center mt-4 text-orange-50">
             * Esta es una estimación aproximada. El plazo real puede variar según las condiciones específicas del proyecto.
           </p>
         </div>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default TimelineCalculator;

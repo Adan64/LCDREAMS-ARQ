@@ -35,7 +35,7 @@ const ClientTestimonial = ({ clientName, clientRole, clientImage, clientImageAlt
               />
             </div>
             
-            <h3 className="font-headline text-xl font-headline-bold text-primary mb-1">
+            <h3 className="text-xl font-headline-bold mb-1 text-yellow-300">
               {clientName}
             </h3>
             <p className="font-body text-sm text-text-secondary">

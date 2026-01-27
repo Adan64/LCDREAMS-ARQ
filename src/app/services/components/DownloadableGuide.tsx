@@ -48,20 +48,20 @@ const DownloadableGuide = ({ guides }: DownloadableGuideProps) => {
           </div>
 
           <div className="p-6">
-            <p className="font-body text-sm font-body-regular text-secondary mb-4">
+            <p className="text-sm font-body-regular mb-4 text-[rgba(220,220,218,1)]">
               {guide.description}
             </p>
 
             <div className="flex items-center justify-between mb-4 pb-4 border-b border-border">
               <div className="flex items-center space-x-2">
                 <Icon name="DocumentTextIcon" size={16} className="text-accent" />
-                <span className="font-body text-xs font-body-regular text-secondary">
+                <span className="text-xs font-body-regular text-[rgba(184,183,183,1)]">
                   {guide.pages} páginas
                 </span>
               </div>
               <div className="flex items-center space-x-2">
                 <Icon name="ArrowDownTrayIcon" size={16} className="text-accent" />
-                <span className="font-body text-xs font-body-regular text-secondary">
+                <span className="text-xs font-body-regular text-[rgba(193,190,190,1)]">
                   {guide.fileSize}
                 </span>
               </div>

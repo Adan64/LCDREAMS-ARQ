@@ -94,7 +94,7 @@ const ConsultationBooking = ({ availableDates }: ConsultationBookingProps) => {
     <div className="bg-card rounded-lg p-8 shadow-architectural">
       <div className="flex items-center space-x-3 mb-6">
         <Icon name="CalendarIcon" size={32} className="text-accent" />
-        <h3 className="font-headline text-2xl font-headline-bold text-primary">
+        <h3 className="font-headline text-2xl font-headline-bold text-white">
           Reservar Consulta
         </h3>
       </div>
@@ -116,7 +116,7 @@ const ConsultationBooking = ({ availableDates }: ConsultationBookingProps) => {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block font-body text-sm font-body-semibold text-primary mb-2">
+            <label className="block font-body text-sm font-body-semibold mb-2 text-white">
               Nombre completo *
             </label>
             <input
@@ -131,7 +131,7 @@ const ConsultationBooking = ({ availableDates }: ConsultationBookingProps) => {
           </div>
 
           <div>
-            <label className="block font-body text-sm font-body-semibold text-primary mb-2">
+            <label className="block font-body text-sm font-body-semibold mb-2 text-white">
               Correo electrónico *
             </label>
             <input
@@ -146,7 +146,7 @@ const ConsultationBooking = ({ availableDates }: ConsultationBookingProps) => {
           </div>
 
           <div>
-            <label className="block font-body text-sm font-body-semibold text-primary mb-2">
+            <label className="block font-body text-sm font-body-semibold mb-2 text-white">
               Teléfono *
             </label>
             <input
@@ -161,7 +161,7 @@ const ConsultationBooking = ({ availableDates }: ConsultationBookingProps) => {
           </div>
 
           <div>
-            <label className="block font-body text-sm font-body-semibold text-primary mb-2">
+            <label className="block font-body text-sm font-body-semibold mb-2 text-white">
               Tipo de proyecto *
             </label>
             <select
@@ -180,7 +180,7 @@ const ConsultationBooking = ({ availableDates }: ConsultationBookingProps) => {
         </div>
 
         <div>
-          <label className="block font-body text-sm font-body-semibold text-primary mb-2">
+          <label className="block font-body text-sm font-body-semibold mb-2 text-white">
             Fecha preferida *
           </label>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -194,7 +194,7 @@ const ConsultationBooking = ({ availableDates }: ConsultationBookingProps) => {
                     ? 'border-accent bg-accent/10 text-primary' :'border-border text-secondary hover:border-accent/50'
                 }`}
               >
-                <span className="font-body text-sm font-body-regular">{date}</span>
+                <span className="font-body text-sm font-body-regular text-white">{date}</span>
               </button>
             ))}
           </div>
@@ -202,7 +202,7 @@ const ConsultationBooking = ({ availableDates }: ConsultationBookingProps) => {
 
         {selectedDate && (
           <div>
-            <label className="block font-body text-sm font-body-semibold text-primary mb-2">
+            <label className="block font-body text-sm font-body-semibold mb-2 text-white">
               Hora preferida *
             </label>
             <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
@@ -219,7 +219,7 @@ const ConsultationBooking = ({ availableDates }: ConsultationBookingProps) => {
                       ? 'border-border text-secondary hover:border-accent/50' :'border-border text-muted-foreground opacity-50 cursor-not-allowed'
                   }`}
                 >
-                  <span className="font-body text-xs font-body-regular">{slot.time}</span>
+                  <span className="font-body text-xs font-body-regular text-orange-50">{slot.time}</span>
                 </button>
               ))}
             </div>
@@ -227,7 +227,7 @@ const ConsultationBooking = ({ availableDates }: ConsultationBookingProps) => {
         )}
 
         <div>
-          <label className="block font-body text-sm font-body-semibold text-primary mb-2">
+          <label className="block font-body text-sm font-body-semibold mb-2 text-white">
             Mensaje adicional
           </label>
           <textarea

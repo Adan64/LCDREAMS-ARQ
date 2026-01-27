@@ -23,7 +23,7 @@ const DownloadableResources = ({ resources }: DownloadableResourcesProps) => {
     <section className="py-16 lg:py-24 bg-muted">
       <div className="max-w-5xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl lg:text-4xl font-headline-bold text-primary mb-4">
+          <h2 className="text-3xl lg:text-4xl font-headline-bold mb-4 text-[rgba(253,252,252,1)]">
             Recursos Descargables
           </h2>
           <p className="font-body text-lg text-text-secondary">
@@ -32,12 +32,12 @@ const DownloadableResources = ({ resources }: DownloadableResourcesProps) => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {resources.map((resource, index) => (
-            <button
-              key={index}
-              onClick={() => handleDownload(resource.title)}
-              className="bg-card rounded-lg p-6 shadow-architectural transition-smooth hover:shadow-elevated hover:-translate-y-1 text-left group"
-            >
+          {resources.map((resource, index) =>
+          <button
+            key={index}
+            onClick={() => handleDownload(resource.title)}
+            className="bg-card rounded-lg p-6 shadow-architectural transition-smooth hover:shadow-elevated hover:-translate-y-1 text-left group">
+
               <div className="flex items-start space-x-4">
                 <div className="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-smooth">
                   <Icon name={resource.icon as any} size={28} className="text-accent" />
@@ -64,11 +64,11 @@ const DownloadableResources = ({ resources }: DownloadableResourcesProps) => {
                 </div>
               </div>
             </button>
-          ))}
+          )}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default DownloadableResources;
