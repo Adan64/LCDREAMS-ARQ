@@ -1,0 +1,590 @@
+{
+    "Index": {
+        "title": "Inicio"
+    },
+    "Header": {
+        "nav": {
+            "home": "Inicio",
+            "about": "Nosotros",
+            "services": "Servicios",
+            "portfolio": "Portafolio",
+            "caseStudies": "Estudios de Caso",
+            "resources": "Recursos",
+            "contact": "Contacto"
+        }
+    },
+    "LocaleSwitcher": {
+        "label": "Cambiar idioma",
+        "locale": "{locale, select, es {Español} en {Inglés} pt {Portugués} other {Desconocido}}"
+    },
+    "Homepage": {
+        "Hero": {
+            "slides": {
+                "1": {
+                    "title": "Villa Moderna Mediterránea",
+                    "category": "Residencial",
+                    "location": "Marbella, España",
+                    "description": "Diseño contemporáneo que fusiona elegancia mediterránea con sostenibilidad"
+                },
+                "2": {
+                    "title": "Centro Corporativo Innovación",
+                    "category": "Comercial",
+                    "location": "Barcelona, España",
+                    "description": "Espacio de trabajo que inspira creatividad y colaboración"
+                },
+                "3": {
+                    "title": "Residencia Urbana Minimalista",
+                    "category": "Residencial",
+                    "location": "Madrid, España",
+                    "description": "Arquitectura limpia que maximiza luz natural y funcionalidad"
+                }
+            },
+            "cta": {
+                "portfolio": "Ver Portfolio Completo",
+                "schedule": "Agendar Consulta"
+            },
+            "aria": {
+                "prev": "Proyecto anterior",
+                "next": "Siguiente proyecto",
+                "dot": "Ir al proyecto {index}"
+            }
+        },
+        "Services": {
+            "title": "Nuestros Servicios",
+            "subtitle": "Ofrecemos soluciones arquitectónicas integrales desde el concepto inicial hasta la entrega final",
+            "items": {
+                "1": {
+                    "title": "Diseño Residencial",
+                    "description": "Creamos hogares únicos que reflejan tu estilo de vida y personalidad",
+                    "features": {
+                        "0": "Casas personalizadas",
+                        "1": "Renovaciones integrales",
+                        "2": "Diseño de interiores"
+                    }
+                },
+                "2": {
+                    "title": "Arquitectura Comercial",
+                    "description": "Espacios comerciales que potencian tu marca y experiencia del cliente",
+                    "features": {
+                        "0": "Oficinas corporativas",
+                        "1": "Locales comerciales",
+                        "2": "Espacios de coworking"
+                    }
+                },
+                "3": {
+                    "title": "Planificación Urbana",
+                    "description": "Desarrollos urbanos sostenibles que mejoran comunidades",
+                    "features": {
+                        "0": "Masterplans",
+                        "1": "Espacios públicos",
+                        "2": "Desarrollo sostenible"
+                    }
+                }
+            },
+            "cta": {
+                "learnMore": "Conocer más",
+                "viewAll": "Ver Todos los Servicios"
+            }
+        },
+        "FeaturedProjects": {
+            "title": "Proyectos Destacados",
+            "subtitle": "Descubre nuestra selección de proyectos que demuestran excelencia en diseño y ejecución",
+            "cta": "Ver Todo el Portfolio",
+            "items": {
+                "1": {
+                    "title": "Casa del Horizonte",
+                    "category": "Residencial",
+                    "location": "Valencia, España",
+                    "description": "Residencia contemporánea que maximiza vistas panorámicas al mar"
+                },
+                "2": {
+                    "title": "Estudio Creativo Urbano",
+                    "category": "Comercial",
+                    "location": "Sevilla, España",
+                    "description": "Espacio de trabajo flexible que fomenta innovación y colaboración"
+                },
+                "3": {
+                    "title": "Loft Industrial Renovado",
+                    "category": "Residencial",
+                    "location": "Bilbao, España",
+                    "description": "Transformación de espacio industrial en vivienda moderna y acogedora"
+                },
+                "4": {
+                    "title": "Centro Wellness Sostenible",
+                    "category": "Comercial",
+                    "location": "Granada, España",
+                    "description": "Diseño biofílico que integra naturaleza y bienestar"
+                }
+            }
+        },
+        "CTA": {
+            "title": "¿Listo para Transformar tu Espacio?",
+            "description": "Agenda una consulta gratuita y descubre cómo podemos convertir tu visión arquitectónica en realidad",
+            "buttons": {
+                "schedule": "Agendar Consulta Gratuita",
+                "portfolio": "Explorar Portfolio"
+            },
+            "contact": {
+                "call": "Llámanos",
+                "email": "Escríbenos",
+                "visit": "Visítanos"
+            }
+        },
+        "Testimonials": {
+            "title": "Lo Que Dicen Nuestros Clientes",
+            "subtitle": "La satisfacción de nuestros clientes es nuestro mayor logro",
+            "items": {
+                "1": {
+                    "text": "LCDREAM.ARQ transformó completamente nuestra visión en realidad. Su atención al detalle y compromiso con la sostenibilidad superaron todas nuestras expectativas. El proceso fue fluido y el resultado final es simplemente espectacular.",
+                    "role": "Propietaria"
+                },
+                "2": {
+                    "text": "Nuestro nuevo espacio de oficinas ha revolucionado la forma en que trabajamos. El diseño fomenta la colaboración y creatividad. El equipo de LCDREAM.ARQ entendió perfectamente nuestra cultura empresarial y la plasmó en cada rincón.",
+                    "role": "Director General"
+                },
+                "3": {
+                    "text": "El diseño biofílico que crearon para nuestro centro de bienestar es absolutamente mágico. Cada espacio transmite paz y armonía. Nuestros clientes constantemente elogian la atmósfera única que han logrado crear.",
+                    "role": "Fundadora"
+                }
+            },
+            "aria": {
+                "prev": "Testimonio anterior",
+                "next": "Siguiente testimonio",
+                "dot": "Ir al testimonio {index}"
+            }
+        },
+        "Philosophy": {
+            "label": "NUESTRA FILOSOFÍA DE DISEÑO",
+            "title": "Nuestra Filosofía de Diseño",
+            "description": "La arquitectura no se trata solo de edificios—se trata de crear experiencias que mejoran la vida humana. Cada espacio cuenta una historia y cada diseño resuelve una necesidad humana.",
+            "items": {
+                "1": {
+                    "title": "Visión Innovadora",
+                    "description": "Transformamos ideas en espacios que inspiran y mejoran la calidad de vida"
+                },
+                "2": {
+                    "title": "Excelencia Funcional",
+                    "description": "Cada diseño equilibra perfectamente estética y funcionalidad práctica"
+                },
+                "3": {
+                    "title": "Sostenibilidad",
+                    "description": "Comprometidos con soluciones ecológicas que respetan nuestro planeta"
+                },
+                "4": {
+                    "title": "Colaboración",
+                    "description": "Trabajamos junto a nuestros clientes para materializar sus sueños espaciales"
+                }
+            }
+        },
+        "Trust": {
+            "title": "Reconocimiento y Experiencia",
+            "subtitle": "Nuestra trayectoria habla por sí misma con años de excelencia y reconocimiento en la industria",
+            "indicators": {
+                "1": "Años de Experiencia",
+                "2": "Proyectos Completados",
+                "3": "Clientes Satisfechos",
+                "4": "Premios Ganados"
+            },
+            "awards": {
+                "title": "Premios Recientes",
+                "items": {
+                    "1": "Premio Nacional de Arquitectura",
+                    "2": "Mejor Diseño Sostenible",
+                    "3": "Innovación en Diseño Residencial"
+                }
+            }
+        },
+        "Footer": {
+            "description": "Transformando espacios con visión y creatividad. Donde la función se encuentra con la belleza para crear resultados extraordinarios.",
+            "sections": {
+                "services": "Servicios",
+                "company": "Empresa",
+                "legal": "Legal"
+            },
+            "links": {
+                "services": {
+                    "residential": "Diseño Residencial",
+                    "commercial": "Arquitectura Comercial",
+                    "urban": "Planificación Urbana",
+                    "interior": "Diseño de Interiores"
+                },
+                "company": {
+                    "about": "Sobre Nosotros",
+                    "portfolio": "Portfolio",
+                    "caseStudies": "Casos de Estudio",
+                    "contact": "Contacto"
+                },
+                "legal": {
+                    "privacy": "Política de Privacidad",
+                    "terms": "Términos de Servicio",
+                    "cookies": "Cookies",
+                    "legal": "Aviso Legal"
+                }
+            },
+            "rights": "Todos los derechos reservados.",
+            "certifications": {
+                "iso": "Certificado ISO 9001",
+                "leed": "LEED Certified"
+            }
+        }
+    },
+    "PortfolioGallery": {
+        "metadata": {
+            "title": "Galería de Proyectos - LCDREAM.ARQ",
+            "description": "Explore nuestra colección de proyectos arquitectónicos excepcionales que abarcan diseño residencial, comercial, urbanismo y diseño interior, demostrando excelencia en cada detalle."
+        },
+        "hero": {
+            "subtitle": "Nuestro Portafolio",
+            "title": "Galería de Proyectos",
+            "description": "Descubra nuestra colección de proyectos arquitectónicos que transforman espacios en experiencias excepcionales. Cada diseño refleja nuestro compromiso con la excelencia, la innovación y la sostenibilidad.",
+            "startProject": "Iniciar un Proyecto",
+            "viewServices": "Ver Servicios"
+        },
+        "stats": {
+            "projects": "Proyectos Completados",
+            "clients": "Clientes Satisfechos",
+            "awards": "Premios Ganados",
+            "countries": "Países"
+        },
+        "filters": {
+            "all": "Todos los Proyectos",
+            "residential": "Residencial",
+            "commercial": "Comercial",
+            "urbanPlanning": "Urbanismo",
+            "interiorDesign": "Diseño Interior",
+            "sort": {
+                "recent": "Más recientes",
+                "oldest": "Más antiguos",
+                "name": "Nombre A-Z",
+                "area": "Área"
+            },
+            "ariaGrid": "Vista de cuadrícula",
+            "ariaList": "Vista de lista"
+        },
+        "common": {
+            "featured": "Destacado",
+            "viewProject": "Ver proyecto completo",
+            "loadMore": "Cargar más proyectos",
+            "loading": "Cargando...",
+            "noResults": "No se encontraron proyectos",
+            "noResultsDesc": "Intenta ajustar los filtros para ver más resultados",
+            "addToFavorites": "Añadir a favoritos",
+            "removeFromFavorites": "Eliminar de favoritos"
+        },
+        "cta": {
+            "title": "¿Tiene un Proyecto en Mente?",
+            "description": "Transformemos su visión en realidad. Nuestro equipo está listo para crear espacios excepcionales que superen sus expectativas.",
+            "button": "Agendar Consulta Gratuita"
+        },
+        "projects": {
+            "villa-moderna-barcelona": {
+                "title": "Villa Moderna Barcelona",
+                "description": "Diseño contemporáneo que fusiona elegancia minimalista con funcionalidad espacial, creando un hogar luminoso y acogedor.",
+                "alt": "Exterior de villa moderna de dos pisos con fachada blanca, grandes ventanales de vidrio y piscina infinita al atardecer"
+            },
+            "oficinas-tech-madrid": {
+                "title": "Oficinas Tech Hub Madrid",
+                "description": "Espacio de trabajo innovador diseñado para fomentar la colaboración y creatividad con zonas flexibles y tecnología integrada.",
+                "alt": "Espacio de oficina moderno con escritorios blancos, sillas ergonómicas azules y grandes ventanales con vista urbana"
+            },
+            "loft-industrial-valencia": {
+                "title": "Loft Industrial Valencia",
+                "description": "Transformación de espacio industrial en vivienda moderna conservando elementos originales y añadiendo confort contemporáneo.",
+                "alt": "Interior de loft con techos altos, vigas de madera expuestas, paredes de ladrillo y mobiliario contemporáneo en tonos neutros"
+            },
+            "plaza-urbana-sevilla": {
+                "title": "Plaza Urbana Sevilla",
+                "description": "Renovación de espacio público integrando áreas verdes, zonas de descanso y elementos sostenibles para la comunidad.",
+                "alt": "Plaza pública moderna con árboles, bancos de madera, fuentes de agua y pavimento de piedra natural al atardecer"
+            },
+            "casa-mediterranea-mallorca": {
+                "title": "Casa Mediterránea Mallorca",
+                "description": "Arquitectura tradicional mediterránea reinterpretada con materiales locales y diseño bioclimático sostenible.",
+                "alt": "Casa mediterránea de piedra con terraza amplia, pérgola de madera, jardín con olivos y vistas al mar"
+            },
+            "restaurante-gastronomico-bilbao": {
+                "title": "Restaurante Gastronómico Bilbao",
+                "description": "Espacio gastronómico que combina diseño sofisticado con ambiente acogedor, destacando cocina abierta y materiales nobles.",
+                "alt": "Interior de restaurante elegante con mesas de madera, sillas tapizadas, iluminación cálida y cocina abierta al fondo"
+            },
+            "penthouse-lujo-marbella": {
+                "title": "Penthouse de Lujo Marbella",
+                "description": "Diseño interior exclusivo que maximiza vistas panorámicas con materiales premium y acabados de alta gama.",
+                "alt": "Salón de penthouse con sofás blancos, mesa de centro de mármol, ventanales del suelo al techo y terraza con vistas al mar"
+            },
+            "parque-sostenible-granada": {
+                "title": "Parque Sostenible Granada",
+                "description": "Proyecto de paisajismo urbano con enfoque en biodiversidad, gestión sostenible del agua y espacios comunitarios.",
+                "alt": "Parque urbano con senderos peatonales, áreas verdes, árboles frondosos, bancos y zonas de juego infantil"
+            },
+            "boutique-hotel-toledo": {
+                "title": "Boutique Hotel Toledo",
+                "description": "Rehabilitación de edificio histórico en hotel boutique preservando elementos originales con confort contemporáneo.",
+                "alt": "Lobby de hotel boutique con recepción de mármol, sillones de terciopelo, lámpara de araña y decoración elegante"
+            },
+            "casa-campo-asturias": {
+                "title": "Casa de Campo Asturias",
+                "description": "Vivienda rural que integra arquitectura tradicional asturiana con eficiencia energética y confort moderno.",
+                "alt": "Casa rural de piedra y madera con jardín amplio, porche cubierto y montañas verdes al fondo"
+            },
+            "showroom-moda-barcelona": {
+                "title": "Showroom de Moda Barcelona",
+                "description": "Espacio comercial minimalista que realza productos mediante iluminación estratégica y diseño limpio.",
+                "alt": "Showroom minimalista con percheros metálicos, maniquíes blancos, iluminación LED y espejos de cuerpo entero"
+            },
+            "centro-cultural-zaragoza": {
+                "title": "Centro Cultural Zaragoza",
+                "description": "Equipamiento cultural que promueve actividades comunitarias con espacios versátiles y arquitectura icónica.",
+                "alt": "Edificio cultural moderno con fachada de vidrio y acero, plaza pública frontal y esculturas contemporáneas"
+            }
+        }
+    },
+    "ProjectCaseStudies": {
+        "metadata": {
+            "title": "Casos de Estudio de Proyectos - LCDREAM.ARQ",
+            "description": "Explora casos de estudio detallados de nuestros proyectos arquitectónicos."
+        },
+        "hero": {
+            "title": "Villa Mediterránea Sostenible",
+            "category": "Residencial de Lujo",
+            "location": "Costa del Sol, España",
+            "imageAlt": "Vista exterior de villa mediterránea moderna con piscina infinita"
+        },
+        "overview": {
+            "challenge": {
+                "title": "El Desafío",
+                "description": "Los clientes buscaban una residencia familiar que combinara el lujo mediterráneo tradicional con tecnología sostenible de vanguardia, mientras maximizaba las vistas al mar."
+            },
+            "solution": {
+                "title": "Nuestra Solución",
+                "description": "Diseñamos una villa de tres niveles que abraza la topografía natural, utilizando muros de contención escalonados para crear terrazas privadas."
+            },
+            "outcome": {
+                "title": "Resultados del Proyecto",
+                "description": "El proyecto resultó en una residencia excepcional que supera los estándares de eficiencia energética en un 40%."
+            },
+            "stats": {
+                "area": "Área Construida",
+                "duration": "Duración",
+                "budget": "Presupuesto",
+                "certification": "Certificación"
+            }
+        },
+        "beforeAfter": {
+            "title": "Transformación del Terreno",
+            "before": "Antes",
+            "after": "Después",
+            "beforeAlt": "Terreno en pendiente sin desarrollar",
+            "afterAlt": "Villa mediterránea completada"
+        },
+        "process": {
+            "title": "Proceso de Diseño",
+            "description": "Un viaje meticuloso desde el concepto hasta la finalización.",
+            "steps": {
+                "0": {
+                    "phase": "Fase 01",
+                    "title": "Análisis del Sitio y Concepto",
+                    "description": "Realizamos un estudio exhaustivo del terreno y desarrollamos múltiples conceptos.",
+                    "alt": "Arquitecto revisando planos"
+                },
+                "1": {
+                    "phase": "Fase 02",
+                    "title": "Desarrollo del Diseño",
+                    "description": "Refinamos el concepto seleccionado y desarrollamos planos detallados.",
+                    "alt": "Modelo 3D arquitectónico"
+                },
+                "2": {
+                    "phase": "Fase 03",
+                    "title": "Documentación y Permisos",
+                    "description": "Preparamos documentación técnica completa para permisos de construcción.",
+                    "alt": "Planos arquitectónicos detallados"
+                },
+                "3": {
+                    "phase": "Fase 04",
+                    "title": "Construcción y Supervisión",
+                    "description": "Supervisamos todas las fases de construcción para garantizar la calidad.",
+                    "alt": "Sitio de construcción activo"
+                }
+            }
+        },
+        "materials": {
+            "title": "Selección de Materiales",
+            "description": "Cada material fue cuidadosamente seleccionado por su calidad y sostenibilidad.",
+            "items": {
+                "limestone": {
+                    "name": "Piedra Caliza Local",
+                    "description": "Piedra natural extraída de canteras locales.",
+                    "alt": "Textura de pared de piedra caliza",
+                    "props": [
+                        "Durabilidad excepcional",
+                        "Bajo impacto ambiental",
+                        "Aislamiento térmico natural"
+                    ]
+                },
+                "teak": {
+                    "name": "Madera de Teca Certificada",
+                    "description": "Madera tropical sostenible utilizada para terrazas.",
+                    "alt": "Superficie de madera de teca",
+                    "props": [
+                        "Certificación FSC",
+                        "Resistencia a humedad",
+                        "Mantenimiento mínimo"
+                    ]
+                },
+                "glass": {
+                    "name": "Vidrio de Alto Rendimiento",
+                    "description": "Acristalamiento de triple panel con recubrimiento de baja emisividad.",
+                    "alt": "Ventanas de vidrio modernas",
+                    "props": [
+                        "Eficiencia energética",
+                        "Reducción de ruido",
+                        "Protección UV"
+                    ]
+                },
+                "concrete": {
+                    "name": "Hormigón Pulido",
+                    "description": "Acabado contemporáneo para pisos interiores.",
+                    "alt": "Piso de hormigón pulido",
+                    "props": [
+                        "Masa térmica alta",
+                        "Durabilidad extrema",
+                        "Fácil mantenimiento"
+                    ]
+                },
+                "ceramic": {
+                    "name": "Cerámica Artesanal",
+                    "description": "Azulejos hechos a mano por artesanos locales.",
+                    "alt": "Mosaico de azulejos cerámicos",
+                    "props": [
+                        "Producción local",
+                        "Diseño único",
+                        "Resistencia al agua"
+                    ]
+                },
+                "steel": {
+                    "name": "Acero Corten",
+                    "description": "Acero resistente a la intemperie.",
+                    "alt": "Panel de acero corten",
+                    "props": [
+                        "Sin mantenimiento",
+                        "Estética industrial",
+                        "Longevidad superior"
+                    ]
+                }
+            }
+        },
+        "testimonial": {
+            "title": "Testimonio del Cliente",
+            "text": "Trabajar con LCDREAM.ARQ fue una experiencia transformadora. No solo diseñaron la casa de nuestros sueños, sino que nos educaron sobre sostenibilidad.",
+            "role": "Propietaria",
+            "name": "María González",
+            "alt": "Mujer profesional sonriendo"
+        },
+        "gallery": {
+            "title": "Galería del Proyecto",
+            "description": "Explora cada detalle de este proyecto transformador.",
+            "captions": {
+                "facade": "Fachada principal con piscina infinita",
+                "living": "Sala de estar con vistas panorámicas",
+                "kitchen": "Cocina gourmet integrada",
+                "bedroom": "Suite principal con terraza privada",
+                "bathroom": "Baño spa con acabados premium",
+                "terrace": "Terraza de entretenimiento exterior"
+            },
+            "alts": {
+                "facade": "Vista exterior de villa",
+                "living": "Sala de estar moderna",
+                "kitchen": "Cocina gourmet con isla",
+                "bedroom": "Dormitorio principal con cama king",
+                "bathroom": "Baño spa con bañera",
+                "terrace": "Terraza cubierta"
+            },
+            "controls": {
+                "close": "Cerrar",
+                "prev": "Anterior",
+                "next": "Siguiente"
+            }
+        },
+        "sustainability": {
+            "title": "Compromiso con la Sostenibilidad",
+            "description": "Diseño responsable que minimiza el impacto ambiental.",
+            "features": {
+                "solar": {
+                    "title": "Sistema Solar Fotovoltaico",
+                    "description": "Instalación de 40 paneles solares de alta eficiencia.",
+                    "impact": "Reducción del 85% en consumo de red"
+                },
+                "water": {
+                    "title": "Recolección de Agua de Lluvia",
+                    "description": "Sistema integrado de captación y filtración.",
+                    "impact": "Ahorro del 60% en consumo de agua"
+                },
+                "insulation": {
+                    "title": "Aislamiento Térmico Avanzado",
+                    "description": "Envolvente de edificio de alto rendimiento.",
+                    "impact": "Reducción del 70% en climatización"
+                },
+                "bioclimatic": {
+                    "title": "Diseño Bioclimático",
+                    "description": "Orientación estratégica y ventilación cruzada.",
+                    "impact": "Temperatura interior estable"
+                }
+            },
+            "certificationsTitle": "Certificaciones y Reconocimientos"
+        },
+        "resources": {
+            "title": "Recursos Descargables",
+            "description": "Accede a información detallada del proyecto",
+            "download": "Descargar",
+            "items": {
+                "specs": {
+                    "title": "Ficha Técnica del Proyecto",
+                    "description": "Especificaciones completas y planos"
+                },
+                "certs": {
+                    "title": "Certificaciones Sostenibles",
+                    "description": "Documentación de certificaciones LEED"
+                },
+                "images": {
+                    "title": "Galería de Imágenes HD",
+                    "description": "Colección completa de fotografías"
+                },
+                "maintenance": {
+                    "title": "Guía de Mantenimiento",
+                    "description": "Instrucciones para el cuidado"
+                }
+            }
+        },
+        "related": {
+            "title": "Proyectos Relacionados",
+            "description": "Descubre más de nuestro trabajo innovador",
+            "viewCaseStudy": "Ver Caso de Estudio",
+            "items": {
+                "loft": {
+                    "title": "Loft Urbano Minimalista",
+                    "category": "Residencial",
+                    "alt": "Interior de loft moderno",
+                    "location": "Barcelona"
+                },
+                "resort": {
+                    "title": "Eco-Resort Costero",
+                    "category": "Hospitalidad",
+                    "alt": "Resort ecológico frente al mar",
+                    "location": "Islas Baleares"
+                },
+                "office": {
+                    "title": "Sede Corporativa Sostenible",
+                    "category": "Comercial",
+                    "alt": "Edificio corporativo moderno",
+                    "location": "Madrid"
+                }
+            }
+        },
+        "cta": {
+            "title": "¿Listo para Transformar Tu Espacio?",
+            "description": "Trabajemos juntos para crear un proyecto excepcional.",
+            "schedule": "Agendar Consulta",
+            "viewMore": "Ver Más Proyectos"
+        }
+    }
+}

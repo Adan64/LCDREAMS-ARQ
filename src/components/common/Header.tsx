@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Link, usePathname } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 import Icon from '@/components/ui/AppIcon';
 import Image from 'next/image';
+import LocaleSwitcher from './LocaleSwitcher';
 
 interface NavigationItem {
   label: string;
@@ -16,21 +17,25 @@ interface HeaderProps {
 }
 
 const Header = ({ className = '' }: HeaderProps) => {
+  const t = useTranslations('Header.nav');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
   const navigationItems: NavigationItem[] = [
-    { label: 'Inicio', href: '/homepage' },
-    { label: 'Portafolio', href: '/portfolio-gallery' },
-    { label: 'Estudios de Caso', href: '/project-case-studies' },
-    { label: 'Servicios', href: '/services' },
-    { label: 'Acerca de', href: '/about' },
-    { label: 'Recursos', href: '/resources-blog' },
+    { label: t('home'), href: '/homepage' },
+    { label: t('portfolio'), href: '/portfolio-gallery' },
+    { label: t('caseStudies'), href: '/project-case-studies' },
+    { label: t('services'), href: '/services' },
+    { label: t('about'), href: '/about' },
+    { label: t('resources'), href: '/resources-blog' },
   ];
 
+  // Updating messages in next step to include missing keys.
+  // For now I will use what I have and add "caseStudies" and "resources" to messages.
+
   const moreItems: NavigationItem[] = [
-    { label: 'Contacto', href: '/contact' },
+    { label: t('contact'), href: '/contact' },
   ];
 
   useEffect(() => {
@@ -69,9 +74,8 @@ const Header = ({ className = '' }: HeaderProps) => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-smooth border-b ${
-          isScrolled ? 'bg-black/95 backdrop-blur-sm shadow-gold border-lcdream-gold/20' : 'bg-black/80 backdrop-blur-sm border-lcdream-gold/10'
-        } ${className}`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-smooth border-b ${isScrolled ? 'bg-black/95 backdrop-blur-sm shadow-gold border-lcdream-gold/20' : 'bg-black/80 backdrop-blur-sm border-lcdream-gold/10'
+          } ${className}`}
       >
         <div className="w-full">
           <div className="flex items-center justify-between h-20 px-6 lg:px-12">
@@ -98,15 +102,14 @@ const Header = ({ className = '' }: HeaderProps) => {
               </div>
             </Link>
 
-            <nav className="hidden lg:flex items-center space-x-1">
+            <nav className="hidden lg:flex items-center space-x-4">
               {navigationItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-4 py-2 font-body text-sm font-body-regular transition-smooth rounded-md ${
-                    isActiveRoute(item.href)
-                      ? 'text-lcdream-gold bg-lcdream-gold/10 shadow-gold' :'text-lcdream-white hover:text-lcdream-gold hover:bg-lcdream-gold/5'
-                  }`}
+                  className={`px-4 py-2 font-body text-sm font-body-regular transition-smooth rounded-md ${isActiveRoute(item.href)
+                    ? 'text-lcdream-gold bg-lcdream-gold/10 shadow-gold' : 'text-lcdream-white hover:text-lcdream-gold hover:bg-lcdream-gold/5'
+                    }`}
                 >
                   {item.label}
                 </Link>
@@ -123,10 +126,9 @@ const Header = ({ className = '' }: HeaderProps) => {
                       <Link
                         key={item.href}
                         href={item.href}
-                        className={`block px-4 py-2 font-body text-sm font-body-regular transition-smooth ${
-                          isActiveRoute(item.href)
-                            ? 'text-lcdream-gold bg-lcdream-gold/10' :'text-lcdream-white hover:text-lcdream-gold hover:bg-lcdream-gold/5'
-                        }`}
+                        className={`block px-4 py-2 font-body text-sm font-body-regular transition-smooth ${isActiveRoute(item.href)
+                          ? 'text-lcdream-gold bg-lcdream-gold/10' : 'text-lcdream-white hover:text-lcdream-gold hover:bg-lcdream-gold/5'
+                          }`}
                       >
                         {item.label}
                       </Link>
@@ -134,9 +136,15 @@ const Header = ({ className = '' }: HeaderProps) => {
                   </div>
                 </div>
               </div>
+
+              {/* Language Switcher */}
+              <div className="ml-4">
+                <LocaleSwitcher />
+              </div>
+
             </nav>
 
-            <div className="hidden lg:block">
+            <div className="hidden lg:flex items-center space-x-4">
               <Link
                 href="/contact"
                 className="inline-flex items-center px-6 py-3 font-cta text-sm font-cta-semibold text-black bg-lcdream-gold rounded-md transition-smooth hover:bg-lcdream-gold-light hover:shadow-gold hover:-translate-y-0.5"
@@ -145,17 +153,22 @@ const Header = ({ className = '' }: HeaderProps) => {
               </Link>
             </div>
 
-            <button
-              onClick={toggleMobileMenu}
-              className="lg:hidden p-2 text-lcdream-gold hover:text-lcdream-gold-light transition-smooth"
-              aria-label="Toggle mobile menu"
-            >
-              {isMobileMenuOpen ? (
-                <Icon name="XMarkIcon" size={28} />
-              ) : (
-                <Icon name="Bars3Icon" size={28} />
-              )}
-            </button>
+            <div className="lg:hidden flex items-center space-x-4">
+              {/* Mobile Language Switcher */}
+              <LocaleSwitcher />
+
+              <button
+                onClick={toggleMobileMenu}
+                className="p-2 text-lcdream-gold hover:text-lcdream-gold-light transition-smooth"
+                aria-label="Toggle mobile menu"
+              >
+                {isMobileMenuOpen ? (
+                  <Icon name="XMarkIcon" size={28} />
+                ) : (
+                  <Icon name="Bars3Icon" size={28} />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -172,10 +185,9 @@ const Header = ({ className = '' }: HeaderProps) => {
                   key={item.href}
                   href={item.href}
                   onClick={closeMobileMenu}
-                  className={`block px-4 py-3 font-body text-base font-body-regular rounded-md transition-smooth ${
-                    isActiveRoute(item.href)
-                      ? 'text-lcdream-gold bg-lcdream-gold/10 shadow-gold' :'text-lcdream-white hover:text-lcdream-gold hover:bg-lcdream-gold/5'
-                  }`}
+                  className={`block px-4 py-3 font-body text-base font-body-regular rounded-md transition-smooth ${isActiveRoute(item.href)
+                    ? 'text-lcdream-gold bg-lcdream-gold/10 shadow-gold' : 'text-lcdream-white hover:text-lcdream-gold hover:bg-lcdream-gold/5'
+                    }`}
                 >
                   {item.label}
                 </Link>
@@ -187,10 +199,9 @@ const Header = ({ className = '' }: HeaderProps) => {
                     key={item.href}
                     href={item.href}
                     onClick={closeMobileMenu}
-                    className={`block px-4 py-3 font-body text-base font-body-regular rounded-md transition-smooth ${
-                      isActiveRoute(item.href)
-                        ? 'text-lcdream-gold bg-lcdream-gold/10 shadow-gold' :'text-lcdream-white hover:text-lcdream-gold hover:bg-lcdream-gold/5'
-                    }`}
+                    className={`block px-4 py-3 font-body text-base font-body-regular rounded-md transition-smooth ${isActiveRoute(item.href)
+                      ? 'text-lcdream-gold bg-lcdream-gold/10 shadow-gold' : 'text-lcdream-white hover:text-lcdream-gold hover:bg-lcdream-gold/5'
+                      }`}
                   >
                     {item.label}
                   </Link>
