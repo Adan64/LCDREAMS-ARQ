@@ -16,8 +16,35 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   };
 }
 
-const PortfolioGalleryPage = () => {
-  const t = useTranslations('PortfolioGallery');
+import { createClient } from '@/lib/supabase/server';
+
+const PortfolioGalleryPage = async ({
+  params: { locale }
+}: {
+  params: { locale: string }
+}) => {
+  const t = await getTranslations({ locale, namespace: 'PortfolioGallery' });
+  const supabase = await createClient();
+
+  // Fetch projects from Supabase
+  const { data: dbProjects } = await supabase
+    .from('projects')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  // Tranform DB data to UI format
+  const projects = dbProjects?.map(p => ({
+    id: p.id,
+    title: p.title[locale] || p.title['es'] || 'Sin Título',
+    category: p.category || 'Residencial', // Fallback or mapping needed if categories are keys
+    location: 'Ubicación Desconocida', // DB needs location column, using placeholder for now
+    year: new Date(p.created_at).getFullYear(),
+    image: p.cover_image || 'https://via.placeholder.com/800x600',
+    alt: p.title[locale] || 'Project Image',
+    area: '0 m²', // DB needs area column
+    description: p.description?.[locale] || '',
+    featured: false
+  })) || [];
 
   const stats = [
     { icon: 'BuildingOffice2Icon', value: '150+', label: t('stats.projects') },
@@ -81,7 +108,7 @@ const PortfolioGalleryPage = () => {
 
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
-            <PortfolioGalleryInteractive />
+            <PortfolioGalleryInteractive initialProjects={projects} />
           </div>
         </section>
 
