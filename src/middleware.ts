@@ -1,11 +1,62 @@
+import { createServerClient } from '@supabase/ssr';
+import { NextResponse, type NextRequest } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
-import {routing} from './i18n/routing';
- 
-export default createMiddleware(routing);
- 
+import { routing } from './i18n/routing';
+
+const intlMiddleware = createMiddleware(routing);
+
+export async function middleware(request: NextRequest) {
+  let response = intlMiddleware(request);
+
+  // 1. Check if route is protected (/admin)
+  const pathname = request.nextUrl.pathname;
+  // This regex checks if the path contains /admin (e.g. /es/admin, /en/admin)
+  const isAdminRoute = pathname.includes('/admin');
+
+  if (isAdminRoute) {
+    // 2. Refresh/Check Supabase Session
+    const supabase = createServerClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        cookies: {
+          getAll() {
+            return request.cookies.getAll();
+          },
+          setAll(cookiesToSet) {
+            cookiesToSet.forEach(({ name, value, options }) => {
+              request.cookies.set(name, value);
+            });
+            response = NextResponse.next({
+              request: {
+                headers: request.headers,
+              },
+            });
+            cookiesToSet.forEach(({ name, value, options }) => {
+              response.cookies.set(name, value, options);
+            });
+          },
+        },
+      }
+    );
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    // 3. Redirect to Login if not authenticated
+    if (!user) {
+       // Extract locale if present to redirect to correct login page
+       const locale = pathname.split('/')[1] || 'es'; 
+       const url = request.nextUrl.clone();
+       url.pathname = `/${locale}/login`;
+       return NextResponse.redirect(url);
+    }
+  }
+
+  return response;
+}
+
 export const config = {
-  // Match all pathnames except for
-  // - … if they start with `/api`, `/_next` or `/_vercel`
-  // - … the ones containing a dot (e.g. `favicon.ico`)
-  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
 };
