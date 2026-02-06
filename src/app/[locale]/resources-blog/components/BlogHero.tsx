@@ -3,7 +3,10 @@
 import React, { useState } from 'react';
 import Icon from '@/components/ui/AppIcon';
 
+import { useTranslations } from 'next-intl';
+
 const BlogHero = () => {
+  const t = useTranslations('ResourcesBlog.hero');
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = (e: React.FormEvent) => {
@@ -18,21 +21,21 @@ const BlogHero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-transparent" />
         <div className="max-w-3xl">
           <span className="font-body text-sm font-body-semibold text-lcdream-gold uppercase tracking-wider mb-4 block">
-            Resources & Blog
+            {t('subtitle')}
           </span>
           <h1 className="font-headline text-5xl lg:text-7xl font-headline-bold text-lcdream-white mb-6 leading-tight">
-            Resources & Blog
+            {t('title')}
           </h1>
           <p className="font-body text-xl lg:text-2xl text-lcdream-gray-light font-body-regular leading-relaxed max-w-3xl">
-            Descubre artículos sobre tendencias arquitectónicas, sostenibilidad, innovación y consejos prácticos para tus proyectos.
+            {t('description')}
           </p>
-          
+
           <form onSubmit={handleSearch} className="relative max-w-2xl">
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Buscar artículos..."
+              placeholder={t('searchPlaceholder')}
               className="w-full px-6 py-4 pr-14 rounded-lg font-body text-base font-body-regular text-primary bg-white focus:outline-none focus:ring-2 focus:ring-accent"
             />
             <button

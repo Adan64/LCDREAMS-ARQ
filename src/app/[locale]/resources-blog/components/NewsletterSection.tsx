@@ -3,7 +3,10 @@
 import React, { useState } from 'react';
 import Icon from '@/components/ui/AppIcon';
 
+import { useTranslations } from 'next-intl';
+
 const NewsletterSection = () => {
+  const t = useTranslations('ResourcesBlog.newsletter');
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,17 +32,17 @@ const NewsletterSection = () => {
         <div className="mb-8">
           <Icon name="EnvelopeIcon" size={48} className="text-accent mx-auto mb-4" />
           <h2 className="font-headline text-4xl lg:text-5xl font-headline-bold text-lcdream-white mb-6 leading-tight text-center">
-            Suscríbete a Nuestro Newsletter
+            {t('title')}
           </h2>
           <p className="font-body text-lg text-lcdream-gray-light font-body-regular leading-relaxed text-center mb-10 max-w-2xl mx-auto">
-            Recibe los últimos artículos, tendencias arquitectónicas y consejos exclusivos directamente en tu correo.
+            {t('description')}
           </p>
         </div>
 
         {isSubmitted ? (
           <div className="bg-success/20 border border-success text-white px-6 py-4 rounded-lg inline-flex items-center space-x-2">
             <Icon name="CheckCircleIcon" size={24} />
-            <span className="font-body font-body-semibold">¡Gracias por suscribirte!</span>
+            <span className="font-body font-body-semibold">{t('success')}</span>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="max-w-xl mx-auto">
@@ -48,7 +51,7 @@ const NewsletterSection = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Tu correo electrónico"
+                placeholder={t('placeholder')}
                 required
                 className="flex-1 px-6 py-4 bg-black border border-lcdream-gold/30 rounded-md sm:rounded-l-md sm:rounded-r-none font-body text-base text-lcdream-white placeholder-lcdream-gray-light focus:outline-none focus:ring-2 focus:ring-lcdream-gold focus:border-transparent transition-smooth"
               />
@@ -57,11 +60,11 @@ const NewsletterSection = () => {
                 disabled={isSubmitting}
                 className="px-8 py-4 bg-lcdream-gold text-black font-cta text-base font-cta-semibold rounded-md sm:rounded-l-none sm:rounded-r-md transition-smooth hover:bg-lcdream-gold-light hover:shadow-gold disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Enviando...' : 'Suscribirse'}
+                {isSubmitting ? t('sending') : t('subscribe')}
               </button>
             </div>
             <p className="mt-4 font-body text-sm font-body-regular text-white/70">
-              No spam. Solo contenido de valor. Cancela cuando quieras.
+              {t('disclaimer')}
             </p>
           </form>
         )}

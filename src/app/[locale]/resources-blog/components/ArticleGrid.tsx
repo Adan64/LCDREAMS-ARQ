@@ -18,23 +18,28 @@ interface Article {
   slug: string;
 }
 
+import { useTranslations } from 'next-intl';
+
+// ...
+
 const ArticleGrid = () => {
-  const [activeCategory, setActiveCategory] = useState('Todos');
+  const t = useTranslations('ResourcesBlog.grid');
+  const [activeCategory, setActiveCategory] = useState('all');
 
   const categories = [
-    'Todos',
-    'Tendencias',
-    'Sostenibilidad',
-    'Innovación',
-    'Consejos para Clientes'
+    { key: 'all', label: t('categories.all') },
+    { key: 'trends', label: t('categories.trends') },
+    { key: 'sustainability', label: t('categories.sustainability') },
+    { key: 'innovation', label: t('categories.innovation') },
+    { key: 'tips', label: t('categories.tips') }
   ];
 
   const articles: Article[] = [
     {
       id: 3,
-      title: "10 Tendencias Arquitectónicas que Dominarán 2026",
-      excerpt: "Desde el diseño biofílico hasta la arquitectura paramétrica, estas son las tendencias que marcarán el año.",
-      category: "Tendencias",
+      title: t('items.3.title'),
+      excerpt: t('items.3.excerpt'),
+      category: "trends", // key for filtering
       readTime: "7 min",
       date: "8 Enero 2026",
       author: "Laura Martínez",
@@ -44,9 +49,9 @@ const ArticleGrid = () => {
     },
     {
       id: 4,
-      title: "Guía Completa: Cómo Planificar tu Proyecto Arquitectónico",
-      excerpt: "Consejos prácticos para clientes que están iniciando un proyecto de construcción o renovación.",
-      category: "Consejos para Clientes",
+      title: t('items.4.title'),
+      excerpt: t('items.4.excerpt'),
+      category: "tips",
       readTime: "10 min",
       date: "5 Enero 2026",
       author: "David López",
@@ -56,9 +61,9 @@ const ArticleGrid = () => {
     },
     {
       id: 5,
-      title: "Certificaciones Verdes: LEED, BREEAM y Más",
-      excerpt: "Todo lo que necesitas saber sobre las principales certificaciones de construcción sostenible.",
-      category: "Sostenibilidad",
+      title: t('items.5.title'),
+      excerpt: t('items.5.excerpt'),
+      category: "sustainability",
       readTime: "9 min",
       date: "2 Enero 2026",
       author: "Ana Fernández",
@@ -68,9 +73,9 @@ const ArticleGrid = () => {
     },
     {
       id: 6,
-      title: "Inteligencia Artificial en el Diseño Arquitectónico",
-      excerpt: "Cómo la IA está transformando el proceso de diseño y optimización de espacios arquitectónicos.",
-      category: "Innovación",
+      title: t('items.6.title'),
+      excerpt: t('items.6.excerpt'),
+      category: "innovation",
       readTime: "8 min",
       date: "28 Diciembre 2025",
       author: "Roberto Sánchez",
@@ -80,9 +85,9 @@ const ArticleGrid = () => {
     },
     {
       id: 7,
-      title: "Presupuesto de Construcción: Evita Estos Errores Comunes",
-      excerpt: "Los errores más frecuentes al presupuestar un proyecto arquitectónico y cómo evitarlos.",
-      category: "Consejos para Clientes",
+      title: t('items.7.title'),
+      excerpt: t('items.7.excerpt'),
+      category: "tips",
       readTime: "6 min",
       date: "25 Diciembre 2025",
       author: "Isabel Torres",
@@ -92,9 +97,9 @@ const ArticleGrid = () => {
     },
     {
       id: 8,
-      title: "Arquitectura Modular: El Futuro de la Construcción Rápida",
-      excerpt: "Descubre cómo la construcción modular está revolucionando los tiempos y costos de edificación.",
-      category: "Tendencias",
+      title: t('items.8.title'),
+      excerpt: t('items.8.excerpt'),
+      category: "trends",
       readTime: "7 min",
       date: "22 Diciembre 2025",
       author: "Miguel Ángel Ruiz",
@@ -104,7 +109,7 @@ const ArticleGrid = () => {
     }
   ];
 
-  const filteredArticles = activeCategory === 'Todos'
+  const filteredArticles = activeCategory === 'all'
     ? articles
     : articles.filter(article => article.category === activeCategory);
 
@@ -113,29 +118,20 @@ const ArticleGrid = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="mb-12">
           <h2 className="font-headline text-3xl lg:text-4xl font-headline-bold text-primary mb-8">
-            Todos los Artículos
+            {t('title')}
           </h2>
-          
+
           <div className="flex flex-wrap gap-4 mb-12">
-            <button
-              onClick={() => setActiveCategory('all')}
-              className={`px-6 py-3 font-body text-sm font-body-semibold rounded-md transition-smooth ${
-                activeCategory === 'all' ?'bg-lcdream-gold text-black shadow-gold' :'bg-lcdream-dark-bg text-lcdream-gray-light border border-lcdream-gold/20 hover:border-lcdream-gold/50 hover:text-lcdream-gold'
-              }`}
-            >
-              Todos
-            </button>
             {categories.map((category) => (
               <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-6 py-3 font-body text-sm font-body-semibold rounded-md transition-smooth ${
-                  activeCategory === category
-                    ? 'bg-lcdream-gold text-black shadow-gold'
-                    : 'bg-lcdream-dark-bg text-lcdream-gray-light border border-lcdream-gold/20 hover:border-lcdream-gold/50 hover:text-lcdream-gold'
-                }`}
+                key={category.key}
+                onClick={() => setActiveCategory(category.key)}
+                className={`px-6 py-3 font-body text-sm font-body-semibold rounded-md transition-smooth ${activeCategory === category.key
+                  ? 'bg-lcdream-gold text-black shadow-gold'
+                  : 'bg-lcdream-dark-bg text-lcdream-gray-light border border-lcdream-gold/20 hover:border-lcdream-gold/50 hover:text-lcdream-gold'
+                  }`}
               >
-                {category}
+                {category.label}
               </button>
             ))}
           </div>
@@ -156,10 +152,10 @@ const ArticleGrid = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-smooth" />
                 <span className="absolute top-4 left-4 px-3 py-1 bg-lcdream-gold text-black font-body text-xs font-body-semibold rounded-full">
-                  {article.category}
+                  {categories.find(c => c.key === article.category)?.label}
                 </span>
               </div>
-              
+
               <div className="p-5">
                 <h3 className="font-headline text-xl font-headline-semibold text-lcdream-white mb-2 group-hover:text-lcdream-gold transition-smooth">
                   {article.title}
@@ -167,7 +163,7 @@ const ArticleGrid = () => {
                 <p className="font-body text-sm text-lcdream-gray-light font-body-regular mb-4">
                   {article.excerpt}
                 </p>
-                
+
                 <div className="flex items-center justify-between text-xs">
                   <span className="font-body font-body-regular text-secondary">
                     {article.date}

@@ -18,14 +18,20 @@ interface Article {
   slug: string;
 }
 
+import { useTranslations } from 'next-intl';
+
+// ...
+
 const FeaturedArticles = () => {
+  const t = useTranslations('ResourcesBlog.featured');
+
   const featuredArticles: Article[] = [
     {
       id: 1,
-      title: "El Futuro de la Arquitectura Sostenible en 2026",
-      excerpt: "Exploramos las tendencias emergentes en diseño ecológico y cómo están transformando el panorama arquitectónico mundial.",
-      category: "Sostenibilidad",
-      readTime: "8 min",
+      title: t('items.1.title'),
+      excerpt: t('items.1.excerpt'),
+      category: t('items.1.category'),
+      readTime: `8 ${t('readTime')}`,
       date: "15 Enero 2026",
       author: "María González",
       image: "https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -34,10 +40,10 @@ const FeaturedArticles = () => {
     },
     {
       id: 2,
-      title: "Materiales Innovadores que Están Revolucionando el Diseño",
-      excerpt: "Desde hormigón translúcido hasta madera transparente, descubre los materiales que definen la arquitectura del futuro.",
-      category: "Innovación",
-      readTime: "6 min",
+      title: t('items.2.title'),
+      excerpt: t('items.2.excerpt'),
+      category: t('items.2.category'),
+      readTime: `6 ${t('readTime')}`,
       date: "10 Enero 2026",
       author: "Carlos Ruiz",
       image: "https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -51,7 +57,7 @@ const FeaturedArticles = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between mb-12">
           <h2 className="font-headline text-4xl lg:text-5xl font-headline-bold text-lcdream-white mb-12 leading-tight text-center">
-            Artículos Destacados
+            {t('title')}
           </h2>
         </div>
 
@@ -75,7 +81,7 @@ const FeaturedArticles = () => {
                   </span>
                 </div>
               </div>
-              
+
               <div className="p-6">
                 <h3 className="font-headline text-2xl font-headline-semibold text-lcdream-white mb-3 group-hover:text-lcdream-gold transition-smooth">
                   {article.title}
@@ -83,7 +89,7 @@ const FeaturedArticles = () => {
                 <p className="font-body text-base text-lcdream-gray-light font-body-regular leading-relaxed mb-4">
                   {article.excerpt}
                 </p>
-                
+
                 <div className="flex items-center justify-between text-sm">
                   <div className="flex items-center space-x-4">
                     <span className="font-body font-body-regular text-secondary">

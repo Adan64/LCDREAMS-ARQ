@@ -586,5 +586,78 @@
             "schedule": "Schedule Consultation",
             "viewMore": "View More Projects"
         }
+    },
+    "ResourcesBlog": {
+        "metadata": {
+            "title": "Resources & Blog - LCDREAM.ARQ",
+            "description": "Explore articles on architectural trends, sustainability, innovation, and practical advice for clients."
+        },
+        "hero": {
+            "subtitle": "Resources & Blog",
+            "title": "Resources & Blog",
+            "description": "Discover articles on architectural trends, sustainability, innovation, and practical advice for your projects.",
+            "searchPlaceholder": "Search articles..."
+        },
+        "featured": {
+            "title": "Featured Articles",
+            "readTime": "min",
+            "items": {
+                "1": {
+                    "title": "The Future of Sustainable Architecture in 2026",
+                    "excerpt": "Exploring emerging trends in eco-friendly design and how they are transforming the global architectural landscape.",
+                    "category": "Sustainability"
+                },
+                "2": {
+                    "title": "Innovative Materials Revolutionizing Design",
+                    "excerpt": "From translucent concrete to transparent wood, discover the materials defining the architecture of the future.",
+                    "category": "Innovation"
+                }
+            }
+        },
+        "grid": {
+            "title": "All Articles",
+            "categories": {
+                "all": "All",
+                "trends": "Trends",
+                "sustainability": "Sustainability",
+                "innovation": "Innovation",
+                "tips": "Client Advice"
+            },
+            "items": {
+                "3": {
+                    "title": "10 Architectural Trends That Will Dominate 2026",
+                    "excerpt": "From biophilic design to parametric architecture, these are the trends that will mark the year."
+                },
+                "4": {
+                    "title": "Complete Guide: How to Plan Your Architectural Project",
+                    "excerpt": "Practical advice for clients starting a construction or renovation project."
+                },
+                "5": {
+                    "title": "Green Certifications: LEED, BREEAM and More",
+                    "excerpt": "Everything you need to know about the main sustainable building certifications."
+                },
+                "6": {
+                    "title": "Artificial Intelligence in Architectural Design",
+                    "excerpt": "How AI is transforming the design process and optimization of architectural spaces."
+                },
+                "7": {
+                    "title": "Construction Budget: Avoid These Common Mistakes",
+                    "excerpt": "The most frequent errors when budgeting an architectural project and how to avoid them."
+                },
+                "8": {
+                    "title": "Modular Architecture: The Future of Rapid Construction",
+                    "excerpt": "Discover how modular construction is revolutionizing building times and costs."
+                }
+            }
+        },
+        "newsletter": {
+            "title": "Subscribe to Our Newsletter",
+            "description": "Receive the latest articles, architectural trends, and exclusive advice directly in your inbox.",
+            "placeholder": "Your email",
+            "subscribe": "Subscribe",
+            "sending": "Sending...",
+            "success": "Thanks for subscribing!",
+            "disclaimer": "No spam. Only valuable content. Unsubscribe anytime."
+        }
     }
 }

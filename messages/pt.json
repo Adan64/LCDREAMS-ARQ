@@ -586,5 +586,78 @@
             "schedule": "Agendar Consulta",
             "viewMore": "Ver Mais Projetos"
         }
+    },
+    "ResourcesBlog": {
+        "metadata": {
+            "title": "Recursos e Blog - LCDREAM.ARQ",
+            "description": "Explore artigos sobre tendências arquitetônicas, sustentabilidade, inovação e conselhos práticos para clientes."
+        },
+        "hero": {
+            "subtitle": "Recursos e Blog",
+            "title": "Recursos e Blog",
+            "description": "Descubra artigos sobre tendências arquitetônicas, sustentabilidade, inovação e conselhos práticos para seus projetos.",
+            "searchPlaceholder": "Buscar artigos..."
+        },
+        "featured": {
+            "title": "Artigos em Destaque",
+            "readTime": "min",
+            "items": {
+                "1": {
+                    "title": "O Futuro da Arquitetura Sustentável em 2026",
+                    "excerpt": "Exploramos as tendências emergentes em design ecológico e como elas estão transformando a paisagem arquitetônica global.",
+                    "category": "Sustentabilidade"
+                },
+                "2": {
+                    "title": "Materiais Inovadores que Estão Revolucionando o Design",
+                    "excerpt": "Do concreto translúcido à madeira transparente, descubra os materiais que definem a arquitetura do futuro.",
+                    "category": "Inovação"
+                }
+            }
+        },
+        "grid": {
+            "title": "Todos os Artigos",
+            "categories": {
+                "all": "Todos",
+                "trends": "Tendências",
+                "sustainability": "Sustentabilidade",
+                "innovation": "Inovação",
+                "tips": "Conselhos para Clientes"
+            },
+            "items": {
+                "3": {
+                    "title": "10 Tendências Arquitetônicas que Dominarão 2026",
+                    "excerpt": "Do design biofílico à arquitetura paramétrica, estas são as tendências que marcarão o ano."
+                },
+                "4": {
+                    "title": "Guia Completo: Como Planejar seu Projeto Arquitetônico",
+                    "excerpt": "Conselhos práticos para clientes que estão iniciando um projeto de construção ou renovação."
+                },
+                "5": {
+                    "title": "Certificações Verdes: LEED, BREEAM e Mais",
+                    "excerpt": "Tudo o que você precisa saber sobre as principais certificações de construção sustentável."
+                },
+                "6": {
+                    "title": "Inteligência Artificial no Design Arquitetônico",
+                    "excerpt": "Como a IA está transformando o processo de design e otimização de espaços arquitetônicos."
+                },
+                "7": {
+                    "title": "Orçamento de Construção: Evite Estes Erros Comuns",
+                    "excerpt": "Os erros mais frequentes ao orçar um projeto arquitetônico e como evitá-los."
+                },
+                "8": {
+                    "title": "Arquitetura Modular: O Futuro da Construção Rápida",
+                    "excerpt": "Descubra como a construção modular está revolucionando os tempos e custos de edificação."
+                }
+            }
+        },
+        "newsletter": {
+            "title": "Inscreva-se na Nossa Newsletter",
+            "description": "Receba os últimos artigos, tendências arquitetônicas e conselhos exclusivos diretamente no seu e-mail.",
+            "placeholder": "Seu e-mail",
+            "subscribe": "Inscrever-se",
+            "sending": "Enviando...",
+            "success": "Obrigado por se inscrever!",
+            "disclaimer": "Sem spam. Apenas conteúdo de valor. Cancele quando quiser."
+        }
     }
 }
