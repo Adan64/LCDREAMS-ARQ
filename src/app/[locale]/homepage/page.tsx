@@ -8,6 +8,7 @@ import TrustSection from './components/TrustSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import CTASection from './components/CTASection';
 import FooterSection from './components/FooterSection';
+import VirtualTourSection from '@/components/ui/VirtualTourSection';
 
 export const metadata: Metadata = {
   title: 'Homepage - LCDREAM.ARQ',
@@ -25,6 +26,7 @@ export default function Homepage() {
         <ServicesSection />
         <TrustSection />
         <TestimonialsSection />
+        <VirtualTourSection />
         <CTASection />
         <FooterSection />
       </main>

@@ -2,6 +2,25 @@
     "Index": {
         "title": "Início"
     },
+    "VirtualTour": {
+        "startTour": "Iniciar Tour Virtual",
+        "dragToExplore": "Arraste para explorar o espaço",
+        "loading": "Carregando panorama...",
+        "controls": "🖱️ Arraste para olhar · 🔍 Scroll para zoom",
+        "resetView": "Redefinir visualização",
+        "fullscreen": "Tela cheia",
+        "exitFullscreen": "Sair da tela cheia",
+        "close": "Fechar tour"
+    },
+    "Portfolio": {
+        "virtualTours": {
+            "badge": "Experiência Imersiva",
+            "title": "Tours Virtuais 360°",
+            "description": "Explore nossos projetos mais destacados com uma experiência imersiva. Navegue pelos espaços como se estivesse lá.",
+            "studioTitle": "Tour do Estúdio LCDREAM.ARQ",
+            "hint": "Clique em qualquer tour para iniciar a experiência 360°"
+        }
+    },
     "Header": {
         "nav": {
             "home": "Início",
@@ -514,6 +533,7 @@
         },
         "sustainability": {
             "title": "Sustentabilidade",
+            "description": "Nosso compromisso com o design sustentável se reflete em cada detalhe do projeto, incorporando tecnologias e materiais que minimizam o impacto ambiental.",
             "certificationsTitle": "Certificações",
             "features": {
                 "solar": {
@@ -1276,6 +1296,10 @@
                 "6-12-months": "6-12 Meses",
                 "over-year": "Mais de 1 Ano",
                 "planning": "Ainda Planejando"
+            },
+            "location": {
+                "addressTitle": "Nosso Endereço",
+                "hoursTitle": "Horário de Funcionamento"
             }
         },
         "location": {

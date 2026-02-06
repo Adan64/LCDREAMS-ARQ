@@ -2,6 +2,25 @@
     "Index": {
         "title": "Home"
     },
+    "VirtualTour": {
+        "startTour": "Start Virtual Tour",
+        "dragToExplore": "Drag to explore the space",
+        "loading": "Loading panorama...",
+        "controls": "🖱️ Drag to look around · 🔍 Scroll to zoom",
+        "resetView": "Reset view",
+        "fullscreen": "Fullscreen",
+        "exitFullscreen": "Exit fullscreen",
+        "close": "Close tour"
+    },
+    "Portfolio": {
+        "virtualTours": {
+            "badge": "Immersive Experience",
+            "title": "360° Virtual Tours",
+            "description": "Explore our most outstanding projects with an immersive experience. Navigate through spaces as if you were there.",
+            "studioTitle": "LCDREAM.ARQ Studio Tour",
+            "hint": "Click any tour to start the 360° experience"
+        }
+    },
     "Header": {
         "nav": {
             "home": "Home",
@@ -530,6 +549,7 @@
         },
         "sustainability": {
             "title": "Sustainability",
+            "description": "Our commitment to sustainable design is reflected in every project detail, incorporating technologies and materials that minimize environmental impact.",
             "features": {
                 "solar": {
                     "title": "Solar Panels",
@@ -1068,6 +1088,10 @@
                 "6-12-months": "6-12 Months",
                 "over-year": "Over 1 Year",
                 "planning": "Still Planning"
+            },
+            "location": {
+                "addressTitle": "Our Address",
+                "hoursTitle": "Office Hours"
             }
         },
         "location": {

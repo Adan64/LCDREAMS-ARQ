@@ -2,6 +2,25 @@
     "Index": {
         "title": "Inicio"
     },
+    "VirtualTour": {
+        "startTour": "Iniciar Tour Virtual",
+        "dragToExplore": "Arrastra para explorar el espacio",
+        "loading": "Cargando panorama...",
+        "controls": "🖱️ Arrastra para mirar · 🔍 Scroll para zoom",
+        "resetView": "Restablecer vista",
+        "fullscreen": "Pantalla completa",
+        "exitFullscreen": "Salir de pantalla completa",
+        "close": "Cerrar tour"
+    },
+    "Portfolio": {
+        "virtualTours": {
+            "badge": "Experiencia Inmersiva",
+            "title": "Tours Virtuales 360°",
+            "description": "Explora nuestros proyectos más destacados con una experiencia inmersiva. Navega por los espacios como si estuvieras allí.",
+            "studioTitle": "Tour del Estudio LCDREAM.ARQ",
+            "hint": "Haz clic en cualquier tour para iniciar la experiencia 360°"
+        }
+    },
     "Header": {
         "nav": {
             "home": "Inicio",
@@ -512,6 +531,7 @@
         },
         "sustainability": {
             "title": "Sostenibilidad",
+            "description": "Nuestro compromiso con el diseño sostenible se refleja en cada detalle del proyecto, incorporando tecnologías y materiales que minimizan el impacto ambiental.",
             "features": {
                 "solar": {
                     "title": "Paneles Solares",
@@ -1050,6 +1070,10 @@
                 "6-12-months": "6-12 Meses",
                 "over-year": "Más de 1 Año",
                 "planning": "Aún Planificando"
+            },
+            "location": {
+                "addressTitle": "Nuestra Dirección",
+                "hoursTitle": "Horario de Oficina"
             }
         },
         "location": {

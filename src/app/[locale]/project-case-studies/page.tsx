@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Header from '@/components/common/Header';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import CaseStudyHero from './components/CaseStudyHero';
 import ProjectOverview from './components/ProjectOverview';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
