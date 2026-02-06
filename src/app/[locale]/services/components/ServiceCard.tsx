@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from '@/components/ui/AppIcon';
+import { useTranslations } from 'next-intl';
 
 interface ServiceCardProps {
   icon: string;
@@ -11,6 +12,8 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ icon, title, description, features, timeline, priceRange }: ServiceCardProps) => {
+  const t = useTranslations('Services.servicesList.card');
+
   return (
     <div className="bg-lcdream-dark-bg rounded-lg p-8 shadow-subtle border border-lcdream-gold/10 hover:border-lcdream-gold/30 transition-smooth group">
       <div className="w-16 h-16 bg-lcdream-gold/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-lcdream-gold/20 transition-smooth border border-lcdream-gold/30">
@@ -27,17 +30,17 @@ const ServiceCard = ({ icon, title, description, features, timeline, priceRange 
 
       <div className="space-y-4 mb-6">
         <div className="flex items-center justify-between py-3 border-t border-border">
-          <span className="font-body text-sm font-body-regular text-secondary">Duración estimada</span>
+          <span className="font-body text-sm font-body-regular text-secondary">{t('estimatedDuration')}</span>
           <span className="font-body text-sm font-body-semibold text-primary">{timeline}</span>
         </div>
         <div className="flex items-center justify-between py-3 border-t border-border">
-          <span className="font-body text-sm font-body-regular text-secondary">Rango de inversión</span>
+          <span className="font-body text-sm font-body-regular text-secondary">{t('investmentRange')}</span>
           <span className="font-body text-sm font-body-semibold text-primary">{priceRange}</span>
         </div>
       </div>
 
       <div className="space-y-3 mb-6">
-        <h4 className="font-body text-sm font-body-semibold text-primary uppercase tracking-wide">Incluye:</h4>
+        <h4 className="font-body text-sm font-body-semibold text-primary uppercase tracking-wide">{t('includes')}</h4>
         {features.map((feature, index) => (
           <div key={index} className="flex items-start space-x-3">
             <Icon name="CheckCircleIcon" size={20} className="text-lcdream-gold mr-2 flex-shrink-0 mt-0.5" />

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Icon from '@/components/ui/AppIcon';
 import AppImage from '@/components/ui/AppImage';
+import { useTranslations } from 'next-intl';
 
 interface Guide {
   id: string;
@@ -19,11 +20,12 @@ interface DownloadableGuideProps {
 }
 
 const DownloadableGuide = ({ guides }: DownloadableGuideProps) => {
+  const t = useTranslations('Services.guides');
   const [downloadingId, setDownloadingId] = useState<string | null>(null);
 
-  const handleDownload = (guideId: string) => {
-    setDownloadingId(guideId);
-    
+  const handleDownload = (id: string) => {
+    setDownloadingId(id);
+    // Simulate download
     setTimeout(() => {
       setDownloadingId(null);
     }, 2000);
@@ -32,55 +34,46 @@ const DownloadableGuide = ({ guides }: DownloadableGuideProps) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {guides.map((guide) => (
-        <div key={guide.id} className="bg-card rounded-lg overflow-hidden shadow-architectural hover:shadow-elevated transition-smooth group">
+        <div key={guide.id} className="group bg-card rounded-lg overflow-hidden shadow-architectural hover:-translate-y-1 transition-smooth border border-border/50">
           <div className="relative h-48 overflow-hidden">
-            <AppImage
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
+            <img
               src={guide.coverImage}
               alt={guide.coverAlt}
-              className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
-            <div className="absolute bottom-4 left-4 right-4">
-              <h4 className="font-headline text-lg font-headline-bold text-primary-foreground">
-                {guide.title}
-              </h4>
+            <div className="absolute bottom-4 left-4 z-20">
+              <div className="inline-flex items-center space-x-2 text-white/80 text-xs font-body font-body-medium mb-1">
+                <Icon name="DocumentTextIcon" size={14} />
+                <span>{guide.pages} {t('pages')}</span>
+                <span>•</span>
+                <span>{guide.fileSize}</span>
+              </div>
             </div>
           </div>
 
           <div className="p-6">
-            <p className="text-sm font-body-regular mb-4 text-[rgba(220,220,218,1)]">
+            <h3 className="font-headline text-lg font-headline-bold text-card-foreground mb-2 group-hover:text-accent transition-colors">
+              {guide.title}
+            </h3>
+            <p className="font-body text-sm font-body-regular text-muted-foreground mb-6 line-clamp-2">
               {guide.description}
             </p>
-
-            <div className="flex items-center justify-between mb-4 pb-4 border-b border-border">
-              <div className="flex items-center space-x-2">
-                <Icon name="DocumentTextIcon" size={16} className="text-accent" />
-                <span className="text-xs font-body-regular text-[rgba(184,183,183,1)]">
-                  {guide.pages} páginas
-                </span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Icon name="ArrowDownTrayIcon" size={16} className="text-accent" />
-                <span className="text-xs font-body-regular text-[rgba(193,190,190,1)]">
-                  {guide.fileSize}
-                </span>
-              </div>
-            </div>
 
             <button
               onClick={() => handleDownload(guide.id)}
               disabled={downloadingId === guide.id}
-              className="w-full py-3 px-4 bg-accent/10 text-accent rounded-lg font-body text-sm font-body-semibold transition-smooth hover:bg-accent hover:text-accent-foreground disabled:opacity-50 flex items-center justify-center space-x-2"
+              className="w-full py-2 px-4 bg-muted text-muted-foreground rounded-lg font-cta text-sm font-cta-semibold hover:bg-accent hover:text-accent-foreground transition-all flex items-center justify-center space-x-2 group-hover:bg-accent group-hover:text-accent-foreground"
             >
               {downloadingId === guide.id ? (
                 <>
-                  <Icon name="ArrowPathIcon" size={18} className="animate-spin" />
-                  <span>Descargando...</span>
+                  <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                  <span>{t('downloading')}</span>
                 </>
               ) : (
                 <>
-                  <Icon name="ArrowDownTrayIcon" size={18} />
-                  <span>Descargar Guía</span>
+                  <Icon name="ArrowDownTrayIcon" size={16} />
+                  <span>{t('download')}</span>
                 </>
               )}
             </button>

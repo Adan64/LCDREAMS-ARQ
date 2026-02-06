@@ -659,5 +659,280 @@
             "success": "Obrigado por se inscrever!",
             "disclaimer": "Sem spam. Apenas conteúdo de valor. Cancele quando quiser."
         }
+    },
+    "Services": {
+        "metadata": {
+            "title": "Serviços - LCDREAM.ARQ",
+            "description": "Descubra nossa gama completa de serviços arquitetônicos, desde design residencial até projetos comerciais e urbanismo. Processo transparente, prazos claros e resultados excepcionais."
+        },
+        "hero": {
+            "badge": "Serviços Profissionais",
+            "title": "Transformamos suas ideias em espaços extraordinários",
+            "description": "Oferecemos uma gama completa de serviços arquitetônicos com uma abordagem personalizada, desde o conceito inicial até a entrega final. Cada projeto é único e merece uma atenção excepcional.",
+            "cta_consultation": "Reservar Consulta",
+            "cta_portfolio": "Ver Portfólio"
+        },
+        "intro": {
+            "title": "Nossos Serviços",
+            "description": "Soluções arquitetônicas integrais adaptadas a cada tipo de projeto e necessidade"
+        },
+        "servicesList": {
+            "items": {
+                "residential": {
+                    "title": "Arquitetura Residencial",
+                    "description": "Design de casas unifamiliares, sobrados e edifícios residenciais que combinam funcionalidade, estética e sustentabilidade.",
+                    "timeline": "4-8 meses",
+                    "priceRange": "€15.000 - €50.000",
+                    "features": {
+                        "0": "Design arquitetônico completo",
+                        "1": "Planos de construção e detalhes técnicos",
+                        "2": "Gestão de licenças e alvarás",
+                        "3": "Supervisão de obra",
+                        "4": "Certificação energética",
+                        "5": "Design de espaços exteriores"
+                    }
+                },
+                "commercial": {
+                    "title": "Arquitetura Comercial",
+                    "description": "Projetos comerciais que otimizam a experiência do cliente e refletem a identidade da sua marca.",
+                    "timeline": "6-12 meses",
+                    "priceRange": "€25.000 - €100.000",
+                    "features": {
+                        "0": "Análise de necessidades comerciais",
+                        "1": "Design de espaços funcionais",
+                        "2": "Otimização de fluxos de trabalho",
+                        "3": "Conformidade normativa comercial",
+                        "4": "Design de fachadas corporativas",
+                        "5": "Projetos chave na mão"
+                    }
+                },
+                "interior": {
+                    "title": "Design de Interiores",
+                    "description": "Transformação de espaços interiores com soluções criativas que melhoram a funcionalidade e o conforto.",
+                    "timeline": "2-4 meses",
+                    "priceRange": "€8.000 - €30.000",
+                    "features": {
+                        "0": "Distribuição e otimização de espaços",
+                        "1": "Seleção de materiais e acabamentos",
+                        "2": "Design de mobiliário sob medida",
+                        "3": "Iluminação arquitetônica",
+                        "4": "Renders 3D fotorrealistas",
+                        "5": "Coordenação com fornecedores"
+                    }
+                },
+                "renovation": {
+                    "title": "Reformas Integrais",
+                    "description": "Renovação completa de espaços existentes com foco em modernização e eficiência energética.",
+                    "timeline": "3-6 meses",
+                    "priceRange": "€12.000 - €40.000",
+                    "features": {
+                        "0": "Estudo de viabilidade técnica",
+                        "1": "Projeto de reforma completo",
+                        "2": "Gestão de licenças de obra",
+                        "3": "Direção de obra especializada",
+                        "4": "Controle de qualidade e prazos",
+                        "5": "Certificados finais de obra"
+                    }
+                },
+                "urban": {
+                    "title": "Urbanismo e Planejamento",
+                    "description": "Desenvolvimento de planos urbanísticos e estudos de viabilidade para projetos de maior escala.",
+                    "timeline": "8-18 meses",
+                    "priceRange": "€30.000 - €150.000",
+                    "features": {
+                        "0": "Estudos de viabilidade urbanística",
+                        "1": "Planos parciais e especiais",
+                        "2": "Projetos de urbanização",
+                        "3": "Estudos de impacto ambiental",
+                        "4": "Gestão administrativa completa",
+                        "5": "Assessoria legal urbanística"
+                    }
+                },
+                "consulting": {
+                    "title": "Consultoria e Assessoria",
+                    "description": "Serviços de consultoria especializada para otimizar projetos existentes ou em fase de planejamento.",
+                    "timeline": "1-3 meses",
+                    "priceRange": "€3.000 - €15.000",
+                    "features": {
+                        "0": "Análise de projetos existentes",
+                        "1": "Assessoria técnica especializada",
+                        "2": "Estudos de viabilidade econômica",
+                        "3": "Relatórios periciais",
+                        "4": "Auditorias energéticas",
+                        "5": "Planos de manutenção"
+                    }
+                }
+            },
+            "card": {
+                "estimatedDuration": "Duração estimada",
+                "investmentRange": "Faixa de investimento",
+                "includes": "Inclui:"
+            }
+        },
+        "process": {
+            "badge": "Nosso Processo de Trabalho",
+            "title": "Nosso Processo de Trabalho",
+            "description": "Uma abordagem estruturada e transparente que garante resultados excepcionais em cada fase do projeto",
+            "steps": {
+                "0": {
+                    "title": "Consulta Inicial",
+                    "description": "Reunião para conhecer suas necessidades, objetivos e orçamento. Analisamos a viabilidade do projeto e estabelecemos as bases da colaboração.",
+                    "duration": "1-2 semanas"
+                },
+                "1": {
+                    "title": "Estudo Preliminar",
+                    "description": "Desenvolvimento de propostas conceituais com esboços e renders 3D. Apresentação de alternativas e refinamento segundo suas preferências.",
+                    "duration": "2-4 semanas"
+                },
+                "2": {
+                    "title": "Projeto Básico",
+                    "description": "Elaboração de plantas detalhadas, memoriais descritivos e orçamentos. Definição completa do escopo do projeto.",
+                    "duration": "4-8 semanas"
+                },
+                "3": {
+                    "title": "Projeto de Execução",
+                    "description": "Desenvolvimento de toda a documentação técnica necessária para a construção. Detalhes construtivos, instalações e especificações.",
+                    "duration": "6-10 semanas"
+                },
+                "4": {
+                    "title": "Tramitação",
+                    "description": "Gestão de licenças, alvarás e autorizações necessárias junto aos órgãos oficiais. Acompanhamento até a aprovação.",
+                    "duration": "8-16 semanas"
+                },
+                "5": {
+                    "title": "Direção de Obra",
+                    "description": "Supervisão técnica durante a construção. Controle de qualidade, prazos e orçamento. Coordenação com empreiteiros.",
+                    "duration": "Conforme projeto"
+                }
+            }
+        },
+        "comparison": {
+            "title": "Comparação de Pacotes",
+            "description": "Escolha o nível de serviço que melhor se adapta às necessidades do seu projeto",
+            "table": {
+                "headers": {
+                    "features": "Características",
+                    "basic": "Básico",
+                    "basicSub": "Projetos pequenos",
+                    "standard": "Padrão",
+                    "standardSub": "Mais popular",
+                    "premium": "Premium",
+                    "premiumSub": "Projetos complexos"
+                },
+                "features": {
+                    "initialConsultation": "Consulta inicial",
+                    "preliminaryStudy": "Estudo preliminar",
+                    "basicRenders": "Renders 3D básicos",
+                    "basicProject": "Projeto básico",
+                    "executionProject": "Projeto de execução",
+                    "photorealisticRenders": "Renders 3D fotorrealistas",
+                    "virtualTour": "Tour virtual 360°",
+                    "licensing": "Tramitação de licenças",
+                    "siteSupervision": "Direção de obra",
+                    "energyCertification": "Certificação energética",
+                    "landscaping": "Design de paisagismo",
+                    "customFurniture": "Mobiliário sob medida",
+                    "postConstructionAdvice": "Assessoria pós-obra",
+                    "extendedWarranty": "Garantia estendida"
+                }
+            }
+        },
+        "calculator": {
+            "title": "Calculadora de Prazos",
+            "labels": {
+                "projectType": "Tipo de Projeto",
+                "projectSize": "Tamanho do Projeto",
+                "complexity": "Complexidade",
+                "estimatedDuration": "Duração Estimada",
+                "weeks": "semanas aproximadamente",
+                "disclaimer": "* Esta é uma estimativa aproximada. O prazo real pode variar de acordo com as condições específicas do projeto.",
+                "complexityOptions": {
+                    "low": "Baixa",
+                    "medium": "Média",
+                    "high": "Alta"
+                }
+            },
+            "types": {
+                "residential": "Residencial",
+                "commercial": "Comercial",
+                "interior": "Interiores",
+                "renovation": "Reforma"
+            }
+        },
+        "booking": {
+            "title": "Reservar Consulta",
+            "success": {
+                "title": "Consulta reservada com sucesso!",
+                "message": "Você receberá um e-mail de confirmação em breve com os detalhes do seu agendamento."
+            },
+            "form": {
+                "name": "Nome completo *",
+                "namePlaceholder": "Seu nome",
+                "email": "E-mail *",
+                "emailPlaceholder": "seu@email.com",
+                "phone": "Telefone *",
+                "phonePlaceholder": "+34 600 000 000",
+                "projectType": "Tipo de projeto *",
+                "selectOption": "Selecione uma opção",
+                "date": "Data preferida *",
+                "time": "Hora preferida *",
+                "message": "Mensagem adicional",
+                "messagePlaceholder": "Conte-nos mais sobre o seu projeto...",
+                "submit": "Confirmar Reserva",
+                "processing": "Processando...",
+                "projectTypes": {
+                    "singleFamily": "Residência Unifamiliar",
+                    "comprehensiveReform": "Reforma Integral",
+                    "interiorDesign": "Design de Interiores",
+                    "commercialProject": "Projeto Comercial",
+                    "urbanPlanning": "Urbanismo",
+                    "other": "Outro"
+                }
+            }
+        },
+        "guides": {
+            "title": "Guias para Download",
+            "description": "Recursos gratuitos para ajudar você a planejar seu projeto arquitetônico",
+            "items": {
+                "guide1": {
+                    "title": "Guia Completo de Planejamento",
+                    "description": "Tudo o que você precisa saber antes de iniciar seu projeto arquitetônico."
+                },
+                "guide2": {
+                    "title": "Sustentabilidade na Arquitetura",
+                    "description": "Estratégias e melhores práticas para projetos ecoeficientes."
+                },
+                "guide3": {
+                    "title": "Orçamentos e Custos",
+                    "description": "Como estimar e controlar o orçamento do seu projeto."
+                }
+            },
+            "download": "Baixar Guia",
+            "downloading": "Baixando...",
+            "pages": "páginas"
+        },
+        "quality": {
+            "badge": "Garantia de Qualidade",
+            "title": "Comprometidos com a excelência",
+            "description": "Todos os nossos serviços são apoiados por certificações profissionais, seguros de responsabilidade civil e uma equipe com mais de 15 anos de experiência no setor.",
+            "items": {
+                "0": "Arquitetos registrados e certificados",
+                "1": "Conformidade normativa garantida",
+                "2": "Equipe multidisciplinar especializada",
+                "3": "Compromisso com prazos estabelecidos"
+            },
+            "stats": {
+                "projects": "Projetos concluídos",
+                "satisfaction": "Satisfação do cliente",
+                "experience": "Anos de experiência",
+                "awards": "Prêmios e reconhecimentos"
+            }
+        },
+        "cta": {
+            "title": "Pronto para começar seu projeto?",
+            "description": "Agende uma consulta gratuita e descubra como podemos transformar sua visão em realidade",
+            "contact": "Contatar Agora",
+            "caseStudies": "Ver Casos de Estudo"
+        }
     }
 }

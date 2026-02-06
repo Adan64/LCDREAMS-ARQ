@@ -659,5 +659,280 @@
             "success": "Thanks for subscribing!",
             "disclaimer": "No spam. Only valuable content. Unsubscribe anytime."
         }
+    },
+    "Services": {
+        "metadata": {
+            "title": "Services - LCDREAM.ARQ",
+            "description": "Discover our full range of architectural services, from residential design to commercial projects and urban planning. Transparent process, clear deadlines, and exceptional results."
+        },
+        "hero": {
+            "badge": "Professional Services",
+            "title": "We transform your ideas into extraordinary spaces",
+            "description": "We offer a full range of architectural services with a personalized approach, from initial concept to final delivery. Every project is unique and deserves exceptional attention.",
+            "cta_consultation": "Book Consultation",
+            "cta_portfolio": "View Portfolio"
+        },
+        "intro": {
+            "title": "Our Services",
+            "description": "Comprehensive architectural solutions adapted to every type of project and need"
+        },
+        "servicesList": {
+            "items": {
+                "residential": {
+                    "title": "Residential Architecture",
+                    "description": "Design of single-family homes, townhouses, and residential buildings that combine functionality, aesthetics, and sustainability.",
+                    "timeline": "4-8 months",
+                    "priceRange": "€15,000 - €50,000",
+                    "features": {
+                        "0": "Complete architectural design",
+                        "1": "Construction plans and technical details",
+                        "2": "Permit and license management",
+                        "3": "Site supervision",
+                        "4": "Energy certification",
+                        "5": "Exterior space design"
+                    }
+                },
+                "commercial": {
+                    "title": "Commercial Architecture",
+                    "description": "Commercial projects that optimize customer experience and reflect your brand identity.",
+                    "timeline": "6-12 months",
+                    "priceRange": "€25,000 - €100,000",
+                    "features": {
+                        "0": "Commercial needs analysis",
+                        "1": "Functional space design",
+                        "2": "Workflow optimization",
+                        "3": "Commercial regulatory compliance",
+                        "4": "Corporate facade design",
+                        "5": "Turnkey projects"
+                    }
+                },
+                "interior": {
+                    "title": "Interior Design",
+                    "description": "Transformation of interior spaces with creative solutions that improve functionality and comfort.",
+                    "timeline": "2-4 months",
+                    "priceRange": "€8,000 - €30,000",
+                    "features": {
+                        "0": "Space distribution and optimization",
+                        "1": "Selection of materials and finishes",
+                        "2": "Custom furniture design",
+                        "3": "Architectural lighting",
+                        "4": "Photorealistic 3D renders",
+                        "5": "Coordination with suppliers"
+                    }
+                },
+                "renovation": {
+                    "title": "Comprehensive Renovations",
+                    "description": "Complete renovation of existing spaces focusing on modernization and energy efficiency.",
+                    "timeline": "3-6 months",
+                    "priceRange": "€12,000 - €40,000",
+                    "features": {
+                        "0": "Technical feasibility study",
+                        "1": "Complete renovation project",
+                        "2": "Building permit management",
+                        "3": "Specialized site direction",
+                        "4": "Quality and deadline control",
+                        "5": "Final work certificates"
+                    }
+                },
+                "urban": {
+                    "title": "Urban Planning",
+                    "description": "Development of urban plans and feasibility studies for larger scale projects.",
+                    "timeline": "8-18 months",
+                    "priceRange": "€30,000 - €150,000",
+                    "features": {
+                        "0": "Urban feasibility studies",
+                        "1": "Partial and special plans",
+                        "2": "Urbanization projects",
+                        "3": "Environmental impact studies",
+                        "4": "Complete administrative management",
+                        "5": "Legal urban advice"
+                    }
+                },
+                "consulting": {
+                    "title": "Consulting & Advisory",
+                    "description": "Specialized consulting services to optimize existing projects or those in the planning phase.",
+                    "timeline": "1-3 months",
+                    "priceRange": "€3,000 - €15,000",
+                    "features": {
+                        "0": "Analysis of existing projects",
+                        "1": "Specialized technical advice",
+                        "2": "Economic feasibility studies",
+                        "3": "Expert reports",
+                        "4": "Energy audits",
+                        "5": "Maintenance plans"
+                    }
+                }
+            },
+            "card": {
+                "estimatedDuration": "Estimated duration",
+                "investmentRange": "Investment range",
+                "includes": "Includes:"
+            }
+        },
+        "process": {
+            "badge": "Our Work Process",
+            "title": "Our Work Process",
+            "description": "A structured and transparent approach ensuring exceptional results in every phase of the project",
+            "steps": {
+                "0": {
+                    "title": "Initial Consultation",
+                    "description": "Meeting to understand your needs, goals, and budget. We analyze project feasibility and establish collaboration bases.",
+                    "duration": "1-2 weeks"
+                },
+                "1": {
+                    "title": "Preliminary Study",
+                    "description": "Development of conceptual proposals with sketches and 3D renders. Presentation of alternatives and refinement according to your preferences.",
+                    "duration": "2-4 weeks"
+                },
+                "2": {
+                    "title": "Basic Project",
+                    "description": "Elaboration of detailed plans, technical reports, and budgets. Complete definition of project scope.",
+                    "duration": "4-8 weeks"
+                },
+                "3": {
+                    "title": "Execution Project",
+                    "description": "Development of all technical documentation necessary for construction. Construction details, installations, and specifications.",
+                    "duration": "6-10 weeks"
+                },
+                "4": {
+                    "title": "Processing",
+                    "description": "Management of permits, licenses, and necessary authorizations with official bodies. Follow-up until approval.",
+                    "duration": "8-16 weeks"
+                },
+                "5": {
+                    "title": "Site Supervision",
+                    "description": "Technical supervision during construction. Quality, deadline, and budget control. Coordination with contractors.",
+                    "duration": "According to project"
+                }
+            }
+        },
+        "comparison": {
+            "title": "Package Comparison",
+            "description": "Choose the service level that best fits your project needs",
+            "table": {
+                "headers": {
+                    "features": "Features",
+                    "basic": "Basic",
+                    "basicSub": "Small projects",
+                    "standard": "Standard",
+                    "standardSub": "Most popular",
+                    "premium": "Premium",
+                    "premiumSub": "Complex projects"
+                },
+                "features": {
+                    "initialConsultation": "Initial consultation",
+                    "preliminaryStudy": "Preliminary study",
+                    "basicRenders": "Basic 3D renders",
+                    "basicProject": "Basic project",
+                    "executionProject": "Execution project",
+                    "photorealisticRenders": "Photorealistic 3D renders",
+                    "virtualTour": "360° virtual tour",
+                    "licensing": "License processing",
+                    "siteSupervision": "Site supervision",
+                    "energyCertification": "Energy certification",
+                    "landscaping": "Landscaping design",
+                    "customFurniture": "Custom furniture",
+                    "postConstructionAdvice": "Post-construction advice",
+                    "extendedWarranty": "Extended warranty"
+                }
+            }
+        },
+        "calculator": {
+            "title": "Timeline Calculator",
+            "labels": {
+                "projectType": "Project Type",
+                "projectSize": "Project Size",
+                "complexity": "Complexity",
+                "estimatedDuration": "Estimated Duration",
+                "weeks": "weeks approximately",
+                "disclaimer": "* This is a rough estimate. Actual timeline may vary based on specific project conditions.",
+                "complexityOptions": {
+                    "low": "Low",
+                    "medium": "Medium",
+                    "high": "High"
+                }
+            },
+            "types": {
+                "residential": "Residential",
+                "commercial": "Commercial",
+                "interior": "Interior",
+                "renovation": "Renovation"
+            }
+        },
+        "booking": {
+            "title": "Book Consultation",
+            "success": {
+                "title": "Consultation booked successfully!",
+                "message": "You will receive a confirmation email shortly with your appointment details."
+            },
+            "form": {
+                "name": "Full name *",
+                "namePlaceholder": "Your name",
+                "email": "Email *",
+                "emailPlaceholder": "your@email.com",
+                "phone": "Phone *",
+                "phonePlaceholder": "+34 600 000 000",
+                "projectType": "Project type *",
+                "selectOption": "Select an option",
+                "date": "Preferred date *",
+                "time": "Preferred time *",
+                "message": "Additional message",
+                "messagePlaceholder": "Tell us more about your project...",
+                "submit": "Confirm Booking",
+                "processing": "Processing...",
+                "projectTypes": {
+                    "singleFamily": "Single Family Home",
+                    "comprehensiveReform": "Comprehensive Reform",
+                    "interiorDesign": "Interior Design",
+                    "commercialProject": "Commercial Project",
+                    "urbanPlanning": "Urban Planning",
+                    "other": "Other"
+                }
+            }
+        },
+        "guides": {
+            "title": "Downloadable Guides",
+            "description": "Free resources to help you plan your architectural project",
+            "items": {
+                "guide1": {
+                    "title": "Complete Planning Guide",
+                    "description": "Everything you need to know before starting your architectural project."
+                },
+                "guide2": {
+                    "title": "Sustainability in Architecture",
+                    "description": "Strategies and best practices for eco-efficient projects."
+                },
+                "guide3": {
+                    "title": "Budgets and Costs",
+                    "description": "How to estimate and control your project budget."
+                }
+            },
+            "download": "Download Guide",
+            "downloading": "Downloading...",
+            "pages": "pages"
+        },
+        "quality": {
+            "badge": "Quality Guarantee",
+            "title": "Committed to excellence",
+            "description": "All our services are backed by professional certifications, liability insurance, and a team with over 15 years of experience in the sector.",
+            "items": {
+                "0": "Registered and certified architects",
+                "1": "Guaranteed regulatory compliance",
+                "2": "Specialized multidisciplinary team",
+                "3": "Commitment to established deadlines"
+            },
+            "stats": {
+                "projects": "Projects completed",
+                "satisfaction": "Customer satisfaction",
+                "experience": "Years of experience",
+                "awards": "Awards and recognitions"
+            }
+        },
+        "cta": {
+            "title": "Ready to start your project?",
+            "description": "Schedule a free consultation and discover how we can transform your vision into reality",
+            "contact": "Contact Now",
+            "caseStudies": "View Case Studies"
+        }
     }
 }

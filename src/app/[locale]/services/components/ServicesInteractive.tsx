@@ -1,5 +1,4 @@
-'use client';
-
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import ProcessStep from './ProcessStep';
@@ -66,40 +65,42 @@ const ServicesInteractive = ({
   availableDates,
   guides
 }: ServicesInteractiveProps) => {
+  const t = useTranslations('Services');
+
   return (
     <div className="space-y-24">
       <section className="relative w-full bg-black py-16 lg:py-24">
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-transparent" />
         <div className="text-center mb-12 relative z-10">
           <span className="font-body text-sm font-body-semibold text-lcdream-gold uppercase tracking-wider mb-4 block">
-            Nuestro Proceso de Trabajo
+            {t('process.badge')}
           </span>
           <h1 className="font-headline text-5xl lg:text-7xl font-headline-bold text-lcdream-white mb-6 leading-tight">
-            Nuestro Proceso de Trabajo
+            {t('process.title')}
           </h1>
           <p className="font-body text-xl lg:text-2xl text-lcdream-gray-light font-body-regular leading-relaxed max-w-3xl mx-auto">
-            Un enfoque estructurado y transparente que garantiza resultados excepcionales en cada fase del proyecto
+            {t('process.description')}
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto space-y-8">
-          {processSteps.map((step, index) =>
-          <ProcessStep
-            key={index}
-            {...step}
-            isLast={index === processSteps.length - 1} />
-
-          )}
+          {processSteps.map((step, index) => (
+            <ProcessStep
+              key={index}
+              {...step}
+              isLast={index === processSteps.length - 1}
+            />
+          ))}
         </div>
       </section>
 
       <section>
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-headline-bold mb-4 text-white">
-            Comparación de Paquetes
+            {t('comparison.title')}
           </h2>
           <p className="font-body text-lg font-body-regular text-secondary max-w-3xl mx-auto">
-            Elige el nivel de servicio que mejor se adapte a las necesidades de tu proyecto
+            {t('comparison.description')}
           </p>
         </div>
 
@@ -114,17 +115,17 @@ const ServicesInteractive = ({
       <section>
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-headline-bold mb-4 text-[rgba(252,252,252,1)]">
-            Guías Descargables
+            {t('guides.title')}
           </h2>
           <p className="font-body text-lg font-body-regular text-secondary max-w-3xl mx-auto">
-            Recursos gratuitos para ayudarte a planificar tu proyecto arquitectónico
+            {t('guides.description')}
           </p>
         </div>
 
         <DownloadableGuide guides={guides} />
       </section>
-    </div>);
-
+    </div>
+  );
 };
 
 export default ServicesInteractive;

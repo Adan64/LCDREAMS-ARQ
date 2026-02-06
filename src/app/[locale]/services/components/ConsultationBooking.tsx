@@ -1,260 +1,226 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Icon from '@/components/ui/AppIcon';
+import { useTranslations } from 'next-intl';
 
-interface TimeSlot {
-  time: string;
-  available: boolean;
-}
+
 
 interface ConsultationBookingProps {
   availableDates: string[];
 }
 
 const ConsultationBooking = ({ availableDates }: ConsultationBookingProps) => {
-  const [isHydrated, setIsHydrated] = useState(false);
-  const [selectedDate, setSelectedDate] = useState<string>('');
-  const [selectedTime, setSelectedTime] = useState<string>('');
+  const t = useTranslations('Services.booking');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     projectType: '',
+    date: '',
+    time: '10:00',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  useEffect(() => {
-    setIsHydrated(true);
-  }, []);
 
-  const timeSlots: TimeSlot[] = [
-    { time: '09:00', available: true },
-    { time: '10:00', available: true },
-    { time: '11:00', available: false },
-    { time: '12:00', available: true },
-    { time: '14:00', available: true },
-    { time: '15:00', available: true },
-    { time: '16:00', available: false },
-    { time: '17:00', available: true }
-  ];
-
-  const projectTypes = [
-    'Vivienda Unifamiliar',
-    'Reforma Integral',
-    'Diseño de Interiores',
-    'Proyecto Comercial',
-    'Urbanismo',
-    'Otro'
-  ];
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+    // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
-      setSubmitSuccess(true);
+      setIsSuccess(true);
       setFormData({
         name: '',
         email: '',
         phone: '',
         projectType: '',
+        date: '',
+        time: '10:00',
         message: ''
       });
-      setSelectedDate('');
-      setSelectedTime('');
-
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
+      setTimeout(() => setIsSuccess(false), 5000);
     }, 1500);
   };
 
-  if (!isHydrated) {
-    return (
-      <div className="bg-card rounded-lg p-8 shadow-architectural">
-        <div className="animate-pulse space-y-6">
-          <div className="h-8 bg-muted rounded w-3/4"></div>
-          <div className="h-4 bg-muted rounded w-full"></div>
-          <div className="h-4 bg-muted rounded w-5/6"></div>
-        </div>
-      </div>
-    );
-  }
+  const projectTypes = [
+    { value: 'single-family', label: t('form.projectTypes.singleFamily') },
+    { value: 'reform', label: t('form.projectTypes.comprehensiveReform') },
+    { value: 'interior', label: t('form.projectTypes.interiorDesign') },
+    { value: 'commercial', label: t('form.projectTypes.commercialProject') },
+    { value: 'urban', label: t('form.projectTypes.urbanPlanning') },
+    { value: 'other', label: t('form.projectTypes.other') }
+  ];
+
+  const availableTimes = [
+    '09:00', '10:00', '11:00', '12:00', '13:00', '16:00', '17:00', '18:00'
+  ];
 
   return (
-    <div className="bg-card rounded-lg p-8 shadow-architectural">
-      <div className="flex items-center space-x-3 mb-6">
-        <Icon name="CalendarIcon" size={32} className="text-accent" />
-        <h3 className="font-headline text-2xl font-headline-bold text-white">
-          Reservar Consulta
-        </h3>
-      </div>
-
-      {submitSuccess && (
-        <div className="mb-6 p-4 bg-success/10 border border-success rounded-lg flex items-start space-x-3">
-          <Icon name="CheckCircleIcon" size={24} className="text-success flex-shrink-0" />
-          <div>
-            <p className="font-body text-sm font-body-semibold text-success mb-1">
-              ¡Consulta reservada con éxito!
-            </p>
-            <p className="font-body text-xs font-body-regular text-success-foreground">
-              Recibirás un correo de confirmación en breve con los detalles de tu cita.
+    <div className="bg-card rounded-lg p-8 shadow-architectural border border-border/50 relative overflow-hidden">
+      {isSuccess && (
+        <div className="absolute inset-0 bg-background/95 backdrop-blur-sm z-50 flex items-center justify-center p-8">
+          <div className="text-center animate-in fade-in zoom-in duration-300">
+            <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+              <Icon name="CheckIcon" size={32} className="text-accent-foreground" />
+            </div>
+            <h3 className="font-headline text-2xl font-headline-bold text-card-foreground mb-2">
+              {t('success.title')}
+            </h3>
+            <p className="font-body text-muted-foreground">
+              {t('success.message')}
             </p>
           </div>
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label className="block font-body text-sm font-body-semibold mb-2 text-white">
-              Nombre completo *
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              required
-              className="w-full px-4 py-3 bg-background border border-input rounded-lg font-body text-sm font-body-regular text-foreground focus:outline-none focus:ring-2 focus:ring-accent transition-smooth"
-              placeholder="Tu nombre"
-            />
-          </div>
+      <div className="flex items-center space-x-3 mb-6">
+        <div className="p-3 bg-accent/10 rounded-lg">
+          <Icon name="CalendarDaysIcon" size={24} className="text-accent" />
+        </div>
+        <h3 className="font-headline text-2xl font-headline-bold text-card-foreground">
+          {t('title')}
+        </h3>
+      </div>
 
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label className="block text-sm font-body font-body-semibold text-card-foreground mb-1">
+            {t('form.name')}
+          </label>
+          <input
+            type="text"
+            required
+            className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-card-foreground placeholder:text-muted-foreground/50"
+            placeholder={t('form.namePlaceholder')}
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block font-body text-sm font-body-semibold mb-2 text-white">
-              Correo electrónico *
+            <label className="block text-sm font-body font-body-semibold text-card-foreground mb-1">
+              {t('form.email')}
             </label>
             <input
               type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
               required
-              className="w-full px-4 py-3 bg-background border border-input rounded-lg font-body text-sm font-body-regular text-foreground focus:outline-none focus:ring-2 focus:ring-accent transition-smooth"
-              placeholder="tu@email.com"
+              className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-card-foreground placeholder:text-muted-foreground/50"
+              placeholder={t('form.emailPlaceholder')}
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             />
           </div>
-
           <div>
-            <label className="block font-body text-sm font-body-semibold mb-2 text-white">
-              Teléfono *
+            <label className="block text-sm font-body font-body-semibold text-card-foreground mb-1">
+              {t('form.phone')}
             </label>
             <input
               type="tel"
-              name="phone"
-              value={formData.phone}
-              onChange={handleInputChange}
               required
-              className="w-full px-4 py-3 bg-background border border-input rounded-lg font-body text-sm font-body-regular text-foreground focus:outline-none focus:ring-2 focus:ring-accent transition-smooth"
-              placeholder="+34 600 000 000"
+              className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-card-foreground placeholder:text-muted-foreground/50"
+              placeholder={t('form.phonePlaceholder')}
+              value={formData.phone}
+              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             />
           </div>
+        </div>
 
-          <div>
-            <label className="block font-body text-sm font-body-semibold mb-2 text-white">
-              Tipo de proyecto *
-            </label>
+        <div>
+          <label className="block text-sm font-body font-body-semibold text-card-foreground mb-1">
+            {t('form.projectType')}
+          </label>
+          <div className="relative">
             <select
-              name="projectType"
-              value={formData.projectType}
-              onChange={handleInputChange}
               required
-              className="w-full px-4 py-3 bg-background border border-input rounded-lg font-body text-sm font-body-regular text-foreground focus:outline-none focus:ring-2 focus:ring-accent transition-smooth"
+              className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all appearance-none text-card-foreground"
+              value={formData.projectType}
+              onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
             >
-              <option value="">Selecciona una opción</option>
+              <option value="">{t('form.selectOption')}</option>
               {projectTypes.map((type) => (
-                <option key={type} value={type}>{type}</option>
+                <option key={type.value} value={type.value}>
+                  {type.label}
+                </option>
               ))}
             </select>
+            <Icon name="ChevronDownIcon" size={16} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground pointer-events-none" />
           </div>
         </div>
 
-        <div>
-          <label className="block font-body text-sm font-body-semibold mb-2 text-white">
-            Fecha preferida *
-          </label>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {availableDates.map((date) => (
-              <button
-                key={date}
-                type="button"
-                onClick={() => setSelectedDate(date)}
-                className={`py-3 px-4 rounded-lg border-2 transition-smooth ${
-                  selectedDate === date
-                    ? 'border-accent bg-accent/10 text-primary' :'border-border text-secondary hover:border-accent/50'
-                }`}
-              >
-                <span className="font-body text-sm font-body-regular text-white">{date}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {selectedDate && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block font-body text-sm font-body-semibold mb-2 text-white">
-              Hora preferida *
+            <label className="block text-sm font-body font-body-semibold text-card-foreground mb-1">
+              {t('form.date')}
             </label>
-            <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
-              {timeSlots.map((slot) => (
-                <button
-                  key={slot.time}
-                  type="button"
-                  onClick={() => slot.available && setSelectedTime(slot.time)}
-                  disabled={!slot.available}
-                  className={`py-2 px-3 rounded-lg border-2 transition-smooth ${
-                    selectedTime === slot.time
-                      ? 'border-accent bg-accent/10 text-primary'
-                      : slot.available
-                      ? 'border-border text-secondary hover:border-accent/50' :'border-border text-muted-foreground opacity-50 cursor-not-allowed'
-                  }`}
-                >
-                  <span className="font-body text-xs font-body-regular text-orange-50">{slot.time}</span>
-                </button>
-              ))}
+            <div className="relative">
+              <select
+                required
+                className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all appearance-none text-card-foreground"
+                value={formData.date}
+                onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+              >
+                <option value="">{t('form.selectOption')}</option>
+                {availableDates.map((date) => (
+                  <option key={date} value={date}>
+                    {date}
+                  </option>
+                ))}
+              </select>
+              <Icon name="CalendarIcon" size={16} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground pointer-events-none" />
             </div>
           </div>
-        )}
+          <div>
+            <label className="block text-sm font-body font-body-semibold text-card-foreground mb-1">
+              {t('form.time')}
+            </label>
+            <div className="relative">
+              <select
+                required
+                className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all appearance-none text-card-foreground"
+                value={formData.time}
+                onChange={(e) => setFormData({ ...formData, time: e.target.value })}
+              >
+                {availableTimes.map((time) => (
+                  <option key={time} value={time}>
+                    {time}
+                  </option>
+                ))}
+              </select>
+              <Icon name="ClockIcon" size={16} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground pointer-events-none" />
+            </div>
+          </div>
+        </div>
 
         <div>
-          <label className="block font-body text-sm font-body-semibold mb-2 text-white">
-            Mensaje adicional
+          <label className="block text-sm font-body font-body-semibold text-card-foreground mb-1">
+            {t('form.message')}
           </label>
           <textarea
-            name="message"
+            className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all h-24 text-card-foreground placeholder:text-muted-foreground/50 resize-none"
+            placeholder={t('form.messagePlaceholder')}
             value={formData.message}
-            onChange={handleInputChange}
-            rows={4}
-            className="w-full px-4 py-3 bg-background border border-input rounded-lg font-body text-sm font-body-regular text-foreground focus:outline-none focus:ring-2 focus:ring-accent transition-smooth resize-none"
-            placeholder="Cuéntanos más sobre tu proyecto..."
-          ></textarea>
+            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          />
         </div>
 
         <button
           type="submit"
-          disabled={isSubmitting || !selectedDate || !selectedTime}
-          className="w-full py-4 px-6 bg-accent text-accent-foreground rounded-lg font-cta text-base font-cta-semibold transition-smooth hover:bg-accent/90 hover:shadow-architectural disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+          disabled={isSubmitting}
+          className="w-full py-3 bg-accent text-accent-foreground rounded-lg font-cta font-cta-semibold hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
         >
           {isSubmitting ? (
             <>
-              <Icon name="ArrowPathIcon" size={20} className="animate-spin" />
-              <span>Procesando...</span>
+              <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin" />
+              <span>{t('form.processing')}</span>
             </>
           ) : (
-            <>
-              <Icon name="CalendarDaysIcon" size={20} />
-              <span>Confirmar Reserva</span>
-            </>
+            <span>{t('form.submit')}</span>
           )}
         </button>
       </form>

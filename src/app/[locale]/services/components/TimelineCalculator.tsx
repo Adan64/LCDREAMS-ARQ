@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Icon from '@/components/ui/AppIcon';
+import { useTranslations } from 'next-intl';
 
 interface ProjectType {
   id: string;
@@ -15,126 +16,128 @@ interface TimelineCalculatorProps {
 }
 
 const TimelineCalculator = ({ projectTypes }: TimelineCalculatorProps) => {
+  const t = useTranslations('Services.calculator');
   const [selectedType, setSelectedType] = useState<string>(projectTypes[0]?.id || '');
-  const [projectSize, setProjectSize] = useState<number>(100);
+  const [size, setSize] = useState<number>(150);
   const [complexity, setComplexity] = useState<string>('medium');
+  const [estimatedWeeks, setEstimatedWeeks] = useState<number>(0);
 
-  const calculateTimeline = () => {
-    const baseType = projectTypes.find((pt) => pt.id === selectedType);
-    if (!baseType) return 0;
+  useEffect(() => {
+    if (!selectedType) return;
 
-    let timeline = baseType.baseTimeline;
+    const type = projectTypes.find(t => t.id === selectedType);
+    if (!type) return;
 
-    const sizeMultiplier = projectSize / 100;
-    timeline *= sizeMultiplier;
+    let weeks = type.baseTimeline;
 
-    const complexityMultipliers: {[key: string]: number;} = {
-      low: 0.8,
-      medium: 1.0,
-      high: 1.3
-    };
-    timeline *= complexityMultipliers[complexity] || 1.0;
+    // Size adjustment
+    if (size > 500) weeks *= 1.5;
+    else if (size > 250) weeks *= 1.25;
+    else if (size < 100) weeks *= 0.8;
 
-    return Math.round(timeline);
-  };
+    // Complexity adjustment
+    if (complexity === 'high') weeks *= 1.3;
+    else if (complexity === 'low') weeks *= 0.8;
 
-  const estimatedWeeks = calculateTimeline();
+    setEstimatedWeeks(Math.round(weeks));
+  }, [selectedType, size, complexity, projectTypes]);
 
   return (
-    <div className="bg-card rounded-lg p-8 shadow-architectural">
+    <div className="bg-card rounded-lg p-8 shadow-architectural border border-border/50">
       <div className="flex items-center space-x-3 mb-6">
-        <Icon name="CalculatorIcon" size={32} className="text-accent" />
-        <h3 className="font-headline text-2xl font-headline-bold text-white">
-          Calculadora de Plazos
+        <div className="p-3 bg-accent/10 rounded-lg">
+          <Icon name="CalculatorIcon" size={24} className="text-accent" />
+        </div>
+        <h3 className="font-headline text-2xl font-headline-bold text-card-foreground">
+          {t('title')}
         </h3>
       </div>
 
       <div className="space-y-6">
         <div>
-          <label className="block font-body text-sm font-body-semibold mb-3 text-white">
-            Tipo de Proyecto
+          <label className="block text-sm font-body font-body-semibold text-card-foreground mb-2">
+            {t('labels.projectType')}
           </label>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {projectTypes.map((type) =>
-            <button
-              key={type.id}
-              onClick={() => setSelectedType(type.id)}
-              className={`flex items-center space-x-3 p-4 rounded-lg border-2 transition-smooth ${
-              selectedType === type.id ?
-              'border-accent bg-accent/10' : 'border-border hover:border-accent/50'}`
-              }>
-
-                <Icon name={type.icon as any} size={24} className={selectedType === type.id ? 'text-accent' : 'text-secondary'} />
-                <span className="text-white">
-                  {type.name}
-                </span>
+          <div className="grid grid-cols-2 gap-3">
+            {projectTypes.map((type) => (
+              <button
+                key={type.id}
+                onClick={() => setSelectedType(type.id)}
+                className={`flex items-center space-x-2 p-3 rounded-lg border transition-all ${selectedType === type.id
+                    ? 'bg-accent text-accent-foreground border-accent'
+                    : 'bg-background text-muted-foreground border-border hover:border-accent/50'
+                  }`}
+              >
+                <Icon name={type.icon as any} size={18} />
+                <span className="text-sm font-body font-body-medium">{type.name}</span>
               </button>
-            )}
+            ))}
           </div>
         </div>
 
         <div>
-          <label className="block font-body text-sm font-body-semibold mb-3 text-[rgba(252,252,252,1)]">
-            Tamaño del Proyecto: {projectSize}m²
+          <label className="block text-sm font-body font-body-semibold text-card-foreground mb-2">
+            {t('labels.size')}
           </label>
           <input
             type="range"
             min="50"
-            max="500"
-            step="10"
-            value={projectSize}
-            onChange={(e) => setProjectSize(Number(e.target.value))}
-            className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-accent bg-white" />
-
-          <div className="flex justify-between mt-2">
-            <span className="font-body text-xs font-body-regular text-white">50m²</span>
-            <span className="font-body text-xs font-body-regular text-white">500m²</span>
+            max="1000"
+            step="50"
+            value={size}
+            onChange={(e) => setSize(parseInt(e.target.value))}
+            className="w-full h-2 bg-secondary rounded-lg appearance-none cursor-pointer accent-accent"
+          />
+          <div className="text-right text-sm text-muted-foreground mt-1">
+            {size} m²
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-body-semibold mb-3 text-white">
-            Complejidad
+          <label className="block text-sm font-body font-body-semibold text-card-foreground mb-2">
+            {t('labels.complexity')}
           </label>
-          <div className="grid grid-cols-3 gap-3">
+          <div className="flex space-x-3">
             {[
-            { value: 'low', label: 'Baja' },
-            { value: 'medium', label: 'Media' },
-            { value: 'high', label: 'Alta' }].
-            map((option) =>
-            <button
-              key={option.value}
-              onClick={() => setComplexity(option.value)}
-              className={`py-3 px-4 rounded-lg border-2 transition-smooth ${
-              complexity === option.value ?
-              'border-accent bg-accent/10 text-primary' : 'border-border text-secondary hover:border-accent/50'}`
-              }>
-
-                <span className="text-sm font-body-regular text-white">{option.label}</span>
+              { id: 'low', label: t('complexity.low') },
+              { id: 'medium', label: t('complexity.medium') },
+              { id: 'high', label: t('complexity.high') }
+            ].map((option) => (
+              <button
+                key={option.id}
+                onClick={() => setComplexity(option.id)}
+                className={`flex-1 py-2 px-4 rounded-lg text-sm font-body font-body-medium transition-all ${complexity === option.id
+                    ? 'bg-primary text-primary-foreground'
+                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                  }`}
+              >
+                {option.label}
               </button>
-            )}
+            ))}
           </div>
         </div>
 
-        <div className="pt-6 border-t border-border">
-          <div className="bg-accent/10 rounded-lg p-6 text-center">
-            <span className="font-body text-sm font-body-regular block mb-2 text-orange-50">
-              Duración Estimada
+        <div className="mt-8 pt-6 border-t border-border">
+          <div className="flex justify-between items-end">
+            <span className="text-sm font-body font-body-regular text-muted-foreground">
+              {t('labels.estimatedDuration')}
             </span>
-            <span className="font-headline text-4xl font-headline-bold text-accent block mb-1">
-              {estimatedWeeks}
-            </span>
-            <span className="font-body text-base font-body-regular text-orange-50">
-              semanas aproximadamente
-            </span>
+            <div className="text-right">
+              <span className="block text-4xl font-headline font-headline-bold text-accent">
+                {estimatedWeeks}
+              </span>
+              <span className="text-sm font-body font-body-medium text-card-foreground">
+                {t('labels.weeks')}
+              </span>
+            </div>
           </div>
-          <p className="font-body text-xs font-body-regular text-center mt-4 text-orange-50">
-            * Esta es una estimación aproximada. El plazo real puede variar según las condiciones específicas del proyecto.
+          <p className="mt-4 text-xs font-body font-body-regular text-muted-foreground/80 italic">
+            * {t('disclaimer')}
           </p>
         </div>
       </div>
-    </div>);
-
+    </div>
+  );
 };
 
 export default TimelineCalculator;
