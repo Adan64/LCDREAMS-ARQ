@@ -12,6 +12,31 @@
         "exitFullscreen": "Sair da tela cheia",
         "close": "Fechar tour"
     },
+    "ClientPortal": {
+        "login": {
+            "title": "Área do Cliente",
+            "subtitle": "Acesse para ver o andamento do projeto",
+            "codePlaceholder": "Digite seu código de acesso",
+            "button": "Entrar no Portal",
+            "error": "Código inválido. Tente novamente.",
+            "hint": "Use 'CASA-LAGO-2024' para testar a demo"
+        },
+        "dashboard": {
+            "welcome": "Bem-vindo, {name}",
+            "lastUpdate": "Última atualização: {date}",
+            "progress": "Progresso Geral",
+            "phases": "Fases do Projeto",
+            "documents": "Documentação",
+            "gallery": "Diário de Obra",
+            "emptyGallery": "Não há fotos recentes.",
+            "download": "Baixar",
+            "status": {
+                "completed": "Concluído",
+                "current": "Em Progresso",
+                "upcoming": "Pendente"
+            }
+        }
+    },
     "Portfolio": {
         "virtualTours": {
             "badge": "Experiência Imersiva",
@@ -969,13 +994,13 @@
     },
     "About": {
         "metadata": {
-            "title": "Sobre Nós - LCDREAM.ARQ",
-            "description": "Descubra a filosofia de design da LCDREAM.ARQ, conheça nossa equipe talentosa e explore nosso compromisso com a arquitetura sustentável."
+            "title": "Sobre Nós - LC+DREAM",
+            "description": "Conheça a história por trás da fusão entre LC Arquitectura e Dream.arq, nossa missão de transformar sonhos em realidade e a equipe que torna isso possível."
         },
         "hero": {
-            "subtitle": "Criando Espaços que Transformam Vidas",
-            "title": "Criando Espaços que Transformam Vidas",
-            "description": "Na LCDREAM.ARQ, acreditamos que a arquitetura transcende a mera construção — trata-se de criar experiências que melhorem a vida humana através da interseção da visão artística e excelência funcional."
+            "title": "Projetamos e construímos espaços que inspiram",
+            "subtitle": "Arquitetura – Design – Construção",
+            "description": "LC+DREAM surge da colaboração estratégica entre LC Arquitectura e Dream.arq, dois estúdios que compartilham uma visão comum: projetar espaços que inspirem e transformem a vida das pessoas."
         },
         "profile": {
             "name": "Elena Martínez",
@@ -995,27 +1020,45 @@
                 "3": "Consultoria em Certificação LEED"
             }
         },
+        "origin": {
+            "title": "Quem Somos",
+            "subtitle": "A Fusão de Dois Mundos",
+            "description": "LC+DREAM surge da colaboração estratégica entre LC Arquitectura e Dream.arq, dois estúdios que compartilham uma visão comum: projetar espaços que inspirem e transformem a vida das pessoas.",
+            "lc_contribution": "LC Arquitectura traz sua solidez técnica e experiência em gestão.",
+            "dream_contribution": "Dream.arq contribui com sua sensibilidade criativa e abordagem estética contemporânea.",
+            "synergy": "Hoje, formamos uma equipe interdisciplinar que funde inovação, precisão técnica e uma profunda compreensão das necessidades de nossos clientes. O resultado são espaços únicos, impregnados de identidade, propósito e equilíbrio.",
+            "closing": "Na LC+DREAM, estamos na vanguarda de qualquer desafio, porque compreendemos profundamente os sonhos e desejos de nossos clientes. Cada projeto é uma oportunidade de fundir criatividade e funcionalidade, transformando ideias em espaços tangíveis que inspiram e melhoram a qualidade de vida."
+        },
         "philosophy": {
-            "subtitle": "Nossa Filosofia de Design",
-            "title": "No coração da LCDREAM.ARQ está o compromisso de criar espaços não apenas visualmente deslumbrantes, mas profundamente significativos.",
-            "description": "No coração da LCDREAM.ARQ está o compromisso de criar espaços não apenas visualmente deslumbrantes, mas profundamente significativos e funcionalmente superiores. Nossa filosofia é baseada em quatro princípios fundamentais.",
-            "principles": {
-                "humanCentered": {
-                    "title": "Design Centrado no Humano",
-                    "description": "Cada espaço que criamos é projetado pensando no usuário final, priorizando conforto, funcionalidade e bem-estar emocional."
-                },
-                "timelessAesthetics": {
-                    "title": "Estética Atemporal",
-                    "description": "Combinamos princípios de design contemporâneo com elementos clássicos para criar espaços que permaneçam belos e relevantes por décadas."
-                },
-                "sustainableInnovation": {
-                    "title": "Inovação Sustentável",
-                    "description": "A responsabilidade ambiental está integrada em cada decisão, desde a seleção de materiais até os sistemas de energia."
-                },
-                "contextualIntegration": {
-                    "title": "Integração Contextual",
-                    "description": "Nossos designs respondem cuidadosamente ao seu entorno, respeitando a cultura local, o clima e a paisagem."
-                }
+            "title": "Missão e Visão",
+            "mission": {
+                "title": "Missão",
+                "description": "Na LC+DREAM projetamos e construímos espaços que combinam estética, funcionalidade e bem-estar, apoiando nossos clientes desde a ideia inicial até a entrega final com soluções personalizadas. Nosso compromisso é converter sonhos em realidades arquitetônicas duradouras, cuidando de cada detalhe com responsabilidade e excelência."
+            },
+            "vision": {
+                "title": "Visão",
+                "description": "Ser referência em arquitetura e construção, reconhecidos pela qualidade, criatividade e eficiência, promovendo uma arquitetura humana, sustentável e contemporânea que melhore a vida e o desenvolvimento das comunidades."
+            }
+        },
+        "whyUs": {
+            "title": "Por Que Nos Escolher",
+            "items": {
+                "0": "Abordagem humana e personalizada",
+                "1": "Inovação em cada proposta",
+                "2": "Soluções funcionais e estéticas",
+                "3": "Compromisso com a qualidade e prazos",
+                "4": "Equipe profissional e altamente capacitada"
+            }
+        },
+        "services": {
+            "title": "Nossos Serviços",
+            "items": {
+                "0": "Projetos arquitetônicos sob medida",
+                "1": "Design e planejamento integral",
+                "2": "Renderização e visualização 3D",
+                "3": "Construção e supervisão de obras",
+                "4": "Remodelações e ampliações",
+                "5": "Consultoria técnica"
             }
         },
         "team": {
@@ -1189,6 +1232,12 @@
                     "label": "Redução Média de Energia"
                 }
             }
+        },
+        "cta": {
+            "title": "Pronto para Começar?",
+            "description": "Vamos transformar sua visão em realidade. Entre em contato hoje para uma consulta.",
+            "schedule": "Agendar Consulta",
+            "portfolio": "Ver Portfólio"
         }
     },
     "Contact": {

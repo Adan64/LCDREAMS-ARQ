@@ -17,7 +17,9 @@ export const routing = defineRouting({
     '/privacy': '/privacy',
     '/terms': '/terms',
     '/cookies': '/cookies',
-    '/legal': '/legal'
+    '/legal': '/legal',
+    '/client-portal': '/client-portal',
+    '/client-portal/dashboard': '/client-portal/dashboard'
   }
 });
 

@@ -51,7 +51,8 @@ const FooterSection = () => {
         { label: t('links.legal.privacy'), href: "/privacy" },
         { label: t('links.legal.terms'), href: "/terms" },
         { label: t('links.legal.cookies'), href: "/cookies" },
-        { label: t('links.legal.legal'), href: "/legal" }
+        { label: t('links.legal.legal'), href: "/legal" },
+        { label: "Área de Clientes", href: "/client-portal" }
       ]
     }
   ];

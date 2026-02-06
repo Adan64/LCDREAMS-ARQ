@@ -2,6 +2,254 @@
     "Index": {
         "title": "Inicio"
     },
+    "About": {
+        "metadata": {
+            "title": "Sobre Nosotros - LC+DREAM",
+            "description": "Conoce la historia detrás de la fusión de LC Arquitectura y Dream.arq, nuestra misión de convertir sueños en realidades y el equipo que lo hace posible."
+        },
+        "hero": {
+            "title": "Diseñamos y construimos espacios que inspiran",
+            "subtitle": "Arquitectura – Diseño – Construcción",
+            "description": "LC+DREAM surge de la colaboración estratégica entre LC Arquitectura y Dream.arq, dos estudios que comparten una visión común: diseñar espacios que inspiren y transformen la vida de las personas."
+        },
+        "profile": {
+            "name": "Elena Martínez",
+            "title": "Arquitecta Principal y Fundadora",
+            "credentials": "M.Arch, LEED AP, AIA",
+            "alt": "Retrato profesional de Elena Martínez",
+            "bio": {
+                "0": "Con más de 15 años de experiencia transformando espacios y creando obras maestras arquitectónicas, Elena Martínez fundó LCDREAM.ARQ con una visión singular: diseñar espacios que no solo alberguen, sino que inspiren y eleven la experiencia humana.",
+                "1": "Su enfoque combina una rigurosa experiencia técnica con un ojo artístico para la belleza, resultando en proyectos funcionalmente superiores y estéticamente deslumbrantes.",
+                "2": "Una defensora apasionada del diseño sostenible, Elena integra prácticas ecológicas en cada proyecto, creyendo que la arquitectura responsable es el único camino para nuestro entorno construido."
+            },
+            "specializationsTitle": "Áreas de Especialización",
+            "specializations": {
+                "0": "Diseño Residencial Sostenible",
+                "1": "Planificación de Espacios Comerciales",
+                "2": "Proyectos de Regeneración Urbana",
+                "3": "Consultoría en Certificación LEED"
+            }
+        },
+        "origin": {
+            "title": "Quiénes Somos",
+            "subtitle": "La Fusión de Dos Mundos",
+            "description": "LC+DREAM surge de la colaboración estratégica entre LC Arquitectura y Dream.arq, dos estudios que comparten una visión común: diseñar espacios que inspiren y transformen la vida de las personas.",
+            "lc_contribution": "LC Arquitectura aporta su solidez técnica y experiencia en gestión.",
+            "dream_contribution": "Dream.arq contribuye con su sensibilidad creativa y enfoque estético contemporáneo.",
+            "synergy": "Hoy en día, formamos un equipo interdisciplinario que fusiona innovación, precisión técnica y una profunda comprensión de las necesidades de nuestros clientes. El resultado son espacios únicos, impregnados de identidad, propósito y equilibrio.",
+            "closing": "En LC+DREAM nos encontramos a la vanguardia de cualquier desafío, porque comprendemos profundamente los sueños y anhelos de nuestros clientes. Cada proyecto es una oportunidad para fusionar creatividad y funcionalidad, transformando ideas en espacios tangibles que inspiran y mejoran la calidad de vida."
+        },
+        "philosophy": {
+            "title": "Misión y Visión",
+            "mission": {
+                "title": "Misión",
+                "description": "En LC+DREAM diseñamos y construimos espacios que combinan estética, funcionalidad y bienestar, apoyando a nuestros clientes desde la idea inicial hasta la entrega final con soluciones personalizadas. Nuestro compromiso es convertir sueños en realidades arquitectónicas duraderas, cuidando cada detalle con responsabilidad y excelencia."
+            },
+            "vision": {
+                "title": "Visión",
+                "description": "Ser un referente en arquitectura y construcción, reconocidos por la calidad, creatividad y eficiencia, promoviendo una arquitectura humana, sostenible y contemporánea que mejore la vida y el desarrollo de comunidades."
+            }
+        },
+        "whyUs": {
+            "title": "Por Qué Elegirnos",
+            "items": {
+                "0": "Enfoque humano y personalizado",
+                "1": "Innovación en cada propuesta",
+                "2": "Soluciones funcionales y estéticas",
+                "3": "Compromiso con la calidad y los plazos",
+                "4": "Equipo profesional y altamente capacitado"
+            }
+        },
+        "services": {
+            "title": "Nuestros Servicios",
+            "items": {
+                "0": "Proyectos arquitectónicos a medida",
+                "1": "Diseño y planificación integral",
+                "2": "Renderización y visualización 3D",
+                "3": "Construcción y supervisión de obras",
+                "4": "Remodelaciones y ampliaciones",
+                "5": "Asesoramiento técnico"
+            }
+        },
+        "team": {
+            "title": "Conoce a Nuestro Equipo",
+            "description": "Nuestro diverso equipo de profesionales talentosos une décadas de experiencia combinada, unidos por una pasión compartida por crear soluciones arquitectónicas excepcionales.",
+            "actions": {
+                "showLess": "Mostrar menos",
+                "learnMore": "Saber más"
+            },
+            "expertiseTitle": "Experiencia",
+            "members": {
+                "1": {
+                    "role": "Arquitecto Senior",
+                    "specialization": "Diseño Comercial y Mixto",
+                    "bio": "Carlos aporta 12 años de experiencia en proyectos comerciales de gran escala, con un enfoque especial en la creación de espacios dinámicos que promueven la interacción comunitaria.",
+                    "expertise": {
+                        "0": "Planificación Urbana",
+                        "1": "Arquitectura Comercial",
+                        "2": "Desarrollo Mixto",
+                        "3": "Espacios Comunitarios"
+                    }
+                },
+                "2": {
+                    "role": "Diseñadora de Interiores Principal",
+                    "specialization": "Interiores Residenciales y Hoteleros",
+                    "bio": "El talento de Isabel para crear interiores acogedores que reflejan la personalidad de sus clientes la ha convertido en una de las diseñadoras más solicitadas de la región.",
+                    "expertise": {
+                        "0": "Diseño de Interiores",
+                        "1": "Planificación de Espacios",
+                        "2": "Selección de Materiales",
+                        "3": "Diseño de Mobiliario Personalizado"
+                    }
+                },
+                "3": {
+                    "role": "Consultor de Sostenibilidad",
+                    "specialization": "Edificios Verdes y Certificación LEED",
+                    "bio": "Miguel es nuestro experto en sostenibilidad, asegurando que cada proyecto cumpla con los más altos estándares ambientales.",
+                    "expertise": {
+                        "0": "Certificación LEED",
+                        "1": "Materiales Sostenibles",
+                        "2": "Eficiencia Energética",
+                        "3": "Sistemas de Construcción Verde"
+                    }
+                },
+                "4": {
+                    "role": "Gerente de Proyectos",
+                    "specialization": "Administración de Construcción y Relaciones con Clientes",
+                    "bio": "Ana María garantiza una ejecución de proyecto perfecta, desde el concepto hasta la finalización. Sus excepcionales habilidades organizativas aseguran entregas a tiempo y dentro del presupuesto.",
+                    "expertise": {
+                        "0": "Gestión de Proyectos",
+                        "1": "Supervisión de Construcción",
+                        "2": "Comunicación con Clientes",
+                        "3": "Gestión Presupuestaria"
+                    }
+                }
+            }
+        },
+        "awards": {
+            "title": "Premios y Reconocimientos",
+            "description": "Nuestro compromiso con la excelencia ha sido reconocido por importantes organizaciones e instituciones de la industria en todo el mundo.",
+            "recentTitle": "Premios Recientes",
+            "certificationsTitle": "Certificaciones Profesionales",
+            "items": {
+                "1": {
+                    "title": "Premio a la Excelencia en Diseño Sostenible",
+                    "organization": "Fundación Internacional de Arquitectura",
+                    "project": "Residencia EcoVista",
+                    "category": "Arquitectura Residencial",
+                    "description": "Reconocido por la integración innovadora de diseño solar pasivo, sistemas de captación de agua de lluvia y materiales de origen local."
+                },
+                "2": {
+                    "title": "Mejor Diseño de Espacio Comercial",
+                    "organization": "Consejo Europeo de Diseño",
+                    "project": "Centro de Innovación TechHub",
+                    "category": "Arquitectura Comercial",
+                    "description": "Premiado por crear un espacio de trabajo dinámico que promueve la colaboración y la creatividad."
+                },
+                "3": {
+                    "title": "Excelencia en Regeneración Urbana",
+                    "organization": "Iniciativa de Ciudades Globales",
+                    "project": "El Distrito del Puerto",
+                    "category": "Diseño Urbano",
+                    "description": "Honrado por transformar una zona industrial subutilizada en una comunidad vibrante de uso mixto."
+                },
+                "4": {
+                    "title": "Certificación LEED Platinum",
+                    "organization": "Consejo de Construcción Verde de EE. UU.",
+                    "project": "Torre Vertex",
+                    "category": "Edificio Sostenible",
+                    "description": "Alcanzó el nivel más alto de certificación LEED para un edificio de oficinas de 12 pisos."
+                },
+                "5": {
+                    "title": "Premio a la Innovación Arquitectónica",
+                    "organization": "Revista Vida Moderna",
+                    "project": "Retiro en el Acantilado",
+                    "category": "Diseño Residencial",
+                    "description": "Reconocido por superar los límites en el diseño residencial de lujo con un uso innovador de vidrio y materiales naturales."
+                },
+                "6": {
+                    "title": "Excelencia en Preservación del Patrimonio",
+                    "organization": "Fondo Nacional para la Preservación Histórica",
+                    "project": "Centro de Artes Old Mill",
+                    "category": "Restauración y Reutilización Adaptativa",
+                    "description": "Premiado por la restauración sensible y reutilización adaptativa de un edificio de molino del siglo XIX."
+                }
+            },
+            "certifications": {
+                "leed": "Profesional Acreditado LEED (LEED AP)",
+                "aia": "Miembro del Instituto Americano de Arquitectos (AIA)",
+                "ncarb": "Consejo Nacional de Juntas de Registro Arquitectónico (NCARB)",
+                "passive": "Diseñador Certificado Passive House",
+                "well": "Profesional Acreditado WELL (WELL AP)"
+            },
+            "issuers": {
+                "usgbc": "Consejo de Construcción Verde de EE. UU.",
+                "aia": "AIA",
+                "ncarb": "NCARB",
+                "phi": "Instituto Passive House",
+                "well": "Instituto Internacional de Construção WELL"
+            }
+        },
+        "sustainability": {
+            "title": "Nuestro Compromiso con la Sostenibilidad",
+            "description": "La responsabilidad ambiental no es una ocurrencia tardía — está tejida en la estructura de cada proyecto que emprendemos.",
+            "initiatives": {
+                "renewable": {
+                    "title": "Integración de Energía Renovable",
+                    "description": "Priorizamos sistemas de energía solar, eólica y geotérmica en todos nuestros proyectos.",
+                    "impact": "Reducción promedio del 60% en costos de energía"
+                },
+                "materials": {
+                    "title": "Materiales Sostenibles",
+                    "description": "Materiales ecológicos cuidadosamente seleccionados, incluyendo madera recuperada y acero reciclado.",
+                    "impact": "85% de materiales de origen local"
+                },
+                "water": {
+                    "title": "Conservación del Agua",
+                    "description": "Captación de agua de lluvia, reciclaje de aguas grises y sistemas de riego eficientes.",
+                    "impact": "Hasta 50% de reducción en el uso de agua"
+                },
+                "passive": {
+                    "title": "Estrategias de Diseño Pasivo",
+                    "description": "La orientación óptima, ventilación natural y masa térmica reducen las necesidades de calefacción y refrigeración.",
+                    "impact": "30-40% de ahorro de energía HVAC"
+                }
+            },
+            "showcase": {
+                "tag": "PROYECTO DESTACADO",
+                "description": "Nuestro proyecto residencial sostenible insignia que logró un consumo neto cero de energía.",
+                "achievementsTitle": "Logros Clave",
+                "achievements": {
+                    "0": "Certificación LEED Platinum",
+                    "1": "Consumo Neto Cero de Energía",
+                    "2": "100% Alimentado por Energía Renovable",
+                    "3": "50% de Reducción en Uso de Agua",
+                    "4": "Proceso de Construcción Carbono Neutral"
+                }
+            },
+            "footer": {
+                "title": "Construyendo un Futuro Sostenible Juntos",
+                "description": "Cada proyecto es una oportunidad para causar un impacto ambiental positivo. Trabajamos estrechamente con los clientes para integrar prácticas sostenibles."
+            },
+            "stats": {
+                "1": {
+                    "label": "Proyectos con Características Sostenibles"
+                },
+                "2": {
+                    "label": "Proyectos Certificados LEED"
+                },
+                "3": {
+                    "label": "Reducción Promedio de Energía"
+                }
+            }
+        },
+        "cta": {
+            "title": "¿Listo para Empezar?",
+            "description": "Transformemos tu visión en realidad. Contáctanos hoy para una consulta inicial.",
+            "schedule": "Agendar Consulta",
+            "portfolio": "Ver Portafolio"
+        }
+    },
     "VirtualTour": {
         "startTour": "Iniciar Tour Virtual",
         "dragToExplore": "Arrastra para explorar el espacio",
@@ -11,6 +259,31 @@
         "fullscreen": "Pantalla completa",
         "exitFullscreen": "Salir de pantalla completa",
         "close": "Cerrar tour"
+    },
+    "ClientPortal": {
+        "login": {
+            "title": "Área de Clientes",
+            "subtitle": "Accede para ver el avance de tu proyecto",
+            "codePlaceholder": "Ingresa tu código de acceso",
+            "button": "Ingresar al Portal",
+            "error": "Código inválido. Inténtalo de nuevo.",
+            "hint": "Usa 'CASA-LAGO-2024' para probar la demo"
+        },
+        "dashboard": {
+            "welcome": "Bienvenido, {name}",
+            "lastUpdate": "Última actualización: {date}",
+            "progress": "Progreso General",
+            "phases": "Fases del Proyecto",
+            "documents": "Documentación",
+            "gallery": "Diario de Obra",
+            "emptyGallery": "No hay fotos recientes.",
+            "download": "Descargar",
+            "status": {
+                "completed": "Completado",
+                "current": "En Progreso",
+                "upcoming": "Pendiente"
+            }
+        }
     },
     "Portfolio": {
         "virtualTours": {
