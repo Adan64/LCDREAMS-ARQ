@@ -13,11 +13,19 @@ import RelatedProjects from './components/RelatedProjects';
 import DownloadableResources from './components/DownloadableResources';
 import CTASection from './components/CTASection';
 import FooterSection from '@/app/[locale]/homepage/components/FooterSection';
+import React from 'react';
+import AppImage from '@/components/ui/AppImage';
+import Icon from '@/components/ui/AppIcon';
+import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Casos de Estudio de Proyectos - LCDREAM.ARQ',
-  description: 'Explora casos de estudio detallados de nuestros proyectos arquitectónicos, mostrando el proceso de diseño, soluciones innovadoras y resultados transformadores que mejoran la vida de nuestros clientes.'
-};
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  const t = await getTranslations({ locale, namespace: 'ProjectCaseStudies.metadata' });
+
+  return {
+    title: t('title'),
+    description: t('description'),
+  };
+}
 
 interface ProjectStat {
   icon: string;
@@ -183,10 +191,10 @@ export default function ProjectCaseStudiesPage() {
   }));
 
   const certifications = [
-    "LEED Gold Certified",
-    "Passivhaus Standard",
-    "BREEAM Excellent",
-    "Energy Star"
+    t('sustainability.certifications.0'),
+    t('sustainability.certifications.1'),
+    t('sustainability.certifications.2'),
+    t('sustainability.certifications.3')
   ];
 
   const relatedDefaultProjects = [

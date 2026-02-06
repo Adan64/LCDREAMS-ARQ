@@ -1,17 +1,18 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import Icon from '@/components/ui/AppIcon';
 
-interface FormData {
-  fullName: string;
+interface FormState {
+  name: string;
   email: string;
   phone: string;
   projectType: string;
   budget: string;
   timeline: string;
-  message: string;
-  preferredContact: string;
+  details: string;
+  preferredContact: 'email' | 'phone' | 'either';
 }
 
 interface FormErrors {
@@ -21,363 +22,394 @@ interface FormErrors {
   projectType?: string;
   message?: string;
 }
-
 interface ConsultationFormProps {
   className?: string;
 }
 
 const ConsultationForm = ({ className = '' }: ConsultationFormProps) => {
+  const t = useTranslations('Contact.form');
   const [isHydrated, setIsHydrated] = useState(false);
-  const [formData, setFormData] = useState<FormData>({
-    fullName: '',
+  const [formState, setFormState] = useState<FormState>({
+    name: '',
     email: '',
     phone: '',
     projectType: '',
     budget: '',
     timeline: '',
-    message: '',
+    details: '',
     preferredContact: 'email'
   });
-  const [errors, setErrors] = useState<FormErrors>({});
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
     setIsHydrated(true);
   }, []);
 
   const projectTypes = [
-    { value: '', label: 'Select Project Type' },
-    { value: 'residential-new', label: 'New Residential Construction' },
-    { value: 'residential-renovation', label: 'Residential Renovation' },
-    { value: 'commercial', label: 'Commercial Space' },
-    { value: 'interior', label: 'Interior Design' },
-    { value: 'urban-planning', label: 'Urban Planning' },
-    { value: 'consultation', label: 'General Consultation' }
+    { value: 'residential-new', label: t('projectTypes.residential-new') },
+    { value: 'residential-renovation', label: t('projectTypes.residential-renovation') },
+    { value: 'commercial', label: t('projectTypes.commercial') },
+    { value: 'interior', label: t('projectTypes.interior') },
+    { value: 'urban-planning', label: t('projectTypes.urban-planning') },
+    { value: 'consultation', label: t('projectTypes.consultation') }
   ];
 
   const budgetRanges = [
-    { value: '', label: 'Select Budget Range' },
-    { value: 'under-100k', label: 'Under €100,000' },
-    { value: '100k-250k', label: '€100,000 - €250,000' },
-    { value: '250k-500k', label: '€250,000 - €500,000' },
-    { value: '500k-1m', label: '€500,000 - €1,000,000' },
-    { value: 'over-1m', label: 'Over €1,000,000' },
-    { value: 'flexible', label: 'Flexible / To Be Discussed' }
+    { value: 'under-100k', label: t('budgetRanges.under-100k') },
+    { value: '100k-250k', label: t('budgetRanges.100k-250k') },
+    { value: '250k-500k', label: t('budgetRanges.250k-500k') },
+    { value: '500k-1m', label: t('budgetRanges.500k-1m') },
+    { value: 'over-1m', label: t('budgetRanges.over-1m') },
+    { value: 'flexible', label: t('budgetRanges.flexible') }
   ];
 
   const timelines = [
-    { value: '', label: 'Select Timeline' },
-    { value: 'immediate', label: 'Immediate (Within 1 month)' },
-    { value: '1-3-months', label: '1-3 Months' },
-    { value: '3-6-months', label: '3-6 Months' },
-    { value: '6-12-months', label: '6-12 Months' },
-    { value: 'over-year', label: 'Over 1 Year' },
-    { value: 'planning', label: 'Still Planning' }
+    { value: 'immediate', label: t('timelines.immediate') },
+    { value: '1-3-months', label: t('timelines.1-3-months') },
+    { value: '3-6-months', label: t('timelines.3-6-months') },
+    { value: '6-12-months', label: t('timelines.6-12-months') },
+    { value: 'over-year', label: t('timelines.over-year') },
+    { value: 'planning', label: t('timelines.planning') }
   ];
 
-  const validateForm = (): boolean => {
-    const newErrors: FormErrors = {};
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
 
-    if (!formData.fullName.trim()) {
-      newErrors.fullName = 'Full name is required';
+    if (!formState.name.trim()) newErrors.name = t('errors.name');
+    if (!formState.email.trim()) {
+      newErrors.email = t('errors.email');
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)) {
+      newErrors.email = t('errors.emailInvalid');
     }
 
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address';
+    if (!formState.phone.trim()) {
+      newErrors.phone = t('errors.phone');
+    } else if (!/^[+\d\s-]{9,}$/.test(formState.phone)) {
+      newErrors.phone = t('errors.phoneInvalid');
     }
 
-    if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
-    } else if (!/^[\d\s\+\-\(\)]+$/.test(formData.phone)) {
-      newErrors.phone = 'Please enter a valid phone number';
-    }
+    if (!formState.projectType) newErrors.projectType = t('errors.projectType');
 
-    if (!formData.projectType) {
-      newErrors.projectType = 'Please select a project type';
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = 'Please provide project details';
-    } else if (formData.message.trim().length < 20) {
-      newErrors.message = 'Please provide at least 20 characters of detail';
+    if (!formState.details.trim()) {
+      newErrors.details = t('errors.details');
+    } else if (formState.details.trim().length < 20) {
+      newErrors.details = t('errors.detailsLength');
     }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    if (errors[name as keyof FormErrors]) {
-      setErrors(prev => ({ ...prev, [name]: undefined }));
-    }
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!isHydrated || isSubmitting) return;
+    if (!isHydrated) return;
 
-    if (!validateForm()) {
-      return;
-    }
+    if (validateForm()) {
+      setIsSubmitting(true);
 
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        projectType: '',
-        budget: '',
-        timeline: '',
-        message: '',
-        preferredContact: 'email'
-      });
-
+      // Simulate API call
       setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
-    }, 1500);
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        setFormState({
+          name: '',
+          email: '',
+          phone: '',
+          projectType: '',
+          budget: '',
+          timeline: '',
+          details: '',
+          preferredContact: 'email'
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 1500);
+    }
   };
 
-  return (
-    <section className="py-20 lg:py-32 bg-black">
-      <div className="max-w-4xl mx-auto px-6 lg:px-12">
-        <div className="text-center mb-12">
-          <h2 className="font-headline text-4xl lg:text-5xl font-headline-bold text-lcdream-white mb-12 leading-tight text-center">
-            Schedule Your Consultation
-          </h2>
-          <p className="font-body text-lg text-text-secondary max-w-2xl mx-auto">
-            Fill out the form below and we'll get back to you within 24 hours to discuss your project and schedule a detailed consultation.
-          </p>
-        </div>
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormState((prev: FormState) => ({
+      ...prev,
+      [name]: value
+    }));
 
-        {submitSuccess && (
-          <div className="mb-8 p-4 bg-success/10 border border-success rounded-lg flex items-start space-x-3">
-            <Icon name="CheckCircleIcon" size={24} className="text-success flex-shrink-0 mt-0.5" />
-            <div>
-              <h3 className="font-body text-base font-body-semibold text-success mb-1">
-                Consultation Request Received!
+    // Clear error when user types
+    if (errors[name]) {
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[name];
+        return newErrors;
+      });
+    }
+  };
+
+  if (isSuccess) {
+    return (
+      <section className={`py-20 lg:py-32 bg-white ${className}`}>
+        <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <Icon name="CheckCircleIcon" size={40} className="text-green-600" />
+          </div>
+          <h2 className="font-headline text-3xl font-headline-bold text-primary mb-4">
+            {t('successTitle')}
+          </h2>
+          <p className="font-body text-lg text-text-secondary mb-8">
+            {t('successDesc')}
+          </p>
+          <button
+            onClick={() => setIsSuccess(false)}
+            className="inline-flex items-center px-6 py-3 font-cta text-sm font-cta-semibold text-white bg-primary rounded-md transition-smooth hover:bg-primary/90"
+          >
+            {t('form.submit')}
+          </button>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className={`py-20 lg:py-32 bg-white ${className}`}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+          <div className="lg:col-span-5">
+            <h2 className="font-headline text-4xl lg:text-5xl font-headline-bold text-primary mb-6 leading-tight">
+              {t('title')}
+            </h2>
+            <p className="font-body text-xl text-text-secondary leading-relaxed mb-8">
+              {t('description')}
+            </p>
+
+            <div className="bg-muted p-8 rounded-lg border border-border">
+              <h3 className="font-headline text-lg font-headline-semibold text-primary mb-4">
+                {t('location.addressTitle')}
               </h3>
-              <p className="font-body text-sm text-success/90">
-                Thank you for your interest. We'll review your information and contact you within 24 hours to schedule your consultation.
+              <p className="font-body text-base text-text-secondary mb-6">
+                Calle de Serrano 45, 3rd Floor<br />
+                28001 Madrid, Spain
+              </p>
+
+              <h3 className="font-headline text-lg font-headline-semibold text-primary mb-4">
+                {t('location.hoursTitle')}
+              </h3>
+              <p className="font-body text-base text-text-secondary">
+                Monday - Friday: 9:00 - 18:00<br />
+                Saturday: By Appointment
               </p>
             </div>
           </div>
-        )}
 
-        <form onSubmit={handleSubmit} className="bg-lcdream-dark-bg rounded-lg p-8 lg:p-12 shadow-subtle border border-lcdream-gold/20 space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label htmlFor="fullName" className="block font-body text-sm font-body-semibold text-lcdream-white mb-2">
-                Full Name *
-              </label>
-              <input
-                type="text"
-                id="fullName"
-                name="fullName"
-                value={formData.fullName}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-black border border-lcdream-gold/30 rounded-md font-body text-base text-lcdream-white placeholder-lcdream-gray-light focus:outline-none focus:ring-2 focus:ring-lcdream-gold focus:border-transparent transition-smooth"
-                placeholder="Juan García"
-              />
-              {errors.fullName && (
-                <p className="mt-1 font-body text-sm text-error">{errors.fullName}</p>
-              )}
-            </div>
+          <div className="lg:col-span-7">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label htmlFor="name" className="block font-body text-sm font-body-medium text-primary">
+                    {t('fields.name')}
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formState.name}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-3 rounded-md border ${errors.name ? 'border-red-500 focus:ring-red-200' : 'border-input focus:ring-accent/20'} bg-background focus:outline-none focus:ring-2 focus:border-accent transition-all`}
+                    placeholder={t('fields.namePlaceholder')}
+                  />
+                  {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+                </div>
 
-            <div>
-              <label htmlFor="email" className="block font-body text-sm font-body-semibold text-lcdream-white mb-2">
-                Email Address *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-black border border-lcdream-gold/30 rounded-md font-body text-base text-lcdream-white placeholder-lcdream-gray-light focus:outline-none focus:ring-2 focus:ring-lcdream-gold focus:border-transparent transition-smooth"
-                placeholder="juan@ejemplo.es"
-              />
-              {errors.email && (
-                <p className="mt-1 font-body text-sm text-error">{errors.email}</p>
-              )}
-            </div>
-          </div>
+                <div className="space-y-2">
+                  <label htmlFor="phone" className="block font-body text-sm font-body-medium text-primary">
+                    {t('fields.phone')}
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formState.phone}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-3 rounded-md border ${errors.phone ? 'border-red-500 focus:ring-red-200' : 'border-input focus:ring-accent/20'} bg-background focus:outline-none focus:ring-2 focus:border-accent transition-all`}
+                    placeholder={t('fields.phonePlaceholder')}
+                  />
+                  {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+                </div>
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label htmlFor="phone" className="block font-body text-sm font-body-semibold text-lcdream-white mb-2">
-                Phone Number *
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-black border border-lcdream-gold/30 rounded-md font-body text-base text-lcdream-white placeholder-lcdream-gray-light focus:outline-none focus:ring-2 focus:ring-lcdream-gold focus:border-transparent transition-smooth"
-                placeholder="+34 912 345 678"
-              />
-              {errors.phone && (
-                <p className="mt-1 font-body text-sm text-error">{errors.phone}</p>
-              )}
-            </div>
-
-            <div>
-              <label htmlFor="projectType" className="block font-body text-sm font-body-semibold text-lcdream-white mb-2">
-                Project Type *
-              </label>
-              <select
-                id="projectType"
-                name="projectType"
-                value={formData.projectType}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-black border border-lcdream-gold/30 rounded-md font-body text-base text-lcdream-white placeholder-lcdream-gray-light focus:outline-none focus:ring-2 focus:ring-lcdream-gold focus:border-transparent transition-smooth"
-              >
-                {projectTypes.map(type => (
-                  <option key={type.value} value={type.value}>
-                    {type.label}
-                  </option>
-                ))}
-              </select>
-              {errors.projectType && (
-                <p className="mt-1 font-body text-sm text-error">{errors.projectType}</p>
-              )}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label htmlFor="budget" className="block font-body text-sm font-body-semibold text-lcdream-white mb-2">
-                Budget Range
-              </label>
-              <select
-                id="budget"
-                name="budget"
-                value={formData.budget}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-black border border-lcdream-gold/30 rounded-md font-body text-base text-lcdream-white placeholder-lcdream-gray-light focus:outline-none focus:ring-2 focus:ring-lcdream-gold focus:border-transparent transition-smooth"
-              >
-                {budgetRanges.map(range => (
-                  <option key={range.value} value={range.value}>
-                    {range.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div>
-              <label htmlFor="timeline" className="block font-body text-sm font-body-semibold text-lcdream-white mb-2">
-                Project Timeline
-              </label>
-              <select
-                id="timeline"
-                name="timeline"
-                value={formData.timeline}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-black border border-lcdream-gold/30 rounded-md font-body text-base text-lcdream-white placeholder-lcdream-gray-light focus:outline-none focus:ring-2 focus:ring-lcdream-gold focus:border-transparent transition-smooth"
-              >
-                {timelines.map(time => (
-                  <option key={time.value} value={time.value}>
-                    {time.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label htmlFor="message" className="block font-body text-sm font-body-semibold text-lcdream-white mb-2">
-              Project Details *
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleInputChange}
-              rows={6}
-              className="w-full px-4 py-3 bg-black border border-lcdream-gold/30 rounded-md font-body text-base text-lcdream-white placeholder-lcdream-gray-light focus:outline-none focus:ring-2 focus:ring-lcdream-gold focus:border-transparent transition-smooth resize-none"
-              placeholder="Please describe your project, including location, size, specific requirements, and any other relevant details..."
-            />
-            {errors.message && (
-              <p className="mt-1 font-body text-sm text-error">{errors.message}</p>
-            )}
-          </div>
-
-          <div>
-            <label className="block font-body text-sm font-body-semibold text-lcdream-white mb-3">
-              Preferred Contact Method
-            </label>
-            <div className="flex flex-wrap gap-4">
-              <label className="flex items-center space-x-2 cursor-pointer">
+              <div className="space-y-2">
+                <label htmlFor="email" className="block font-body text-sm font-body-medium text-primary">
+                  {t('fields.email')}
+                </label>
                 <input
-                  type="radio"
-                  name="preferredContact"
-                  value="email"
-                  checked={formData.preferredContact === 'email'}
-                  onChange={handleInputChange}
-                  className="w-4 h-4 text-accent focus:ring-accent"
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                  className={`w-full px-4 py-3 rounded-md border ${errors.email ? 'border-red-500 focus:ring-red-200' : 'border-input focus:ring-accent/20'} bg-background focus:outline-none focus:ring-2 focus:border-accent transition-all`}
+                  placeholder={t('fields.emailPlaceholder')}
                 />
-                <span className="font-body text-base text-text-primary">Email</span>
-              </label>
-              <label className="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="preferredContact"
-                  value="phone"
-                  checked={formData.preferredContact === 'phone'}
-                  onChange={handleInputChange}
-                  className="w-4 h-4 text-accent focus:ring-accent"
-                />
-                <span className="font-body text-base text-text-primary">Phone</span>
-              </label>
-              <label className="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="preferredContact"
-                  value="either"
-                  checked={formData.preferredContact === 'either'}
-                  onChange={handleInputChange}
-                  className="w-4 h-4 text-accent focus:ring-accent"
-                />
-                <span className="font-body text-base text-text-primary">Either</span>
-              </label>
-            </div>
-          </div>
+                {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+              </div>
 
-          <div className="pt-4">
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full px-8 py-4 bg-lcdream-gold text-black font-cta text-base font-cta-semibold rounded-md transition-smooth hover:bg-lcdream-gold-light hover:shadow-gold hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isSubmitting ? (
-                <>
-                  <Icon name="ArrowPathIcon" size={20} className="animate-spin" />
-                  <span>Submitting...</span>
-                </>
-              ) : (
-                <>
-                  <span>Schedule Consultation</span>
-                  <Icon name="PaperAirplaneIcon" size={20} />
-                </>
-              )}
-            </button>
-          </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label htmlFor="projectType" className="block font-body text-sm font-body-medium text-primary">
+                    {t('fields.projectType')}
+                  </label>
+                  <div className="relative">
+                    <select
+                      id="projectType"
+                      name="projectType"
+                      value={formState.projectType}
+                      onChange={handleChange}
+                      className={`w-full px-4 py-3 rounded-md border ${errors.projectType ? 'border-red-500 focus:ring-red-200' : 'border-input focus:ring-accent/20'} bg-background focus:outline-none focus:ring-2 focus:border-accent transition-all appearance-none cursor-pointer`}
+                    >
+                      <option value="" disabled>{t('fields.selectProject')}</option>
+                      {projectTypes.map(type => (
+                        <option key={type.value} value={type.value}>{type.label}</option>
+                      ))}
+                    </select>
+                    <Icon name="ChevronDownIcon" size={16} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-text-secondary pointer-events-none" />
+                  </div>
+                  {errors.projectType && <p className="text-red-500 text-xs mt-1">{errors.projectType}</p>}
+                </div>
 
-          <p className="font-body text-sm text-text-secondary">
-            * Required fields. By submitting this form, you agree to our privacy policy and consent to be contacted regarding your project inquiry.
-          </p>
-        </form>
+                <div className="space-y-2">
+                  <label htmlFor="budget" className="block font-body text-sm font-body-medium text-primary">
+                    {t('fields.budget')}
+                  </label>
+                  <div className="relative">
+                    <select
+                      id="budget"
+                      name="budget"
+                      value={formState.budget}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all appearance-none cursor-pointer"
+                    >
+                      <option value="" disabled>{t('fields.selectBudget')}</option>
+                      {budgetRanges.map(range => (
+                        <option key={range.value} value={range.value}>{range.label}</option>
+                      ))}
+                    </select>
+                    <Icon name="ChevronDownIcon" size={16} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-text-secondary pointer-events-none" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="timeline" className="block font-body text-sm font-body-medium text-primary">
+                  {t('fields.timeline')}
+                </label>
+                <div className="relative">
+                  <select
+                    id="timeline"
+                    name="timeline"
+                    value={formState.timeline}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all appearance-none cursor-pointer"
+                  >
+                    <option value="" disabled>{t('fields.selectTimeline')}</option>
+                    {timelines.map(timeline => (
+                      <option key={timeline.value} value={timeline.value}>{timeline.label}</option>
+                    ))}
+                  </select>
+                  <Icon name="ChevronDownIcon" size={16} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-text-secondary pointer-events-none" />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="details" className="block font-body text-sm font-body-medium text-primary">
+                  {t('fields.details')}
+                </label>
+                <textarea
+                  id="details"
+                  name="details"
+                  value={formState.details}
+                  onChange={handleChange}
+                  rows={4}
+                  className={`w-full px-4 py-3 rounded-md border ${errors.details ? 'border-red-500 focus:ring-red-200' : 'border-input focus:ring-accent/20'} bg-background focus:outline-none focus:ring-2 focus:border-accent transition-all resize-y`}
+                  placeholder={t('fields.detailsPlaceholder')}
+                />
+                {errors.details && <p className="text-red-500 text-xs mt-1">{errors.details}</p>}
+              </div>
+
+              <div className="space-y-2">
+                <label className="block font-body text-sm font-body-medium text-primary mb-2">
+                  {t('fields.preferredContact')}
+                </label>
+                <div className="flex space-x-6">
+                  <label className="flex items-center cursor-pointer group">
+                    <input
+                      type="radio"
+                      name="preferredContact"
+                      value="email"
+                      checked={formState.preferredContact === 'email'}
+                      onChange={handleChange}
+                      className="w-4 h-4 text-accent border-gray-300 focus:ring-accent cursor-pointer"
+                    />
+                    <span className="ml-2 font-body text-sm text-text-secondary group-hover:text-primary transition-colors">
+                      {t('fields.emailOption')}
+                    </span>
+                  </label>
+                  <label className="flex items-center cursor-pointer group">
+                    <input
+                      type="radio"
+                      name="preferredContact"
+                      value="phone"
+                      checked={formState.preferredContact === 'phone'}
+                      onChange={handleChange}
+                      className="w-4 h-4 text-accent border-gray-300 focus:ring-accent cursor-pointer"
+                    />
+                    <span className="ml-2 font-body text-sm text-text-secondary group-hover:text-primary transition-colors">
+                      {t('fields.phoneOption')}
+                    </span>
+                  </label>
+                  <label className="flex items-center cursor-pointer group">
+                    <input
+                      type="radio"
+                      name="preferredContact"
+                      value="either"
+                      checked={formState.preferredContact === 'either'}
+                      onChange={handleChange}
+                      className="w-4 h-4 text-accent border-gray-300 focus:ring-accent cursor-pointer"
+                    />
+                    <span className="ml-2 font-body text-sm text-text-secondary group-hover:text-primary transition-colors">
+                      {t('fields.eitherOption')}
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div className="pt-4">
+                <button
+                  type="submit"
+                  disabled={isSubmitting || !isHydrated}
+                  className="w-full inline-flex items-center justify-center px-6 py-4 font-cta text-base font-cta-semibold text-accent-foreground bg-accent rounded-md transition-smooth hover:bg-accent/90 disabled:opacity-50 disabled:cursor-not-allowed shadow-architectural"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      {t('submitting')}
+                    </>
+                  ) : (
+                    <>
+                      {t('submit')}
+                      <Icon name="ArrowRightIcon" size={20} className="ml-2" />
+                    </>
+                  )}
+                </button>
+                <p className="mt-4 text-center font-body text-xs text-text-secondary">
+                  {t('disclaimer')}
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   );

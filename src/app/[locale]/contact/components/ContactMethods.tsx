@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Icon from '@/components/ui/AppIcon';
+import { useTranslations } from 'next-intl';
 
 interface ContactMethod {
   id: string;
@@ -18,6 +19,7 @@ interface ContactMethodsProps {
 }
 
 const ContactMethods = ({ className = '' }: ContactMethodsProps) => {
+  const t = useTranslations('Contact.methods');
   const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
@@ -28,46 +30,46 @@ const ContactMethods = ({ className = '' }: ContactMethodsProps) => {
     {
       id: '1',
       icon: 'PhoneIcon',
-      title: 'Phone',
-      description: 'Speak directly with our team',
+      title: t('phone.title'),
+      description: t('phone.desc'),
       value: '+34 912 345 678',
-      action: 'Call Now',
+      action: t('phone.action'),
       href: 'tel:+34912345678'
     },
     {
       id: '2',
       icon: 'EnvelopeIcon',
-      title: 'Email',
-      description: 'Send us a detailed message',
+      title: t('email.title'),
+      description: t('email.desc'),
       value: 'contact@lcdream.arq',
-      action: 'Send Email',
+      action: t('email.action'),
       href: 'mailto:contact@lcdream.arq'
     },
     {
       id: '3',
       icon: 'ChatBubbleLeftRightIcon',
-      title: 'Live Chat',
-      description: 'Chat with us in real-time',
-      value: 'Available Mon-Fri, 9:00-18:00',
-      action: 'Start Chat',
+      title: t('chat.title'),
+      description: t('chat.desc'),
+      value: t('chat.value'),
+      action: t('chat.action'),
       href: '#chat'
     },
     {
       id: '4',
       icon: 'MapPinIcon',
-      title: 'Visit Us',
-      description: 'Schedule an in-person meeting',
+      title: t('visit.title'),
+      description: t('visit.desc'),
       value: 'Calle de Serrano 45, Madrid',
-      action: 'Get Directions',
+      action: t('visit.action'),
       href: 'https://maps.google.com/?q=40.4268,-3.6874'
     }
   ];
 
   const handleMethodClick = (method: ContactMethod) => {
     if (!isHydrated) return;
-    
+
     if (method.id === '3') {
-      alert('Chat functionality will be available soon. Please use phone or email for immediate assistance.');
+      alert(t('chat.alert'));
     }
   };
 
@@ -76,10 +78,10 @@ const ContactMethods = ({ className = '' }: ContactMethodsProps) => {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-12">
           <h2 className="font-headline text-4xl lg:text-5xl font-headline-bold text-lcdream-white mb-12 leading-tight text-center">
-            Multiple Ways to Connect
+            {t('title')}
           </h2>
           <p className="font-body text-lg text-text-secondary max-w-2xl mx-auto">
-            Choose your preferred method of communication. We're here to answer your questions and discuss your project needs.
+            {t('description')}
           </p>
         </div>
 
@@ -93,19 +95,19 @@ const ContactMethods = ({ className = '' }: ContactMethodsProps) => {
                 <div className="w-16 h-16 bg-lcdream-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-lcdream-gold/20 transition-smooth border border-lcdream-gold/30">
                   <Icon name={method.icon as any} size={32} className="text-lcdream-gold" />
                 </div>
-                
+
                 <h3 className="font-headline text-xl font-headline-semibold text-lcdream-white mb-3 group-hover:text-lcdream-gold transition-smooth">
                   {method.title}
                 </h3>
-                
+
                 <p className="font-body text-sm text-text-secondary mb-3">
                   {method.description}
                 </p>
-                
+
                 <p className="font-body text-base text-lcdream-gray-light font-body-regular leading-relaxed mb-4">
                   {method.value}
                 </p>
-                
+
                 <div className="mt-auto">
                   {method.id === '3' ? (
                     <button
@@ -136,5 +138,4 @@ const ContactMethods = ({ className = '' }: ContactMethodsProps) => {
     </section>
   );
 };
-
 export default ContactMethods;

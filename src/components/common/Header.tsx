@@ -18,6 +18,7 @@ interface HeaderProps {
 
 const Header = ({ className = '' }: HeaderProps) => {
   const t = useTranslations('Header.nav');
+  const tCta = useTranslations('Header.cta');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
@@ -97,7 +98,7 @@ const Header = ({ className = '' }: HeaderProps) => {
                   LCDREAM.ARQ
                 </span>
                 <span className="font-body text-xs text-lcdream-gray-light tracking-wide uppercase">
-                  Arquitectura e Interiores
+                  {t('tagline')}
                 </span>
               </div>
             </Link>
@@ -117,7 +118,7 @@ const Header = ({ className = '' }: HeaderProps) => {
 
               <div className="relative group">
                 <button className="px-4 py-2 font-body text-sm font-body-regular text-lcdream-white hover:text-lcdream-gold hover:bg-lcdream-gold/5 transition-smooth rounded-md flex items-center space-x-1">
-                  <span>More</span>
+                  <span>{t('more')}</span>
                   <Icon name="ChevronDownIcon" size={16} className="transition-smooth group-hover:rotate-180" />
                 </button>
                 <div className="absolute right-0 top-full mt-2 w-48 bg-lcdream-dark-bg border border-lcdream-gold/20 shadow-elevated rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-smooth">
@@ -149,14 +150,11 @@ const Header = ({ className = '' }: HeaderProps) => {
                 href="/contact"
                 className="inline-flex items-center px-6 py-3 font-cta text-sm font-cta-semibold text-black bg-lcdream-gold rounded-md transition-smooth hover:bg-lcdream-gold-light hover:shadow-gold hover:-translate-y-0.5"
               >
-                Schedule Consultation
+                {tCta('scheduleConsultation')}
               </Link>
             </div>
 
-            <div className="lg:hidden flex items-center space-x-4">
-              {/* Mobile Language Switcher */}
-              <LocaleSwitcher />
-
+            <div className="lg:hidden flex items-center">
               <button
                 onClick={toggleMobileMenu}
                 className="p-2 text-lcdream-gold hover:text-lcdream-gold-light transition-smooth"
@@ -209,13 +207,18 @@ const Header = ({ className = '' }: HeaderProps) => {
               </div>
             </div>
 
-            <div className="sticky bottom-0 p-6 bg-lcdream-dark-bg border-t border-lcdream-gold/20">
+            <div className="sticky bottom-0 p-6 bg-lcdream-dark-bg border-t border-lcdream-gold/20 space-y-4">
+              {/* Mobile Language Switcher */}
+              <div className="flex justify-center">
+                <LocaleSwitcher />
+              </div>
+
               <Link
                 href="/contact"
                 onClick={closeMobileMenu}
                 className="flex items-center justify-center w-full px-6 py-4 font-cta text-base font-cta-semibold text-black bg-lcdream-gold rounded-md transition-smooth hover:bg-lcdream-gold-light hover:shadow-gold"
               >
-                Schedule Consultation
+                {tCta('scheduleConsultation')}
               </Link>
             </div>
           </nav>

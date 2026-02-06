@@ -10,7 +10,12 @@
             "portfolio": "Portfolio",
             "caseStudies": "Case Studies",
             "resources": "Resources",
-            "contact": "Contact"
+            "contact": "Contact",
+            "more": "More",
+            "tagline": "Architecture & Interiors"
+        },
+        "cta": {
+            "scheduleConsultation": "Schedule Consultation"
         }
     },
     "LocaleSwitcher": {
@@ -524,29 +529,34 @@
             }
         },
         "sustainability": {
-            "title": "Sustainability Commitment",
-            "description": "Responsible design minimizing environmental impact.",
+            "title": "Sustainability",
             "features": {
                 "solar": {
-                    "title": "Photovoltaic Solar System",
-                    "description": "Installation of 40 high-efficiency solar panels.",
-                    "impact": "85% reduction in grid consumption"
+                    "title": "Solar Panels",
+                    "description": "15kW integrated photovoltaic system",
+                    "impact": "100% of Energy"
                 },
                 "water": {
-                    "title": "Rainwater Harvesting",
-                    "description": "Integrated rainwater capture and filtration system.",
-                    "impact": "60% saving in water consumption"
+                    "title": "Water Collection",
+                    "description": "10,000L rainwater harvesting system",
+                    "impact": "Irrigation & Toilets"
                 },
                 "insulation": {
-                    "title": "Advanced Thermal Insulation",
-                    "description": "High-performance building envelope.",
-                    "impact": "70% reduction in HVAC needs"
+                    "title": "Thermal Insulation",
+                    "description": "High-performance natural wood fiber insulation",
+                    "impact": "Energy Class A"
                 },
                 "bioclimatic": {
                     "title": "Bioclimatic Design",
-                    "description": "Strategic orientation and cross ventilation.",
-                    "impact": "Stable indoor temperature"
+                    "description": "Optimized orientation and ventilation",
+                    "impact": "Passive Climate Control"
                 }
+            },
+            "certifications": {
+                "0": "LEED Gold Certified",
+                "1": "Passivhaus Standard",
+                "2": "BREEAM Excellent",
+                "3": "Energy Star"
             },
             "certificationsTitle": "Certifications & Awards"
         },
@@ -1155,9 +1165,148 @@
             "terms": "Terms of Service"
         }
     },
-    "ProjectCaseStudies": {
+    "Privacy": {
         "metadata": {
-            "title": "Project Case Studies - LCDREAM.ARQ",
-            "description": "Explore detailed case studies of our architectural projects, showcasing the design process, innovative solutions, and transformative results that enhance our clients' lives."
+            "title": "Privacy Policy - LCDREAM.ARQ",
+            "description": "LCDREAM.ARQ privacy policy regarding the processing of personal data"
+        },
+        "title": "Privacy Policy",
+        "lastUpdated": "Last updated: February 2026",
+        "intro": "At LCDREAM.ARQ, we are committed to protecting your privacy and personal data. This policy explains how we collect, use, and protect your information when you use our website or architectural and interior design services.",
+        "collection": {
+            "title": "Data We Collect",
+            "description": "We collect information you provide directly: full name, email address, phone number, postal address (for projects), estimated budget, and details of the architectural project you wish to undertake. We also collect technical data such as your IP address, browser type, and pages visited."
+        },
+        "usage": {
+            "title": "Use of Information",
+            "description": "We use your information to: respond to your inquiries and quote requests, prepare personalized architectural design proposals, manage the contractual relationship with our clients, send updates on your project progress, and with your consent, send newsletters with design inspiration and studio news."
+        },
+        "cookies": {
+            "title": "Cookies and Tracking Technologies",
+            "description": "We use essential cookies for site functionality and analytical cookies (Google Analytics) to understand how visitors interact with our site. You can manage your cookie preferences at any time through your browser settings."
+        },
+        "thirdParty": {
+            "title": "Sharing with Third Parties",
+            "description": "We do not sell your personal data. We may share information with service providers who help us operate our business: hosting services, email marketing platforms, and project management tools. All our providers are required to protect your data."
+        },
+        "rights": {
+            "title": "Your Rights",
+            "description": "You have the right to: access your personal data, rectify incorrect information, request deletion of your data, object to the processing of your data, and request portability of your information. To exercise these rights, contact us at info@lcdream.arq."
+        },
+        "retention": {
+            "title": "Data Retention",
+            "description": "We retain your personal data for as long as necessary to fulfill the purposes described in this policy, generally for the duration of our business relationship and up to 5 years thereafter to comply with legal and tax obligations."
+        },
+        "contact": {
+            "title": "Contact",
+            "description": "If you have questions about this privacy policy or wish to exercise your rights, you can contact us at: info@lcdream.arq or through the contact form on our website."
+        }
+    },
+    "Terms": {
+        "metadata": {
+            "title": "Terms of Service - LCDREAM.ARQ",
+            "description": "Terms and conditions of use for the LCDREAM.ARQ website"
+        },
+        "title": "Terms of Service",
+        "lastUpdated": "Last updated: February 2026",
+        "intro": "Welcome to LCDREAM.ARQ. By accessing and using this website, you agree to comply with these terms and conditions. Please read them carefully before using our services.",
+        "acceptance": {
+            "title": "Acceptance of Terms",
+            "description": "Use of this website constitutes your full acceptance of these terms and conditions. If you do not agree with any part of these terms, please do not use our site. We reserve the right to modify these terms at any time."
+        },
+        "services": {
+            "title": "Description of Services",
+            "description": "LCDREAM.ARQ offers architectural design, interior design, and consulting services. The content of this website is informational and does not constitute a contractual offer. Specific projects will be formalized through individual contracts with particular conditions."
+        },
+        "intellectual": {
+            "title": "Intellectual Property",
+            "description": "All content on this website, including but not limited to: designs, 3D renders, photographs, plans, logos, texts, and source code, are the exclusive property of LCDREAM.ARQ or its licensors. Reproduction, distribution, or use without express written authorization is prohibited."
+        },
+        "usage": {
+            "title": "Site Usage",
+            "description": "You agree to use this site only for lawful purposes and in a manner that does not infringe the rights of third parties. It is prohibited to: copy or redistribute content without authorization, use the site for illegal activities, attempt to access restricted areas, and any use that may damage the reputation of LCDREAM.ARQ."
+        },
+        "liability": {
+            "title": "Limitation of Liability",
+            "description": "LCDREAM.ARQ is not liable for direct, indirect, incidental, or consequential damages arising from the use or inability to use this website. The information presented is for guidance only and may contain unintentional errors or omissions."
+        },
+        "modifications": {
+            "title": "Modifications",
+            "description": "We reserve the right to modify these terms of service at any time. Changes will take effect immediately upon publication on the site. We recommend reviewing this page periodically."
+        },
+        "law": {
+            "title": "Applicable Law",
+            "description": "These terms are governed by the laws of Spain. Any dispute related to these terms shall be subject to the exclusive jurisdiction of the courts of the city where LCDREAM.ARQ has its headquarters."
+        }
+    },
+    "Cookies": {
+        "metadata": {
+            "title": "Cookie Policy - LCDREAM.ARQ",
+            "description": "Information about the use of cookies on the LCDREAM.ARQ website"
+        },
+        "title": "Cookie Policy",
+        "lastUpdated": "Last updated: February 2026",
+        "intro": "This website uses cookies to improve your browsing experience. Below, we explain what cookies are, what types we use, and how you can manage them.",
+        "whatAreCookies": {
+            "title": "What Are Cookies?",
+            "description": "Cookies are small text files that are stored on your device when you visit a website. They help the site remember information about your visit, such as your preferred language and other settings, to make your next visit easier and the site more useful to you."
+        },
+        "typesOfCookies": {
+            "title": "Types of Cookies We Use",
+            "description": "We use different types of cookies on our site: essential cookies (necessary for site functionality), analytical cookies (to understand how the site is used), and functionality cookies (to remember your preferences such as language)."
+        },
+        "essential": {
+            "title": "Essential Cookies",
+            "description": "These cookies are necessary for the website to function properly. They include session cookies, language preferences, and cookie acceptance. They cannot be disabled as they are essential for navigation."
+        },
+        "analytics": {
+            "title": "Analytical Cookies",
+            "description": "We use Google Analytics to collect anonymous information about how visitors use our site. This helps us improve content and user experience. These cookies collect information such as pages visited, time spent, and traffic source."
+        },
+        "marketing": {
+            "title": "Marketing Cookies",
+            "description": "We currently do not use marketing or targeted advertising cookies on our site. If this changes in the future, we will update this policy and request your consent."
+        },
+        "management": {
+            "title": "How to Manage Cookies",
+            "description": "You can control and delete cookies through your browser settings. Most browsers allow you to see what cookies you have and delete them individually or block cookies from specific sites. Please note that blocking some cookies may affect site functionality."
+        },
+        "consent": {
+            "title": "Your Consent",
+            "description": "By continuing to browse our site after seeing the cookie notice, you accept the use of cookies according to this policy. You can change your preferences at any time through your browser settings."
+        }
+    },
+    "Legal": {
+        "metadata": {
+            "title": "Legal Notice - LCDREAM.ARQ",
+            "description": "Legal information and owner data for the LCDREAM.ARQ website"
+        },
+        "title": "Legal Notice",
+        "lastUpdated": "Last updated: February 2026",
+        "intro": "In compliance with current regulations, we provide users with the following legal information about the owner of this website and the terms of use.",
+        "owner": {
+            "title": "Owner Information",
+            "description": "Trade name: LCDREAM.ARQ | Activity: Architecture and Interior Design Studio | Email: info@lcdream.arq | Phone: [Contact number] | Address: [Full fiscal address]. The owner reserves the right to modify the information contained herein."
+        },
+        "activity": {
+            "title": "Professional Activity",
+            "description": "LCDREAM.ARQ is a studio dedicated to architectural design, interior design, and project consulting. Our services include: residential housing design, commercial projects, comprehensive renovations, interior design, and advice on energy efficiency and sustainability."
+        },
+        "professional": {
+            "title": "Professional Registration",
+            "description": "LCDREAM.ARQ architects are duly licensed and registered with the corresponding Official College of Architects. All our projects comply with applicable technical and urban planning regulations."
+        },
+        "responsibility": {
+            "title": "Responsibility",
+            "description": "The content of this website is informational and for guidance only. LCDREAM.ARQ does not guarantee the accuracy, completeness, or timeliness of the published information. Project images shown are representative of our work but may differ from final results according to the specific characteristics of each project."
+        },
+        "externalLinks": {
+            "title": "External Links",
+            "description": "This site may contain links to third-party websites. LCDREAM.ARQ is not responsible for the content, privacy policies, or practices of external sites. We recommend reviewing the policies of any site you visit."
+        },
+        "jurisdiction": {
+            "title": "Jurisdiction",
+            "description": "This legal notice is governed by Spanish law. For any controversy related to this website, both parties submit to the jurisdiction of the courts and tribunals of the city where LCDREAM.ARQ has its registered office."
         }
     }
+}

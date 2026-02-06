@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import Header from '@/components/common/Header';
 import ContactHero from './components/ContactHero';
 import ContactMethods from './components/ContactMethods';
@@ -8,16 +8,20 @@ import OfficeLocation from './components/OfficeLocation';
 import FAQSection from './components/FAQSection';
 import ContactFooter from './components/ContactFooter';
 
-export const metadata: Metadata = {
-  title: 'Contact & Consultation - LCDREAM.ARQ',
-  description: 'Get in touch with LCDREAM.ARQ to discuss your architectural project. Schedule a consultation, visit our Madrid studio, or contact us via phone, email, or our online form. We respond within 24 hours.',
-};
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  const t = await getTranslations({ locale, namespace: 'Contact.metadata' });
+
+  return {
+    title: t('title'),
+    description: t('description')
+  };
+}
 
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-background">
       <Header />
-      
+
       <div className="pt-20">
         <ContactHero />
         <ResponseTime />

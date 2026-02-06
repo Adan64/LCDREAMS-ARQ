@@ -19,17 +19,17 @@ export default function LocaleSwitcher() {
     }
 
     return (
-        <label className="border-2 rounded">
+        <label className="border-2 border-lcdream-gold/30 rounded-md hover:border-lcdream-gold/60 transition-smooth">
             <p className="sr-only">{t('label')}</p>
             <select
                 defaultValue={locale}
-                className="bg-transparent py-2"
+                className="bg-lcdream-dark-bg text-lcdream-gold py-2 px-3 rounded-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-lcdream-gold/50"
                 onChange={onSelectChange}
                 disabled={isPending}
             >
-                <option value="es">{t('locale', { locale: 'es' })}</option>
-                <option value="en">{t('locale', { locale: 'en' })}</option>
-                <option value="pt">{t('locale', { locale: 'pt' })}</option>
+                <option value="es" className="bg-lcdream-dark-bg text-lcdream-gold">{t('locale', { locale: 'es' })}</option>
+                <option value="en" className="bg-lcdream-dark-bg text-lcdream-gold">{t('locale', { locale: 'en' })}</option>
+                <option value="pt" className="bg-lcdream-dark-bg text-lcdream-gold">{t('locale', { locale: 'pt' })}</option>
             </select>
         </label>
     );

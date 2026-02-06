@@ -10,7 +10,12 @@
             "portfolio": "Portafolio",
             "caseStudies": "Estudios de Caso",
             "resources": "Recursos",
-            "contact": "Contacto"
+            "contact": "Contacto",
+            "more": "Más",
+            "tagline": "Arquitectura e Interiores"
+        },
+        "cta": {
+            "scheduleConsultation": "Programar Consulta"
         }
     },
     "LocaleSwitcher": {
@@ -506,29 +511,34 @@
             }
         },
         "sustainability": {
-            "title": "Compromiso con la Sostenibilidad",
-            "description": "Diseño responsable que minimiza el impacto ambiental.",
+            "title": "Sostenibilidad",
             "features": {
                 "solar": {
-                    "title": "Sistema Solar Fotovoltaico",
-                    "description": "Instalación de 40 paneles solares de alta eficiencia.",
-                    "impact": "Reducción del 85% en consumo de red"
+                    "title": "Paneles Solares",
+                    "description": "Sistema fotovoltaico integrado de 15kW",
+                    "impact": "100% de la Energía"
                 },
                 "water": {
-                    "title": "Recolección de Agua de Lluvia",
-                    "description": "Sistema integrado de captación y filtración.",
-                    "impact": "Ahorro del 60% en consumo de agua"
+                    "title": "Recolección de Agua",
+                    "description": "Sistema de recolección de agua de lluvia de 10.000L",
+                    "impact": "Riego & Aseo"
                 },
                 "insulation": {
-                    "title": "Aislamiento Térmico Avanzado",
-                    "description": "Envolvente de edificio de alto rendimiento.",
-                    "impact": "Reducción del 70% en climatización"
+                    "title": "Aislamiento Térmico",
+                    "description": "Aislamiento de fibra de madera natural de alto rendimiento",
+                    "impact": "Clase Energética A"
                 },
                 "bioclimatic": {
                     "title": "Diseño Bioclimático",
-                    "description": "Orientación estratégica y ventilación cruzada.",
-                    "impact": "Temperatura interior estable"
+                    "description": "Orientación y ventilación optimizadas",
+                    "impact": "Climatización Pasiva"
                 }
+            },
+            "certifications": {
+                "0": "Certificación LEED Gold",
+                "1": "Estándar Passivhaus",
+                "2": "BREEAM Excelente",
+                "3": "Energy Star"
             },
             "certificationsTitle": "Certificaciones y Reconocimientos"
         },
@@ -933,6 +943,352 @@
             "description": "Agenda una consulta gratuita y descubre cómo podemos transformar tu visión en realidad",
             "contact": "Contactar Ahora",
             "caseStudies": "Ver Casos de Estudio"
+        }
+    },
+    "Contact": {
+        "metadata": {
+            "title": "Contacto y Consulta - LCDREAM.ARQ",
+            "description": "Póngase en contacto con LCDREAM.ARQ para discutir su proyecto arquitectónico. Programe una consulta, visite nuestro estudio en Madrid o contáctenos por teléfono, correo electrónico o nuestro formulario en línea. Respondemos en 24 horas."
+        },
+        "hero": {
+            "label": "Creemos Algo Extraordinario Juntos",
+            "title": "Creemos Algo Extraordinario Juntos",
+            "description": "Ya sea que esté planeando una casa personalizada, un espacio comercial o una renovación importante, estamos aquí para transformar su visión en realidad. Programe una consulta para discutir su proyecto y descubra cómo nuestra experiencia puede dar vida a sus sueños arquitectónicos."
+        },
+        "responseTime": {
+            "title1": "Respuesta en 24 Horas",
+            "desc1": "Respondemos a todas las consultas dentro de un día hábil",
+            "title2": "Atención Personalizada",
+            "desc2": "Cada consulta recibe atención individual de nuestro equipo",
+            "title3": "Confidencial y Seguro",
+            "desc3": "Su información está protegida y nunca se comparte con terceros"
+        },
+        "methods": {
+            "title": "Múltiples Formas de Conectar",
+            "description": "Elija su método de comunicación preferido. Estamos aquí para responder sus preguntas y discutir las necesidades de su proyecto.",
+            "phone": {
+                "title": "Teléfono",
+                "desc": "Hable directamente con nuestro equipo",
+                "action": "Llamar Ahora"
+            },
+            "email": {
+                "title": "Correo Electrónico",
+                "desc": "Envíenos un mensaje detallado",
+                "action": "Enviar Email"
+            },
+            "chat": {
+                "title": "Chat en Vivo",
+                "desc": "Chatee con nosotros en tiempo real",
+                "value": "Disponible Lun-Vie, 9:00-18:00",
+                "action": "Iniciar Chat",
+                "alert": "La funcionalidad de chat estará disponible pronto. Por favor use teléfono o correo electrónico para asistencia inmediata."
+            },
+            "visit": {
+                "title": "Visítenos",
+                "desc": "Programe una reunión en persona",
+                "action": "Obtener Direcciones"
+            }
+        },
+        "form": {
+            "title": "Programe Su Consulta",
+            "description": "Complete el formulario a continuación y nos pondremos en contacto con usted dentro de las 24 horas para discutir su proyecto y programar una consulta detallada.",
+            "successTitle": "¡Solicitud de Consulta Recibida!",
+            "successDesc": "Gracias por su interés. Revisaremos su información y nos pondremos en contacto con usted dentro de las 24 horas para programar su consulta.",
+            "submitting": "Enviando...",
+            "submit": "Programar Consulta",
+            "fields": {
+                "name": "Nombre Completo *",
+                "namePlaceholder": "Juan García",
+                "email": "Dirección de Email *",
+                "emailPlaceholder": "juan@ejemplo.es",
+                "phone": "Número de Teléfono *",
+                "phonePlaceholder": "+34 912 345 678",
+                "projectType": "Tipo de Proyecto *",
+                "selectProject": "Seleccionar Tipo de Proyecto",
+                "budget": "Rango de Presupuesto",
+                "selectBudget": "Seleccionar Rango de Presupuesto",
+                "timeline": "Cronograma del Proyecto",
+                "selectTimeline": "Seleccionar Cronograma",
+                "details": "Detalles del Proyecto *",
+                "detailsPlaceholder": "Por favor describa su proyecto, incluyendo ubicación, tamaño, requisitos específicos y cualquier otro detalle relevante...",
+                "preferredContact": "Método de Contacto Preferido",
+                "emailOption": "Email",
+                "phoneOption": "Teléfono",
+                "eitherOption": "Cualquiera"
+            },
+            "errors": {
+                "name": "El nombre completo es obligatorio",
+                "email": "El email es obligatorio",
+                "emailInvalid": "Por favor ingrese un email válido",
+                "phone": "El teléfono es obligatorio",
+                "phoneInvalid": "Por favor ingrese un teléfono válido",
+                "projectType": "Por favor seleccione un tipo de proyecto",
+                "details": "Por favor proporcione detalles del proyecto",
+                "detailsLength": "Por favor proporcione al menos 20 caracteres de detalle"
+            },
+            "disclaimer": "* Campos obligatorios. Al enviar este formulario, usted acepta nuestra política de privacidad y consiente ser contactado con respecto a su consulta de proyecto.",
+            "projectTypes": {
+                "residential-new": "Nueva Construcción Residencial",
+                "residential-renovation": "Renovación Residencial",
+                "commercial": "Espacio Comercial",
+                "interior": "Diseño de Interiores",
+                "urban-planning": "Planificación Urbana",
+                "consultation": "Consulta General"
+            },
+            "budgetRanges": {
+                "under-100k": "Menos de €100,000",
+                "100k-250k": "€100,000 - €250,000",
+                "250k-500k": "€250,000 - €500,000",
+                "500k-1m": "€500,000 - €1,000,000",
+                "over-1m": "Más de €1,000,000",
+                "flexible": "Flexible / A Discutir"
+            },
+            "timelines": {
+                "immediate": "Inmediato (Dentro de 1 mes)",
+                "1-3-months": "1-3 Meses",
+                "3-6-months": "3-6 Meses",
+                "6-12-months": "6-12 Meses",
+                "over-year": "Más de 1 Año",
+                "planning": "Aún Planificando"
+            }
+        },
+        "location": {
+            "title": "Visite Nuestro Estudio",
+            "description": "Experimente nuestro estudio de diseño en el corazón de Madrid. Programe una consulta en persona para discutir su proyecto en nuestro espacio creativo inspirador.",
+            "addressTitle": "Dirección",
+            "hoursTitle": "Horario de Oficina",
+            "parkingTitle": "Aparcamiento y Acceso",
+            "expectTitle": "Qué Esperar",
+            "openMaps": "Abrir en Google Maps",
+            "virtualTour": {
+                "title": "Tour Virtual del Estudio",
+                "subtitle": "Explore nuestro estudio de diseño desde cualquier lugar",
+                "start": "Iniciar Tour Virtual",
+                "close": "Cerrar Tour",
+                "reception": "Recepción y Área de Consulta",
+                "receptionDesc": "Espacio acogedor con asientos cómodos y exhibición de nuestros últimos proyectos",
+                "library": "Biblioteca de Materiales",
+                "libraryDesc": "Amplia colección de acabados, materiales y muestras para su selección",
+                "studio": "Estudio de Diseño",
+                "studioDesc": "Espacio de trabajo creativo donde nuestro equipo da vida a visiones arquitectónicas"
+            },
+            "cta": {
+                "title": "Programe una Consulta en Persona",
+                "description": "Visite nuestro estudio para discutir su proyecto en detalle, revisar materiales y explorar posibilidades de diseño con nuestro equipo.",
+                "button": "Llamar para Programar"
+            },
+            "items": {
+                "address": [
+                    "Calle de Serrano 45, 3ª Planta",
+                    "28001 Madrid, España"
+                ],
+                "hours": [
+                    "Lunes - Viernes: 9:00 - 18:00",
+                    "Sábado: 10:00 - 14:00 (Con Cita)",
+                    "Domingo: Cerrado"
+                ],
+                "parking": [
+                    "Aparcamiento en la calle disponible",
+                    "Parking público: 2 min a pie",
+                    "Metro: Estación Serrano (Línea 4)",
+                    "Entrada accesible para sillas de ruedas"
+                ],
+                "expect": [
+                    "Ambiente de estudio de diseño moderno",
+                    "Salas de consulta privadas",
+                    "Biblioteca de muestras de materiales y acabados",
+                    "Café y refrescos proporcionados"
+                ]
+            }
+        },
+        "faq": {
+            "title": "Preguntas Frecuentes",
+            "description": "Respuestas rápidas a preguntas comunes sobre nuestros servicios y proceso",
+            "footer": "Aún tiene preguntas? Estamos aquí para ayudar.",
+            "email": "Envíenos un email",
+            "items": {
+                "1": {
+                    "question": "¿Qué debo preparar para la consulta inicial?",
+                    "answer": "Traiga cualquier imagen de inspiración, bocetos aproximados, fotos del sitio y una lista de sus requisitos y rango de presupuesto. Discutiremos su visión, cronograma y alcance del proyecto para determinar el mejor enfoque para sus necesidades."
+                },
+                "2": {
+                    "question": "¿Cuánto dura típicamente el proceso de diseño?",
+                    "answer": "El cronograma varía según la complejidad del proyecto. Los proyectos residenciales suelen tardar de 3 a 6 meses para el desarrollo del diseño, mientras que los comerciales pueden requerir de 6 a 12 meses. Le proporcionaremos un cronograma detallado durante su consulta."
+                },
+                "3": {
+                    "question": "¿Trabajan en proyectos fuera de Madrid?",
+                    "answer": "Sí, trabajamos en proyectos en toda España e internacionalmente. Para proyectos fuera de Madrid, podemos programar visitas adicionales al sitio y coordinar con contratistas locales para asegurar una ejecución perfecta."
+                },
+                "4": {
+                    "question": "¿Cuáles son sus tarifas y estructura de pago?",
+                    "answer": "Nuestras tarifas se basan en el proyecto y dependen del alcance, complejidad y servicios requeridos. Típicamente estructuramos los pagos en fases: consulta inicial, desarrollo del diseño, documentación de construcción y administración de la construcción. Se proporcionan propuestas de tarifas detalladas después de la consulta inicial."
+                },
+                "5": {
+                    "question": "¿Pueden ayudar con permisos y aprobaciones?",
+                    "answer": "Absolutamente. Manejamos todos los permisos necesarios, aprobaciones de zonificación y cumplimiento normativo como parte de nuestro servicio integral. Nuestro equipo tiene amplia experiencia navegando códigos de construcción y regulaciones locales."
+                },
+                "6": {
+                    "question": "¿Proporcionan servicios de gestión de construcción?",
+                    "answer": "Sí, ofrecemos servicios completos de administración de construcción, incluyendo selección de contratistas, revisión de ofertas, supervisión del sitio y control de calidad durante toda la fase de construcción para asegurar que su proyecto se construya según las especificaciones de diseño."
+                }
+            }
+        },
+        "footer": {
+            "description": "Transformando espacios con visión y creatividad. Donde la función se encuentra con la belleza para crear experiencias arquitectónicas extraordinarias.",
+            "quickLinks": "Enlaces Rápidos",
+            "home": "Inicio",
+            "portfolio": "Portafolio",
+            "services": "Servicios",
+            "about": "Nosotros",
+            "connect": "Conéctese Con Nosotros",
+            "follow": "Síganos para inspiración de diseño y actualizaciones de proyectos",
+            "rights": "LCDREAM.ARQ. Todos los derechos reservados.",
+            "privacy": "Política de Privacidad",
+            "terms": "Términos de Servicio"
+        }
+    },
+    "Privacy": {
+        "metadata": {
+            "title": "Política de Privacidad - LCDREAM.ARQ",
+            "description": "Política de privacidad de LCDREAM.ARQ sobre el tratamiento de datos personales"
+        },
+        "title": "Política de Privacidad",
+        "lastUpdated": "Última actualización: Febrero 2026",
+        "intro": "En LCDREAM.ARQ, nos comprometemos a proteger su privacidad y sus datos personales. Esta política explica cómo recopilamos, utilizamos y protegemos su información cuando utiliza nuestro sitio web o servicios de arquitectura e interiorismo.",
+        "collection": {
+            "title": "Datos que Recopilamos",
+            "description": "Recopilamos información que usted nos proporciona directamente: nombre completo, dirección de correo electrónico, número de teléfono, dirección postal (para proyectos), presupuesto estimado y detalles del proyecto arquitectónico que desea realizar. También recopilamos datos técnicos como su dirección IP, tipo de navegador y páginas visitadas."
+        },
+        "usage": {
+            "title": "Uso de la Información",
+            "description": "Utilizamos su información para: responder a sus consultas y solicitudes de presupuesto, elaborar propuestas de diseño arquitectónico personalizadas, gestionar la relación contractual con nuestros clientes, enviar actualizaciones sobre el progreso de su proyecto, y con su consentimiento, enviar newsletters con inspiración de diseño y novedades del estudio."
+        },
+        "cookies": {
+            "title": "Cookies y Tecnologías de Seguimiento",
+            "description": "Utilizamos cookies esenciales para el funcionamiento del sitio y cookies analíticas (Google Analytics) para entender cómo los visitantes interactúan con nuestro sitio. Puede gestionar sus preferencias de cookies en cualquier momento a través de la configuración de su navegador."
+        },
+        "thirdParty": {
+            "title": "Compartir con Terceros",
+            "description": "No vendemos sus datos personales. Podemos compartir información con proveedores de servicios que nos ayudan a operar nuestro negocio: servicios de hosting, plataformas de email marketing, y herramientas de gestión de proyectos. Todos nuestros proveedores están obligados a proteger sus datos."
+        },
+        "rights": {
+            "title": "Sus Derechos",
+            "description": "Usted tiene derecho a: acceder a sus datos personales, rectificar información incorrecta, solicitar la eliminación de sus datos, oponerse al tratamiento de sus datos, y solicitar la portabilidad de su información. Para ejercer estos derechos, contáctenos en info@lcdream.arq."
+        },
+        "retention": {
+            "title": "Retención de Datos",
+            "description": "Conservamos sus datos personales durante el tiempo necesario para cumplir con los fines descritos en esta política, generalmente durante la duración de nuestra relación comercial y hasta 5 años después para cumplir con obligaciones legales y fiscales."
+        },
+        "contact": {
+            "title": "Contacto",
+            "description": "Si tiene preguntas sobre esta política de privacidad o desea ejercer sus derechos, puede contactarnos en: info@lcdream.arq o a través del formulario de contacto de nuestra web."
+        }
+    },
+    "Terms": {
+        "metadata": {
+            "title": "Términos de Servicio - LCDREAM.ARQ",
+            "description": "Términos y condiciones de uso del sitio web de LCDREAM.ARQ"
+        },
+        "title": "Términos de Servicio",
+        "lastUpdated": "Última actualización: Febrero 2026",
+        "intro": "Bienvenido a LCDREAM.ARQ. Al acceder y utilizar este sitio web, usted acepta cumplir con estos términos y condiciones. Por favor, léalos cuidadosamente antes de utilizar nuestros servicios.",
+        "acceptance": {
+            "title": "Aceptación de Términos",
+            "description": "El uso de este sitio web constituye su aceptación plena de estos términos y condiciones. Si no está de acuerdo con alguna parte de estos términos, le rogamos que no utilice nuestro sitio. Nos reservamos el derecho de modificar estos términos en cualquier momento."
+        },
+        "services": {
+            "title": "Descripción de Servicios",
+            "description": "LCDREAM.ARQ ofrece servicios de diseño arquitectónico, interiorismo y consultoría. El contenido de este sitio web es informativo y no constituye una oferta contractual. Los proyectos específicos se formalizarán mediante contratos individuales con condiciones particulares."
+        },
+        "intellectual": {
+            "title": "Propiedad Intelectual",
+            "description": "Todo el contenido de este sitio web, incluyendo pero no limitado a: diseños, renders 3D, fotografías, planos, logotipos, textos y código fuente, son propiedad exclusiva de LCDREAM.ARQ o sus licenciantes. Queda prohibida su reproducción, distribución o uso sin autorización expresa por escrito."
+        },
+        "usage": {
+            "title": "Uso del Sitio",
+            "description": "Usted se compromete a utilizar este sitio únicamente con fines legales y de manera que no infrinja los derechos de terceros. Está prohibido: copiar o redistribuir contenido sin autorización, utilizar el sitio para actividades ilegales, intentar acceder a áreas restringidas, y cualquier uso que pueda dañar la reputación de LCDREAM.ARQ."
+        },
+        "liability": {
+            "title": "Limitación de Responsabilidad",
+            "description": "LCDREAM.ARQ no se hace responsable de daños directos, indirectos, incidentales o consecuentes derivados del uso o imposibilidad de uso de este sitio web. La información presentada es orientativa y puede contener errores u omisiones involuntarias."
+        },
+        "modifications": {
+            "title": "Modificaciones",
+            "description": "Nos reservamos el derecho de modificar estos términos de servicio en cualquier momento. Los cambios entrarán en vigor inmediatamente después de su publicación en el sitio. Le recomendamos revisar periódicamente esta página."
+        },
+        "law": {
+            "title": "Legislación Aplicable",
+            "description": "Estos términos se rigen por las leyes de España. Cualquier disputa relacionada con estos términos estará sujeta a la jurisdicción exclusiva de los tribunales de la ciudad donde esté ubicada la sede de LCDREAM.ARQ."
+        }
+    },
+    "Cookies": {
+        "metadata": {
+            "title": "Política de Cookies - LCDREAM.ARQ",
+            "description": "Información sobre el uso de cookies en el sitio web de LCDREAM.ARQ"
+        },
+        "title": "Política de Cookies",
+        "lastUpdated": "Última actualización: Febrero 2026",
+        "intro": "Este sitio web utiliza cookies para mejorar su experiencia de navegación. A continuación, le explicamos qué son las cookies, qué tipos utilizamos y cómo puede gestionarlas.",
+        "whatAreCookies": {
+            "title": "¿Qué son las Cookies?",
+            "description": "Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web. Ayudan al sitio a recordar información sobre su visita, como su idioma preferido y otras configuraciones, para hacer su próxima visita más fácil y el sitio más útil para usted."
+        },
+        "typesOfCookies": {
+            "title": "Tipos de Cookies que Utilizamos",
+            "description": "Utilizamos diferentes tipos de cookies en nuestro sitio: cookies esenciales (necesarias para el funcionamiento del sitio), cookies analíticas (para entender cómo se utiliza el sitio), y cookies de funcionalidad (para recordar sus preferencias como el idioma)."
+        },
+        "essential": {
+            "title": "Cookies Esenciales",
+            "description": "Estas cookies son necesarias para que el sitio web funcione correctamente. Incluyen cookies de sesión, preferencias de idioma y aceptación de cookies. No se pueden desactivar ya que son esenciales para la navegación."
+        },
+        "analytics": {
+            "title": "Cookies Analíticas",
+            "description": "Utilizamos Google Analytics para recopilar información anónima sobre cómo los visitantes utilizan nuestro sitio. Esto nos ayuda a mejorar el contenido y la experiencia de usuario. Estas cookies recopilan información como las páginas visitadas, el tiempo de permanencia y la fuente de tráfico."
+        },
+        "marketing": {
+            "title": "Cookies de Marketing",
+            "description": "Actualmente no utilizamos cookies de marketing o publicidad dirigida en nuestro sitio. Si esto cambia en el futuro, actualizaremos esta política y solicitaremos su consentimiento."
+        },
+        "management": {
+            "title": "Cómo Gestionar las Cookies",
+            "description": "Puede controlar y eliminar las cookies a través de la configuración de su navegador. La mayoría de los navegadores le permiten ver qué cookies tiene y eliminarlas individualmente o bloquear cookies de sitios específicos. Tenga en cuenta que bloquear algunas cookies puede afectar la funcionalidad del sitio."
+        },
+        "consent": {
+            "title": "Su Consentimiento",
+            "description": "Al continuar navegando en nuestro sitio después de ver el aviso de cookies, usted acepta el uso de cookies según esta política. Puede cambiar sus preferencias en cualquier momento a través de la configuración de su navegador."
+        }
+    },
+    "Legal": {
+        "metadata": {
+            "title": "Aviso Legal - LCDREAM.ARQ",
+            "description": "Información legal y datos del titular del sitio web LCDREAM.ARQ"
+        },
+        "title": "Aviso Legal",
+        "lastUpdated": "Última actualización: Febrero 2026",
+        "intro": "En cumplimiento de la normativa vigente, ponemos a disposición de los usuarios la siguiente información legal sobre el titular de este sitio web y los términos de uso del mismo.",
+        "owner": {
+            "title": "Datos del Titular",
+            "description": "Nombre comercial: LCDREAM.ARQ | Actividad: Estudio de Arquitectura e Interiorismo | Email: info@lcdream.arq | Teléfono: [Número de contacto] | Dirección: [Dirección fiscal completa]. El titular se reserva el derecho de modificar la información aquí contenida."
+        },
+        "activity": {
+            "title": "Actividad Profesional",
+            "description": "LCDREAM.ARQ es un estudio dedicado al diseño arquitectónico, interiorismo y consultoría de proyectos. Nuestros servicios incluyen: diseño de viviendas residenciales, proyectos comerciales, reformas integrales, diseño de interiores, y asesoramiento en eficiencia energética y sostenibilidad."
+        },
+        "professional": {
+            "title": "Registro Profesional",
+            "description": "Los arquitectos de LCDREAM.ARQ están debidamente colegiados y registrados en el Colegio Oficial de Arquitectos correspondiente. Todos nuestros proyectos cumplen con la normativa técnica y urbanística aplicable."
+        },
+        "responsibility": {
+            "title": "Responsabilidad",
+            "description": "El contenido de este sitio web tiene carácter informativo y orientativo. LCDREAM.ARQ no garantiza la exactitud, integridad o actualidad de la información publicada. Las imágenes de proyectos mostradas son representativas de nuestro trabajo pero pueden diferir de los resultados finales según las características específicas de cada proyecto."
+        },
+        "externalLinks": {
+            "title": "Enlaces Externos",
+            "description": "Este sitio puede contener enlaces a sitios web de terceros. LCDREAM.ARQ no se hace responsable del contenido, políticas de privacidad ni prácticas de sitios externos. Le recomendamos revisar las políticas de cualquier sitio que visite."
+        },
+        "jurisdiction": {
+            "title": "Jurisdicción",
+            "description": "Este aviso legal se rige por la legislación española. Para cualquier controversia relacionada con este sitio web, ambas partes se someten a la jurisdicción de los juzgados y tribunales de la ciudad donde LCDREAM.ARQ tenga su domicilio social."
         }
     }
 }

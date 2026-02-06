@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from '@/i18n/routing';
 import Icon from '@/components/ui/AppIcon';
 import { useTranslations } from 'next-intl';
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 interface FooterLink {
   label: string;
@@ -47,19 +48,19 @@ const FooterSection = () => {
     {
       title: t('sections.legal'),
       links: [
-        { label: t('links.legal.privacy'), href: "/homepage" },
-        { label: t('links.legal.terms'), href: "/homepage" },
-        { label: t('links.legal.cookies'), href: "/homepage" },
-        { label: t('links.legal.legal'), href: "/homepage" }
+        { label: t('links.legal.privacy'), href: "/privacy" },
+        { label: t('links.legal.terms'), href: "/terms" },
+        { label: t('links.legal.cookies'), href: "/cookies" },
+        { label: t('links.legal.legal'), href: "/legal" }
       ]
     }
   ];
 
   const socialLinks = [
-    { name: "Facebook", icon: "ShareIcon", href: "#" },
-    { name: "Instagram", icon: "CameraIcon", href: "#" },
-    { name: "LinkedIn", icon: "BriefcaseIcon", href: "#" },
-    { name: "Twitter", icon: "ChatBubbleLeftIcon", href: "#" }
+    { name: "Facebook", icon: FaFacebook, href: "#" },
+    { name: "Instagram", icon: FaInstagram, href: "#" },
+    { name: "LinkedIn", icon: FaLinkedin, href: "#" },
+    { name: "Twitter", icon: FaTwitter, href: "#" }
   ];
 
   return (
@@ -108,18 +109,23 @@ const FooterSection = () => {
               {t('description')}
             </p>
 
-            <div className="flex items-center space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  className="w-10 h-10 flex items-center justify-center bg-lcdream-gold/10 text-lcdream-gold rounded-full transition-smooth hover:bg-lcdream-gold hover:text-black hover:scale-110 border border-lcdream-gold/30"
-                  aria-label={social.name}
-                >
-                  <Icon name={social.icon as any} size={20} />
-                </a>
-              ))}
-            </div>
+            <div className="flex space-x-4">
+              {socialLinks.map((social) => {
+                const IconComponent = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    className="w-10 h-10 rounded-full bg-lcdream-gold/10 flex items-center justify-center hover:bg-lcdream-gold/20 transition-smooth group"
+                    aria-label={social.name}
+                  >
+                    <IconComponent
+                      size={18}
+                      className="text-lcdream-gold group-hover:text-lcdream-gold-light transition-smooth"
+                    />
+                  </a>
+                );
+              })}</div>
           </div>
 
           {footerSections.map((section) => (
@@ -146,7 +152,7 @@ const FooterSection = () => {
         <div className="border-t border-lcdream-gold/20 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="font-body text-sm text-lcdream-gray-light font-body-regular text-center md:text-left">
-              {isHydrated ? `© ${currentYear}` : '© 2026'} LCDREAM.ARQ. {t('rights')}
+              {isHydrated ? `© ${currentYear} ` : '© 2026'} LCDREAM.ARQ. {t('rights')}
             </p>
 
             <div className="flex items-center space-x-6">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import Icon from '@/components/ui/AppIcon';
 
 interface ResponseTimeProps {
@@ -6,21 +7,23 @@ interface ResponseTimeProps {
 }
 
 const ResponseTime = ({ className = '' }: ResponseTimeProps) => {
+  const t = useTranslations('Contact.responseTime');
+
   const responseInfo = [
     {
       icon: 'ClockIcon',
-      title: '24-Hour Response',
-      description: 'We respond to all inquiries within one business day'
+      title: t('title1'),
+      description: t('desc1')
     },
     {
       icon: 'ChatBubbleLeftRightIcon',
-      title: 'Personalized Attention',
-      description: 'Every inquiry receives individual attention from our team'
+      title: t('title2'),
+      description: t('desc2')
     },
     {
       icon: 'ShieldCheckIcon',
-      title: 'Confidential & Secure',
-      description: 'Your information is protected and never shared with third parties'
+      title: t('title3'),
+      description: t('desc3')
     }
   ];
 

@@ -1,232 +1,189 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Icon from '@/components/ui/AppIcon';
-import AppImage from '@/components/ui/AppImage';
-
-interface OfficeInfo {
-  title: string;
-  icon: string;
-  details: string[];
-}
+import { useTranslations } from 'next-intl';
 
 interface OfficeLocationProps {
   className?: string;
 }
 
 const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
-  const [isHydrated, setIsHydrated] = useState(false);
-  const [showVirtualTour, setShowVirtualTour] = useState(false);
+  const t = useTranslations('Contact.location');
+  const [showMap, setShowMap] = useState(false);
+  const [activeTab, setActiveTab] = useState('reception');
 
-  useEffect(() => {
-    setIsHydrated(true);
-  }, []);
+  const officeInfo = [
+    {
+      icon: 'MapPinIcon',
+      title: t('addressTitle'),
+      details: [t('items.address.0'), t('items.address.1')]
+    },
+    {
+      icon: 'ClockIcon',
+      title: t('hoursTitle'),
+      details: [t('items.hours.0'), t('items.hours.1'), t('items.hours.2')]
+    },
+    {
+      icon: 'TruckIcon',
+      title: t('parkingTitle'),
+      details: [t('items.parking.0'), t('items.parking.1'), t('items.parking.2'), t('items.parking.3')]
+    },
+    {
+      icon: 'SparklesIcon',
+      title: t('expectTitle'),
+      details: [t('items.expect.0'), t('items.expect.1'), t('items.expect.2'), t('items.expect.3')]
+    }
+  ];
 
-  const officeInfo: OfficeInfo[] = [
-  {
-    title: 'Address',
-    icon: 'MapPinIcon',
-    details: [
-    'Calle de Serrano 45, 3rd Floor',
-    '28001 Madrid, Spain']
-
-  },
-  {
-    title: 'Office Hours',
-    icon: 'ClockIcon',
-    details: [
-    'Monday - Friday: 9:00 - 18:00',
-    'Saturday: 10:00 - 14:00 (By Appointment)',
-    'Sunday: Closed']
-
-  },
-  {
-    title: 'Parking & Access',
-    icon: 'TruckIcon',
-    details: [
-    'Street parking available',
-    'Public parking: 2 min walk',
-    'Metro: Serrano Station (Line 4)',
-    'Wheelchair accessible entrance']
-
-  },
-  {
-    title: 'What to Expect',
-    icon: 'HomeModernIcon',
-    details: [
-    'Modern design studio environment',
-    'Private consultation rooms',
-    'Material & finish samples library',
-    'Coffee & refreshments provided']
-
-  }];
-
-
-  const handleVirtualTourClick = () => {
-    if (!isHydrated) return;
-    setShowVirtualTour(!showVirtualTour);
-  };
+  const tourStops = [
+    {
+      id: 'reception',
+      title: t('virtualTour.reception'),
+      description: t('virtualTour.receptionDesc'),
+      image: '/images/office/reception.jpg'
+    },
+    {
+      id: 'library',
+      title: t('virtualTour.library'),
+      description: t('virtualTour.libraryDesc'),
+      image: '/images/office/library.jpg'
+    },
+    {
+      id: 'studio',
+      title: t('virtualTour.studio'),
+      description: t('virtualTour.studioDesc'),
+      image: '/images/office/studio.jpg'
+    }
+  ];
 
   return (
-    <section className={`py-16 lg:py-24 bg-background ${className}`}>
+    <section className={`py-20 lg:py-32 bg-gray-50 ${className}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl md:text-4xl font-headline-bold text-primary mb-4">
-            Visit Our Studio
-          </h2>
-          <p className="font-body text-lg text-text-secondary max-w-2xl mx-auto">
-            Experience our design studio in the heart of Madrid. Schedule an in-person consultation to discuss your project in our inspiring creative space.
-          </p>
-        </div>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <div>
+            <h2 className="font-headline text-4xl lg:text-5xl font-headline-bold text-primary mb-6 leading-tight">
+              {t('title')}
+            </h2>
+            <p className="font-body text-xl text-text-secondary leading-relaxed mb-12">
+              {t('description')}
+            </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
-          <div className="space-y-6">
-            {officeInfo.map((info, index) =>
-            <div key={index} className="bg-card rounded-lg p-6 border border-border">
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Icon name={info.icon as any} size={20} className="text-accent" />
+            <div className="grid sm:grid-cols-2 gap-8 mb-12">
+              {officeInfo.map((info, index) => (
+                <div key={index} className="space-y-4">
+                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <Icon name={info.icon as any} size={24} className="text-accent" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-headline text-lg font-headline-semibold text-primary mb-2">
-                      {info.title}
-                    </h3>
-                    <div className="space-y-1">
-                      {info.details.map((detail, idx) =>
-                    <p key={idx} className="font-body text-sm text-text-secondary">
-                          {detail}
-                        </p>
-                    )}
-                    </div>
+                  <h3 className="font-headline text-lg font-headline-semibold text-primary">
+                    {info.title}
+                  </h3>
+                  <ul className="space-y-2">
+                    {info.details.map((detail, idx) => (
+                      <li key={idx} className="font-body text-base text-text-secondary">
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://maps.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 font-cta text-base font-cta-semibold text-white bg-primary rounded-md transition-smooth hover:bg-primary/90"
+              >
+                {t('openMaps')}
+                <Icon name="ArrowTopRightOnSquareIcon" size={20} className="ml-2" />
+              </a>
+              <button
+                onClick={() => setShowMap(!showMap)}
+                className="inline-flex items-center justify-center px-6 py-3 font-cta text-base font-cta-semibold text-primary border border-primary rounded-md transition-smooth hover:bg-primary/5"
+              >
+                {t('virtualTour.start')}
+                <Icon name="VideoCameraIcon" size={20} className="ml-2" />
+              </button>
+            </div>
+          </div>
+
+          <div className="relative h-[600px] bg-gray-200 rounded-lg overflow-hidden shadow-lg">
+            {showMap ? (
+              <div className="absolute inset-0 bg-black/90 z-20 flex flex-col items-center justify-center p-8 text-white">
+                <button
+                  onClick={() => setShowMap(false)}
+                  className="absolute top-4 right-4 p-2 hover:bg-white/10 rounded-full transition-colors"
+                >
+                  <Icon name="XMarkIcon" size={24} />
+                </button>
+                <div className="w-full max-w-2xl text-center">
+                  <h3 className="font-headline text-2xl font-headline-bold mb-4">
+                    {t('virtualTour.title')}
+                  </h3>
+                  <p className="font-body text-lg text-gray-300 mb-8">
+                    {t('virtualTour.subtitle')}
+                  </p>
+
+                  <div className="grid grid-cols-3 gap-4 mb-8">
+                    {tourStops.map((stop) => (
+                      <button
+                        key={stop.id}
+                        onClick={() => setActiveTab(stop.id)}
+                        className={`p-4 rounded-lg transition-all ${activeTab === stop.id
+                          ? 'bg-accent text-white'
+                          : 'bg-white/10 hover:bg-white/20'
+                          }`}
+                      >
+                        <span className="block font-headline font-headline-semibold mb-1">
+                          {stop.title}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+
+                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
+                    {tourStops.map((stop) => (
+                      stop.id === activeTab && (
+                        <div key={stop.id} className="animate-fade-in">
+                          <h4 className="font-headline text-xl font-headline-semibold mb-2">
+                            {stop.title}
+                          </h4>
+                          <p className="font-body text-gray-300">
+                            {stop.description}
+                          </p>
+                        </div>
+                      )
+                    ))}
                   </div>
                 </div>
+              </div>
+            ) : (
+              <div className="absolute inset-0 bg-gray-300 flex items-center justify-center">
+                <p className="text-gray-500">Map Placeholder</p>
               </div>
             )}
           </div>
-
-          <div className="space-y-6">
-            <div className="bg-card rounded-lg overflow-hidden border border-border">
-              <div className="aspect-video w-full">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  loading="lazy"
-                  title="LCDREAM.ARQ Studio Location"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  src="https://www.google.com/maps?q=40.4268,-3.6874&z=15&output=embed"
-                  className="border-0" />
-
-              </div>
-              <div className="p-4 bg-muted">
-                <a
-                  href="https://maps.google.com/?q=40.4268,-3.6874"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center font-body text-sm font-body-semibold text-accent hover:text-accent/80 transition-smooth">
-
-                  <Icon name="MapIcon" size={16} className="mr-2" />
-                  Open in Google Maps
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg overflow-hidden border border-border">
-              <div className="relative aspect-video w-full overflow-hidden">
-                <AppImage
-                  src="https://img.rocket.new/generatedImages/rocket_gen_img_14bdd380d-1765352497190.png"
-                  alt="Modern architectural studio interior with white walls, wooden floors, large windows, design materials on display tables, and contemporary furniture"
-                  className="w-full h-full object-cover" />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end">
-                  <div className="p-6 w-full">
-                    <h3 className="font-headline text-xl font-headline-semibold text-primary-foreground mb-2">
-                      Studio Virtual Tour
-                    </h3>
-                    <p className="font-body text-sm text-primary-foreground/90 mb-4">
-                      Explore our design studio from anywhere
-                    </p>
-                    <button
-                      onClick={handleVirtualTourClick}
-                      disabled={!isHydrated}
-                      className="inline-flex items-center px-4 py-2 font-cta text-sm font-cta-semibold text-primary bg-primary-foreground rounded-md transition-smooth hover:bg-primary-foreground/90 disabled:opacity-50">
-
-                      <Icon name="PlayIcon" size={16} className="mr-2" />
-                      {showVirtualTour ? 'Close Tour' : 'Start Virtual Tour'}
-                    </button>
-                  </div>
-                </div>
-              </div>
-              
-              {showVirtualTour &&
-              <div className="p-6 bg-muted border-t border-border">
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <Icon name="CameraIcon" size={20} className="text-accent flex-shrink-0 mt-0.5" />
-                      <div>
-                        <h4 className="font-body text-sm font-body-semibold text-primary mb-1">
-                          Reception & Consultation Area
-                        </h4>
-                        <p className="font-body text-sm text-text-secondary">
-                          Welcoming space with comfortable seating and our latest project displays
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <Icon name="CameraIcon" size={20} className="text-accent flex-shrink-0 mt-0.5" />
-                      <div>
-                        <h4 className="font-body text-sm font-body-semibold text-primary mb-1">
-                          Materials Library
-                        </h4>
-                        <p className="font-body text-sm text-text-secondary">
-                          Extensive collection of finishes, materials, and samples for your selection
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <Icon name="CameraIcon" size={20} className="text-accent flex-shrink-0 mt-0.5" />
-                      <div>
-                        <h4 className="font-body text-sm font-body-semibold text-primary mb-1">
-                          Design Studio
-                        </h4>
-                        <p className="font-body text-sm text-text-secondary">
-                          Creative workspace where our team brings architectural visions to life
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              }
-            </div>
-          </div>
         </div>
 
-        <div className="bg-accent/5 rounded-lg p-8 border border-accent/20">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0">
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Icon name="CalendarDaysIcon" size={24} className="text-accent" />
-              </div>
-              <div>
-                <h3 className="font-headline text-xl font-headline-semibold text-primary mb-2">
-                  Schedule an In-Person Consultation
-                </h3>
-                <p className="font-body text-base text-text-secondary">
-                  Visit our studio to discuss your project in detail, review materials, and explore design possibilities with our team.
-                </p>
-              </div>
-            </div>
-            <a
-              href="tel:+34912345678"
-              className="inline-flex items-center px-6 py-3 font-cta text-sm font-cta-semibold text-accent-foreground bg-accent rounded-md transition-smooth hover:bg-accent/90 hover:shadow-architectural whitespace-nowrap">
-
-              <Icon name="PhoneIcon" size={18} className="mr-2" />
-              Call to Schedule
-            </a>
-          </div>
+        <div className="mt-20 p-12 bg-primary rounded-lg text-center">
+          <h2 className="font-headline text-3xl font-headline-bold text-white mb-4">
+            {t('cta.title')}
+          </h2>
+          <p className="font-body text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+            {t('cta.description')}
+          </p>
+          <a
+            href="tel:+34912345678"
+            className="inline-flex items-center justify-center px-8 py-4 font-cta text-base font-cta-semibold text-primary bg-white rounded-md transition-smooth hover:bg-gray-100"
+          >
+            {t('cta.button')}
+          </a>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default OfficeLocation;
