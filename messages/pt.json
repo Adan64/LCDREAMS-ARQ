@@ -46,7 +46,7 @@
             "aria": {
                 "prev": "Projeto anterior",
                 "next": "Próximo projeto",
-                "dot": "Ir para o projeto {index}"
+                "dot": "Ir para o slide {index}"
             }
         },
         "Services": {
@@ -933,6 +933,236 @@
             "description": "Agende uma consulta gratuita e descubra como podemos transformar sua visão em realidade",
             "contact": "Contatar Agora",
             "caseStudies": "Ver Casos de Estudo"
+        }
+    },
+    "About": {
+        "metadata": {
+            "title": "Sobre Nós - LCDREAM.ARQ",
+            "description": "Descubra a filosofia de design da LCDREAM.ARQ, conheça nossa equipe talentosa e explore nosso compromisso com a arquitetura sustentável."
+        },
+        "hero": {
+            "subtitle": "Criando Espaços que Transformam Vidas",
+            "title": "Criando Espaços que Transformam Vidas",
+            "description": "Na LCDREAM.ARQ, acreditamos que a arquitetura transcende a mera construção — trata-se de criar experiências que melhorem a vida humana através da interseção da visão artística e excelência funcional."
+        },
+        "profile": {
+            "name": "Elena Martínez",
+            "title": "Arquiteta Principal e Fundadora",
+            "credentials": "M.Arch, LEED AP, AIA",
+            "alt": "Retrato profissional de Elena Martínez",
+            "bio": {
+                "0": "Com mais de 15 anos de experiência transformando espaços e criando obras-primas arquitetônicas, Elena Martínez fundou a LCDREAM.ARQ com uma visão singular: projetar espaços que não apenas abriguem, mas inspirem e elevem a experiência humana.",
+                "1": "Sua abordagem combina rigorosa experiência técnica com um olhar artístico para a beleza, resultando em projetos funcionalmente superiores e esteticamente deslumbrantes.",
+                "2": "Uma defensora apaixonada pelo design sustentável, Elena integra práticas ecológicas em cada projeto, acreditando que a arquitetura responsável é o único caminho para o nosso ambiente construído."
+            },
+            "specializationsTitle": "Áreas de Especialização",
+            "specializations": {
+                "0": "Design Residencial Sustentável",
+                "1": "Planejamento de Espaços Comerciais",
+                "2": "Projetos de Regeneração Urbana",
+                "3": "Consultoria em Certificação LEED"
+            }
+        },
+        "philosophy": {
+            "subtitle": "Nossa Filosofia de Design",
+            "title": "No coração da LCDREAM.ARQ está o compromisso de criar espaços não apenas visualmente deslumbrantes, mas profundamente significativos.",
+            "description": "No coração da LCDREAM.ARQ está o compromisso de criar espaços não apenas visualmente deslumbrantes, mas profundamente significativos e funcionalmente superiores. Nossa filosofia é baseada em quatro princípios fundamentais.",
+            "principles": {
+                "humanCentered": {
+                    "title": "Design Centrado no Humano",
+                    "description": "Cada espaço que criamos é projetado pensando no usuário final, priorizando conforto, funcionalidade e bem-estar emocional."
+                },
+                "timelessAesthetics": {
+                    "title": "Estética Atemporal",
+                    "description": "Combinamos princípios de design contemporâneo com elementos clássicos para criar espaços que permaneçam belos e relevantes por décadas."
+                },
+                "sustainableInnovation": {
+                    "title": "Inovação Sustentável",
+                    "description": "A responsabilidade ambiental está integrada em cada decisão, desde a seleção de materiais até os sistemas de energia."
+                },
+                "contextualIntegration": {
+                    "title": "Integração Contextual",
+                    "description": "Nossos designs respondem cuidadosamente ao seu entorno, respeitando a cultura local, o clima e a paisagem."
+                }
+            }
+        },
+        "team": {
+            "title": "Conheça Nossa Equipe",
+            "description": "Nossa equipe diversificada de profissionais talentosos reúne décadas de experiência combinada, unidos por uma paixão compartilhada por criar soluções arquitetônicas excepcionais.",
+            "actions": {
+                "showLess": "Mostrar menos",
+                "learnMore": "Saiba mais"
+            },
+            "expertiseTitle": "Experiência",
+            "members": {
+                "1": {
+                    "role": "Arquiteto Sênior",
+                    "specialization": "Design Comercial e Misto",
+                    "bio": "Carlos traz 12 anos de experiência em projetos comerciais de grande escala, com foco especial na criação de espaços dinâmicos que promovam a interação comunitária.",
+                    "expertise": {
+                        "0": "Planejamento Urbano",
+                        "1": "Arquitetura Comercial",
+                        "2": "Desenvolvimento Misto",
+                        "3": "Espaços Comunitários"
+                    }
+                },
+                "2": {
+                    "role": "Designer de Interiores Principal",
+                    "specialization": "Interiores Residenciais e Hoteleiros",
+                    "bio": "O talento de Isabel para criar interiores acolhedores que refletem a personalidade de seus clientes a tornou uma das designers mais procuradas da região.",
+                    "expertise": {
+                        "0": "Design de Interiores",
+                        "1": "Planejamento de Espaço",
+                        "2": "Seleção de Materiais",
+                        "3": "Design de Mobiliário Personalizado"
+                    }
+                },
+                "3": {
+                    "role": "Consultor de Sustentabilidade",
+                    "specialization": "Edifícios Verdes e Certificação LEED",
+                    "bio": "Miguel é nosso especialista em sustentabilidade, garantindo que cada projeto atenda aos mais altos padrões ambientais.",
+                    "expertise": {
+                        "0": "Certificação LEED",
+                        "1": "Materiais Sustentáveis",
+                        "2": "Eficiência Energética",
+                        "3": "Sistemas de Construção Verde"
+                    }
+                },
+                "4": {
+                    "role": "Gerente de Projetos",
+                    "specialization": "Administração de Construção e Relações com Clientes",
+                    "bio": "Ana María garante uma execução de projeto perfeita, do conceito à conclusão. Suas habilidades organizacionais excepcionais garantem entregas dentro do prazo e do orçamento.",
+                    "expertise": {
+                        "0": "Gestão de Projetos",
+                        "1": "Supervisão de Construção",
+                        "2": "Comunicação com Clientes",
+                        "3": "Gestão Orçamentária"
+                    }
+                }
+            }
+        },
+        "awards": {
+            "title": "Prêmios e Reconhecimento",
+            "description": "Nosso compromisso com a excelência foi reconhecido por importantes organizações e instituições da indústria em todo o mundo.",
+            "recentTitle": "Prêmios Recentes",
+            "certificationsTitle": "Certificações Profissionais",
+            "items": {
+                "1": {
+                    "title": "Prêmio de Excelência em Design Sustentável",
+                    "organization": "Fundação Internacional de Arquitetura",
+                    "project": "Residência EcoVista",
+                    "category": "Arquitetura Residencial",
+                    "description": "Reconhecido pela integração inovadora de design solar passivo, sistemas de captação de água da chuva e materiais de origem local."
+                },
+                "2": {
+                    "title": "Melhor Design de Espaço Comercial",
+                    "organization": "Conselho Europeu de Design",
+                    "project": "Centro de Inovação TechHub",
+                    "category": "Arquitetura Comercial",
+                    "description": "Premiado por criar um espaço de trabalho dinâmico que promove a colaboração e a criatividade."
+                },
+                "3": {
+                    "title": "Excelência em Regeneração Urbana",
+                    "organization": "Iniciativa de Cidades Globais",
+                    "project": "O Distrito do Porto",
+                    "category": "Design Urbano",
+                    "description": "Homenageado por transformar uma área industrial subutilizada em uma comunidade vibrante de uso misto."
+                },
+                "4": {
+                    "title": "Certificação LEED Platinum",
+                    "organization": "Conselho de Construção Verde dos EUA",
+                    "project": "Torre Vertex",
+                    "category": "Edifício Sustentável",
+                    "description": "Alcançou o nível mais alto de certificação LEED para um edifício de escritórios de 12 andares."
+                },
+                "5": {
+                    "title": "Prêmio de Inovação Arquitetônica",
+                    "organization": "Revista Vida Moderna",
+                    "project": "Retiro no Penhasco",
+                    "category": "Design Residencial",
+                    "description": "Reconhecido por ultrapassar os limites no design residencial de luxo com uso inovador de vidro e materiais naturais."
+                },
+                "6": {
+                    "title": "Excelência em Preservação do Patrimônio",
+                    "organization": "Fundo Nacional para Preservação Histórica",
+                    "project": "Centro de Artes Old Mill",
+                    "category": "Restauração e Reutilização Adaptativa",
+                    "description": "Premiado pela restauração sensível e reutilização adaptativa de um edifício de moinho do século XIX."
+                }
+            },
+            "certifications": {
+                "leed": "Profissional Credenciado LEED (LEED AP)",
+                "aia": "Membro do Instituto Americano de Arquitetos (AIA)",
+                "ncarb": "Conselho Nacional de Juntas de Registro Arquitetônico (NCARB)",
+                "passive": "Designer Certificado Passive House",
+                "well": "Profissional Credenciado WELL (WELL AP)"
+            },
+            "issuers": {
+                "usgbc": "Conselho de Construção Verde dos EUA",
+                "aia": "AIA",
+                "ncarb": "NCARB",
+                "phi": "Instituto Passive House",
+                "well": "Instituto Internacional de Construção WELL"
+            }
+        },
+        "sustainability": {
+            "title": "Nosso Compromisso com a Sustentabilidade",
+            "description": "A responsabilidade ambiental não é uma reflexão tardia — está tecida na estrutura de cada projeto que realizamos.",
+            "initiatives": {
+                "renewable": {
+                    "title": "Integração de Energia Renovável",
+                    "description": "Priorizamos sistemas de energia solar, eólica e geotérmica em todos os nossos projetos.",
+                    "impact": "Redução média de 60% nos custos de energia"
+                },
+                "materials": {
+                    "title": "Materiais Sustentáveis",
+                    "description": "Materiais ecológicos cuidadosamente selecionados, incluindo madeira recuperada e aço reciclado.",
+                    "impact": "85% de materiais de origem local"
+                },
+                "water": {
+                    "title": "Conservação da Água",
+                    "description": "Captação de água da chuva, reciclagem de águas cinzas e sistemas de irrigação eficientes.",
+                    "impact": "Até 50% de redução no uso de água"
+                },
+                "passive": {
+                    "title": "Estratégias de Design Passivo",
+                    "description": "Orientação ideal, ventilação natural e massa térmica reduzem as necessidades de aquecimento e resfriamento.",
+                    "impact": "30-40% de economia de energia HVAC"
+                }
+            },
+            "showcase": {
+                "tag": "PROJETO EM DESTAQUE",
+                "description": "Nosso principal projeto residencial sustentável que alcançou consumo líquido zero de energia.",
+                "achievementsTitle": "Principais Conquistas",
+                "achievements": {
+                    "0": "Certificação LEED Platinum",
+                    "1": "Consumo Líquido Zero de Energia",
+                    "2": "100% Alimentado por Energia Renovável",
+                    "3": "50% de Redução no Uso de Água",
+                    "4": "Processo de Construção Carbono Neutro"
+                }
+            },
+            "footer": {
+                "title": "Construindo um Futuro Sustentável Juntos",
+                "description": "Cada projeto é uma oportunidade de causar um impacto ambiental positivo. Trabalhamos em estreita colaboração com os clientes para integrar práticas sustentáveis."
+            },
+            "stats": {
+                "1": {
+                    "label": "Projetos com Recursos Sustentáveis"
+                },
+                "2": {
+                    "label": "Projetos Certificados LEED"
+                },
+                "3": {
+                    "label": "Redução Média de Energia"
+                }
+            }
+        },
+        "cta": {
+            "title": "Pronto para Transformar Seu Espaço?",
+            "description": "Vamos discutir como podemos dar vida à sua visão arquitetônica com nossa experiência, criatividade e compromisso com a excelência.",
+            "schedule": "Agendar Consulta",
+            "portfolio": "Ver Nosso Portfólio"
         }
     }
 }

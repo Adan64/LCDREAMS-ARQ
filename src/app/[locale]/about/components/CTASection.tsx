@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import Link from 'next/link';
 import Icon from '@/components/ui/AppIcon';
@@ -7,31 +8,28 @@ interface CTASectionProps {
 }
 
 const CTASection = ({ className = '' }: CTASectionProps) => {
+  const t = useTranslations('About.cta');
+
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-br from-black via-lcdream-dark-bg to-black relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(212,175,55,0.1),transparent_50%)]" />
-      <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-        <h2 className="font-headline text-4xl lg:text-6xl font-headline-bold text-lcdream-white mb-6 leading-tight text-center">
-          Ready to Transform Your Space?
+    <section className="py-20 lg:py-32 bg-accent relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-multiply" />
+
+      <div className="max-w-4xl mx-auto px-6 lg:px-12 relative z-10 text-center">
+        <h2 className="font-headline text-4xl lg:text-5xl font-headline-bold text-accent-foreground mb-6 leading-tight">
+          {t('title')}
         </h2>
-        <p className="font-body text-lg lg:text-xl text-lcdream-gray-light font-body-regular leading-relaxed text-center mb-10 max-w-2xl mx-auto">
-          Let's discuss how we can bring your architectural vision to life with our expertise, creativity, and commitment to excellence.
+        <p className="font-body text-lg lg:text-xl font-body-medium text-accent-foreground/80 mb-10 leading-relaxed max-w-2xl mx-auto">
+          {t('description')}
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center px-10 py-5 bg-lcdream-gold text-black font-cta text-lg font-cta-semibold rounded-md transition-smooth hover:bg-lcdream-gold-light hover:shadow-gold hover:-translate-y-1"
-          >
-            <span>Schedule a Consultation</span>
-            <Icon name="ArrowRightIcon" size={20} className="ml-2" />
-          </Link>
-          <Link
-            href="/portfolio-gallery"
-            className="inline-flex items-center justify-center px-8 py-4 font-cta text-base font-cta-semibold text-primary-foreground bg-transparent border-2 border-primary-foreground rounded-md transition-smooth hover:bg-primary-foreground/10"
-          >
-            <span>View Our Portfolio</span>
-            <Icon name="ArrowRightIcon" size={20} className="ml-2" />
-          </Link>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button className="w-full sm:w-auto px-8 py-4 bg-black text-white rounded-lg font-cta font-cta-bold hover:bg-black/80 transition-smooth shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            {t('schedule')}
+          </button>
+          <button className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-black text-black rounded-lg font-cta font-cta-bold hover:bg-black/5 transition-smooth">
+            {t('portfolio')}
+          </button>
         </div>
       </div>
     </section>

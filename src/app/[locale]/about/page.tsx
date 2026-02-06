@@ -8,16 +8,22 @@ import AwardsSection from './components/AwardsSection';
 import SustainabilityCommitment from './components/SustainabilityCommitment';
 import CTASection from './components/CTASection';
 
-export const metadata: Metadata = {
-  title: 'About - LCDREAM.ARQ',
-  description: 'Discover LCDREAM.ARQ\'s design philosophy, meet our talented team, and explore our commitment to sustainable architecture. Learn about our awards, certifications, and approach to creating spaces that transform lives.',
-};
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+  const t = await getTranslations({ locale, namespace: 'About.metadata' });
+
+  return {
+    title: t('title'),
+    description: t('description'),
+  };
+}
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background">
       <Header />
-      
+
       <div className="pt-20">
         <HeroSection />
         <ArchitectProfile />

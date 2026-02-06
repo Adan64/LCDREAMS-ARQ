@@ -46,7 +46,7 @@
             "aria": {
                 "prev": "Previous project",
                 "next": "Next project",
-                "dot": "Go to project {index}"
+                "dot": "Go to slide {index}"
             }
         },
         "Services": {
@@ -92,28 +92,46 @@
             "cta": "View Full Portfolio",
             "items": {
                 "1": {
-                    "title": "Horizon House",
-                    "category": "Residential",
-                    "location": "Valencia, Spain",
-                    "description": "Contemporary residence maximizing panoramic sea views"
+                    "title": "Excellence in Sustainable Design Award",
+                    "organization": "International Architecture Foundation",
+                    "project": "EcoVista Residence",
+                    "category": "Residential Architecture",
+                    "description": "Recognized for innovative integration of passive solar design, rainwater harvesting systems, and locally-sourced materials."
                 },
                 "2": {
-                    "title": "Urban Creative Studio",
-                    "category": "Commercial",
-                    "location": "Seville, Spain",
-                    "description": "Flexible workspace fostering innovation and collaboration"
+                    "title": "Best Commercial Space Design",
+                    "organization": "European Design Council",
+                    "project": "TechHub Innovation Center",
+                    "category": "Commercial Architecture",
+                    "description": "Awarded for creating a dynamic workspace that fosters collaboration and creativity while maintaining exceptional energy efficiency."
                 },
                 "3": {
-                    "title": "Renovated Industrial Loft",
-                    "category": "Residential",
-                    "location": "Bilbao, Spain",
-                    "description": "Transformation of industrial space into modern cozy living"
+                    "title": "Urban Regeneration Excellence",
+                    "organization": "Global Cities Initiative",
+                    "project": "The Harbour District",
+                    "category": "Urban Design",
+                    "description": "Honored for transforming an underutilized industrial area into a vibrant mixed-use community that respects historical context."
                 },
                 "4": {
-                    "title": "Sustainable Wellness Center",
-                    "category": "Commercial",
-                    "location": "Granada, Spain",
-                    "description": "Biophilic design integrating nature and well-being"
+                    "title": "LEED Platinum Certification",
+                    "organization": "U.S. Green Building Council",
+                    "project": "Vertex Tower",
+                    "category": "Sustainable Building",
+                    "description": "Achieved the highest level of LEED certification for a 12-story office building featuring advanced green building technologies."
+                },
+                "5": {
+                    "title": "Architectural Innovation Award",
+                    "organization": "Modern Living Magazine",
+                    "project": "Cliffside Retreat",
+                    "category": "Residential Design",
+                    "description": "Recognized for pushing boundaries in luxury residential design with innovative use of glass, steel, and natural materials."
+                },
+                "6": {
+                    "title": "Heritage Preservation Excellence",
+                    "organization": "National Trust for Historic Preservation",
+                    "project": "Old Mill Arts Centre",
+                    "category": "Restoration & Adaptive Reuse",
+                    "description": "Awarded for sensitive restoration and adaptive reuse of a 19th-century mill building, preserving historical character."
                 }
             }
         },
@@ -934,5 +952,212 @@
             "contact": "Contact Now",
             "caseStudies": "View Case Studies"
         }
+    },
+    "Contact": {
+        "metadata": {
+            "title": "Contact & Consultation - LCDREAM.ARQ",
+            "description": "Get in touch with LCDREAM.ARQ to discuss your architectural project. Schedule a consultation, visit our Madrid studio, or contact us via phone, email, or our online form. We respond within 24 hours."
+        },
+        "hero": {
+            "label": "Let's Create Something Extraordinary Together",
+            "title": "Let's Create Something Extraordinary Together",
+            "description": "Whether you're planning a custom home, commercial space, or major renovation, we're here to transform your vision into reality. Schedule a consultation to discuss your project and discover how our expertise can bring your architectural dreams to life."
+        },
+        "responseTime": {
+            "title1": "24-Hour Response",
+            "desc1": "We respond to all inquiries within one business day",
+            "title2": "Personalized Attention",
+            "desc2": "Every inquiry receives individual attention from our team",
+            "title3": "Confidential & Secure",
+            "desc3": "Your information is protected and never shared with third parties"
+        },
+        "methods": {
+            "title": "Multiple Ways to Connect",
+            "description": "Choose your preferred method of communication. We're here to answer your questions and discuss your project needs.",
+            "phone": {
+                "title": "Phone",
+                "desc": "Speak directly with our team",
+                "action": "Call Now"
+            },
+            "email": {
+                "title": "Email",
+                "desc": "Send us a detailed message",
+                "action": "Send Email"
+            },
+            "chat": {
+                "title": "Live Chat",
+                "desc": "Chat with us in real-time",
+                "value": "Available Mon-Fri, 9:00-18:00",
+                "action": "Start Chat",
+                "alert": "Chat functionality will be available soon. Please use phone or email for immediate assistance."
+            },
+            "visit": {
+                "title": "Visit Us",
+                "desc": "Schedule an in-person meeting",
+                "action": "Get Directions"
+            }
+        },
+        "form": {
+            "title": "Schedule Your Consultation",
+            "description": "Fill out the form below and we'll get back to you within 24 hours to discuss your project and schedule a detailed consultation.",
+            "successTitle": "Consultation Request Received!",
+            "successDesc": "Thank you for your interest. We'll review your information and contact you within 24 hours to schedule your consultation.",
+            "submitting": "Submitting...",
+            "submit": "Schedule Consultation",
+            "fields": {
+                "name": "Full Name *",
+                "namePlaceholder": "John Smith",
+                "email": "Email Address *",
+                "emailPlaceholder": "john@example.com",
+                "phone": "Phone Number *",
+                "phonePlaceholder": "+34 912 345 678",
+                "projectType": "Project Type *",
+                "selectProject": "Select Project Type",
+                "budget": "Budget Range",
+                "selectBudget": "Select Budget Range",
+                "timeline": "Project Timeline",
+                "selectTimeline": "Select Timeline",
+                "details": "Project Details *",
+                "detailsPlaceholder": "Please describe your project, including location, size, specific requirements, and any other relevant details...",
+                "preferredContact": "Preferred Contact Method",
+                "emailOption": "Email",
+                "phoneOption": "Phone",
+                "eitherOption": "Either"
+            },
+            "errors": {
+                "name": "Full name is required",
+                "email": "Email is required",
+                "emailInvalid": "Please enter a valid email address",
+                "phone": "Phone number is required",
+                "phoneInvalid": "Please enter a valid phone number",
+                "projectType": "Please select a project type",
+                "details": "Please provide project details",
+                "detailsLength": "Please provide at least 20 characters of detail"
+            },
+            "disclaimer": "* Required fields. By submitting this form, you agree to our privacy policy and consent to be contacted regarding your project inquiry.",
+            "projectTypes": {
+                "residential-new": "New Residential Construction",
+                "residential-renovation": "Residential Renovation",
+                "commercial": "Commercial Space",
+                "interior": "Interior Design",
+                "urban-planning": "Urban Planning",
+                "consultation": "General Consultation"
+            },
+            "budgetRanges": {
+                "under-100k": "Under €100,000",
+                "100k-250k": "€100,000 - €250,000",
+                "250k-500k": "€250,000 - €500,000",
+                "500k-1m": "€500,000 - €1,000,000",
+                "over-1m": "Over €1,000,000",
+                "flexible": "Flexible / To Be Discussed"
+            },
+            "timelines": {
+                "immediate": "Immediate (Within 1 month)",
+                "1-3-months": "1-3 Months",
+                "3-6-months": "3-6 Months",
+                "6-12-months": "6-12 Months",
+                "over-year": "Over 1 Year",
+                "planning": "Still Planning"
+            }
+        },
+        "location": {
+            "title": "Visit Our Studio",
+            "description": "Experience our design studio in the heart of Madrid. Schedule an in-person consultation to discuss your project in our inspiring creative space.",
+            "addressTitle": "Address",
+            "hoursTitle": "Office Hours",
+            "parkingTitle": "Parking & Access",
+            "expectTitle": "What to Expect",
+            "openMaps": "Open in Google Maps",
+            "virtualTour": {
+                "title": "Studio Virtual Tour",
+                "subtitle": "Explore our design studio from anywhere",
+                "start": "Start Virtual Tour",
+                "close": "Close Tour",
+                "reception": "Reception & Consultation Area",
+                "receptionDesc": "Welcoming space with comfortable seating and our latest project displays",
+                "library": "Materials Library",
+                "libraryDesc": "Extensive collection of finishes, materials, and samples for your selection",
+                "studio": "Design Studio",
+                "studioDesc": "Creative workspace where our team brings architectural visions to life"
+            },
+            "cta": {
+                "title": "Schedule an In-Person Consultation",
+                "description": "Visit our studio to discuss your project in detail, review materials, and explore design possibilities with our team.",
+                "button": "Call to Schedule"
+            },
+            "items": {
+                "address": [
+                    "Calle de Serrano 45, 3rd Floor",
+                    "28001 Madrid, Spain"
+                ],
+                "hours": [
+                    "Monday - Friday: 9:00 - 18:00",
+                    "Saturday: 10:00 - 14:00 (By Appointment)",
+                    "Sunday: Closed"
+                ],
+                "parking": [
+                    "Street parking available",
+                    "Public parking: 2 min walk",
+                    "Metro: Serrano Station (Line 4)",
+                    "Wheelchair accessible entrance"
+                ],
+                "expect": [
+                    "Modern design studio environment",
+                    "Private consultation rooms",
+                    "Material & finish samples library",
+                    "Coffee & refreshments provided"
+                ]
+            }
+        },
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "description": "Quick answers to common questions about our services and process",
+            "footer": "Still have questions? We're here to help.",
+            "email": "Send us an email",
+            "items": {
+                "1": {
+                    "question": "What should I prepare for the initial consultation?",
+                    "answer": "Bring any inspiration images, rough sketches, site photos, and a list of your requirements and budget range. We'll discuss your vision, timeline, and project scope to determine the best approach for your needs."
+                },
+                "2": {
+                    "question": "How long does the design process typically take?",
+                    "answer": "The timeline varies based on project complexity. Residential projects typically take 3-6 months for design development, while commercial projects may require 6-12 months. We'll provide a detailed timeline during your consultation."
+                },
+                "3": {
+                    "question": "Do you work on projects outside of Madrid?",
+                    "answer": "Yes, we work on projects throughout Spain and internationally. For projects outside Madrid, we may schedule additional site visits and coordinate with local contractors to ensure seamless execution."
+                },
+                "4": {
+                    "question": "What are your fees and payment structure?",
+                    "answer": "Our fees are project-based and depend on scope, complexity, and services required. We typically structure payments in phases: initial consultation, design development, construction documentation, and construction administration. Detailed fee proposals are provided after the initial consultation."
+                },
+                "5": {
+                    "question": "Can you help with permits and approvals?",
+                    "answer": "Absolutely. We handle all necessary permits, zoning approvals, and regulatory compliance as part of our comprehensive service. Our team has extensive experience navigating local building codes and regulations."
+                },
+                "6": {
+                    "question": "Do you provide construction management services?",
+                    "answer": "Yes, we offer full construction administration services, including contractor selection, bid review, site supervision, and quality control throughout the construction phase to ensure your project is built according to design specifications."
+                }
+            }
+        },
+        "footer": {
+            "description": "Transforming spaces with vision and creativity. Where function meets beauty to create extraordinary architectural experiences.",
+            "quickLinks": "Quick Links",
+            "home": "Home",
+            "portfolio": "Portfolio",
+            "services": "Services",
+            "about": "About",
+            "connect": "Connect With Us",
+            "follow": "Follow us for design inspiration and project updates",
+            "rights": "LCDREAM.ARQ. All rights reserved.",
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service"
+        }
+    },
+    "ProjectCaseStudies": {
+        "metadata": {
+            "title": "Project Case Studies - LCDREAM.ARQ",
+            "description": "Explore detailed case studies of our architectural projects, showcasing the design process, innovative solutions, and transformative results that enhance our clients' lives."
+        }
     }
-}
