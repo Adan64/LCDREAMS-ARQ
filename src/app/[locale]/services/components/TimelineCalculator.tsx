@@ -64,8 +64,8 @@ const TimelineCalculator = ({ projectTypes }: TimelineCalculatorProps) => {
                 key={type.id}
                 onClick={() => setSelectedType(type.id)}
                 className={`flex items-center space-x-2 p-3 rounded-lg border transition-all ${selectedType === type.id
-                    ? 'bg-accent text-accent-foreground border-accent'
-                    : 'bg-background text-muted-foreground border-border hover:border-accent/50'
+                  ? 'bg-accent text-accent-foreground border-accent'
+                  : 'bg-background text-muted-foreground border-border hover:border-accent/50'
                   }`}
               >
                 <Icon name={type.icon as any} size={18} />
@@ -77,7 +77,7 @@ const TimelineCalculator = ({ projectTypes }: TimelineCalculatorProps) => {
 
         <div>
           <label className="block text-sm font-body font-body-semibold text-card-foreground mb-2">
-            {t('labels.size')}
+            {t('labels.projectSize')}
           </label>
           <input
             type="range"
@@ -99,16 +99,16 @@ const TimelineCalculator = ({ projectTypes }: TimelineCalculatorProps) => {
           </label>
           <div className="flex space-x-3">
             {[
-              { id: 'low', label: t('complexity.low') },
-              { id: 'medium', label: t('complexity.medium') },
-              { id: 'high', label: t('complexity.high') }
+              { id: 'low', label: t('labels.complexityOptions.low') },
+              { id: 'medium', label: t('labels.complexityOptions.medium') },
+              { id: 'high', label: t('labels.complexityOptions.high') }
             ].map((option) => (
               <button
                 key={option.id}
                 onClick={() => setComplexity(option.id)}
                 className={`flex-1 py-2 px-4 rounded-lg text-sm font-body font-body-medium transition-all ${complexity === option.id
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'bg-muted text-muted-foreground hover:bg-muted/80'
                   }`}
               >
                 {option.label}
@@ -132,7 +132,7 @@ const TimelineCalculator = ({ projectTypes }: TimelineCalculatorProps) => {
             </div>
           </div>
           <p className="mt-4 text-xs font-body font-body-regular text-muted-foreground/80 italic">
-            * {t('disclaimer')}
+            * {t('labels.disclaimer')}
           </p>
         </div>
       </div>
