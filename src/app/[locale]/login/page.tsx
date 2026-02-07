@@ -15,16 +15,19 @@ export default function LoginPage() {
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
+        console.log("Intentando iniciar sesión con:", email);
 
-        const { error } = await supabase.auth.signInWithPassword({
+        const { data, error } = await supabase.auth.signInWithPassword({
             email,
             password,
         });
 
         if (error) {
-            alert('Error: ' + error.message);
+            console.error("Error de Login:", error);
+            alert(`Error: ${error.message}\nStatus: ${error.status}\nName: ${error.name}`);
             setLoading(false);
         } else {
+            console.log("Login Exitoso:", data);
             router.push('/admin');
             router.refresh();
         }
