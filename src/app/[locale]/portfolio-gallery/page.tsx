@@ -16,6 +16,8 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   };
 }
 
+export const dynamic = 'force-dynamic';
+
 import { createClient } from '@/lib/supabase/server';
 
 const PortfolioGalleryPage = async ({
