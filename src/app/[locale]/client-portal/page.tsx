@@ -4,9 +4,10 @@ import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from '@/i18n/routing';
 import { motion } from 'framer-motion';
-import { getProjectByCode } from '@/data/mock-client-portal';
+// import { getProjectByCode } from '@/data/mock-client-portal'; // Removed mock
 import Header from '@/components/common/Header';
 import AppIcon from '@/components/ui/AppIcon';
+import { createClient } from '@/lib/supabase/client';
 
 export default function ClientPortalLoginPage() {
     const t = useTranslations('ClientPortal.login');
@@ -14,27 +15,33 @@ export default function ClientPortalLoginPage() {
     const [accessCode, setAccessCode] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
+    const supabase = createClient();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setError('');
         setIsLoading(true);
 
-        try {
-            // Simulate network request
-            const project = await getProjectByCode(accessCode.trim());
+        const code = accessCode.trim().toUpperCase();
 
-            if (project) {
-                // In a real app, we would set a session cookie here
-                // For this demo, we just redirect with the project ID
+        try {
+            // Real Supabase Query
+            const { data: project, error } = await supabase
+                .from('projects')
+                .select('id')
+                .eq('access_code', code)
+                .single();
+
+            if (project && !error) {
                 router.push({
                     pathname: '/client-portal/dashboard',
                     query: { p: project.id }
                 } as any);
             } else {
-                setError(t('error'));
+                setError(t('error')); // "Invalid code"
             }
         } catch (err) {
+            console.error(err);
             setError(t('error'));
         } finally {
             setIsLoading(false);

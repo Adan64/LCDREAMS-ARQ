@@ -3,29 +3,113 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { MOCK_PROJECTS, MOCK_CLIENT } from '@/data/mock-client-portal';
 import Header from '@/components/common/Header';
 import AppIcon from '@/components/ui/AppIcon';
 import { motion } from 'framer-motion';
+import { createClient } from '@/lib/supabase/client';
+
+// Define types for our data
+type Project = {
+    id: string;
+    title: any; // jsonb
+    client: string;
+    status: string;
+    cover_image: string;
+    address: string; // We might need to map this or add it to DB if missing
+    progress: number;
+    start_date: string;
+    estimated_completion: string;
+    images: string[];
+    // Computed/Derived for UI
+    code?: string;
+};
+
+type Phase = {
+    id: string;
+    name: string;
+    description: string;
+    status: 'pending' | 'current' | 'completed';
+    date: string;
+};
+
+type Document = {
+    id: string;
+    title: string;
+    type: string;
+    url: string;
+    size: string;
+    date: string; // created_at
+};
 
 export default function ClientDashboardPage() {
     const t = useTranslations('ClientPortal.dashboard');
     const searchParams = useSearchParams();
     const router = useRouter();
     const projectId = searchParams.get('p');
+    const supabase = createClient();
 
-    // In a real app, we would fetch this from API/Supabase using the ID
-    const project = MOCK_PROJECTS.find(p => p.id === projectId);
-    const client = MOCK_CLIENT; // Simplified for demo
+    const [project, setProject] = useState<Project | null>(null);
+    const [phases, setPhases] = useState<Phase[]>([]);
+    const [documents, setDocuments] = useState<Document[]>([]);
+    const [loading, setLoading] = useState(true);
 
-    // Security check mock
     useEffect(() => {
-        if (!projectId || !project) {
+        if (!projectId) {
             router.push('/client-portal');
+            return;
         }
-    }, [projectId, project, router]);
+
+        const fetchData = async () => {
+            try {
+                // 1. Fetch Project
+                const { data: projectData, error: projectError } = await supabase
+                    .from('projects')
+                    .select('*')
+                    .eq('id', projectId)
+                    .single();
+
+                if (projectError || !projectData) throw new Error('Project not found');
+
+                // 2. Fetch Phases
+                const { data: phasesData } = await supabase
+                    .from('project_phases')
+                    .select('*')
+                    .eq('project_id', projectId)
+                    .order('order', { ascending: true });
+
+                // 3. Fetch Documents
+                const { data: docsData } = await supabase
+                    .from('project_documents')
+                    .select('*')
+                    .eq('project_id', projectId)
+                    .order('created_at', { ascending: false });
+
+                setProject(projectData);
+                setPhases(phasesData || []);
+                setDocuments(docsData || []);
+            } catch (error) {
+                console.error("Error fetching dashboard data:", error);
+                router.push('/client-portal'); // Redirect on error
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, [projectId, router]);
+
+    if (loading) {
+        return (
+            <div className="min-h-screen bg-black flex items-center justify-center">
+                <div className="w-8 h-8 border-4 border-yellow-500 border-t-transparent rounded-full animate-spin" />
+            </div>
+        );
+    }
 
     if (!project) return null;
+
+    // Helper to format currency/dates if needed
+    // const locale = ...
 
     // Animation variants
     const containerVariants = {
@@ -48,7 +132,7 @@ export default function ClientDashboardPage() {
             {/* Project Header */}
             <div className="bg-lcdream-charcoal text-white pt-24 pb-12 px-6 lg:px-12 relative overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <img src={project.coverImage} alt="Project Cover" className="w-full h-full object-cover opacity-20" />
+                    <img src={project.cover_image || '/images/placeholder.jpg'} alt="Project Cover" className="w-full h-full object-cover opacity-20" />
                     <div className="absolute inset-0 bg-gradient-to-t from-lcdream-charcoal via-lcdream-charcoal/80 to-transparent" />
                 </div>
 
@@ -57,27 +141,28 @@ export default function ClientDashboardPage() {
                         <div>
                             <div className="inline-flex items-center gap-2 bg-lcdream-gold/20 text-lcdream-gold px-3 py-1 rounded-full text-xs font-semibold mb-4">
                                 <span className="w-2 h-2 rounded-full bg-lcdream-gold animate-pulse" />
-                                {t(`status.${project.status === 'Construcción' ? 'current' : 'completed'}`)}
+                                {project.status /* Translate status if needed */}
                             </div>
                             <h1 className="font-headline text-3xl md:text-5xl font-headline-bold mb-2">
-                                {project.title}
+                                {/* Handle JSON title safely */}
+                                {(project.title as any)['es'] || project.title}
                             </h1>
                             <p className="text-lcdream-gray-light flex items-center gap-2">
                                 <AppIcon name="MapPinIcon" className="w-4 h-4" />
-                                {project.address}
+                                {project.client} {/* Using client as proxy for location/subtitle for now */}
                             </p>
                         </div>
 
                         <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl min-w-[280px]">
                             <p className="text-lcdream-gray text-sm mb-2">{t('progress')}</p>
                             <div className="flex items-end gap-2 mb-2">
-                                <span className="text-4xl font-headline-bold text-lcdream-gold">{project.progress}%</span>
+                                <span className="text-4xl font-headline-bold text-lcdream-gold">{project.progress || 0}%</span>
                                 <span className="text-sm text-lcdream-gray mb-1.5">completado</span>
                             </div>
                             <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
                                 <motion.div
                                     initial={{ width: 0 }}
-                                    animate={{ width: `${project.progress}%` }}
+                                    animate={{ width: `${project.progress || 0}%` }}
                                     transition={{ duration: 1.5, ease: "easeOut" }}
                                     className="h-full bg-lcdream-gold"
                                 />
@@ -102,51 +187,55 @@ export default function ClientDashboardPage() {
                                 <AppIcon name="ClockIcon" className="w-5 h-5 text-lcdream-gold" />
                                 {t('phases')}
                             </h2>
-                            <div className="space-y-6">
-                                {project.phases.map((phase, index) => (
-                                    <div key={phase.id} className="flex gap-4 relative">
-                                        {/* Activity Line */}
-                                        {index !== project.phases.length - 1 && (
-                                            <div className="absolute left-[15px] top-8 bottom-[-24px] w-0.5 bg-gray-100" />
-                                        )}
-
-                                        {/* Status Dot */}
-                                        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 z-10 ${phase.status === 'completed' ? 'bg-green-100 text-green-600' :
-                                            phase.status === 'current' ? 'bg-lcdream-gold text-white ring-4 ring-lcdream-gold/20' :
-                                                'bg-gray-100 text-gray-400'
-                                            }`}>
-                                            {phase.status === 'completed' ? (
-                                                <AppIcon name="CheckIcon" className="w-4 h-4" />
-                                            ) : (
-                                                <span className="text-xs font-bold">{index + 1}</span>
+                            {phases.length === 0 ? (
+                                <p className="text-gray-500 italic">No hay fases registradas aún.</p>
+                            ) : (
+                                <div className="space-y-6">
+                                    {phases.map((phase, index) => (
+                                        <div key={phase.id} className="flex gap-4 relative">
+                                            {/* Activity Line */}
+                                            {index !== phases.length - 1 && (
+                                                <div className="absolute left-[15px] top-8 bottom-[-24px] w-0.5 bg-gray-100" />
                                             )}
-                                        </div>
 
-                                        {/* Content */}
-                                        <div className="flex-1 pt-1">
-                                            <div className="flex justify-between items-start">
-                                                <h3 className={`font-semibold ${phase.status === 'current' ? 'text-lcdream-charcoal' : 'text-gray-600'
-                                                    }`}>
-                                                    {phase.name}
-                                                </h3>
-                                                {phase.date && (
-                                                    <span className="text-xs font-mono text-gray-400 bg-gray-50 px-2 py-1 rounded">
-                                                        {phase.date}
-                                                    </span>
+                                            {/* Status Dot */}
+                                            <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 z-10 ${phase.status === 'completed' ? 'bg-green-100 text-green-600' :
+                                                phase.status === 'current' ? 'bg-lcdream-gold text-white ring-4 ring-lcdream-gold/20' :
+                                                    'bg-gray-100 text-gray-400'
+                                                }`}>
+                                                {phase.status === 'completed' ? (
+                                                    <AppIcon name="CheckIcon" className="w-4 h-4" />
+                                                ) : (
+                                                    <span className="text-xs font-bold">{index + 1}</span>
                                                 )}
                                             </div>
-                                            {phase.description && (
-                                                <p className="text-sm text-gray-500 mt-1">
-                                                    {phase.description}
-                                                </p>
-                                            )}
+
+                                            {/* Content */}
+                                            <div className="flex-1 pt-1">
+                                                <div className="flex justify-between items-start">
+                                                    <h3 className={`font-semibold ${phase.status === 'current' ? 'text-lcdream-charcoal' : 'text-gray-600'
+                                                        }`}>
+                                                        {phase.name}
+                                                    </h3>
+                                                    {phase.date && (
+                                                        <span className="text-xs font-mono text-gray-400 bg-gray-50 px-2 py-1 rounded">
+                                                            {phase.date}
+                                                        </span>
+                                                    )}
+                                                </div>
+                                                {phase.description && (
+                                                    <p className="text-sm text-gray-500 mt-1">
+                                                        {phase.description}
+                                                    </p>
+                                                )}
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
-                            </div>
+                                    ))}
+                                </div>
+                            )}
                         </motion.div>
 
-                        {/* Photo Gallery */}
+                        {/* Photo Gallery - Using project.images if available */}
                         <motion.div variants={itemVariants} className="bg-white rounded-xl shadow-sm p-8 border border-gray-200">
                             <div className="flex items-center justify-between mb-6">
                                 <h2 className="font-headline text-xl font-headline-bold flex items-center gap-2 text-lcdream-charcoal">
@@ -155,23 +244,21 @@ export default function ClientDashboardPage() {
                                 </h2>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-4">
-                                {project.gallery.map((photo) => (
-                                    <div key={photo.id} className="group relative aspect-video rounded-lg overflow-hidden bg-gray-100 cursor-pointer">
-                                        <img
-                                            src={photo.url}
-                                            alt={photo.caption}
-                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                        />
-                                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                                            <div>
-                                                <p className="text-white text-sm font-semibold">{photo.caption}</p>
-                                                <p className="text-white/70 text-xs">{photo.date}</p>
-                                            </div>
+                            {!project.images || project.images.length === 0 ? (
+                                <p className="text-gray-500 italic">No hay fotos disponibles.</p>
+                            ) : (
+                                <div className="grid grid-cols-2 gap-4">
+                                    {project.images.map((url, idx) => (
+                                        <div key={idx} className="group relative aspect-video rounded-lg overflow-hidden bg-gray-100 cursor-pointer">
+                                            <img
+                                                src={url}
+                                                alt={`Project photo ${idx}`}
+                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            />
                                         </div>
-                                    </div>
-                                ))}
-                            </div>
+                                    ))}
+                                </div>
+                            )}
                         </motion.div>
                     </div>
 
@@ -183,48 +270,49 @@ export default function ClientDashboardPage() {
                                 <AppIcon name="DocumentTextIcon" className="w-5 h-5 text-lcdream-gold" />
                                 {t('documents')}
                             </h2>
-                            <div className="space-y-4">
-                                {project.documents.map((doc) => (
-                                    <div key={doc.id} className="flex items-center gap-3 p-3 rounded-lg border border-gray-100 hover:border-lcdream-gold/30 hover:bg-orange-50/30 transition-all group cursor-pointer">
-                                        <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center text-red-500 flex-shrink-0">
-                                            <span className="text-xs font-bold uppercase">{doc.type}</span>
+                            {documents.length === 0 ? (
+                                <p className="text-gray-500 italic">No hay documentos.</p>
+                            ) : (
+                                <div className="space-y-4">
+                                    {documents.map((doc) => (
+                                        <div key={doc.id} className="flex items-center gap-3 p-3 rounded-lg border border-gray-100 hover:border-lcdream-gold/30 hover:bg-orange-50/30 transition-all group cursor-pointer" onClick={() => window.open(doc.url, '_blank')}>
+                                            <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center text-red-500 flex-shrink-0">
+                                                <span className="text-xs font-bold uppercase">{doc.type || 'PDF'}</span>
+                                            </div>
+                                            <div className="flex-1 min-w-0">
+                                                <p className="text-sm font-semibold text-gray-700 truncate group-hover:text-lcdream-charcoal">{doc.title}</p>
+                                                <p className="text-xs text-gray-400">{new Date(doc.date).toLocaleDateString()} • {doc.size || 'N/A'}</p>
+                                            </div>
+                                            <AppIcon name="ArrowDownTrayIcon" className="w-4 h-4 text-gray-300 group-hover:text-lcdream-gold" />
                                         </div>
-                                        <div className="flex-1 min-w-0">
-                                            <p className="text-sm font-semibold text-gray-700 truncate group-hover:text-lcdream-charcoal">{doc.title}</p>
-                                            <p className="text-xs text-gray-400">{doc.date} • {doc.size}</p>
-                                        </div>
-                                        <AppIcon name="ArrowDownTrayIcon" className="w-4 h-4 text-gray-300 group-hover:text-lcdream-gold" />
-                                    </div>
-                                ))}
-                            </div>
-                            <button className="w-full mt-6 py-3 px-4 text-sm font-cta-semibold text-white bg-lcdream-charcoal rounded-lg hover:bg-black transition-all shadow-md transform hover:scale-[1.02] active:scale-95">
-                                {t('download')}
-                            </button>
+                                    ))}
+                                </div>
+                            )}
                         </motion.div>
 
                         {/* Client Card */}
                         <motion.div variants={itemVariants} className="bg-lcdream-charcoal p-8 rounded-xl text-white">
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="w-12 h-12 rounded-full bg-lcdream-gold flex items-center justify-center font-bold text-lcdream-charcoal text-xl">
-                                    {client.avatar}
+                                    {project.client?.charAt(0) || 'C'}
                                 </div>
                                 <div>
                                     <p className="text-sm text-lcdream-gray-light">Área Privada</p>
-                                    <p className="font-semibold">{client.name}</p>
+                                    <p className="font-semibold">{project.client}</p>
                                 </div>
                             </div>
                             <div className="space-y-3 text-sm text-lcdream-gray-light font-mono">
                                 <div className="flex justify-between">
-                                    <span>Proyecto:</span>
-                                    <span className="text-white">{project.code}</span>
+                                    <span>Código:</span>
+                                    <span className="text-white">{(project as any).access_code || '---'}</span>
                                 </div>
                                 <div className="flex justify-between">
                                     <span>Inicio:</span>
-                                    <span className="text-white">{project.startDate}</span>
+                                    <span className="text-white">{project.start_date || '---'}</span>
                                 </div>
                                 <div className="flex justify-between">
                                     <span>Entrega Est.:</span>
-                                    <span className="text-white">{project.estimatedCompletion}</span>
+                                    <span className="text-white">{project.estimated_completion || '---'}</span>
                                 </div>
                             </div>
                         </motion.div>
