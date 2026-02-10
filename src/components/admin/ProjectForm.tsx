@@ -149,13 +149,13 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
 
       if (error) throw error;
 
-      alert(initialData ? '¡Proyecto actualizado!' : '¡Proyecto creado con éxito!');
+      alert(initialData ? t('alerts.updated') : t('alerts.created'));
       router.push('/admin/projects');
       router.refresh();
 
     } catch (error) {
       console.error('Error:', error);
-      alert('Error al guardar el proyecto.');
+      alert(t('alerts.error'));
     } finally {
       setIsSubmitting(false);
     }
@@ -187,7 +187,7 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
                     value={formData.title}
                     onChange={handleChange}
                     className="flex-1 border-0 bg-transparent py-2.5 pl-3 text-white placeholder:text-gray-500 focus:ring-0 sm:text-sm sm:leading-6"
-                    placeholder="Ej: Casa en la Playa"
+                    placeholder={t('placeholders.title')}
                   />
                 </div>
               </div>
@@ -261,7 +261,7 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
                       id="access_code"
                       value={formData.access_code}
                       onChange={handleChange}
-                      placeholder="Ej: VILLA2024"
+                      placeholder={t('placeholders.accessCode')}
                       className="block w-full rounded-md border-0 bg-gray-700/50 py-2.5 text-white shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-yellow-500 sm:text-sm sm:leading-6"
                     />
                   </div>
@@ -326,7 +326,7 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
               </label>
               {initialData?.cover_image && (
                 <div className="mb-4">
-                  <p className="text-xs text-gray-400 mb-2">Imagen actual:</p>
+                  <p className="text-xs text-gray-400 mb-2">{t('currentImage')}</p>
                   <img src={initialData.cover_image} alt="Cover" className="h-32 rounded-lg object-cover" />
                 </div>
               )}
@@ -347,9 +347,9 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
                         <span className="relative rounded-md font-semibold text-yellow-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-yellow-500 focus-within:ring-offset-2 hover:text-yellow-400">
                           {initialData?.cover_image ? t('uploadImage') : t('uploadImage')}
                         </span>
-                        <p className="pl-1">o arrastra y suelta</p>
+                        <p className="pl-1">{t('dragDrop')}</p>
                       </div>
-                      <p className="text-xs leading-5 text-gray-500">PNG, JPG, GIF hasta 10MB</p>
+                      <p className="text-xs leading-5 text-gray-500">{t('formats')}</p>
                     </>
                   )}
                 </div>

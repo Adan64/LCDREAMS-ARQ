@@ -1869,7 +1869,19 @@
                 "accessCode": "Código de Acceso (Contraseña)",
                 "progress": "Progreso (%)",
                 "startDate": "Fecha de Inicio",
-                "estimatedDate": "Fecha Estimada Entrega"
+                "estimatedDate": "Fecha Estimada Entrega",
+                "currentImage": "Imagen actual:",
+                "dragDrop": "o arrastra y suelta",
+                "formats": "PNG, JPG, GIF hasta 10MB",
+                "alerts": {
+                    "updated": "¡Proyecto actualizado!",
+                    "created": "¡Proyecto creado con éxito!",
+                    "error": "Error al guardar el proyecto."
+                },
+                "placeholders": {
+                    "title": "Ej: Casa en la Playa",
+                    "accessCode": "Ej: VILLA2024"
+                }
             }
         },
         "Phases": {
@@ -1923,7 +1935,16 @@
                 "update": "Actualizar Entrada",
                 "cancel": "Cancelar",
                 "saving": "Guardando...",
-                "imageHelper": "Sube una imagen"
+                "imageHelper": "Sube una imagen",
+                "currentImage": "Imagen actual:",
+                "alerts": {
+                    "updated": "¡Post actualizado!",
+                    "created": "¡Post creado!",
+                    "error": "Error al guardar el post."
+                },
+                "placeholders": {
+                    "tags": "Arquitectura, Diseño, Noticias"
+                }
             }
         }
     }

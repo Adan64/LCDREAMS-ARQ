@@ -1879,7 +1879,19 @@
                 "accessCode": "Access Code (Password)",
                 "progress": "Progress (%)",
                 "startDate": "Start Date",
-                "estimatedDate": "Estimated Completion Date"
+                "estimatedDate": "Estimated Completion Date",
+                "currentImage": "Current image:",
+                "dragDrop": "or drag and drop",
+                "formats": "PNG, JPG, GIF up to 10MB",
+                "alerts": {
+                    "updated": "Project updated!",
+                    "created": "Project created successfully!",
+                    "error": "Error saving project."
+                },
+                "placeholders": {
+                    "title": "Ex: Beach House",
+                    "accessCode": "Ex: VILLA2024"
+                }
             }
         },
         "Phases": {
@@ -1942,7 +1954,16 @@
                 "update": "Update Post",
                 "cancel": "Cancel",
                 "saving": "Saving...",
-                "imageHelper": "Upload an image"
+                "imageHelper": "Upload an image",
+                "currentImage": "Current image:",
+                "alerts": {
+                    "updated": "Post updated!",
+                    "created": "Post created!",
+                    "error": "Error saving post."
+                },
+                "placeholders": {
+                    "tags": "Architecture, Design, News"
+                }
             }
         }
     }

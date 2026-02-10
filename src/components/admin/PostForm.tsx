@@ -134,13 +134,13 @@ export default function PostForm({ initialData }: PostFormProps) {
 
             if (error) throw error;
 
-            alert(initialData ? 'Post updated!' : 'Post created!');
+            alert(initialData ? t('alerts.updated') : t('alerts.created'));
             router.push('/admin/blog');
             router.refresh();
 
         } catch (error) {
             console.error('Error:', error);
-            alert('Error saving post.');
+            alert(t('alerts.error'));
         } finally {
             setIsSubmitting(false);
         }
@@ -269,7 +269,7 @@ export default function PostForm({ initialData }: PostFormProps) {
                                     id="tags"
                                     value={formData.tags}
                                     onChange={handleChange}
-                                    placeholder="Architecture, Design, News"
+                                    placeholder={t('placeholders.tags')}
                                     className="block w-full rounded-md border-0 bg-gray-700/50 py-2.5 text-white shadow-sm ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-inset focus:ring-yellow-500 sm:text-sm sm:leading-6"
                                 />
                             </div>
@@ -281,7 +281,7 @@ export default function PostForm({ initialData }: PostFormProps) {
                             </label>
                             {initialData?.cover_image && (
                                 <div className="mb-4">
-                                    <p className="text-xs text-gray-400 mb-2">Current Image:</p>
+                                    <p className="text-xs text-gray-400 mb-2">{t('currentImage')}</p>
                                     <img src={initialData.cover_image} alt="Cover" className="h-32 rounded-lg object-cover" />
                                 </div>
                             )}
@@ -314,14 +314,14 @@ export default function PostForm({ initialData }: PostFormProps) {
 
             <div className="pt-8 flex items-center justify-end gap-x-6">
                 <Link href="/admin/blog" className="text-sm font-semibold leading-6 text-white hover:text-gray-300">
-                    {t('cancel') || 'Cancel'}
+                    {t('cancel')}
                 </Link>
                 <button
                     type="submit"
                     disabled={isSubmitting}
                     className="rounded-md bg-yellow-500 px-6 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 >
-                    {isSubmitting ? (t('saving') || 'Saving...') : (initialData ? t('update') : t('save'))}
+                    {isSubmitting ? t('saving') : (initialData ? t('update') : t('save'))}
                 </button>
             </div>
         </form>

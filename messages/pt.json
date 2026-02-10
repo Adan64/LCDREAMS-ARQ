@@ -1882,7 +1882,19 @@
                 "accessCode": "Código de Acesso (Senha)",
                 "progress": "Progresso (%)",
                 "startDate": "Data de Início",
-                "estimatedDate": "Data Estimada de Entrega"
+                "estimatedDate": "Data Estimada de Entrega",
+                "currentImage": "Imagem atual:",
+                "dragDrop": "ou arraste e solte",
+                "formats": "PNG, JPG, GIF até 10MB",
+                "alerts": {
+                    "updated": "Projeto atualizado!",
+                    "created": "Projeto criado com sucesso!",
+                    "error": "Erro ao salvar o projeto."
+                },
+                "placeholders": {
+                    "title": "Ex: Casa na Praia",
+                    "accessCode": "Ex: VILLA2024"
+                }
             }
         },
         "Phases": {
@@ -1936,7 +1948,16 @@
                 "update": "Atualizar Postagem",
                 "cancel": "Cancelar",
                 "saving": "Salvando...",
-                "imageHelper": "Carregar uma imagem"
+                "imageHelper": "Carregar uma imagem",
+                "currentImage": "Imagem atual:",
+                "alerts": {
+                    "updated": "Post atualizado!",
+                    "created": "Post criado!",
+                    "error": "Erro ao salvar o post."
+                },
+                "placeholders": {
+                    "tags": "Arquitetura, Design, Notícias"
+                }
             }
         }
     }

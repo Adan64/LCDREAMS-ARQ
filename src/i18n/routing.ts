@@ -23,7 +23,12 @@ export const routing = defineRouting({
     '/admin': '/admin',
     '/admin/blog': '/admin/blog',
     '/admin/blog/new': '/admin/blog/new',
-    '/admin/blog/edit/[id]': '/admin/blog/edit/[id]'
+    '/admin/blog/edit/[id]': '/admin/blog/edit/[id]',
+    '/admin/projects': '/admin/projects',
+    '/admin/projects/new': '/admin/projects/new',
+    '/admin/projects/edit/[id]': '/admin/projects/edit/[id]',
+    '/admin/users': '/admin/users',
+    '/admin/settings': '/admin/settings'
   }
 });
 
