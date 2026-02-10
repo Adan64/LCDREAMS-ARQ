@@ -13,7 +13,7 @@ interface BeforeAfterSliderProps {
 }
 
 const BeforeAfterSlider = ({ beforeImage, beforeImageAlt, afterImage, afterImageAlt, title }: BeforeAfterSliderProps) => {
-  const t = useTranslations('ProjectCaseStudies.beforeAfter');
+  const t = useTranslations('ProjectCaseStudies.common.beforeAfter');
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
 

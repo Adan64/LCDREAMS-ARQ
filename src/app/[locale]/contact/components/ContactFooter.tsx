@@ -84,18 +84,18 @@ const ContactFooter = ({ className = '' }: ContactFooterProps) => {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3 text-gray-400">
                 <Icon name="MapPinIcon" size={20} className="mt-1 text-accent flex-shrink-0" />
-                <span className="font-body">Calle de Serrano 45, 28001 Madrid, Spain</span>
+                <span className="font-body">Madrid, España</span>
               </li>
               <li className="flex items-start space-x-3 text-gray-400">
                 <Icon name="PhoneIcon" size={20} className="mt-1 text-accent flex-shrink-0" />
-                <a href="tel:+34912345678" className="font-body hover:text-white transition-colors">
-                  +34 912 345 678
+                <a href="tel:+595971954037" className="font-body hover:text-white transition-colors">
+                  +595 971 954 037
                 </a>
               </li>
               <li className="flex items-start space-x-3 text-gray-400">
                 <Icon name="EnvelopeIcon" size={20} className="mt-1 text-accent flex-shrink-0" />
-                <a href="mailto:contact@lcdream.arq" className="font-body hover:text-white transition-colors">
-                  contact@lcdream.arq
+                <a href="mailto:badan4074@gmail.com" className="font-body hover:text-white transition-colors">
+                  badan4074@gmail.com
                 </a>
               </li>
             </ul>

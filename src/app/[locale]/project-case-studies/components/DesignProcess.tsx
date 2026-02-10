@@ -17,7 +17,7 @@ interface DesignProcessProps {
 }
 
 const DesignProcess = ({ steps }: DesignProcessProps) => {
-  const t = useTranslations('ProjectCaseStudies.process');
+  const t = useTranslations('ProjectCaseStudies.common.process');
   return (
     <section className="py-16 lg:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">

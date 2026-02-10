@@ -1,14 +1,72 @@
-import { Link } from '@/i18n/routing';
-import { PencilSquareIcon, TrashIcon } from '@heroicons/react/24/outline';
+'use client';
 
-const projects = [
-    { id: 1, title: 'Casa en la Playa', client: 'Familia Pérez', status: 'En Construcción', date: '2025-01-15' },
-    { id: 2, title: 'Oficinas TechHub', client: 'Innovate Corp', status: 'Diseño', date: '2025-02-01' },
-    { id: 3, title: 'Restaurante El Jardín', client: 'Chef Mario', status: 'Completado', date: '2024-11-20' },
-    { id: 4, title: 'Residencia Monteverde', client: 'Sr. Gómez', status: 'Licencia', date: '2024-12-10' },
-];
+import { useEffect, useState } from 'react';
+import { Link, useRouter } from '@/i18n/routing';
+import { PencilSquareIcon, TrashIcon } from '@heroicons/react/24/outline';
+import { createClient } from '@/lib/supabase/client';
+
+type Project = {
+    id: string;
+    title: any;
+    client: string;
+    status: string;
+    created_at: string;
+};
 
 export default function AdminProjectsPage() {
+    const [projects, setProjects] = useState<Project[]>([]);
+    const [loading, setLoading] = useState(true);
+    const supabase = createClient();
+    const router = useRouter();
+
+    const fetchProjects = async () => {
+        try {
+            const { data, error } = await supabase
+                .from('projects')
+                .select('*')
+                .order('created_at', { ascending: false });
+
+            if (error) throw error;
+            setProjects(data || []);
+        } catch (error) {
+            console.error('Error fetching projects:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchProjects();
+    }, []);
+
+    const handleDelete = async (id: string) => {
+        if (!confirm('¿Estás seguro de que quieres eliminar este proyecto?')) return;
+
+        try {
+            const { error } = await supabase
+                .from('projects')
+                .delete()
+                .eq('id', id);
+
+            if (error) throw error;
+
+            // Optimistic update
+            setProjects(projects.filter(p => p.id !== id));
+            router.refresh();
+        } catch (error) {
+            console.error('Error deleting project:', error);
+            alert('Error al eliminar el proyecto.');
+        }
+    };
+
+    // Helper to get localized title
+    const getTitle = (title: any) => {
+        if (typeof title === 'string') return title;
+        return title?.es || 'Sin título';
+    };
+
+    if (loading) return <div className="text-white">Cargando proyectos...</div>;
+
     return (
         <div className="space-y-6">
             <div className="flex items-center justify-between">
@@ -33,27 +91,46 @@ export default function AdminProjectsPage() {
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-700 bg-gray-800">
-                        {projects.map((project) => (
-                            <tr key={project.id} className="hover:bg-gray-700/50 transition-colors">
-                                <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-white sm:pl-6">{project.title}</td>
-                                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-300">{project.client}</td>
-                                <td className="whitespace-nowrap px-3 py-4 text-sm">
-                                    <span className={`inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ${project.status === 'Completado' ? 'bg-green-400/10 text-green-400 ring-green-400/20' :
-                                        project.status === 'En Construcción' ? 'bg-blue-400/10 text-blue-400 ring-blue-400/20' :
-                                            'bg-yellow-400/10 text-yellow-400 ring-yellow-400/20'
-                                        }`}>
-                                        {project.status}
-                                    </span>
-                                </td>
-                                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-400">{project.date}</td>
-                                <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                    <div className="flex justify-end gap-3">
-                                        <button className="text-gray-400 hover:text-white transition-colors"><PencilSquareIcon className="h-5 w-5" /></button>
-                                        <button className="text-gray-400 hover:text-red-400 transition-colors"><TrashIcon className="h-5 w-5" /></button>
-                                    </div>
+                        {projects.length === 0 ? (
+                            <tr>
+                                <td colSpan={5} className="py-8 text-center text-gray-500">
+                                    No hay proyectos aún.
                                 </td>
                             </tr>
-                        ))}
+                        ) : (
+                            projects.map((project) => (
+                                <tr key={project.id} className="hover:bg-gray-700/50 transition-colors">
+                                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-white sm:pl-6">
+                                        {getTitle(project.title)}
+                                    </td>
+                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-300">{project.client}</td>
+                                    <td className="whitespace-nowrap px-3 py-4 text-sm">
+                                        <span className={`inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ${project.status === 'Completado' ? 'bg-green-400/10 text-green-400 ring-green-400/20' :
+                                            project.status === 'En Construcción' ? 'bg-blue-400/10 text-blue-400 ring-blue-400/20' :
+                                                'bg-yellow-400/10 text-yellow-400 ring-yellow-400/20'
+                                            }`}>
+                                            {project.status}
+                                        </span>
+                                    </td>
+                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-400">
+                                        {new Date(project.created_at).toLocaleDateString()}
+                                    </td>
+                                    <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                        <div className="flex justify-end gap-3">
+                                            <Link href={`/admin/projects/${project.id}`} className="text-gray-400 hover:text-white transition-colors">
+                                                <PencilSquareIcon className="h-5 w-5" />
+                                            </Link>
+                                            <button
+                                                onClick={() => handleDelete(project.id)}
+                                                className="text-gray-400 hover:text-red-400 transition-colors"
+                                            >
+                                                <TrashIcon className="h-5 w-5" />
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))
+                        )}
                     </tbody>
                 </table>
             </div>

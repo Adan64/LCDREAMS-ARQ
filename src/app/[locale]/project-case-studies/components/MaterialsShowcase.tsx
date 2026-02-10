@@ -15,7 +15,7 @@ interface MaterialsShowcaseProps {
 }
 
 const MaterialsShowcase = ({ materials }: MaterialsShowcaseProps) => {
-  const t = useTranslations('ProjectCaseStudies.materials');
+  const t = useTranslations('ProjectCaseStudies.common.materials');
   return (
     <section className="py-16 lg:py-24 bg-muted">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">

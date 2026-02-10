@@ -8,7 +8,8 @@ import Icon from '@/components/ui/AppIcon';
 import Link from 'next/link';
 import FooterSection from '../homepage/components/FooterSection';
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'PortfolioGallery.metadata' });
   return {
     title: t('title'),
@@ -21,10 +22,11 @@ export const dynamic = 'force-dynamic';
 import { createClient } from '@/lib/supabase/server';
 
 const PortfolioGalleryPage = async ({
-  params: { locale }
+  params
 }: {
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) => {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'PortfolioGallery' });
   const supabase = await createClient();
 
@@ -34,16 +36,16 @@ const PortfolioGalleryPage = async ({
     .select('*')
     .order('created_at', { ascending: false });
 
-  // Tranform DB data to UI format
-  const projects = dbProjects?.map(p => ({
+  // Transform DB data to UI format
+  const projects = (dbProjects as any[])?.map(p => ({
     id: p.id,
-    title: p.title[locale] || p.title['es'] || 'Sin Título',
-    category: p.category || 'Residencial', // Fallback or mapping needed if categories are keys
-    location: 'Ubicación Desconocida', // DB needs location column, using placeholder for now
+    title: p.title?.[locale] || p.title?.['es'] || 'Sin Título',
+    category: p.category || 'Residencial',
+    location: 'Ubicación Desconocida',
     year: new Date(p.created_at).getFullYear(),
     image: p.cover_image || 'https://via.placeholder.com/800x600',
-    alt: p.title[locale] || 'Project Image',
-    area: '0 m²', // DB needs area column
+    alt: p.title?.[locale] || 'Project Image',
+    area: '0 m²',
     description: p.description?.[locale] || '',
     featured: false
   })) || [];

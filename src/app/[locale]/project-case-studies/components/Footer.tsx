@@ -57,7 +57,7 @@ const Footer = () => {
                 />
               </svg>
               <span className="font-headline text-xl font-headline-bold">
-LCDREAM.ARQ
+                LCDREAM.ARQ
               </span>
             </Link>
             <p className="font-body text-sm text-primary-foreground/70 leading-relaxed">
@@ -127,19 +127,19 @@ LCDREAM.ARQ
             </p>
             <div className="flex space-x-6">
               <Link
-                href="#"
+                href="/privacy"
                 className="font-body text-sm text-primary-foreground/60 hover:text-accent transition-smooth"
               >
                 Privacidad
               </Link>
               <Link
-                href="#"
+                href="/terms"
                 className="font-body text-sm text-primary-foreground/60 hover:text-accent transition-smooth"
               >
                 Términos
               </Link>
               <Link
-                href="#"
+                href="/cookies"
                 className="font-body text-sm text-primary-foreground/60 hover:text-accent transition-smooth"
               >
                 Cookies

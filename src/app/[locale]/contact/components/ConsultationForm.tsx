@@ -171,30 +171,30 @@ const ConsultationForm = ({ className = '' }: ConsultationFormProps) => {
   }
 
   return (
-    <section className={`py-20 lg:py-32 bg-white ${className}`}>
+    <section className={`py-20 lg:py-32 bg-lcdream-dark-bg ${className}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
           <div className="lg:col-span-5">
-            <h2 className="font-headline text-4xl lg:text-5xl font-headline-bold text-primary mb-6 leading-tight">
+            <h2 className="font-headline text-4xl lg:text-5xl font-headline-bold text-lcdream-gold mb-6 leading-tight">
               {t('title')}
             </h2>
-            <p className="font-body text-xl text-text-secondary leading-relaxed mb-8">
+            <p className="font-body text-xl text-lcdream-gray-light leading-relaxed mb-8">
               {t('description')}
             </p>
 
-            <div className="bg-muted p-8 rounded-lg border border-border">
-              <h3 className="font-headline text-lg font-headline-semibold text-primary mb-4">
+            <div className="bg-lcdream-gray-dark/20 p-8 rounded-lg border border-lcdream-gold/20">
+              <h3 className="font-headline text-lg font-headline-semibold text-lcdream-gold mb-4">
                 {t('location.addressTitle')}
               </h3>
-              <p className="font-body text-base text-text-secondary mb-6">
+              <p className="font-body text-base text-lcdream-gray-light mb-6">
                 Calle de Serrano 45, 3rd Floor<br />
                 28001 Madrid, Spain
               </p>
 
-              <h3 className="font-headline text-lg font-headline-semibold text-primary mb-4">
+              <h3 className="font-headline text-lg font-headline-semibold text-lcdream-gold mb-4">
                 {t('location.hoursTitle')}
               </h3>
-              <p className="font-body text-base text-text-secondary">
+              <p className="font-body text-base text-lcdream-gray-light">
                 Monday - Friday: 9:00 - 18:00<br />
                 Saturday: By Appointment
               </p>
@@ -205,7 +205,7 @@ const ConsultationForm = ({ className = '' }: ConsultationFormProps) => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="block font-body text-sm font-body-medium text-primary">
+                  <label htmlFor="name" className="block font-body text-sm font-body-medium text-lcdream-white">
                     {t('fields.name')}
                   </label>
                   <input
@@ -214,14 +214,14 @@ const ConsultationForm = ({ className = '' }: ConsultationFormProps) => {
                     name="name"
                     value={formState.name}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 rounded-md border ${errors.name ? 'border-red-500 focus:ring-red-200' : 'border-input focus:ring-accent/20'} bg-background focus:outline-none focus:ring-2 focus:border-accent transition-all`}
+                    className={`w-full px-4 py-3 rounded-md border ${errors.name ? 'border-red-500 focus:ring-red-200' : 'border-lcdream-gold/20 focus:ring-lcdream-gold/20'} bg-black/50 text-white focus:outline-none focus:ring-2 focus:border-lcdream-gold transition-all`}
                     placeholder={t('fields.namePlaceholder')}
                   />
                   {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="phone" className="block font-body text-sm font-body-medium text-primary">
+                  <label htmlFor="phone" className="block font-body text-sm font-body-medium text-lcdream-white">
                     {t('fields.phone')}
                   </label>
                   <input
@@ -230,7 +230,7 @@ const ConsultationForm = ({ className = '' }: ConsultationFormProps) => {
                     name="phone"
                     value={formState.phone}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 rounded-md border ${errors.phone ? 'border-red-500 focus:ring-red-200' : 'border-input focus:ring-accent/20'} bg-background focus:outline-none focus:ring-2 focus:border-accent transition-all`}
+                    className={`w-full px-4 py-3 rounded-md border ${errors.phone ? 'border-red-500 focus:ring-red-200' : 'border-lcdream-gold/20 focus:ring-lcdream-gold/20'} bg-black/50 text-white focus:outline-none focus:ring-2 focus:border-lcdream-gold transition-all`}
                     placeholder={t('fields.phonePlaceholder')}
                   />
                   {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
@@ -238,7 +238,7 @@ const ConsultationForm = ({ className = '' }: ConsultationFormProps) => {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="email" className="block font-body text-sm font-body-medium text-primary">
+                <label htmlFor="email" className="block font-body text-sm font-body-medium text-lcdream-white">
                   {t('fields.email')}
                 </label>
                 <input
@@ -247,7 +247,7 @@ const ConsultationForm = ({ className = '' }: ConsultationFormProps) => {
                   name="email"
                   value={formState.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-md border ${errors.email ? 'border-red-500 focus:ring-red-200' : 'border-input focus:ring-accent/20'} bg-background focus:outline-none focus:ring-2 focus:border-accent transition-all`}
+                  className={`w-full px-4 py-3 rounded-md border ${errors.email ? 'border-red-500 focus:ring-red-200' : 'border-lcdream-gold/20 focus:ring-lcdream-gold/20'} bg-black/50 text-white focus:outline-none focus:ring-2 focus:border-lcdream-gold transition-all`}
                   placeholder={t('fields.emailPlaceholder')}
                 />
                 {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
@@ -255,7 +255,7 @@ const ConsultationForm = ({ className = '' }: ConsultationFormProps) => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="projectType" className="block font-body text-sm font-body-medium text-primary">
+                  <label htmlFor="projectType" className="block font-body text-sm font-body-medium text-lcdream-white">
                     {t('fields.projectType')}
                   </label>
                   <div className="relative">
@@ -264,20 +264,20 @@ const ConsultationForm = ({ className = '' }: ConsultationFormProps) => {
                       name="projectType"
                       value={formState.projectType}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-md border ${errors.projectType ? 'border-red-500 focus:ring-red-200' : 'border-input focus:ring-accent/20'} bg-background focus:outline-none focus:ring-2 focus:border-accent transition-all appearance-none cursor-pointer`}
+                      className={`w-full px-4 py-3 rounded-md border ${errors.projectType ? 'border-red-500 focus:ring-red-200' : 'border-lcdream-gold/20 focus:ring-lcdream-gold/20'} bg-black/50 text-white focus:outline-none focus:ring-2 focus:border-lcdream-gold transition-all appearance-none cursor-pointer`}
                     >
-                      <option value="" disabled>{t('fields.selectProject')}</option>
+                      <option value="" disabled className="text-gray-500">{t('fields.selectProject')}</option>
                       {projectTypes.map(type => (
-                        <option key={type.value} value={type.value}>{type.label}</option>
+                        <option key={type.value} value={type.value} className="text-black">{type.label}</option>
                       ))}
                     </select>
-                    <Icon name="ChevronDownIcon" size={16} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-text-secondary pointer-events-none" />
+                    <Icon name="ChevronDownIcon" size={16} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-lcdream-gold pointer-events-none" />
                   </div>
                   {errors.projectType && <p className="text-red-500 text-xs mt-1">{errors.projectType}</p>}
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="budget" className="block font-body text-sm font-body-medium text-primary">
+                  <label htmlFor="budget" className="block font-body text-sm font-body-medium text-lcdream-white">
                     {t('fields.budget')}
                   </label>
                   <div className="relative">
@@ -286,20 +286,20 @@ const ConsultationForm = ({ className = '' }: ConsultationFormProps) => {
                       name="budget"
                       value={formState.budget}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all appearance-none cursor-pointer"
+                      className="w-full px-4 py-3 rounded-md border border-lcdream-gold/20 bg-black/50 text-white focus:outline-none focus:ring-2 focus:ring-lcdream-gold/20 focus:border-lcdream-gold transition-all appearance-none cursor-pointer"
                     >
-                      <option value="" disabled>{t('fields.selectBudget')}</option>
+                      <option value="" disabled className="text-gray-500">{t('fields.selectBudget')}</option>
                       {budgetRanges.map(range => (
-                        <option key={range.value} value={range.value}>{range.label}</option>
+                        <option key={range.value} value={range.value} className="text-black">{range.label}</option>
                       ))}
                     </select>
-                    <Icon name="ChevronDownIcon" size={16} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-text-secondary pointer-events-none" />
+                    <Icon name="ChevronDownIcon" size={16} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-lcdream-gold pointer-events-none" />
                   </div>
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="timeline" className="block font-body text-sm font-body-medium text-primary">
+                <label htmlFor="timeline" className="block font-body text-sm font-body-medium text-lcdream-white">
                   {t('fields.timeline')}
                 </label>
                 <div className="relative">
@@ -308,19 +308,19 @@ const ConsultationForm = ({ className = '' }: ConsultationFormProps) => {
                     name="timeline"
                     value={formState.timeline}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all appearance-none cursor-pointer"
+                    className="w-full px-4 py-3 rounded-md border border-lcdream-gold/20 bg-black/50 text-white focus:outline-none focus:ring-2 focus:ring-lcdream-gold/20 focus:border-lcdream-gold transition-all appearance-none cursor-pointer"
                   >
-                    <option value="" disabled>{t('fields.selectTimeline')}</option>
+                    <option value="" disabled className="text-gray-500">{t('fields.selectTimeline')}</option>
                     {timelines.map(timeline => (
-                      <option key={timeline.value} value={timeline.value}>{timeline.label}</option>
+                      <option key={timeline.value} value={timeline.value} className="text-black">{timeline.label}</option>
                     ))}
                   </select>
-                  <Icon name="ChevronDownIcon" size={16} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-text-secondary pointer-events-none" />
+                  <Icon name="ChevronDownIcon" size={16} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-lcdream-gold pointer-events-none" />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="details" className="block font-body text-sm font-body-medium text-primary">
+                <label htmlFor="details" className="block font-body text-sm font-body-medium text-lcdream-white">
                   {t('fields.details')}
                 </label>
                 <textarea
@@ -329,56 +329,51 @@ const ConsultationForm = ({ className = '' }: ConsultationFormProps) => {
                   value={formState.details}
                   onChange={handleChange}
                   rows={4}
-                  className={`w-full px-4 py-3 rounded-md border ${errors.details ? 'border-red-500 focus:ring-red-200' : 'border-input focus:ring-accent/20'} bg-background focus:outline-none focus:ring-2 focus:border-accent transition-all resize-y`}
+                  className={`w-full px-4 py-3 rounded-md border ${errors.details ? 'border-red-500 focus:ring-red-200' : 'border-lcdream-gold/20 focus:ring-lcdream-gold/20'} bg-black/50 text-white focus:outline-none focus:ring-2 focus:border-lcdream-gold transition-all resize-y`}
                   placeholder={t('fields.detailsPlaceholder')}
                 />
                 {errors.details && <p className="text-red-500 text-xs mt-1">{errors.details}</p>}
               </div>
 
-              <div className="space-y-2">
-                <label className="block font-body text-sm font-body-medium text-primary mb-2">
+              <div className="space-y-4">
+                <label className="block font-body text-sm font-body-medium text-lcdream-white">
                   {t('fields.preferredContact')}
                 </label>
-                <div className="flex space-x-6">
-                  <label className="flex items-center cursor-pointer group">
-                    <input
-                      type="radio"
-                      name="preferredContact"
-                      value="email"
-                      checked={formState.preferredContact === 'email'}
-                      onChange={handleChange}
-                      className="w-4 h-4 text-accent border-gray-300 focus:ring-accent cursor-pointer"
-                    />
-                    <span className="ml-2 font-body text-sm text-text-secondary group-hover:text-primary transition-colors">
-                      {t('fields.emailOption')}
-                    </span>
-                  </label>
-                  <label className="flex items-center cursor-pointer group">
-                    <input
-                      type="radio"
-                      name="preferredContact"
-                      value="phone"
-                      checked={formState.preferredContact === 'phone'}
-                      onChange={handleChange}
-                      className="w-4 h-4 text-accent border-gray-300 focus:ring-accent cursor-pointer"
-                    />
-                    <span className="ml-2 font-body text-sm text-text-secondary group-hover:text-primary transition-colors">
-                      {t('fields.phoneOption')}
-                    </span>
-                  </label>
-                  <label className="flex items-center cursor-pointer group">
-                    <input
-                      type="radio"
-                      name="preferredContact"
-                      value="either"
-                      checked={formState.preferredContact === 'either'}
-                      onChange={handleChange}
-                      className="w-4 h-4 text-accent border-gray-300 focus:ring-accent cursor-pointer"
-                    />
-                    <span className="ml-2 font-body text-sm text-text-secondary group-hover:text-primary transition-colors">
-                      {t('fields.eitherOption')}
-                    </span>
-                  </label>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {[
+                    { value: 'email', icon: 'EnvelopeIcon', label: t('fields.emailOption') },
+                    { value: 'phone', icon: 'PhoneIcon', label: t('fields.phoneOption') },
+                    { value: 'either', icon: 'ChatBubbleLeftEllipsisIcon', label: t('fields.eitherOption') }
+                  ].map((option) => (
+                    <label
+                      key={option.value}
+                      className={`
+                        relative flex flex-col items-center justify-center p-4 rounded-lg border cursor-pointer transition-all duration-300 group
+                        ${formState.preferredContact === option.value
+                          ? 'border-lcdream-gold bg-lcdream-gold/10'
+                          : 'border-white/10 bg-white/5 hover:border-lcdream-gold/50 hover:bg-white/10'}
+                      `}
+                    >
+                      <input
+                        type="radio"
+                        name="preferredContact"
+                        value={option.value}
+                        checked={formState.preferredContact === option.value}
+                        onChange={handleChange}
+                        className="sr-only"
+                      />
+                      <Icon
+                        name={option.icon}
+                        size={24}
+                        className={`mb-3 transition-colors duration-300 ${formState.preferredContact === option.value ? 'text-lcdream-gold' : 'text-gray-400 group-hover:text-lcdream-gold'
+                          }`}
+                      />
+                      <span className={`font-body text-sm transition-colors duration-300 ${formState.preferredContact === option.value ? 'text-white font-body-semibold' : 'text-gray-400 group-hover:text-white'
+                        }`}>
+                        {option.label}
+                      </span>
+                    </label>
+                  ))}
                 </div>
               </div>
 
@@ -386,11 +381,11 @@ const ConsultationForm = ({ className = '' }: ConsultationFormProps) => {
                 <button
                   type="submit"
                   disabled={isSubmitting || !isHydrated}
-                  className="w-full inline-flex items-center justify-center px-6 py-4 font-cta text-base font-cta-semibold text-accent-foreground bg-accent rounded-md transition-smooth hover:bg-accent/90 disabled:opacity-50 disabled:cursor-not-allowed shadow-architectural"
+                  className="w-full inline-flex items-center justify-center px-6 py-4 font-cta text-base font-cta-semibold text-black bg-lcdream-gold rounded-md transition-smooth hover:bg-lcdream-gold-light disabled:opacity-50 disabled:cursor-not-allowed shadow-architectural"
                 >
                   {isSubmitting ? (
                     <>
-                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
@@ -403,7 +398,7 @@ const ConsultationForm = ({ className = '' }: ConsultationFormProps) => {
                     </>
                   )}
                 </button>
-                <p className="mt-4 text-center font-body text-xs text-text-secondary">
+                <p className="mt-4 text-center font-body text-xs text-lcdream-gray-light">
                   {t('disclaimer')}
                 </p>
               </div>

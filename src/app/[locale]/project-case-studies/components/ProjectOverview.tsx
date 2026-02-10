@@ -19,14 +19,14 @@ interface ProjectOverviewProps {
 import { useTranslations } from 'next-intl';
 
 const ProjectOverview = ({ challenge, solution, outcome, stats }: ProjectOverviewProps) => {
-  const t = useTranslations('ProjectCaseStudies.overview');
+  const t = useTranslations('ProjectCaseStudies.common');
   return (
     <section className="py-20 lg:py-32 bg-lcdream-dark-bg">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
           <div>
             <h2 className="font-headline text-4xl lg:text-5xl font-headline-bold text-lcdream-white mb-12 leading-tight">
-              {t('challenge.title')}
+              {t('challengeTitle')}
             </h2>
             <p className="font-body text-base lg:text-lg text-text-secondary leading-relaxed">
               {challenge}
@@ -35,7 +35,7 @@ const ProjectOverview = ({ challenge, solution, outcome, stats }: ProjectOvervie
 
           <div>
             <h2 className="font-headline text-4xl lg:text-5xl font-headline-bold text-lcdream-white mb-12 leading-tight">
-              {t('solution.title')}
+              {t('solutionTitle')}
             </h2>
             <p className="font-body text-base lg:text-lg text-text-secondary leading-relaxed">
               {solution}
@@ -45,7 +45,7 @@ const ProjectOverview = ({ challenge, solution, outcome, stats }: ProjectOvervie
 
         <div className="bg-black rounded-lg p-8 shadow-subtle border border-lcdream-gold/20 mb-16">
           <h3 className="font-headline text-xl font-headline-semibold text-lcdream-gold mb-2">
-            {t('outcome.title')}
+            {t('outcomeTitle')}
           </h3>
           <p className="font-body text-3xl font-body-bold text-lcdream-white mb-8">
             {outcome}

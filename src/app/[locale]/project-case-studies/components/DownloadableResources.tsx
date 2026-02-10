@@ -16,7 +16,7 @@ interface DownloadableResourcesProps {
 }
 
 const DownloadableResources = ({ resources }: DownloadableResourcesProps) => {
-  const t = useTranslations('ProjectCaseStudies.resources');
+  const t = useTranslations('ProjectCaseStudies.common.resources');
   const handleDownload = (title: string) => {
     alert(`Descargando: ${title}\n\nEsta es una demostración. En producción, esto iniciaría la descarga del archivo.`);
   };

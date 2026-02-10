@@ -12,6 +12,8 @@ import CTASection from './components/CTASection';
 
 import { getTranslations } from 'next-intl/server';
 
+import Footer from '@/components/common/Footer';
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'About.metadata' });
@@ -38,6 +40,7 @@ export default function AboutPage() {
         <SustainabilityCommitment />
         <CTASection />
       </div>
+      <Footer />
     </main>
   );
 }

@@ -18,7 +18,7 @@ interface RelatedProjectsProps {
 }
 
 const RelatedProjects = ({ projects }: RelatedProjectsProps) => {
-  const t = useTranslations('ProjectCaseStudies.related');
+  const t = useTranslations('ProjectCaseStudies.common.related');
   return (
     <section className="py-16 lg:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">

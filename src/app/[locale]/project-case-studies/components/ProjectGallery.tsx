@@ -13,10 +13,12 @@ interface GalleryImage {
 
 interface ProjectGalleryProps {
   images: GalleryImage[];
+  title: string;
+  description: string;
 }
 
-const ProjectGallery = ({ images }: ProjectGalleryProps) => {
-  const t = useTranslations('ProjectCaseStudies.gallery');
+const ProjectGallery = ({ images, title, description }: ProjectGalleryProps) => {
+  const t = useTranslations('ProjectCaseStudies.common.gallery');
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const openLightbox = (index: number) => {
@@ -44,10 +46,10 @@ const ProjectGallery = ({ images }: ProjectGalleryProps) => {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-headline-bold mb-4 text-neutral-50">
-            {t('title')}
+            {title}
           </h2>
           <p className="font-body text-lg text-text-secondary">
-            {t('description')}
+            {description}
           </p>
         </div>
 

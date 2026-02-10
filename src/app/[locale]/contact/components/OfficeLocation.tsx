@@ -58,29 +58,29 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
   ];
 
   return (
-    <section className={`py-20 lg:py-32 bg-gray-50 ${className}`}>
+    <section className={`py-20 lg:py-32 bg-lcdream-dark-bg border-t border-lcdream-gold/10 ${className}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           <div>
-            <h2 className="font-headline text-4xl lg:text-5xl font-headline-bold text-primary mb-6 leading-tight">
+            <h2 className="font-headline text-4xl lg:text-5xl font-headline-bold text-lcdream-gold mb-6 leading-tight">
               {t('title')}
             </h2>
-            <p className="font-body text-xl text-text-secondary leading-relaxed mb-12">
+            <p className="font-body text-xl text-lcdream-gray-light leading-relaxed mb-12">
               {t('description')}
             </p>
 
             <div className="grid sm:grid-cols-2 gap-8 mb-12">
               {officeInfo.map((info, index) => (
                 <div key={index} className="space-y-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                    <Icon name={info.icon as any} size={24} className="text-accent" />
+                  <div className="w-12 h-12 bg-lcdream-gold/10 rounded-lg flex items-center justify-center">
+                    <Icon name={info.icon as any} size={24} className="text-lcdream-gold" />
                   </div>
-                  <h3 className="font-headline text-lg font-headline-semibold text-primary">
+                  <h3 className="font-headline text-lg font-headline-semibold text-white">
                     {info.title}
                   </h3>
                   <ul className="space-y-2">
                     {info.details.map((detail, idx) => (
-                      <li key={idx} className="font-body text-base text-text-secondary">
+                      <li key={idx} className="font-body text-base text-lcdream-gray-light">
                         {detail}
                       </li>
                     ))}
@@ -94,14 +94,14 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
                 href="https://maps.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 font-cta text-base font-cta-semibold text-white bg-primary rounded-md transition-smooth hover:bg-primary/90"
+                className="inline-flex items-center justify-center px-6 py-3 font-cta text-base font-cta-semibold text-black bg-lcdream-gold rounded-md transition-smooth hover:bg-lcdream-gold-light"
               >
                 {t('openMaps')}
                 <Icon name="ArrowTopRightOnSquareIcon" size={20} className="ml-2" />
               </a>
               <button
                 onClick={() => setShowMap(!showMap)}
-                className="inline-flex items-center justify-center px-6 py-3 font-cta text-base font-cta-semibold text-primary border border-primary rounded-md transition-smooth hover:bg-primary/5"
+                className="inline-flex items-center justify-center px-6 py-3 font-cta text-base font-cta-semibold text-lcdream-gold border border-lcdream-gold rounded-md transition-smooth hover:bg-lcdream-gold/10"
               >
                 {t('virtualTour.start')}
                 <Icon name="VideoCameraIcon" size={20} className="ml-2" />
@@ -109,7 +109,7 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
             </div>
           </div>
 
-          <div className="relative h-[600px] bg-gray-200 rounded-lg overflow-hidden shadow-lg">
+          <div className="relative h-[600px] bg-gray-900 rounded-lg overflow-hidden shadow-lg border border-white/10">
             {showMap ? (
               <div className="absolute inset-0 bg-black/90 z-20 flex flex-col items-center justify-center p-8 text-white">
                 <button
@@ -119,7 +119,7 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
                   <Icon name="XMarkIcon" size={24} />
                 </button>
                 <div className="w-full max-w-2xl text-center">
-                  <h3 className="font-headline text-2xl font-headline-bold mb-4">
+                  <h3 className="font-headline text-2xl font-headline-bold mb-4 text-lcdream-gold">
                     {t('virtualTour.title')}
                   </h3>
                   <p className="font-body text-lg text-gray-300 mb-8">
@@ -132,8 +132,8 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
                         key={stop.id}
                         onClick={() => setActiveTab(stop.id)}
                         className={`p-4 rounded-lg transition-all ${activeTab === stop.id
-                          ? 'bg-accent text-white'
-                          : 'bg-white/10 hover:bg-white/20'
+                          ? 'bg-lcdream-gold text-black'
+                          : 'bg-white/10 hover:bg-white/20 text-white'
                           }`}
                       >
                         <span className="block font-headline font-headline-semibold mb-1">
@@ -143,11 +143,11 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
                     ))}
                   </div>
 
-                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
+                  <div className="bg-white/5 rounded-lg p-6 backdrop-blur-sm border border-white/10">
                     {tourStops.map((stop) => (
                       stop.id === activeTab && (
                         <div key={stop.id} className="animate-fade-in">
-                          <h4 className="font-headline text-xl font-headline-semibold mb-2">
+                          <h4 className="font-headline text-xl font-headline-semibold mb-2 text-lcdream-gold">
                             {stop.title}
                           </h4>
                           <p className="font-body text-gray-300">
@@ -160,23 +160,23 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
                 </div>
               </div>
             ) : (
-              <div className="absolute inset-0 bg-gray-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gray-900 flex items-center justify-center">
                 <p className="text-gray-500">Map Placeholder</p>
               </div>
             )}
           </div>
         </div>
 
-        <div className="mt-20 p-12 bg-primary rounded-lg text-center">
-          <h2 className="font-headline text-3xl font-headline-bold text-white mb-4">
+        <div className="mt-20 p-12 bg-lcdream-gray-dark border border-lcdream-gold/20 rounded-lg text-center">
+          <h2 className="font-headline text-3xl font-headline-bold text-lcdream-gold mb-4">
             {t('cta.title')}
           </h2>
-          <p className="font-body text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+          <p className="font-body text-lg text-lcdream-gray-light max-w-2xl mx-auto mb-8">
             {t('cta.description')}
           </p>
           <a
             href="tel:+34912345678"
-            className="inline-flex items-center justify-center px-8 py-4 font-cta text-base font-cta-semibold text-primary bg-white rounded-md transition-smooth hover:bg-gray-100"
+            className="inline-flex items-center justify-center px-8 py-4 font-cta text-base font-cta-semibold text-black bg-white rounded-md transition-smooth hover:bg-gray-100"
           >
             {t('cta.button')}
           </a>

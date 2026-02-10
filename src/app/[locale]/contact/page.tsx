@@ -6,9 +6,10 @@ import ConsultationForm from './components/ConsultationForm';
 import ResponseTime from './components/ResponseTime';
 import OfficeLocation from './components/OfficeLocation';
 import FAQSection from './components/FAQSection';
-import ContactFooter from './components/ContactFooter';
+import Footer from '@/components/common/Footer';
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Contact.metadata' });
 
   return {
@@ -29,7 +30,7 @@ export default function ContactPage() {
         <ConsultationForm />
         <OfficeLocation />
         <FAQSection />
-        <ContactFooter />
+        <Footer />
       </div>
     </main>
   );

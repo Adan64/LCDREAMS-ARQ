@@ -81,6 +81,8 @@
             "expertiseTitle": "Experiencia",
             "members": {
                 "1": {
+                    "name": "Carlos Rodríguez",
+                    "alt": "Foto de Carlos Rodríguez",
                     "role": "Arquitecto Senior",
                     "specialization": "Diseño Comercial y Mixto",
                     "bio": "Carlos aporta 12 años de experiencia en proyectos comerciales de gran escala, con un enfoque especial en la creación de espacios dinámicos que promueven la interacción comunitaria.",
@@ -92,6 +94,8 @@
                     }
                 },
                 "2": {
+                    "name": "Isabel Fernández",
+                    "alt": "Foto de Isabel Fernández",
                     "role": "Diseñadora de Interiores Principal",
                     "specialization": "Interiores Residenciales y Hoteleros",
                     "bio": "El talento de Isabel para crear interiores acogedores que reflejan la personalidad de sus clientes la ha convertido en una de las diseñadoras más solicitadas de la región.",
@@ -103,6 +107,8 @@
                     }
                 },
                 "3": {
+                    "name": "Miguel Silva",
+                    "alt": "Foto de Miguel Silva",
                     "role": "Consultor de Sostenibilidad",
                     "specialization": "Edificios Verdes y Certificación LEED",
                     "bio": "Miguel es nuestro experto en sostenibilidad, asegurando que cada proyecto cumpla con los más altos estándares ambientales.",
@@ -114,6 +120,8 @@
                     }
                 },
                 "4": {
+                    "name": "Ana María López",
+                    "alt": "Foto de Ana María López",
                     "role": "Gerente de Proyectos",
                     "specialization": "Administración de Construcción y Relaciones con Clientes",
                     "bio": "Ana María garantiza una ejecución de proyecto perfecta, desde el concepto hasta la finalización. Sus excepcionales habilidades organizativas aseguran entregas a tiempo y dentro del presupuesto.",
@@ -641,253 +649,472 @@
             "title": "Casos de Estudio de Proyectos - LCDREAM.ARQ",
             "description": "Explora casos de estudio detallados de nuestros proyectos arquitectónicos."
         },
-        "hero": {
-            "title": "Villa Mediterránea Sostenible",
-            "category": "Residencial de Lujo",
-            "location": "Costa del Sol, España",
-            "imageAlt": "Vista exterior de villa mediterránea moderna con piscina infinita"
-        },
-        "overview": {
-            "challenge": {
-                "title": "El Desafío",
-                "description": "Los clientes buscaban una residencia familiar que combinara el lujo mediterráneo tradicional con tecnología sostenible de vanguardia, mientras maximizaba las vistas al mar."
-            },
-            "solution": {
-                "title": "Nuestra Solución",
-                "description": "Diseñamos una villa de tres niveles que abraza la topografía natural, utilizando muros de contención escalonados para crear terrazas privadas."
-            },
-            "outcome": {
-                "title": "Resultados del Proyecto",
-                "description": "El proyecto resultó en una residencia excepcional que supera los estándares de eficiencia energética en un 40%."
-            },
+        "common": {
+            "challengeTitle": "El Desafío",
+            "solutionTitle": "Nuestra Solución",
+            "outcomeTitle": "Resultados del Proyecto",
             "stats": {
                 "area": "Área Construida",
                 "duration": "Duración",
                 "budget": "Presupuesto",
                 "certification": "Certificación"
-            }
-        },
-        "beforeAfter": {
-            "title": "Transformación del Terreno",
-            "before": "Antes",
-            "after": "Después",
-            "beforeAlt": "Terreno en pendiente sin desarrollar",
-            "afterAlt": "Villa mediterránea completada"
-        },
-        "process": {
-            "title": "Proceso de Diseño",
-            "description": "Un viaje meticuloso desde el concepto hasta la finalización.",
-            "steps": {
-                "0": {
-                    "phase": "Fase 01",
-                    "title": "Análisis del Sitio y Concepto",
-                    "description": "Realizamos un estudio exhaustivo del terreno y desarrollamos múltiples conceptos.",
-                    "alt": "Arquitecto revisando planos"
-                },
-                "1": {
-                    "phase": "Fase 02",
-                    "title": "Desarrollo del Diseño",
-                    "description": "Refinamos el concepto seleccionado y desarrollamos planos detallados.",
-                    "alt": "Modelo 3D arquitectónico"
-                },
-                "2": {
-                    "phase": "Fase 03",
-                    "title": "Documentación y Permisos",
-                    "description": "Preparamos documentación técnica completa para permisos de construcción.",
-                    "alt": "Planos arquitectónicos detallados"
-                },
-                "3": {
-                    "phase": "Fase 04",
-                    "title": "Construcción y Supervisión",
-                    "description": "Supervisamos todas las fases de construcción para garantizar la calidad.",
-                    "alt": "Sitio de construcción activo"
-                }
-            }
-        },
-        "materials": {
-            "title": "Selección de Materiales",
-            "description": "Cada material fue cuidadosamente seleccionado por su calidad y sostenibilidad.",
-            "items": {
-                "limestone": {
-                    "name": "Piedra Caliza Local",
-                    "description": "Piedra natural extraída de canteras locales.",
-                    "alt": "Textura de pared de piedra caliza",
-                    "props": [
-                        "Durabilidad excepcional",
-                        "Bajo impacto ambiental",
-                        "Aislamiento térmico natural"
-                    ]
-                },
-                "teak": {
-                    "name": "Madera de Teca Certificada",
-                    "description": "Madera tropical sostenible utilizada para terrazas.",
-                    "alt": "Superficie de madera de teca",
-                    "props": [
-                        "Certificación FSC",
-                        "Resistencia a humedad",
-                        "Mantenimiento mínimo"
-                    ]
-                },
-                "glass": {
-                    "name": "Vidrio de Alto Rendimiento",
-                    "description": "Acristalamiento de triple panel con recubrimiento de baja emisividad.",
-                    "alt": "Ventanas de vidrio modernas",
-                    "props": [
-                        "Eficiencia energética",
-                        "Reducción de ruido",
-                        "Protección UV"
-                    ]
-                },
-                "concrete": {
-                    "name": "Hormigón Pulido",
-                    "description": "Acabado contemporáneo para pisos interiores.",
-                    "alt": "Piso de hormigón pulido",
-                    "props": [
-                        "Masa térmica alta",
-                        "Durabilidad extrema",
-                        "Fácil mantenimiento"
-                    ]
-                },
-                "ceramic": {
-                    "name": "Cerámica Artesanal",
-                    "description": "Azulejos hechos a mano por artesanos locales.",
-                    "alt": "Mosaico de azulejos cerámicos",
-                    "props": [
-                        "Producción local",
-                        "Diseño único",
-                        "Resistencia al agua"
-                    ]
-                },
-                "steel": {
-                    "name": "Acero Corten",
-                    "description": "Acero resistente a la intemperie.",
-                    "alt": "Panel de acero corten",
-                    "props": [
-                        "Sin mantenimiento",
-                        "Estética industrial",
-                        "Longevidad superior"
-                    ]
-                }
-            }
-        },
-        "testimonial": {
-            "title": "Testimonio del Cliente",
-            "text": "Trabajar con LCDREAM.ARQ fue una experiencia transformadora. No solo diseñaron la casa de nuestros sueños, sino que nos educaron sobre sostenibilidad.",
-            "role": "Propietaria",
-            "name": "María González",
-            "alt": "Mujer profesional sonriendo"
-        },
-        "gallery": {
-            "title": "Galería del Proyecto",
-            "description": "Explora cada detalle de este proyecto transformador.",
-            "captions": {
-                "facade": "Fachada principal con piscina infinita",
-                "living": "Sala de estar con vistas panorámicas",
-                "kitchen": "Cocina gourmet integrada",
-                "bedroom": "Suite principal con terraza privada",
-                "bathroom": "Baño spa con acabados premium",
-                "terrace": "Terraza de entretenimiento exterior"
             },
-            "alts": {
-                "facade": "Vista exterior de villa",
-                "living": "Sala de estar moderna",
-                "kitchen": "Cocina gourmet con isla",
-                "bedroom": "Dormitorio principal con cama king",
-                "bathroom": "Baño spa con bañera",
-                "terrace": "Terraza cubierta"
+            "beforeAfter": {
+                "title": "Transformación del Terreno",
+                "before": "Antes",
+                "after": "Después",
+                "beforeAlt": "Estado original",
+                "afterAlt": "Proyecto completado"
             },
-            "controls": {
-                "close": "Cerrar",
-                "prev": "Anterior",
-                "next": "Siguiente"
-            }
-        },
-        "sustainability": {
-            "title": "Sostenibilidad",
-            "description": "Nuestro compromiso con el diseño sostenible se refleja en cada detalle del proyecto, incorporando tecnologías y materiales que minimizan el impacto ambiental.",
-            "features": {
-                "solar": {
-                    "title": "Paneles Solares",
-                    "description": "Sistema fotovoltaico integrado de 15kW",
-                    "impact": "100% de la Energía"
-                },
-                "water": {
-                    "title": "Recolección de Agua",
-                    "description": "Sistema de recolección de agua de lluvia de 10.000L",
-                    "impact": "Riego & Aseo"
-                },
-                "insulation": {
-                    "title": "Aislamiento Térmico",
-                    "description": "Aislamiento de fibra de madera natural de alto rendimiento",
-                    "impact": "Clase Energética A"
-                },
-                "bioclimatic": {
-                    "title": "Diseño Bioclimático",
-                    "description": "Orientación y ventilación optimizadas",
-                    "impact": "Climatización Pasiva"
+            "process": {
+                "title": "Proceso de Diseño",
+                "description": "Un viaje meticuloso desde el concepto hasta la finalización.",
+                "steps": {
+                    "0": {
+                        "phase": "Fase 01",
+                        "title": "Análisis del Sitio y Concepto",
+                        "description": "Realizamos un estudio exhaustivo del terreno y desarrollamos múltiples conceptos.",
+                        "alt": "Arquitecto revisando planos"
+                    },
+                    "1": {
+                        "phase": "Fase 02",
+                        "title": "Desarrollo del Diseño",
+                        "description": "Refinamos el concepto seleccionado y desarrollamos planos detallados.",
+                        "alt": "Modelo 3D arquitectónico"
+                    },
+                    "2": {
+                        "phase": "Fase 03",
+                        "title": "Documentación y Permisos",
+                        "description": "Preparamos documentación técnica completa para permisos de construcción.",
+                        "alt": "Planos arquitectónicos detallados"
+                    },
+                    "3": {
+                        "phase": "Fase 04",
+                        "title": "Construcción y Supervisión",
+                        "description": "Supervisamos todas las fases de construcción para garantizar la calidad.",
+                        "alt": "Sitio de construcción activo"
+                    }
                 }
             },
-            "certifications": {
-                "0": "Certificación LEED Gold",
-                "1": "Estándar Passivhaus",
-                "2": "BREEAM Excelente",
-                "3": "Energy Star"
+            "materials": {
+                "title": "Selección de Materiales",
+                "description": "Cada material fue cuidadosamente seleccionado por su calidad y sostenibilidad."
             },
-            "certificationsTitle": "Certificaciones y Reconocimientos"
-        },
-        "resources": {
-            "title": "Recursos Descargables",
-            "description": "Accede a información detallada del proyecto",
-            "download": "Descargar",
-            "items": {
-                "specs": {
-                    "title": "Ficha Técnica del Proyecto",
-                    "description": "Especificaciones completas y planos"
-                },
-                "certs": {
-                    "title": "Certificaciones Sostenibles",
-                    "description": "Documentación de certificaciones LEED"
-                },
-                "images": {
-                    "title": "Galería de Imágenes HD",
-                    "description": "Colección completa de fotografías"
-                },
-                "maintenance": {
-                    "title": "Guía de Mantenimiento",
-                    "description": "Instrucciones para el cuidado"
+            "testimonialTitle": "Testimonio del Cliente",
+            "galleryTitle": "Galería del Proyecto",
+            "gallery": {
+                "controls": {
+                    "close": "Cerrar",
+                    "prev": "Anterior",
+                    "next": "Siguiente"
                 }
+            },
+            "sustainability": {
+                "title": "Sostenibilidad",
+                "description": "Nuestro compromiso con el diseño sostenible se refleja en cada detalle.",
+                "features": {
+                    "solar": {
+                        "title": "Paneles Solares"
+                    },
+                    "water": {
+                        "title": "Recolección de Agua"
+                    },
+                    "insulation": {
+                        "title": "Aislamiento Térmico"
+                    },
+                    "bioclimatic": {
+                        "title": "Diseño Bioclimático"
+                    }
+                },
+                "certificationsTitle": "Certificaciones y Reconocimientos"
+            },
+            "resources": {
+                "title": "Recursos Descargables",
+                "description": "Accede a información detallada del proyecto",
+                "download": "Descargar",
+                "items": {
+                    "specs": {
+                        "title": "Ficha Técnica"
+                    },
+                    "certs": {
+                        "title": "Certificaciones"
+                    },
+                    "images": {
+                        "title": "Galería HD"
+                    },
+                    "maintenance": {
+                        "title": "Manual de Uso"
+                    }
+                }
+            },
+            "related": {
+                "title": "Proyectos Relacionados",
+                "description": "Descubre más de nuestro trabajo innovador",
+                "viewCaseStudy": "Ver Caso de Estudio"
+            },
+            "cta": {
+                "title": "¿Listo para Transformar Tu Espacio?",
+                "description": "Trabajemos juntos para crear un proyecto excepcional.",
+                "schedule": "Agendar Consulta",
+                "viewMore": "Ver Más Proyectos"
             }
         },
-        "related": {
-            "title": "Proyectos Relacionados",
-            "description": "Descubre más de nuestro trabajo innovador",
-            "viewCaseStudy": "Ver Caso de Estudio",
-            "items": {
-                "loft": {
-                    "title": "Loft Urbano Minimalista",
-                    "category": "Residencial",
-                    "alt": "Interior de loft moderno",
-                    "location": "Barcelona"
+        "projects": {
+            "villa-mediterranean": {
+                "hero": {
+                    "title": "Villa Mediterránea Sostenible",
+                    "category": "Residencial de Lujo",
+                    "location": "Costa del Sol, España",
+                    "imageAlt": "Vista exterior de villa mediterránea moderna con piscina infinita"
                 },
-                "resort": {
-                    "title": "Eco-Resort Costero",
-                    "category": "Hospitalidad",
-                    "alt": "Resort ecológico frente al mar",
-                    "location": "Islas Baleares"
+                "overview": {
+                    "challenge": "Los clientes buscaban una residencia familiar que combinara el lujo mediterráneo tradicional con tecnología sostenible de vanguardia, mientras maximizaba las vistas al mar.",
+                    "solution": "Diseñamos una villa de tres niveles que abraza la topografía natural, utilizando muros de contención escalonados para crear terrazas privadas.",
+                    "outcome": "El proyecto resultó en una residencia excepcional que supera los estándares de eficiencia energética en un 40%."
                 },
-                "office": {
-                    "title": "Sede Corporativa Sostenible",
-                    "category": "Comercial",
-                    "alt": "Edificio corporativo moderno",
-                    "location": "Madrid"
+                "materials": {
+                    "items": {
+                        "limestone": {
+                            "name": "Piedra Caliza Local",
+                            "description": "Piedra natural extraída de canteras locales.",
+                            "alt": "Textura de pared de piedra caliza",
+                            "props": [
+                                "Durabilidad",
+                                "Bajo impacto",
+                                "Aislamiento"
+                            ]
+                        },
+                        "teak": {
+                            "name": "Madera de Teca",
+                            "description": "Madera tropical sostenible.",
+                            "alt": "Superficie de madera",
+                            "props": [
+                                "Certificación FSC",
+                                "Resistencia",
+                                "Mantenimiento mínimo"
+                            ]
+                        },
+                        "glass": {
+                            "name": "Vidrio Alto Rendimiento",
+                            "description": "Acristalamiento triple.",
+                            "alt": "Ventanas modernas",
+                            "props": [
+                                "Eficiencia",
+                                "Reducción ruido",
+                                "Protección UV"
+                            ]
+                        },
+                        "concrete": {
+                            "name": "Hormigón Pulido",
+                            "description": "Acabado contemporáneo.",
+                            "alt": "Piso hormigón",
+                            "props": [
+                                "Masa térmica",
+                                "Durabilidad",
+                                "Fácil mantenimiento"
+                            ]
+                        },
+                        "ceramic": {
+                            "name": "Cerámica Artesanal",
+                            "description": "Azulejos hechos a mano.",
+                            "alt": "Mosaico",
+                            "props": [
+                                "Producción local",
+                                "Diseño único",
+                                "Resistencia agua"
+                            ]
+                        },
+                        "steel": {
+                            "name": "Acero Corten",
+                            "description": "Acero resistente.",
+                            "alt": "Panel acero",
+                            "props": [
+                                "Sin mantenimiento",
+                                "Estética",
+                                "Longevidad"
+                            ]
+                        }
+                    }
+                },
+                "testimonial": {
+                    "text": "Trabajar con LCDREAM.ARQ fue una experiencia transformadora. No solo diseñaron la casa de nuestros sueños, sino que nos educaron sobre sostenibilidad.",
+                    "role": "Propietaria",
+                    "name": "María González",
+                    "alt": "Mujer profesional sonriendo"
+                },
+                "gallery": {
+                    "description": "Explora cada detalle de este proyecto transformador.",
+                    "captions": {
+                        "facade": "Fachada principal con piscina infinita",
+                        "living": "Sala de estar con vistas panorámicas",
+                        "kitchen": "Cocina gourmet integrada",
+                        "bedroom": "Suite principal con terraza privada",
+                        "bathroom": "Baño spa con acabados premium",
+                        "terrace": "Terraza de entretenimiento exterior"
+                    },
+                    "alts": {
+                        "facade": "Vista exterior de villa",
+                        "living": "Sala de estar moderna",
+                        "kitchen": "Cocina gourmet con isla",
+                        "bedroom": "Dormitorio principal con cama king",
+                        "bathroom": "Baño spa con bañera",
+                        "terrace": "Terraza cubierta"
+                    }
+                },
+                "sustainability": {
+                    "features": {
+                        "solar": {
+                            "description": "Sistema fotovoltaico integrado de 15kW",
+                            "impact": "100% de la Energía"
+                        },
+                        "water": {
+                            "description": "Sistema de recolección de agua de lluvia",
+                            "impact": "Riego & Aseo"
+                        },
+                        "insulation": {
+                            "description": "Aislamiento de fibra de madera",
+                            "impact": "Clase Energética A"
+                        },
+                        "bioclimatic": {
+                            "description": "Orientación y ventilación optimizadas",
+                            "impact": "Climatización Pasiva"
+                        }
+                    },
+                    "certifications": {
+                        "0": "Certificación LEED Gold",
+                        "1": "Estándar Passivhaus",
+                        "2": "BREEAM Excelente",
+                        "3": "Energy Star"
+                    }
+                },
+                "resources": {
+                    "items": {
+                        "specs": {
+                            "description": "Especificaciones completas y planos"
+                        },
+                        "certs": {
+                            "description": "Documentación de certificaciones LEED"
+                        },
+                        "images": {
+                            "description": "Colección completa de fotografías"
+                        },
+                        "maintenance": {
+                            "description": "Instrucciones para el cuidado"
+                        }
+                    }
+                }
+            },
+            "office-tech-madrid": {
+                "hero": {
+                    "title": "Oficinas Tech Hub Madrid",
+                    "category": "Comercial / Oficinas",
+                    "location": "Madrid, España",
+                    "imageAlt": "Oficina moderna y tecnológica"
+                },
+                "overview": {
+                    "challenge": "Crear un espacio de trabajo que fomente la colaboración y refleje la innovación de la empresa tecnológica líder.",
+                    "solution": "Un diseño de planta abierta con zonas flexibles, cápsulas de privacidad y tecnología integrada en todo el espacio.",
+                    "outcome": "Aumento del 30% en la satisfacción de los empleados y mejora en la eficiencia del flujo de trabajo."
+                },
+                "materials": {
+                    "items": {
+                        "glass": {
+                            "name": "Vidrio Inteligente",
+                            "description": "Vidrio con opacidad conmutable.",
+                            "alt": "Pared de vidrio",
+                            "props": [
+                                "Privacidad",
+                                "Tecnología",
+                                "Luz natural"
+                            ]
+                        },
+                        "steel": {
+                            "name": "Estructura de Acero",
+                            "description": "Elementos estructurales expuestos.",
+                            "alt": "Vigas de acero",
+                            "props": [
+                                "Resistencia",
+                                "Industrial",
+                                "Reciclable"
+                            ]
+                        },
+                        "concrete": {
+                            "name": "Microcemento",
+                            "description": "Suelos continuos modernos.",
+                            "alt": "Suelo gris",
+                            "props": [
+                                "Continuidad",
+                                "Limpieza",
+                                "Modernidad"
+                            ]
+                        }
+                    }
+                },
+                "testimonial": {
+                    "text": "El nuevo diseño ha transformado nuestra cultura de trabajo. Es el equilibrio perfecto entre funcionalidad e inspiración.",
+                    "role": "CEO",
+                    "name": "Alejandro Ruiz",
+                    "alt": "Hombre de negocios"
+                },
+                "gallery": {
+                    "description": "Un recorrido por el espacio de trabajo del futuro.",
+                    "captions": {
+                        "facade": "Entrada principal",
+                        "living": "Zona de descanso",
+                        "kitchen": "Cafetería"
+                    },
+                    "alts": {
+                        "facade": "Fachada de vidrio",
+                        "living": "Sofás coloridos",
+                        "kitchen": "Mesas de comedor"
+                    }
+                },
+                "sustainability": {
+                    "features": {
+                        "solar": {
+                            "description": "Iluminación LED inteligente",
+                            "impact": "40% Ahorro"
+                        },
+                        "water": {
+                            "description": "Grifos de bajo consumo",
+                            "impact": "30% Ahorro"
+                        },
+                        "insulation": {
+                            "description": "Paneles acústicos",
+                            "impact": "Confort"
+                        },
+                        "bioclimatic": {
+                            "description": "Control de clima zonificado",
+                            "impact": "Eficiencia"
+                        }
+                    },
+                    "certifications": {
+                        "0": "BREEAM In-Use",
+                        "1": "WELL Silver"
+                    }
+                },
+                "resources": {
+                    "items": {
+                        "specs": {
+                            "description": "Planos de distribución"
+                        },
+                        "certs": {
+                            "description": "Certificado de sostenibilidad"
+                        },
+                        "images": {
+                            "description": "Fotos del espacio"
+                        },
+                        "maintenance": {
+                            "description": "Manual de instalaciones"
+                        }
+                    }
+                }
+            },
+            "loft-industrial-valencia": {
+                "hero": {
+                    "title": "Loft Industrial Valencia",
+                    "category": "Residencial / Reforma",
+                    "location": "Valencia, España",
+                    "imageAlt": "Interior de loft industrial renovado"
+                },
+                "overview": {
+                    "challenge": "Transformar un antiguo almacén textil en una vivienda moderna conservando su carácter histórico.",
+                    "solution": "Restauración de elementos originales como vigas y ladrillos, añadiendo volúmenes modernos para servicios.",
+                    "outcome": "Un espacio único que respeta el pasado mientras ofrece todo el confort contemporáneo."
+                },
+                "materials": {
+                    "items": {
+                        "concrete": {
+                            "name": "Hormigón Visto",
+                            "description": "Estructura original saneada.",
+                            "alt": "Columna de hormigón",
+                            "props": [
+                                "Carácter",
+                                "Historia",
+                                "Solidez"
+                            ]
+                        },
+                        "steel": {
+                            "name": "Hierro Negro",
+                            "description": "Carpinterías y escaleras.",
+                            "alt": "Escalera de hierro",
+                            "props": [
+                                "Contraste",
+                                "Elegancia",
+                                "Durabilidad"
+                            ]
+                        },
+                        "teak": {
+                            "name": "Madera Recuperada",
+                            "description": "Suelos de zona de noche.",
+                            "alt": "Suelo de madera",
+                            "props": [
+                                "Calidez",
+                                "Sostenibilidad",
+                                "Textura"
+                            ]
+                        }
+                    }
+                },
+                "testimonial": {
+                    "text": "Han logrado capturar la esencia del edificio y convertirlo en un hogar acogedor. El resultado es espectacular.",
+                    "role": "Propietario",
+                    "name": "Javier S.",
+                    "alt": "Joven creativo"
+                },
+                "gallery": {
+                    "description": "Detalles de la rehabilitación.",
+                    "captions": {
+                        "living": "Salón de doble altura",
+                        "kitchen": "Cocina abierta",
+                        "bedroom": "Dormitorio en altillo"
+                    },
+                    "alts": {
+                        "living": "Gran espacio abierto",
+                        "kitchen": "Isla de cocina",
+                        "bedroom": "Cama con vistas"
+                    }
+                },
+                "sustainability": {
+                    "features": {
+                        "solar": {
+                            "description": "Agua caliente solar",
+                            "impact": "60% Ahorro"
+                        },
+                        "water": {
+                            "description": "Sistemas eficientes",
+                            "impact": "20% Ahorro"
+                        },
+                        "insulation": {
+                            "description": "Aislamiento en cubierta",
+                            "impact": "Confort térmico"
+                        },
+                        "bioclimatic": {
+                            "description": "Ventilación cruzada",
+                            "impact": "Pasiva"
+                        }
+                    },
+                    "certifications": {
+                        "0": "Clase Energética A"
+                    }
+                },
+                "resources": {
+                    "items": {
+                        "specs": {
+                            "description": "Memoria de calidades"
+                        },
+                        "certs": {
+                            "description": "Licencia de ocupación"
+                        },
+                        "images": {
+                            "description": "Reportaje fotográfico"
+                        },
+                        "maintenance": {
+                            "description": "Guía de usuario"
+                        }
+                    }
                 }
             }
-        },
-        "cta": {
-            "title": "¿Listo para Transformar Tu Espacio?",
-            "description": "Trabajemos juntos para crear un proyecto excepcional.",
-            "schedule": "Agendar Consulta",
-            "viewMore": "Ver Más Proyectos"
         }
     },
     "ResourcesBlog": {
@@ -919,6 +1146,7 @@
         },
         "grid": {
             "title": "Todos los Artículos",
+            "noArticles": "No hay artículos encontrados.",
             "categories": {
                 "all": "Todos",
                 "trends": "Tendencias",
@@ -1586,6 +1814,117 @@
         "jurisdiction": {
             "title": "Jurisdicción",
             "description": "Este aviso legal se rige por la legislación española. Para cualquier controversia relacionada con este sitio web, ambas partes se someten a la jurisdicción de los juzgados y tribunales de la ciudad donde LCDREAM.ARQ tenga su domicilio social."
+        }
+    },
+    "Admin": {
+        "title": "Panel de Administración",
+        "Sidebar": {
+            "dashboard": "Dashboard",
+            "projects": "Proyectos",
+            "blog": "Blog",
+            "users": "Usuarios",
+            "settings": "Configuración",
+            "backToSite": "Volver al Sitio"
+        },
+        "Projects": {
+            "title": "Gestión de Proyectos",
+            "subtitle": "Administra el portafolio y los detalles de los proyectos.",
+            "newProject": "Nuevo Proyecto",
+            "editProject": "Editar Proyecto",
+            "deleteProject": "Eliminar Proyecto",
+            "searchPlaceholder": "Buscar proyectos...",
+            "status": {
+                "all": "Todos",
+                "completed": "Completado",
+                "in_progress": "En Progreso",
+                "design": "Diseño",
+                "construction": "Construcción"
+            },
+            "table": {
+                "name": "Nombre",
+                "client": "Cliente",
+                "status": "Estado",
+                "date": "Fecha",
+                "actions": "Acciones"
+            },
+            "form": {
+                "titleInfo": "Información del Proyecto",
+                "editInfo": "Editar Información",
+                "subtitleInfo": "Esta información será pública en el portafolio.",
+                "projectTitle": "Título del Proyecto",
+                "client": "Cliente",
+                "status": "Estado",
+                "description": "Descripción",
+                "location": "Ubicación",
+                "year": "Año",
+                "category": "Categoría",
+                "coverImage": "Imagen de Portada",
+                "galleryImages": "Galería de Imágenes",
+                "uploadImage": "Subir Imagen",
+                "save": "Guardar Proyecto",
+                "update": "Actualizar Proyecto",
+                "saving": "Guardando...",
+                "cancel": "Cancelar",
+                "clientPortalSection": "Portal de Clientes",
+                "accessCode": "Código de Acceso (Contraseña)",
+                "progress": "Progreso (%)",
+                "startDate": "Fecha de Inicio",
+                "estimatedDate": "Fecha Estimada Entrega"
+            }
+        },
+        "Phases": {
+            "title": "Fases del Proyecto",
+            "subtitle": "Gestiona el cronograma y estado de cada etapa.",
+            "addPhase": "Nueva Fase",
+            "phaseName": "Nombre de la Fase",
+            "date": "Fecha",
+            "status": "Estado",
+            "completed": "Completada",
+            "pending": "Pendiente",
+            "in_progress": "En Curso",
+            "deleteConfirm": "¿Eliminar esta fase?"
+        },
+        "Documents": {
+            "title": "Documentos del Proyecto",
+            "subtitle": "Sube archivos PDF, planos y contratos para el cliente.",
+            "upload": "Subir Documento",
+            "dragDrop": "Arrastra archivos aquí o haz clic",
+            "noDocuments": "No hay documentos aún.",
+            "deleteConfirm": "¿Eliminar este documento?"
+        },
+        "Blog": {
+            "title": "Gestión del Blog",
+            "subtitle": "Crea y edita noticias y artículos.",
+            "newPost": "Nueva Entrada",
+            "editPost": "Editar Entrada",
+            "searchPlaceholder": "Buscar entradas...",
+            "table": {
+                "title": "Título",
+                "author": "Autor",
+                "status": "Estado",
+                "date": "Fecha",
+                "actions": "Acciones"
+            },
+            "form": {
+                "titleInfo": "Información de la Entrada",
+                "editInfo": "Editar Entrada",
+                "subtitleInfo": "Gestiona el contenido de tu publicación.",
+                "title": "Título",
+                "slug": "Slug (URL amigable)",
+                "excerpt": "Resumen",
+                "content": "Contenido",
+                "coverImage": "Imagen de Portada",
+                "category": "Categoría",
+                "tags": "Etiquetas (separadas por comas)",
+                "status": "Estado",
+                "published": "Publicado",
+                "draft": "Borrador",
+                "save": "Guardar Entrada",
+                "update": "Actualizar Entrada",
+                "cancel": "Cancelar",
+                "saving": "Guardando...",
+                "imageHelper": "Sube una imagen"
+            }
         }
     }
 }

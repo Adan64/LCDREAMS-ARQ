@@ -15,7 +15,7 @@ interface ClientTestimonialProps {
 }
 
 const ClientTestimonial = ({ clientName, clientRole, clientImage, clientImageAlt, testimonial, videoUrl }: ClientTestimonialProps) => {
-  const t = useTranslations('ProjectCaseStudies.testimonial');
+  const t = useTranslations('ProjectCaseStudies.common');
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   return (
@@ -23,7 +23,7 @@ const ClientTestimonial = ({ clientName, clientRole, clientImage, clientImageAlt
       <div className="max-w-5xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-12">
           <h2 className="font-headline text-3xl lg:text-4xl font-headline-bold mb-4 text-white">
-            {t('title')}
+            {t('testimonialTitle')}
           </h2>
         </div>
 

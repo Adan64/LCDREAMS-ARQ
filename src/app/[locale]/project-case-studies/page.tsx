@@ -1,25 +1,16 @@
-import type { Metadata } from 'next';
-import Header from '@/components/common/Header';
+import React from 'react';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import CaseStudyHero from './components/CaseStudyHero';
-import ProjectOverview from './components/ProjectOverview';
-import BeforeAfterSlider from './components/BeforeAfterSlider';
-import DesignProcess from './components/DesignProcess';
-import MaterialsShowcase from './components/MaterialsShowcase';
-import ClientTestimonial from './components/ClientTestimonial';
-import ProjectGallery from './components/ProjectGallery';
-import SustainabilityFeatures from './components/SustainabilityFeatures';
-import RelatedProjects from './components/RelatedProjects';
-import DownloadableResources from './components/DownloadableResources';
-import CTASection from './components/CTASection';
+import Link from 'next/link';
+import Header from '@/components/common/Header';
 import FooterSection from '@/app/[locale]/homepage/components/FooterSection';
-import React from 'react';
+import CTASection from './components/CTASection';
 import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
-import Link from 'next/link';
+import { projects } from './data';
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'ProjectCaseStudies.metadata' });
 
   return {
@@ -28,231 +19,76 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   };
 }
 
-interface ProjectStat {
-  icon: string;
-  label: string;
-  value: string;
-}
-
-interface ProcessStep {
-  phase: string;
-  title: string;
-  description: string;
-  image: string;
-  imageAlt: string;
-  icon: string;
-}
-
-interface Material {
-  name: string;
-  description: string;
-  image: string;
-  imageAlt: string;
-  properties: string[];
-}
-
-interface GalleryImage {
-  url: string;
-  alt: string;
-  caption: string;
-}
-
-interface SustainabilityFeature {
-  icon: string;
-  title: string;
-  description: string;
-  impact: string;
-}
-
-interface RelatedProject {
-  id: string;
-  title: string;
-  category: string;
-  image: string;
-  imageAlt: string;
-  location: string;
-}
-
-interface Resource {
-  title: string;
-  description: string;
-  fileSize: string;
-  icon: string;
-}
-
-export default function ProjectCaseStudiesPage() {
+export default function ProjectCaseStudiesIndexPage() {
   const t = useTranslations('ProjectCaseStudies');
-
-  const heroData = {
-    title: t('hero.title'),
-    category: t('hero.category'),
-    location: t('hero.location'),
-    year: "2025",
-    heroImage: "https://img.rocket.new/generatedImages/rocket_gen_img_1f0e7fb75-1767893206100.png",
-    heroImageAlt: t('hero.imageAlt')
-  };
-
-  const projectStats: ProjectStat[] = [
-    { icon: "HomeModernIcon", label: t('overview.stats.area'), value: "450 m²" },
-    { icon: "ClockIcon", label: t('overview.stats.duration'), value: "18 meses" },
-    { icon: "CurrencyEuroIcon", label: t('overview.stats.budget'), value: "€2.5M" },
-    { icon: "StarIcon", label: t('overview.stats.certification'), value: "LEED Gold" }
-  ];
-
-  const overviewData = {
-    challenge: t('overview.challenge.description'),
-    solution: t('overview.solution.description'),
-    outcome: t('overview.outcome.description'),
-    stats: projectStats
-  };
-
-  const beforeAfterData = {
-    beforeImage: "https://img.rocket.new/generatedImages/rocket_gen_img_18b2b0a35-1769455081296.png",
-    beforeImageAlt: t('beforeAfter.beforeAlt'),
-    afterImage: "https://images.unsplash.com/photo-1716483714417-c23efa1bd67c",
-    afterImageAlt: t('beforeAfter.afterAlt'),
-    title: t('beforeAfter.title')
-  };
-
-  const processIcons = ["LightBulbIcon", "PencilSquareIcon", "DocumentCheckIcon", "WrenchScrewdriverIcon"];
-  const processImages = [
-    "https://img.rocket.new/generatedImages/rocket_gen_img_1c0171d2c-1767430156416.png",
-    "https://img.rocket.new/generatedImages/rocket_gen_img_1e7d9d14b-1764654649679.png",
-    "https://img.rocket.new/generatedImages/rocket_gen_img_16f483d33-1769455078226.png",
-    "https://images.unsplash.com/photo-1604336979624-f5f90aa94d7d"
-  ];
-
-  const processSteps: ProcessStep[] = [0, 1, 2, 3].map(index => ({
-    phase: t(`process.steps.${index}.phase`),
-    title: t(`process.steps.${index}.title`),
-    description: t(`process.steps.${index}.description`),
-    image: processImages[index],
-    imageAlt: t(`process.steps.${index}.alt`),
-    icon: processIcons[index]
-  }));
-
-  const materialKeys = ['limestone', 'teak', 'glass', 'concrete', 'ceramic', 'steel'];
-  const materialImages = {
-    limestone: "https://images.unsplash.com/photo-1688984955491-41db1d95e7df",
-    teak: "https://img.rocket.new/generatedImages/rocket_gen_img_1bbf76e27-1768395637600.png",
-    glass: "https://images.unsplash.com/photo-1655034723500-8427b4eb4ac8",
-    concrete: "https://img.rocket.new/generatedImages/rocket_gen_img_17ed919e1-1764775755678.png",
-    ceramic: "https://images.unsplash.com/photo-1709373222160-e1ca38b68e8e",
-    steel: "https://images.unsplash.com/photo-1594477464105-445814a832a1"
-  };
-
-  const materials: Material[] = materialKeys.map(key => ({
-    name: t(`materials.items.${key}.name`),
-    description: t(`materials.items.${key}.description`),
-    image: materialImages[key as keyof typeof materialImages],
-    imageAlt: t(`materials.items.${key}.alt`),
-    properties: [
-      t(`materials.items.${key}.props.0`),
-      t(`materials.items.${key}.props.1`),
-      t(`materials.items.${key}.props.2`)
-    ]
-  }));
-
-  const testimonialData = {
-    clientName: t('testimonial.name'),
-    clientRole: t('testimonial.role'),
-    clientImage: "https://img.rocket.new/generatedImages/rocket_gen_img_1c0007e95-1763295050768.png",
-    clientImageAlt: t('testimonial.alt'),
-    testimonial: t('testimonial.text'),
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-  };
-
-  const galleryDefaultImages = [
-    { key: 'facade', url: "https://images.unsplash.com/photo-1642329873337-24a26c287cce" },
-    { key: 'living', url: "https://images.unsplash.com/photo-1606137036070-aea56eae1052" },
-    { key: 'kitchen', url: "https://img.rocket.new/generatedImages/rocket_gen_img_14142eac2-1764678676520.png" },
-    { key: 'bedroom', url: "https://img.rocket.new/generatedImages/rocket_gen_img_17d8ac43a-1766837430470.png" },
-    { key: 'bathroom', url: "https://images.unsplash.com/photo-1728016280671-3c0ce314d744" },
-    { key: 'terrace', url: "https://images.unsplash.com/photo-1579232350083-17659168da11" }
-  ];
-
-  const galleryImages: GalleryImage[] = galleryDefaultImages.map(item => ({
-    url: item.url,
-    alt: t(`gallery.alts.${item.key}`),
-    caption: t(`gallery.captions.${item.key}`)
-  }));
-
-  const sustainabilityKeys = [
-    { key: 'solar', icon: 'BoltIcon' },
-    { key: 'water', icon: 'BeakerIcon' },
-    { key: 'insulation', icon: 'HomeIcon' },
-    { key: 'bioclimatic', icon: 'SunIcon' }
-  ];
-
-  const sustainabilityFeatures: SustainabilityFeature[] = sustainabilityKeys.map(item => ({
-    icon: item.icon,
-    title: t(`sustainability.features.${item.key}.title`),
-    description: t(`sustainability.features.${item.key}.description`),
-    impact: t(`sustainability.features.${item.key}.impact`)
-  }));
-
-  const certifications = [
-    t('sustainability.certifications.0'),
-    t('sustainability.certifications.1'),
-    t('sustainability.certifications.2'),
-    t('sustainability.certifications.3')
-  ];
-
-  const relatedDefaultProjects = [
-    { id: "urban-loft", key: 'loft', image: "https://images.unsplash.com/photo-1507149442471-c16d3947aaeb" },
-    { id: "eco-resort", key: 'resort', image: "https://images.unsplash.com/photo-1643496500440-950729b16141" },
-    { id: "corporate-headquarters", key: 'office', image: "https://images.unsplash.com/photo-1689232781358-99b0e797c6b2" }
-  ];
-
-  const relatedProjects: RelatedProject[] = relatedDefaultProjects.map(project => ({
-    id: project.id,
-    title: t(`related.items.${project.key}.title`),
-    category: t(`related.items.${project.key}.category`),
-    image: project.image,
-    imageAlt: t(`related.items.${project.key}.alt`),
-    location: t(`related.items.${project.key}.location`)
-  }));
-
-  const resourcesKeys = [
-    { key: 'specs', fileSize: "2.4 MB", icon: 'DocumentTextIcon' },
-    { key: 'certs', fileSize: "1.8 MB", icon: 'ShieldCheckIcon' },
-    { key: 'images', fileSize: "45 MB", icon: 'PhotoIcon' },
-    { key: 'maintenance', fileSize: "3.2 MB", icon: 'WrenchScrewdriverIcon' }
-  ];
-
-  const downloadableResources: Resource[] = resourcesKeys.map(res => ({
-    title: t(`resources.items.${res.key}.title`),
-    description: t(`resources.items.${res.key}.description`),
-    fileSize: res.fileSize,
-    icon: res.icon
-  }));
 
   return (
     <main className="min-h-screen bg-background">
       <Header />
 
-      <div className="pt-20">
-        <CaseStudyHero {...heroData} />
+      <div className="pt-32 pb-16 lg:pt-40 lg:pb-24 px-6 lg:px-12 max-w-7xl mx-auto">
+        <div className="text-center mb-16 lg:mb-24">
+          <h1 className="text-4xl lg:text-6xl font-headline-bold mb-6 text-neutral-50">
+            {t('metadata.title').split('-')[0].trim()}
+          </h1>
+          <p className="font-body text-xl text-text-secondary max-w-3xl mx-auto">
+            {t('metadata.description')}
+          </p>
+        </div>
 
-        <ProjectOverview {...overviewData} />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+          {projects.map((project) => (
+            <Link
+              key={project.id}
+              href={`project-case-studies/${project.id}`}
+              className="group block"
+            >
+              <article className="bg-card rounded-lg overflow-hidden border border-white/5 hover:border-accent/50 transition-colors duration-300 h-full flex flex-col">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <AppImage
+                    src={project.heroImage}
+                    alt={t(`projects.${project.key}.hero.imageAlt`)}
+                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300" />
 
-        <BeforeAfterSlider {...beforeAfterData} />
+                  <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10">
+                    <span className="text-xs font-body-semibold text-text-primary">
+                      {t(`projects.${project.key}.hero.category`)}
+                    </span>
+                  </div>
+                </div>
 
-        <DesignProcess steps={processSteps} />
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="flex items-center space-x-2 text-text-secondary mb-3">
+                    <Icon name="MapPinIcon" size={16} className="text-accent" />
+                    <span className="text-sm font-body">
+                      {t(`projects.${project.key}.hero.location`)}
+                    </span>
+                  </div>
 
-        <MaterialsShowcase materials={materials} />
+                  <h2 className="text-xl font-headline-bold text-neutral-50 mb-3 group-hover:text-accent transition-colors">
+                    {t(`projects.${project.key}.hero.title`)}
+                  </h2>
 
-        <ClientTestimonial {...testimonialData} />
+                  <p className="text-text-secondary text-sm font-body line-clamp-3 mb-6 flex-1">
+                    {t(`projects.${project.key}.overview.challenge`)}
+                  </p>
 
-        <ProjectGallery images={galleryImages} />
-
-        <SustainabilityFeatures
-          features={sustainabilityFeatures}
-          certifications={certifications} />
-
-        <DownloadableResources resources={downloadableResources} />
-
-        <RelatedProjects projects={relatedProjects} />
+                  <div className="flex items-center justify-between pt-4 border-t border-white/5">
+                    <span className="text-accent font-body-semibold text-sm flex items-center">
+                      {t('common.related.viewCaseStudy')}
+                      <Icon name="ArrowRightIcon" size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+                    </span>
+                    <span className="text-text-secondary text-xs font-body">
+                      {project.year}
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </Link>
+          ))}
+        </div>
 
         <CTASection />
       </div>

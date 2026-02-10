@@ -32,44 +32,44 @@ const ContactMethods = ({ className = '' }: ContactMethodsProps) => {
       icon: 'PhoneIcon',
       title: t('phone.title'),
       description: t('phone.desc'),
-      value: '+34 912 345 678',
+      value: '+595 971 954 037',
       action: t('phone.action'),
-      href: 'tel:+34912345678'
+      href: 'tel:+595971954037'
     },
     {
       id: '2',
       icon: 'EnvelopeIcon',
       title: t('email.title'),
       description: t('email.desc'),
-      value: 'contact@lcdream.arq',
+      value: 'badan4074@gmail.com',
       action: t('email.action'),
-      href: 'mailto:contact@lcdream.arq'
+      href: 'mailto:badan4074@gmail.com'
     },
     {
       id: '3',
       icon: 'ChatBubbleLeftRightIcon',
       title: t('chat.title'),
       description: t('chat.desc'),
-      value: t('chat.value'),
+      value: 'WhatsApp',
       action: t('chat.action'),
-      href: '#chat'
+      href: 'https://wa.me/595971954037'
     },
     {
       id: '4',
       icon: 'MapPinIcon',
       title: t('visit.title'),
       description: t('visit.desc'),
-      value: 'Calle de Serrano 45, Madrid',
+      value: 'Madrid, España',
       action: t('visit.action'),
-      href: 'https://maps.google.com/?q=40.4268,-3.6874'
+      href: 'https://maps.google.com/?q=Madrid,España'
     }
   ];
 
   const handleMethodClick = (method: ContactMethod) => {
     if (!isHydrated) return;
 
-    if (method.id === '3') {
-      alert(t('chat.alert'));
+    if (method.action === 'WhatsApp' || method.id === '3') {
+      window.open(method.href, '_blank');
     }
   };
 

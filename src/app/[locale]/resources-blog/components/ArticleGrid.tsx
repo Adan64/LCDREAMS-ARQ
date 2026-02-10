@@ -1,182 +1,131 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import AppImage from '@/components/ui/AppImage';
-import Icon from '@/components/ui/AppIcon';
-
-interface Article {
-  id: number;
-  title: string;
-  excerpt: string;
-  category: string;
-  readTime: string;
-  date: string;
-  author: string;
-  image: string;
-  alt: string;
-  slug: string;
-}
-
+import { CalendarIcon, ClockIcon } from '@heroicons/react/24/outline'; // Adjust import if needed
 import { useTranslations } from 'next-intl';
 
-// ...
+interface Post {
+  id: string;
+  title: any;
+  slug: string;
+  excerpt: any;
+  category: string;
+  created_at: string;
+  cover_image: string | null;
+  author_id?: string;
+}
 
-const ArticleGrid = () => {
+interface ArticleGridProps {
+  posts: Post[];
+  locale: string;
+}
+
+const ArticleGrid = ({ posts, locale }: ArticleGridProps) => {
   const t = useTranslations('ResourcesBlog.grid');
   const [activeCategory, setActiveCategory] = useState('all');
 
-  const categories = [
-    { key: 'all', label: t('categories.all') },
-    { key: 'trends', label: t('categories.trends') },
-    { key: 'sustainability', label: t('categories.sustainability') },
-    { key: 'innovation', label: t('categories.innovation') },
-    { key: 'tips', label: t('categories.tips') }
-  ];
+  // Extract unique categories from posts, plus 'all'
+  const categories = useMemo(() => {
+    const uniqueCats = Array.from(new Set(posts.map(p => p.category).filter(Boolean)));
+    return ['all', ...uniqueCats];
+  }, [posts]);
 
-  const articles: Article[] = [
-    {
-      id: 3,
-      title: t('items.3.title'),
-      excerpt: t('items.3.excerpt'),
-      category: "trends", // key for filtering
-      readTime: "7 min",
-      date: "8 Enero 2026",
-      author: "Laura Martínez",
-      image: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Modern architectural building showcasing parametric design with curved glass facades",
-      slug: "10-tendencias-arquitectonicas-2026"
-    },
-    {
-      id: 4,
-      title: t('items.4.title'),
-      excerpt: t('items.4.excerpt'),
-      category: "tips",
-      readTime: "10 min",
-      date: "5 Enero 2026",
-      author: "David López",
-      image: "https://images.pexels.com/photos/3862379/pexels-photo-3862379.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Architect and client reviewing blueprints and architectural plans on desk with laptop",
-      slug: "guia-planificar-proyecto-arquitectonico"
-    },
-    {
-      id: 5,
-      title: t('items.5.title'),
-      excerpt: t('items.5.excerpt'),
-      category: "sustainability",
-      readTime: "9 min",
-      date: "2 Enero 2026",
-      author: "Ana Fernández",
-      image: "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Green certified building with LEED plaque and sustainable landscaping features",
-      slug: "certificaciones-verdes-leed-breeam"
-    },
-    {
-      id: 6,
-      title: t('items.6.title'),
-      excerpt: t('items.6.excerpt'),
-      category: "innovation",
-      readTime: "8 min",
-      date: "28 Diciembre 2025",
-      author: "Roberto Sánchez",
-      image: "https://images.pexels.com/photos/8849295/pexels-photo-8849295.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Digital architectural design interface showing AI-powered 3D modeling software",
-      slug: "inteligencia-artificial-diseno-arquitectonico"
-    },
-    {
-      id: 7,
-      title: t('items.7.title'),
-      excerpt: t('items.7.excerpt'),
-      category: "tips",
-      readTime: "6 min",
-      date: "25 Diciembre 2025",
-      author: "Isabel Torres",
-      image: "https://images.pexels.com/photos/6863332/pexels-photo-6863332.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Construction budget spreadsheet with calculator and architectural drawings",
-      slug: "presupuesto-construccion-errores-comunes"
-    },
-    {
-      id: 8,
-      title: t('items.8.title'),
-      excerpt: t('items.8.excerpt'),
-      category: "trends",
-      readTime: "7 min",
-      date: "22 Diciembre 2025",
-      author: "Miguel Ángel Ruiz",
-      image: "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800",
-      alt: "Modular building construction with prefabricated units being assembled on site",
-      slug: "arquitectura-modular-futuro-construccion"
-    }
-  ];
+  const getLocStr = (val: any) => {
+    if (!val) return '';
+    if (typeof val === 'string') return val;
+    return val[locale] || val['es'] || val['en'] || '';
+  };
 
-  const filteredArticles = activeCategory === 'all'
-    ? articles
-    : articles.filter(article => article.category === activeCategory);
+  const filteredPosts = activeCategory === 'all'
+    ? posts
+    : posts.filter(post => post.category === activeCategory);
 
   return (
-    <section className="py-20 lg:py-32 bg-black">
+    <section className="py-20 lg:py-32 bg-black min-h-screen">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="mb-12">
-          <h2 className="font-headline text-3xl lg:text-4xl font-headline-bold text-primary mb-8">
+          <h2 className="font-headline text-3xl lg:text-4xl font-headline-bold text-white mb-8">
             {t('title')}
           </h2>
 
           <div className="flex flex-wrap gap-4 mb-12">
-            {categories.map((category) => (
+            {categories.map((cat) => (
               <button
-                key={category.key}
-                onClick={() => setActiveCategory(category.key)}
-                className={`px-6 py-3 font-body text-sm font-body-semibold rounded-md transition-smooth ${activeCategory === category.key
-                  ? 'bg-lcdream-gold text-black shadow-gold'
-                  : 'bg-lcdream-dark-bg text-lcdream-gray-light border border-lcdream-gold/20 hover:border-lcdream-gold/50 hover:text-lcdream-gold'
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-6 py-3 text-sm font-semibold rounded-md transition-all ${activeCategory === cat
+                  ? 'bg-yellow-500 text-black shadow-lg shadow-yellow-500/20'
+                  : 'bg-gray-800 text-gray-400 border border-gray-700 hover:border-yellow-500/50 hover:text-yellow-500'
                   }`}
               >
-                {category.label}
+                {cat === 'all' ? t('categories.all') : cat}
               </button>
             ))}
           </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredArticles.map((article) => (
+          {filteredPosts.map((post) => (
             <Link
-              key={article.id}
-              href={`/resources-blog/${article.slug}`}
-              className="group bg-lcdream-dark-bg rounded-lg overflow-hidden shadow-subtle border border-lcdream-gold/10 hover:border-lcdream-gold/30 transition-smooth"
+              key={post.id}
+              href={`/resources-blog/${post.slug}`}
+              className="group bg-gray-900 rounded-lg overflow-hidden border border-white/5 hover:border-yellow-500/30 transition-all duration-300 flex flex-col h-full"
             >
-              <div className="relative h-48 overflow-hidden">
-                <AppImage
-                  src={article.image}
-                  alt={article.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-smooth duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-smooth" />
-                <span className="absolute top-4 left-4 px-3 py-1 bg-lcdream-gold text-black font-body text-xs font-body-semibold rounded-full">
-                  {categories.find(c => c.key === article.category)?.label}
-                </span>
+              <div className="relative h-48 overflow-hidden w-full bg-gray-800">
+                {post.cover_image ? (
+                  <AppImage
+                    src={post.cover_image}
+                    alt={getLocStr(post.title)}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    width={800}
+                    height={450}
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">
+                    No Image
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                {post.category && (
+                  <span className="absolute top-4 left-4 px-3 py-1 bg-yellow-500/90 text-black text-xs font-bold uppercase tracking-wide rounded-sm shadow-sm backdrop-blur-sm">
+                    {post.category}
+                  </span>
+                )}
               </div>
 
-              <div className="p-5">
-                <h3 className="font-headline text-xl font-headline-semibold text-lcdream-white mb-2 group-hover:text-lcdream-gold transition-smooth">
-                  {article.title}
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-500 transition-colors line-clamp-2">
+                  {getLocStr(post.title)}
                 </h3>
-                <p className="font-body text-sm text-lcdream-gray-light font-body-regular mb-4">
-                  {article.excerpt}
+                <p className="text-sm text-gray-400 mb-6 line-clamp-3 flex-grow">
+                  {getLocStr(post.excerpt)}
                 </p>
 
-                <div className="flex items-center justify-between text-xs">
-                  <span className="font-body font-body-regular text-secondary">
-                    {article.date}
-                  </span>
-                  <div className="flex items-center space-x-1 text-secondary">
-                    <Icon name="ClockIcon" size={14} />
-                    <span className="font-body font-body-regular">{article.readTime}</span>
+                <div className="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-gray-800 mt-auto">
+                  <div className="flex items-center gap-1.5">
+                    <CalendarIcon className="w-4 h-4" />
+                    <span>
+                      {new Date(post.created_at).toLocaleDateString(locale === 'es' ? 'es-ES' : 'en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}
+                    </span>
                   </div>
+                  {/* Read time placeholder or calculation could go here */}
                 </div>
               </div>
             </Link>
           ))}
         </div>
+
+        {filteredPosts.length === 0 && (
+          <div className="text-center text-gray-500 py-12">
+            {t('noArticles') || "No articles found."}
+          </div>
+        )}
       </div>
     </section>
   );

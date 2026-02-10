@@ -7,7 +7,7 @@ import ServicesSection from './components/ServicesSection';
 import TrustSection from './components/TrustSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import CTASection from './components/CTASection';
-import FooterSection from './components/FooterSection';
+import Footer from '@/components/common/Footer';
 import VirtualTourSection from '@/components/ui/VirtualTourSection';
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function Homepage() {
         <TestimonialsSection />
         <VirtualTourSection />
         <CTASection />
-        <FooterSection />
+        <Footer />
       </main>
     </>
   );

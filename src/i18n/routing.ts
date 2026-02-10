@@ -19,7 +19,11 @@ export const routing = defineRouting({
     '/cookies': '/cookies',
     '/legal': '/legal',
     '/client-portal': '/client-portal',
-    '/client-portal/dashboard': '/client-portal/dashboard'
+    '/client-portal/dashboard': '/client-portal/dashboard',
+    '/admin': '/admin',
+    '/admin/blog': '/admin/blog',
+    '/admin/blog/new': '/admin/blog/new',
+    '/admin/blog/edit/[id]': '/admin/blog/edit/[id]'
   }
 });
 
