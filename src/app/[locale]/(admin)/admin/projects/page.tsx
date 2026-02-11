@@ -8,7 +8,12 @@ import { createClient } from '@/lib/supabase/client';
 type Project = {
     id: string;
     title: any;
-    client: string;
+    client: string; // Legacy string
+    client_id: string; // Foreign key
+    profiles?: {    // Joined profile
+        full_name: string;
+        email: string;
+    };
     status: string;
     created_at: string;
 };
@@ -23,11 +28,11 @@ export default function AdminProjectsPage() {
         try {
             const { data, error } = await supabase
                 .from('projects')
-                .select('*')
+                .select('*, profiles(full_name, email)') // Join with profiles
                 .order('created_at', { ascending: false });
 
             if (error) throw error;
-            setProjects(data || []);
+            setProjects(data as any || []);
         } catch (error) {
             console.error('Error fetching projects:', error);
         } finally {
@@ -103,7 +108,10 @@ export default function AdminProjectsPage() {
                                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-white sm:pl-6">
                                         {getTitle(project.title)}
                                     </td>
-                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-300">{project.client}</td>
+                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-300">
+                                        {/* Display Profile Name OR legacy client string OR placeholder */}
+                                        {project.profiles?.full_name || project.client || <span className="text-gray-500 italic">Sin Asignar</span>}
+                                    </td>
                                     <td className="whitespace-nowrap px-3 py-4 text-sm">
                                         <span className={`inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ${project.status === 'Completado' ? 'bg-green-400/10 text-green-400 ring-green-400/20' :
                                             project.status === 'En Construcción' ? 'bg-blue-400/10 text-blue-400 ring-blue-400/20' :
@@ -117,7 +125,7 @@ export default function AdminProjectsPage() {
                                     </td>
                                     <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                         <div className="flex justify-end gap-3">
-                                            <Link href={`/admin/projects/${project.id}`} className="text-gray-400 hover:text-white transition-colors">
+                                            <Link href={`/admin/projects/${project.id}` as any} className="text-gray-400 hover:text-white transition-colors">
                                                 <PencilSquareIcon className="h-5 w-5" />
                                             </Link>
                                             <button

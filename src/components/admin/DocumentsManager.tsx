@@ -115,7 +115,7 @@ export default function DocumentsManager({ projectId }: DocumentsManagerProps) {
 
     return (
         <div className="bg-gray-800 p-6 rounded-xl border border-gray-700">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                 <h3 className="text-lg font-semibold text-white">{t('title')}</h3>
                 <div className="relative">
                     <input
@@ -125,9 +125,9 @@ export default function DocumentsManager({ projectId }: DocumentsManagerProps) {
                         disabled={uploading}
                         className="absolute inset-0 w-full h-full opacity-0 cursor-pointer disabled:cursor-not-allowed"
                     />
-                    <button className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white px-3 py-1.5 rounded-md text-sm transition-colors">
-                        <DocumentArrowUpIcon className="h-4 w-4" />
-                        {uploading ? 'Uploading...' : t('upload')}
+                    <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-4 py-2 rounded-md transition-colors shadow-sm">
+                        <DocumentArrowUpIcon className="h-5 w-5" />
+                        {uploading ? 'Uploading...' : (t('upload') || 'Subir Documento')}
                     </button>
                 </div>
             </div>

@@ -138,7 +138,7 @@ const FooterSection = () => {
                 {section.links.map((link) => (
                   <li key={link.label}>
                     <Link
-                      href={link.href}
+                      href={link.href as any}
                       className="font-body text-sm text-lcdream-gray-light font-body-regular transition-smooth hover:text-lcdream-gold hover:translate-x-1 inline-block"
                     >
                       {link.label}

@@ -46,10 +46,19 @@ export async function middleware(request: NextRequest) {
 
     // 3. Redirect to Login if not authenticated
     if (!user) {
-       // Extract locale if present to redirect to correct login page
        const locale = pathname.split('/')[1] || 'es'; 
        const url = request.nextUrl.clone();
        url.pathname = `/${locale}/login`;
+       return NextResponse.redirect(url);
+    }
+
+    // 4. Check for Admin Role
+    const userRole = user.user_metadata?.role;
+    if (userRole !== 'admin') {
+       // Redirect to home or show error if not admin
+       const locale = pathname.split('/')[1] || 'es';
+       const url = request.nextUrl.clone();
+       url.pathname = `/${locale}/homepage`; // Redirect unauthorized users to homepage
        return NextResponse.redirect(url);
     }
   }

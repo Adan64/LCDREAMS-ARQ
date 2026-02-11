@@ -25,7 +25,17 @@ export default function LoginPage() {
             alert('Error: ' + error.message);
             setLoading(false);
         } else {
-            router.push('/admin');
+            // Check role and redirect
+            const { data: { user } } = await supabase.auth.getUser();
+            const role = user?.user_metadata?.role;
+
+            if (role === 'admin') {
+                router.push('/admin');
+            } else {
+                // Default all other roles (client, user, null) to client portal
+                console.log('Redirecting non-admin user to client portal. Role:', role);
+                router.push('/client-portal/dashboard');
+            }
             router.refresh();
         }
     };

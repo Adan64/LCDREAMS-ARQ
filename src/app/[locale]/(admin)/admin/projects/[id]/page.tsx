@@ -46,15 +46,17 @@ export default function EditProjectPage() {
     if (!project) return null;
 
     return (
-        <div className="max-w-4xl mx-auto space-y-12 pb-20">
-            <div>
-                <h1 className="text-2xl font-bold text-white mb-2">Editar Proyecto</h1>
-                <p className="text-gray-400 text-sm">Gestiona la información, fases y documentos del proyecto.</p>
+        <div className="max-w-6xl mx-auto space-y-8 pb-20 px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between">
+                <div>
+                    <h1 className="text-2xl font-bold text-white mb-2">Editar Proyecto</h1>
+                    <p className="text-gray-400 text-sm">Gestiona la información, fases y documentos del proyecto.</p>
+                </div>
             </div>
 
-            <ProjectForm initialData={project} />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Stacked Layout for Maximum Width */}
+            <div className="space-y-8">
+                <ProjectForm initialData={project} />
                 <PhasesManager projectId={project.id} />
                 <DocumentsManager projectId={project.id} />
             </div>

@@ -1866,6 +1866,7 @@
                 "subtitleInfo": "Esta informação será pública no portfólio.",
                 "projectTitle": "Título do Projeto",
                 "client": "Cliente",
+                "selectClient": "Selecionar Cliente",
                 "status": "Status",
                 "description": "Descrição",
                 "location": "Localização",
@@ -1958,6 +1959,25 @@
                 "placeholders": {
                     "tags": "Arquitetura, Design, Notícias"
                 }
+            }
+        },
+        "Users": {
+            "title": "Gestão de Usuários",
+            "subtitle": "Gerenciar acesso e funções dos usuários.",
+            "searchPlaceholder": "Buscar por nome ou e-mail...",
+            "table": {
+                "name": "Nome",
+                "email": "E-mail",
+                "role": "Função",
+                "actions": "Ações"
+            },
+            "createUser": "Criar Usuário",
+            "editRole": "Editar Função",
+            "noUsers": "Nenhum usuário encontrado.",
+            "loading": "Carregando usuários...",
+            "alerts": {
+                "updated": "Função atualizada com sucesso!",
+                "error": "Erro ao atualizar função."
             }
         }
     }

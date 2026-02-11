@@ -107,7 +107,7 @@ const Header = ({ className = '' }: HeaderProps) => {
               {navigationItems.map((item) => (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  href={item.href as any}
                   className={`px-4 py-2 font-body text-sm font-body-regular transition-smooth rounded-md ${isActiveRoute(item.href)
                     ? 'text-lcdream-gold bg-lcdream-gold/10 shadow-gold' : 'text-lcdream-white hover:text-lcdream-gold hover:bg-lcdream-gold/5'
                     }`}
@@ -126,7 +126,7 @@ const Header = ({ className = '' }: HeaderProps) => {
                     {moreItems.map((item) => (
                       <Link
                         key={item.href}
-                        href={item.href}
+                        href={item.href as any}
                         className={`block px-4 py-2 font-body text-sm font-body-regular transition-smooth ${isActiveRoute(item.href)
                           ? 'text-lcdream-gold bg-lcdream-gold/10' : 'text-lcdream-white hover:text-lcdream-gold hover:bg-lcdream-gold/5'
                           }`}
@@ -181,7 +181,7 @@ const Header = ({ className = '' }: HeaderProps) => {
               {navigationItems.map((item) => (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  href={item.href as any}
                   onClick={closeMobileMenu}
                   className={`block px-4 py-3 font-body text-base font-body-regular rounded-md transition-smooth ${isActiveRoute(item.href)
                     ? 'text-lcdream-gold bg-lcdream-gold/10 shadow-gold' : 'text-lcdream-white hover:text-lcdream-gold hover:bg-lcdream-gold/5'
@@ -195,7 +195,7 @@ const Header = ({ className = '' }: HeaderProps) => {
                 {moreItems.map((item) => (
                   <Link
                     key={item.href}
-                    href={item.href}
+                    href={item.href as any}
                     onClick={closeMobileMenu}
                     className={`block px-4 py-3 font-body text-base font-body-regular rounded-md transition-smooth ${isActiveRoute(item.href)
                       ? 'text-lcdream-gold bg-lcdream-gold/10 shadow-gold' : 'text-lcdream-white hover:text-lcdream-gold hover:bg-lcdream-gold/5'

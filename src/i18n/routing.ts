@@ -26,7 +26,7 @@ export const routing = defineRouting({
     '/admin/blog/edit/[id]': '/admin/blog/edit/[id]',
     '/admin/projects': '/admin/projects',
     '/admin/projects/new': '/admin/projects/new',
-    '/admin/projects/edit/[id]': '/admin/projects/edit/[id]',
+    '/admin/projects/[id]': '/admin/projects/[id]',
     '/admin/users': '/admin/users',
     '/admin/settings': '/admin/settings'
   }

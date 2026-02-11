@@ -20,6 +20,10 @@ type Project = {
     start_date: string;
     estimated_completion: string;
     images: string[];
+    // Linked Profile
+    profiles?: {
+        full_name: string;
+    };
     // Computed/Derived for UI
     code?: string;
 };
@@ -48,48 +52,75 @@ export default function ClientDashboardPage() {
     const projectId = searchParams.get('p');
     const supabase = createClient();
 
+    // State
+    const [allProjects, setAllProjects] = useState<Project[]>([]);
     const [project, setProject] = useState<Project | null>(null);
     const [phases, setPhases] = useState<Phase[]>([]);
     const [documents, setDocuments] = useState<Document[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if (!projectId) {
-            router.push('/client-portal');
-            return;
-        }
-
         const fetchData = async () => {
             try {
-                // 1. Fetch Project
-                const { data: projectData, error: projectError } = await supabase
+                // 1. Get Current User
+                const { data: { user } } = await supabase.auth.getUser();
+
+                if (!user) {
+                    console.warn('No user found in Dashboard, redirecting to Portal Home');
+                    router.push('/client-portal');
+                    return;
+                }
+
+                // 2. Fetch ALL Assigned Projects for this User
+                const { data: userProjects, error: projectsError } = await supabase
                     .from('projects')
-                    .select('*')
-                    .eq('id', projectId)
-                    .single();
+                    .select('*, profiles(full_name)')
+                    .eq('client_id', user.id);
 
-                if (projectError || !projectData) throw new Error('Project not found');
+                if (projectsError) throw projectsError;
 
-                // 2. Fetch Phases
-                const { data: phasesData } = await supabase
-                    .from('project_phases')
-                    .select('*')
-                    .eq('project_id', projectId)
-                    .order('order', { ascending: true });
+                const projectsList = userProjects || [];
+                setAllProjects(projectsList);
 
-                // 3. Fetch Documents
-                const { data: docsData } = await supabase
-                    .from('project_documents')
-                    .select('*')
-                    .eq('project_id', projectId)
-                    .order('created_at', { ascending: false });
+                // 3. Determine Project Selection Logic
+                let targetProject: Project | undefined;
 
-                setProject(projectData);
-                setPhases(phasesData || []);
-                setDocuments(docsData || []);
+                if (projectId) {
+                    // Case A: Specific project requested via URL
+                    targetProject = projectsList.find(p => p.id === projectId);
+                } else if (projectsList.length === 1) {
+                    // Case B: Only one project exists - Auto-select it
+                    targetProject = projectsList[0];
+                }
+                // Case C: Multiple projects and no ID selected -> targetProject remains undefined, showing Selection Grid
+
+                // 4. If a project is selected, fetch its details (Phases & Docs)
+                if (targetProject) {
+                    setProject(targetProject);
+
+                    // Fetch Phases
+                    const { data: phasesData } = await supabase
+                        .from('project_phases')
+                        .select('*')
+                        .eq('project_id', targetProject.id)
+                        .order('order', { ascending: true });
+
+                    // Fetch Documents
+                    const { data: docsData } = await supabase
+                        .from('project_documents')
+                        .select('*')
+                        .eq('project_id', targetProject.id)
+                        .order('created_at', { ascending: false });
+
+                    setPhases(phasesData || []);
+                    setDocuments(docsData || []);
+                } else {
+                    // No specific project selected (showing grid)
+                    setProject(null);
+                }
+
             } catch (error) {
                 console.error("Error fetching dashboard data:", error);
-                router.push('/client-portal'); // Redirect on error
             } finally {
                 setLoading(false);
             }
@@ -97,6 +128,21 @@ export default function ClientDashboardPage() {
 
         fetchData();
     }, [projectId, router]);
+
+    const handleSelectProject = (id: string) => {
+        // Update URL to include project ID
+        router.push(`/client-portal/dashboard?p=${id}`);
+    };
+
+    const handleBackToProjects = () => {
+        router.push('/client-portal/dashboard');
+    };
+
+    // DEBUG LOGGING
+    useEffect(() => {
+        console.log('Dashboard State:', { loading, userFound: !!project || allProjects.length > 0, projectCount: allProjects.length });
+    }, [loading, allProjects, project]);
+
 
     if (loading) {
         return (
@@ -106,11 +152,88 @@ export default function ClientDashboardPage() {
         );
     }
 
-    if (!project) return null;
+    // STATE: No Projects Found
+    if (allProjects.length === 0) {
+        return (
+            <main className="min-h-screen bg-muted/30 flex flex-col">
+                <Header />
+                <div className="flex-1 flex flex-col items-center justify-center p-6 text-center">
+                    <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 max-w-md w-full">
+                        <div className="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <AppIcon name="FolderIcon" className="w-8 h-8" />
+                        </div>
+                        <h1 className="text-xl font-bold text-gray-900 mb-2">No tienes proyectos asignados</h1>
+                        <p className="text-gray-500 mb-6">
+                            Tu cuenta de cliente está activa, pero aún no se ha vinculado ningún proyecto. Por favor, contacta con la administración.
+                        </p>
+                        <button
+                            onClick={() => router.push('/')}
+                            className="text-sm text-yellow-600 font-semibold hover:underline"
+                        >
+                            Volver al inicio
+                        </button>
+                    </div>
+                </div>
+            </main>
+        );
+    }
 
-    // Helper to format currency/dates if needed
-    // const locale = ...
+    // STATE: Project Selection Grid (Multiple Projects)
+    if (!project) {
+        return (
+            <main className="min-h-screen bg-muted/30 flex flex-col">
+                <Header />
+                <div className="flex-1 max-w-7xl mx-auto w-full px-6 lg:px-12 pt-24 pb-12">
+                    <div className="mb-8">
+                        <h1 className="text-3xl font-headline-bold text-lcdream-charcoal mb-2">Mis Proyectos</h1>
+                        <p className="text-gray-500">Selecciona un proyecto para ver sus detalles y progreso.</p>
+                    </div>
 
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {allProjects.map((p) => {
+                            const pName = (p.title as any)['es'] || p.title;
+                            return (
+                                <div
+                                    key={p.id}
+                                    onClick={() => handleSelectProject(p.id)}
+                                    className="group bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 hover:shadow-md hover:border-lcdream-gold/50 transition-all cursor-pointer"
+                                >
+                                    <div className="h-48 relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-gray-900/10 group-hover:bg-gray-900/0 transition-colors z-10" />
+                                        <img
+                                            src={p.cover_image || '/images/placeholder.jpg'}
+                                            alt={pName}
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                        />
+                                        <div className="absolute top-4 right-4 z-20">
+                                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800 shadow-sm backdrop-blur-sm">
+                                                {p.status}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="p-6">
+                                        <h3 className="text-lg font-bold text-gray-900 group-hover:text-lcdream-gold transition-colors mb-2">{pName}</h3>
+                                        <div className="flex justify-between items-center text-sm text-gray-500 mt-4">
+                                            <span className="flex items-center gap-1">
+                                                <AppIcon name="ClockIcon" className="w-4 h-4" />
+                                                Inicio: {new Date(p.start_date).toLocaleDateString()}
+                                            </span>
+                                            <span className="font-semibold text-gray-900">{p.progress}%</span>
+                                        </div>
+                                        <div className="w-full bg-gray-100 rounded-full h-1.5 mt-2 overflow-hidden">
+                                            <div className="bg-lcdream-gold h-1.5 rounded-full" style={{ width: `${p.progress}%` }} />
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </main>
+        );
+    }
+
+    // STATE: Single Project Dashboard (Original View)
     // Animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -125,6 +248,12 @@ export default function ClientDashboardPage() {
         visible: { opacity: 1, y: 0 }
     };
 
+    // Determine Client Name: Use linked profile name first, fall back to legacy text
+    const clientName = (project as any).profiles?.full_name || project.client || 'Cliente';
+
+    // Show "Back to Projects" if user has multiple projects
+    const showBackButton = allProjects.length > 1;
+
     return (
         <main className="min-h-screen bg-muted/30 pb-20">
             <Header />
@@ -137,6 +266,16 @@ export default function ClientDashboardPage() {
                 </div>
 
                 <div className="max-w-7xl mx-auto relative z-10">
+                    {showBackButton && (
+                        <button
+                            onClick={handleBackToProjects}
+                            className="mb-6 flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors group"
+                        >
+                            <AppIcon name="ArrowLeftIcon" className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                            Volver a mis proyectos
+                        </button>
+                    )}
+
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                         <div>
                             <div className="inline-flex items-center gap-2 bg-lcdream-gold/20 text-lcdream-gold px-3 py-1 rounded-full text-xs font-semibold mb-4">
@@ -148,8 +287,8 @@ export default function ClientDashboardPage() {
                                 {(project.title as any)['es'] || project.title}
                             </h1>
                             <p className="text-lcdream-gray-light flex items-center gap-2">
-                                <AppIcon name="MapPinIcon" className="w-4 h-4" />
-                                {project.client} {/* Using client as proxy for location/subtitle for now */}
+                                <AppIcon name="UserIcon" className="w-4 h-4" />
+                                {clientName}
                             </p>
                         </div>
 
@@ -294,11 +433,11 @@ export default function ClientDashboardPage() {
                         <motion.div variants={itemVariants} className="bg-lcdream-charcoal p-8 rounded-xl text-white">
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="w-12 h-12 rounded-full bg-lcdream-gold flex items-center justify-center font-bold text-lcdream-charcoal text-xl">
-                                    {project.client?.charAt(0) || 'C'}
+                                    {clientName.charAt(0) || 'C'}
                                 </div>
                                 <div>
                                     <p className="text-sm text-lcdream-gray-light">Área Privada</p>
-                                    <p className="font-semibold">{project.client}</p>
+                                    <p className="font-semibold">{clientName}</p>
                                 </div>
                             </div>
                             <div className="space-y-3 text-sm text-lcdream-gray-light font-mono">

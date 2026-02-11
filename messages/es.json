@@ -1853,6 +1853,7 @@
                 "subtitleInfo": "Esta información será pública en el portafolio.",
                 "projectTitle": "Título del Proyecto",
                 "client": "Cliente",
+                "selectClient": "Seleccionar Cliente",
                 "status": "Estado",
                 "description": "Descripción",
                 "location": "Ubicación",
@@ -1894,7 +1895,8 @@
             "completed": "Completada",
             "pending": "Pendiente",
             "in_progress": "En Curso",
-            "deleteConfirm": "¿Eliminar esta fase?"
+            "deleteConfirm": "¿Eliminar esta fase?",
+            "add": "Añadir Fase"
         },
         "Documents": {
             "title": "Documentos del Proyecto",
@@ -1945,6 +1947,25 @@
                 "placeholders": {
                     "tags": "Arquitectura, Diseño, Noticias"
                 }
+            }
+        },
+        "Users": {
+            "title": "Gestión de Usuarios",
+            "subtitle": "Administra el acceso y roles de los usuarios.",
+            "searchPlaceholder": "Buscar por nombre o email...",
+            "table": {
+                "name": "Nombre",
+                "email": "Email",
+                "role": "Rol",
+                "actions": "Acciones"
+            },
+            "createUser": "Crear Usuario",
+            "editRole": "Editar Rol",
+            "noUsers": "No se encontraron usuarios.",
+            "loading": "Cargando usuarios...",
+            "alerts": {
+                "updated": "¡Rol actualizado correctamente!",
+                "error": "Error al actualizar el rol."
             }
         }
     }

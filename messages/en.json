@@ -1863,6 +1863,7 @@
                 "subtitleInfo": "This information will be public in the portfolio.",
                 "projectTitle": "Project Title",
                 "client": "Client",
+                "selectClient": "Select Client",
                 "status": "Status",
                 "description": "Description",
                 "location": "Location",
@@ -1964,6 +1965,25 @@
                 "placeholders": {
                     "tags": "Architecture, Design, News"
                 }
+            }
+        },
+        "Users": {
+            "title": "User Management",
+            "subtitle": "Manage user access and roles.",
+            "searchPlaceholder": "Search by name or email...",
+            "table": {
+                "name": "Name",
+                "email": "Email",
+                "role": "Role",
+                "actions": "Actions"
+            },
+            "createUser": "Create User",
+            "editRole": "Edit Role",
+            "noUsers": "No users found.",
+            "loading": "Loading users...",
+            "alerts": {
+                "updated": "Role updated successfully!",
+                "error": "Error updating role."
             }
         }
     }

@@ -17,6 +17,19 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
   const [isChanged, setIsChanged] = useState(false);
   const router = useRouter();
   const supabase = createClient();
+  const [clients, setClients] = useState<any[]>([]);
+
+  // Fetch clients on mount
+  useEffect(() => {
+    const fetchClients = async () => {
+      const { data } = await supabase
+        .from('profiles')
+        .select('id, full_name, email')
+        .eq('role', 'client');
+      if (data) setClients(data);
+    };
+    fetchClients();
+  }, [supabase]);
 
   // Helper to safely get localized string from JSONB
   const getLocStr = (val: any) => {
@@ -28,7 +41,7 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
   // State for controlled inputs
   const [formData, setFormData] = useState({
     title: '',
-    client: '',
+    client_id: '', // Changed from client (text) to client_id (UUID)
     status: 'Diseño',
     description: '',
     access_code: '',
@@ -42,7 +55,7 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
     if (initialData) {
       setFormData({
         title: getLocStr(initialData.title),
-        client: initialData.client || '',
+        client_id: initialData.client_id || '', // Use client_id
         status: initialData.status || 'Diseño',
         description: getLocStr(initialData.description),
         access_code: initialData.access_code || '',
@@ -62,7 +75,8 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
 
     const hasChanges =
       formData.title !== getLocStr(initialData.title) ||
-      formData.client !== (initialData.client || '') ||
+      formData.title !== getLocStr(initialData.title) ||
+      formData.client_id !== (initialData.client_id || '') ||
       formData.status !== (initialData.status || 'Diseño') ||
       formData.description !== getLocStr(initialData.description) ||
       formData.access_code !== (initialData.access_code || '') ||
@@ -117,7 +131,8 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
       // 2. Prepare Data Payload
       const payload = {
         title: { es: formData.title, en: formData.title + ' (EN)', pt: formData.title + ' (PT)' },
-        client: formData.client,
+        client_id: formData.client_id || null, // Save client_id
+        // client: formData.client, // Remove old string field if deprecated, or keep for legacy? Let's assume schema change
         status: formData.status,
         description: { es: formData.description, en: formData.description + ' (EN)', pt: formData.description + ' (PT)' },
         cover_image: imageUrl,
@@ -198,14 +213,22 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
                 {t('client')}
               </label>
               <div className="mt-2">
-                <input
-                  type="text"
-                  name="client"
-                  id="client"
-                  value={formData.client}
-                  onChange={handleChange}
-                  className="block w-full rounded-md border-0 bg-gray-700/50 py-2.5 text-white shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-yellow-500 sm:text-sm sm:leading-6"
-                />
+                <div className="mt-2">
+                  <select
+                    id="client_id"
+                    name="client_id"
+                    value={formData.client_id}
+                    onChange={handleChange}
+                    className="block w-full rounded-md border-0 bg-gray-700/50 py-3 text-white shadow-sm ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-inset focus:ring-yellow-500 sm:text-sm sm:leading-6"
+                  >
+                    <option value="">{t('selectClient') || 'Select a Client'}</option>
+                    {clients.map((client) => (
+                      <option key={client.id} value={client.id}>
+                        {client.full_name || client.email}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
             </div>
 
