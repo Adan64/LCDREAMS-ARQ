@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import '../../styles/index.css';
 import { Metadata, Viewport } from 'next';
+import { Analytics } from "@vercel/analytics/next";
 import IntroAnimation from '@/components/ui/IntroAnimation';
 import ScrollProgressBar from '@/components/ui/ScrollProgressBar';export const viewport: Viewport = {
     width: 'device-width',
@@ -65,6 +66,7 @@ export default async function LocaleLayout({
                     <ScrollProgressBar />
                     <IntroAnimation />
                     {children}
+                    <Analytics />
                 </NextIntlClientProvider>
             </body>
         </html>
