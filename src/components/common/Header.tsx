@@ -121,8 +121,8 @@ const Header = ({ className = '' }: HeaderProps) => {
                   <span>{t('more')}</span>
                   <Icon name="ChevronDownIcon" size={16} className="transition-smooth group-hover:rotate-180" />
                 </button>
-                <div className="absolute right-0 top-full mt-2 w-48 bg-lcdream-dark-bg border border-lcdream-gold/20 shadow-elevated rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-smooth">
-                  <div className="py-2">
+                <div className="absolute right-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-smooth z-50">
+                  <div className="bg-lcdream-dark-bg border border-lcdream-gold/20 shadow-elevated rounded-md py-2">
                     {moreItems.map((item) => (
                       <Link
                         key={item.href}
