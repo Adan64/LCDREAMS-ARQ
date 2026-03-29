@@ -86,8 +86,8 @@ const Header = ({ className = '' }: HeaderProps) => {
               onClick={closeMobileMenu}
             >
               <div className="relative w-12 h-12 transition-smooth group-hover:scale-105">
-                <Image
-                  src="/assets/images/WhatsApp_Image_2026-01-21_at_4.57.17_PM-1769110981223.jpeg"
+                  <Image
+                  src="/assets/images/logo.png"
                   alt="LCDREAM.ARQ Logo"
                   fill
                   className="object-contain"

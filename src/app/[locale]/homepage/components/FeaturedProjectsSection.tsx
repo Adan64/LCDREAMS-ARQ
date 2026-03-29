@@ -25,7 +25,7 @@ const FeaturedProjectsSection = () => {
       category: t('items.1.category'),
       location: t('items.1.location'),
       year: 2025,
-      image: "https://images.pixabay.com/photo/2016/11/18/17/20/living-room-1835923_1280.jpg",
+      image: "/assets/images/project1.png",
       alt: "Modern minimalist living room",
       description: t('items.1.description')
     },
@@ -35,7 +35,7 @@ const FeaturedProjectsSection = () => {
       category: t('items.2.category'),
       location: t('items.2.location'),
       year: 2025,
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800",
+      image: "/assets/images/project2.png",
       alt: "Modern open office space",
       description: t('items.2.description')
     },
@@ -45,7 +45,7 @@ const FeaturedProjectsSection = () => {
       category: t('items.3.category'),
       location: t('items.3.location'),
       year: 2024,
-      image: "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/assets/images/project3.png",
       alt: "Industrial loft interior",
       description: t('items.3.description')
     },
@@ -55,7 +55,7 @@ const FeaturedProjectsSection = () => {
       category: t('items.4.category'),
       location: t('items.4.location'),
       year: 2024,
-      image: "https://images.pixabay.com/photo/2016/11/29/03/53/architecture-1867187_1280.jpg",
+      image: "/assets/images/project4.png",
       alt: "Modern spa interior",
       description: t('items.4.description')
     }

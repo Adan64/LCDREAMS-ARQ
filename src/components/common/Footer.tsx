@@ -5,6 +5,7 @@ import { Link } from '@/i18n/routing';
 import Icon from '@/components/ui/AppIcon';
 import { useTranslations } from 'next-intl';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import Image from 'next/image';
 
 interface FooterLink {
     label: string;
@@ -71,30 +72,12 @@ const Footer = () => {
                     <div className="lg:col-span-2">
                         <Link href="/homepage" className="flex items-center space-x-3 mb-6">
                             <div className="relative w-12 h-12">
-                                <svg
-                                    width="48"
-                                    height="48"
-                                    viewBox="0 0 48 48"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M24 4L4 16V32L24 44L44 32V16L24 4Z"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        className="text-lcdream-white"
-                                    />
-                                    <path
-                                        d="M24 4V44M4 16L44 32M44 16L4 32"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        className="text-lcdream-gold"
-                                    />
-                                </svg>
+                                <Image
+                                    src="/assets/images/logo.png"
+                                    alt="LCDREAM.ARQ Logo"
+                                    fill
+                                    className="object-contain"
+                                />
                             </div>
                             <div className="flex flex-col">
                                 <span className="font-headline text-2xl font-headline-bold tracking-tight text-lcdream-gold">

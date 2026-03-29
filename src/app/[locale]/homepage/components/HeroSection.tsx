@@ -26,7 +26,7 @@ const HeroSection = () => {
       title: t('slides.1.title'),
       category: t('slides.1.category'),
       location: t('slides.1.location'),
-      image: "https://img.rocket.new/generatedImages/rocket_gen_img_1f0e7fb75-1767893206100.png",
+      image: "/assets/images/hero1.png",
       alt: "Modern white Mediterranean villa",
       description: t('slides.1.description')
     },
@@ -35,7 +35,7 @@ const HeroSection = () => {
       title: t('slides.2.title'),
       category: t('slides.2.category'),
       location: t('slides.2.location'),
-      image: "https://images.unsplash.com/photo-1605261810990-6b0c79de1175",
+      image: "/assets/images/hero2.png",
       alt: "Sleek modern glass office building",
       description: t('slides.2.description')
     },
@@ -44,7 +44,7 @@ const HeroSection = () => {
       title: t('slides.3.title'),
       category: t('slides.3.category'),
       location: t('slides.3.location'),
-      image: "https://images.unsplash.com/photo-1665522557472-bff4ff75c7d9",
+      image: "/assets/images/hero3.png",
       alt: "Minimalist urban home",
       description: t('slides.3.description')
     }
