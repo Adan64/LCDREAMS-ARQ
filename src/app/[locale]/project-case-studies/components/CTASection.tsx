@@ -4,7 +4,7 @@ import Icon from '@/components/ui/AppIcon';
 import { useTranslations } from 'next-intl';
 
 const CTASection = () => {
-  const t = useTranslations('ProjectCaseStudies.cta');
+  const t = useTranslations('ProjectCaseStudies.common.cta');
   return (
     <section className="py-16 lg:py-24 bg-primary">
       <div className="max-w-5xl mx-auto px-6 lg:px-12 text-center">

@@ -104,6 +104,7 @@ export default async function ProjectCaseStudiesPage({ params }: { params: Promi
     // We need two translation namespaces: generic logic and specific project data
     const tCommon = await getTranslations({ locale, namespace: 'ProjectCaseStudies.common' });
     const tProject = await getTranslations({ locale, namespace: `ProjectCaseStudies.projects.${project.key}` });
+    const tAllProjects = await getTranslations({ locale, namespace: 'ProjectCaseStudies.projects' });
 
     const heroData = {
         title: tProject('hero.title'),
@@ -218,18 +219,13 @@ export default async function ProjectCaseStudiesPage({ params }: { params: Promi
     // I will map manually for now or use placeholders.
 
     const relatedProjects: RelatedProject[] = otherProjects.map(p => {
-        // Fallback mapping for demo purposes since we don't have full translations for every ID in `related` block yet
-        let relatedKey = 'office';
-        if (p.id.includes('loft')) relatedKey = 'loft';
-        if (p.id.includes('villa')) relatedKey = 'resort';
-
         return {
             id: p.id,
-            title: tCommon(`related.items.${relatedKey}.title`),
-            category: tCommon(`related.items.${relatedKey}.category`),
+            title: tAllProjects(`${p.key}.hero.title`),
+            category: tAllProjects(`${p.key}.hero.category`),
             image: p.heroImage,
-            imageAlt: tCommon(`related.items.${relatedKey}.alt`),
-            location: tCommon(`related.items.${relatedKey}.location`)
+            imageAlt: tAllProjects(`${p.key}.hero.imageAlt`),
+            location: tAllProjects(`${p.key}.hero.location`)
         };
     });
 
