@@ -10,13 +10,19 @@ import ScrollProgressBar from '@/components/ui/ScrollProgressBar';export const v
 };
 
 export const metadata: Metadata = {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://lcdream.arq'),
+    metadataBase: new URL(
+        process.env.NEXT_PUBLIC_APP_URL || 
+        (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://lcdreams-arq.vercel.app')
+    ),
     title: 'LCDREAM.ARQ - Arquitectura e Interiores',
     description: 'Estudio de arquitectura e interiores especializado en diseño de lujo y elegancia',
     icons: {
         icon: [
             { url: '/favicon.png', type: 'image/png' }
         ],
+        apple: [
+            { url: '/favicon.png', type: 'image/png' }
+        ]
     },
     openGraph: {
         title: 'LCDREAM.ARQ - Arquitectura e Interiores',
@@ -26,8 +32,8 @@ export const metadata: Metadata = {
         images: [
             {
                 url: '/assets/images/logo.png',
-                width: 1200,
-                height: 630,
+                width: 400,
+                height: 400,
                 alt: 'LCDREAM.ARQ - Arquitectura e Interiores',
             },
         ],
@@ -35,7 +41,7 @@ export const metadata: Metadata = {
         type: 'website',
     },
     twitter: {
-        card: 'summary_large_image',
+        card: 'summary', // Note: "summary" creates a smaller square card next to text instead of "summary_large_image"
         title: 'LCDREAM.ARQ - Arquitectura e Interiores',
         description: 'Estudio de arquitectura e interiores especializado en diseño de lujo y elegancia',
         images: ['/assets/images/logo.png'],
