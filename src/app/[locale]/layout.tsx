@@ -5,7 +5,10 @@ import '../../styles/index.css';
 import { Metadata, Viewport } from 'next';
 import { Analytics } from "@vercel/analytics/next";
 import IntroAnimation from '@/components/ui/IntroAnimation';
-import ScrollProgressBar from '@/components/ui/ScrollProgressBar';export const viewport: Viewport = {
+import ScrollProgressBar from '@/components/ui/ScrollProgressBar';
+import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
+
+export const viewport: Viewport = {
     width: 'device-width',
     initialScale: 1,
 };
@@ -67,6 +70,7 @@ export default async function LocaleLayout({
                     <IntroAnimation />
                     {children}
                     <Analytics />
+                    <FloatingWhatsApp />
                 </NextIntlClientProvider>
             </body>
         </html>

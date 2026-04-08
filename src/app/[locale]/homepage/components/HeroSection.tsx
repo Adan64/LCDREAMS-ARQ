@@ -112,18 +112,16 @@ const HeroSection = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
-                    href="/portfolio-gallery"
-                    className="inline-flex items-center justify-center px-8 py-4 bg-lcdream-gold text-black font-cta text-base font-cta-semibold rounded-md transition-smooth hover:bg-lcdream-gold-light hover:shadow-gold hover:-translate-y-0.5">
-
-                    {t('cta.portfolio')}
-                    <Icon name="ArrowRightIcon" size={20} className="ml-2" />
-                  </Link>
-                  <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center px-8 py-4 bg-lcdream-white/10 backdrop-blur-sm text-lcdream-white border-2 border-lcdream-gold/50 font-cta text-base font-cta-semibold rounded-md transition-smooth hover:bg-lcdream-white/20 hover:border-lcdream-gold">
-
+                    className="inline-flex items-center justify-center px-8 py-4 bg-lcdream-gold text-black font-cta text-base font-cta-semibold rounded-md transition-smooth hover:bg-lcdream-gold-light hover:shadow-gold hover:-translate-y-0.5">
                     {t('cta.schedule')}
                     <Icon name="CalendarIcon" size={20} className="ml-2" />
+                  </Link>
+                  <Link
+                    href="/portfolio-gallery"
+                    className="inline-flex items-center justify-center px-8 py-4 bg-lcdream-white/10 backdrop-blur-sm text-lcdream-white border-2 border-lcdream-gold/50 font-cta text-base font-cta-semibold rounded-md transition-smooth hover:bg-lcdream-white/20 hover:border-lcdream-gold">
+                    {t('cta.portfolio')}
+                    <Icon name="ArrowRightIcon" size={20} className="ml-2" />
                   </Link>
                 </div>
               </div>

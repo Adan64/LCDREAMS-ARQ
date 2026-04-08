@@ -148,22 +148,22 @@ const ConsultationForm = ({ className = '' }: ConsultationFormProps) => {
 
   if (isSuccess) {
     return (
-      <section className={`py-20 lg:py-32 bg-white ${className}`}>
+      <section className={`py-20 lg:py-32 bg-lcdream-dark-bg ${className}`}>
         <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
-          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Icon name="CheckCircleIcon" size={40} className="text-green-600" />
+          <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <Icon name="CheckCircleIcon" size={40} className="text-green-500" />
           </div>
-          <h2 className="font-headline text-3xl font-headline-bold text-primary mb-4">
+          <h2 className="font-headline text-3xl font-headline-bold text-lcdream-gold mb-4">
             {t('successTitle')}
           </h2>
-          <p className="font-body text-lg text-text-secondary mb-8">
+          <p className="font-body text-lg text-lcdream-gray-light mb-8">
             {t('successDesc')}
           </p>
           <button
             onClick={() => setIsSuccess(false)}
-            className="inline-flex items-center px-6 py-3 font-cta text-sm font-cta-semibold text-white bg-primary rounded-md transition-smooth hover:bg-primary/90"
+            className="inline-flex items-center px-6 py-3 font-cta text-sm font-cta-semibold text-black bg-lcdream-gold rounded-md transition-smooth hover:bg-lcdream-gold-light"
           >
-            {t('form.submit')}
+            {t('submit')}
           </button>
         </div>
       </section>

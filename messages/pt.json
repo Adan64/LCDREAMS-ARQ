@@ -70,22 +70,22 @@
         "Hero": {
             "slides": {
                 "1": {
-                    "title": "Villa Moderna Mediterrânea",
-                    "category": "Residencial",
-                    "location": "Marbella, Espanha",
-                    "description": "Design contemporâneo que funde elegância mediterrânea com sustentabilidade"
+                    "title": "Projetamos espaços funcionais e modernos",
+                    "category": "Arquitetura Comercial",
+                    "location": "Nível Global",
+                    "description": "Da conceituação à execução, tornamos seus projetos comerciais e corporativos uma realidade."
                 },
                 "2": {
-                    "title": "Centro Corporativo Inovação",
-                    "category": "Comercial",
-                    "location": "Barcelona, Espanha",
-                    "description": "Espaço de trabalho que inspira criatividade e colaboração"
+                    "title": "Transformamos sua visão em luxo e conforto",
+                    "category": "Design Residencial",
+                    "location": "Projetos Exclusivos",
+                    "description": "Criamos lares únicos combinando estética atemporal com funcionalidade inteligente e design biofílico."
                 },
                 "3": {
-                    "title": "Residência Urbana Minimalista",
-                    "category": "Residencial",
-                    "location": "Madri, Espanha",
-                    "description": "Arquitetura limpa que maximiza a luz natural e a funcionalidade"
+                    "title": "Inovação e Sustentabilidade em cada obra",
+                    "category": "Desenvolvimento Integral",
+                    "location": "Múltiplas Escalas",
+                    "description": "Oferecemos projetos chave na mão com os mais altos padrões de qualidade, eficiência e tecnologia."
                 }
             },
             "cta": {
@@ -103,30 +103,30 @@
             "subtitle": "Oferecemos soluções arquitetônicas integrais desde o conceito inicial até a entrega final",
             "items": {
                 "1": {
-                    "title": "Design Residencial",
-                    "description": "Criamos lares únicos que refletem seu estilo de vida e personalidade",
+                    "title": "Design Arquitetônico",
+                    "description": "Desenvolvimento de plantas arquitetônicas precisas, design conceitual e interiores estratégicos.",
                     "features": {
-                        "0": "Casas personalizadas",
-                        "1": "Renovações integrais",
-                        "2": "Design de interiores"
+                        "0": "Projetos construtivos",
+                        "1": "Design de interiores",
+                        "2": "Análise de viabilidade"
                     }
                 },
                 "2": {
-                    "title": "Arquitetura Comercial",
-                    "description": "Espaços comerciais que potencializam sua marca e experiência do cliente",
+                    "title": "Visualização 3D Avançada",
+                    "description": "Projetos interativos, renders fotorrealistas e simulações de espaços antes de construir.",
                     "features": {
-                        "0": "Escritórios corporativos",
-                        "1": "Lojas comerciais",
-                        "2": "Espaços de coworking"
+                        "0": "Renders fotorrealistas",
+                        "1": "Tours virtuais 360",
+                        "2": "Modelagem BIM"
                     }
                 },
                 "3": {
-                    "title": "Planejamento Urbano",
-                    "description": "Desenvolvimentos urbanos sustentáveis que melhoram comunidades",
+                    "title": "Execução de Obras",
+                    "description": "Supervisão, gestão de fornecedores e execução integral garantindo qualidade e prazos.",
                     "features": {
-                        "0": "Masterplans",
-                        "1": "Espaços públicos",
-                        "2": "Desenvolvimento sustentável"
+                        "0": "Projetos chave na mão",
+                        "1": "Direção de obra",
+                        "2": "Controle de orçamento"
                     }
                 }
             },
@@ -180,6 +180,18 @@
                 "email": "Escreva para nós",
                 "visit": "Visite-nos"
             }
+        },
+        "ContactForm": {
+            "name": "Nome completo",
+            "email": "E-mail",
+            "phone": "Telefone (opcional)",
+            "message": "Conte-nos sobre seu projeto...",
+            "submit": "Enviar Mensagem",
+            "sending": "Enviando...",
+            "successTitle": "Mensagem enviada!",
+            "successMessage": "Entraremos em contato em breve.",
+            "errorTitle": "Ocorreu um erro",
+            "errorMessage": "Por favor, tente enviar sua mensagem novamente."
         },
         "Testimonials": {
             "title": "O Que Dizem Nossos Clientes",

@@ -17,21 +17,21 @@ const ServicesSection = () => {
   const services: Service[] = [
     {
       id: 1,
-      icon: "HomeModernIcon",
+      icon: "PencilSquareIcon",
       title: t('items.1.title'),
       description: t('items.1.description'),
       features: [t('items.1.features.0'), t('items.1.features.1'), t('items.1.features.2')]
     },
     {
       id: 2,
-      icon: "BuildingOfficeIcon",
+      icon: "CubeIcon",
       title: t('items.2.title'),
       description: t('items.2.description'),
       features: [t('items.2.features.0'), t('items.2.features.1'), t('items.2.features.2')]
     },
     {
       id: 3,
-      icon: "MapIcon",
+      icon: "WrenchScrewdriverIcon",
       title: t('items.3.title'),
       description: t('items.3.description'),
       features: [t('items.3.features.0'), t('items.3.features.1'), t('items.3.features.2')]

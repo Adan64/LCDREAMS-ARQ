@@ -318,22 +318,22 @@
         "Hero": {
             "slides": {
                 "1": {
-                    "title": "Modern Mediterranean Villa",
-                    "category": "Residential",
-                    "location": "Marbella, Spain",
-                    "description": "Contemporary design merging Mediterranean elegance with sustainability"
+                    "title": "We design functional and modern spaces",
+                    "category": "Commercial Architecture",
+                    "location": "Global Reach",
+                    "description": "From conceptualization to execution, we make your commercial and corporate projects a reality."
                 },
                 "2": {
-                    "title": "Innovation Corporate Center",
-                    "category": "Commercial",
-                    "location": "Barcelona, Spain",
-                    "description": "Workspace that inspires creativity and collaboration"
+                    "title": "Transforming your vision into luxury and comfort",
+                    "category": "Residential Design",
+                    "location": "Exclusive Projects",
+                    "description": "We create unique homes combining timeless aesthetics with smart functionality and biophilic design."
                 },
                 "3": {
-                    "title": "Minimalist Urban Residence",
-                    "category": "Residential",
-                    "location": "Madrid, Spain",
-                    "description": "Clean architecture maximizing natural light and functionality"
+                    "title": "Innovation and Sustainability in every project",
+                    "category": "Comprehensive Development",
+                    "location": "Multiple Scales",
+                    "description": "We offer turnkey projects with the highest standards of quality, efficiency, and technology."
                 }
             },
             "cta": {
@@ -351,30 +351,30 @@
             "subtitle": "We offer comprehensive architectural solutions from initial concept to final delivery",
             "items": {
                 "1": {
-                    "title": "Residential Design",
-                    "description": "We create unique homes reflecting your lifestyle and personality",
+                    "title": "Architectural Design",
+                    "description": "Development of precise architectural plans, conceptual design, and strategic interior design.",
                     "features": {
-                        "0": "Custom homes",
-                        "1": "Integral renovations",
-                        "2": "Interior design"
+                        "0": "Construction plans",
+                        "1": "Interior design",
+                        "2": "Feasibility analysis"
                     }
                 },
                 "2": {
-                    "title": "Commercial Architecture",
-                    "description": "Commercial spaces that enhance your brand and customer experience",
+                    "title": "Advanced 3D Visualization",
+                    "description": "Interactive projects, photorealistic renders, and space simulations before building.",
                     "features": {
-                        "0": "Corporate offices",
-                        "1": "Retail spaces",
-                        "2": "Coworking spaces"
+                        "0": "Photorealistic renders",
+                        "1": "360 virtual tours",
+                        "2": "BIM Modeling"
                     }
                 },
                 "3": {
-                    "title": "Urban Planning",
-                    "description": "Sustainable urban developments that improve communities",
+                    "title": "Construction Execution",
+                    "description": "Supervision, supplier management, and comprehensive execution ensuring quality and times.",
                     "features": {
-                        "0": "Masterplans",
-                        "1": "Public spaces",
-                        "2": "Sustainable development"
+                        "0": "Turnkey projects",
+                        "1": "Construction management",
+                        "2": "Budget control"
                     }
                 }
             },
@@ -444,6 +444,18 @@
                 "email": "Email us",
                 "visit": "Visit us"
             }
+        },
+        "ContactForm": {
+            "name": "Full name",
+            "email": "Email address",
+            "phone": "Phone (optional)",
+            "message": "Tell us about your project...",
+            "submit": "Send Message",
+            "sending": "Sending...",
+            "successTitle": "Message sent!",
+            "successMessage": "We will get back to you shortly.",
+            "errorTitle": "An error occurred",
+            "errorMessage": "Please try sending your message again."
         },
         "Testimonials": {
             "title": "What Our Clients Say",
