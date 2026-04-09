@@ -447,6 +447,93 @@
             "errorTitle": "Ocurrió un error",
             "errorMessage": "Por favor intenta enviar tu mensaje nuevamente."
         },
+        "Quiz": {
+            "banner": {
+                "tag": "TEST DE ESTILO",
+                "title": "¿Cómo se vería tu casa ideal?",
+                "description": "Respondé 4 preguntas rápidas para descubrir tu estilo arquitectónico y la viabilidad de tu proyecto.",
+                "button": "Hacer el test ahora"
+            },
+            "modal": {
+                "title": "¿Cómo se vería tu casa ideal?",
+                "introSubtitle": "Responde 4 preguntas breves para descubrir tu estilo arquitectónico.",
+                "processing": "Analizando tus preferencias arquitectónicas...",
+                "resultTitle": "Tu estilo ideal es: {result}",
+                "resultSubtitle": "Hemos analizado tus elecciones y este estilo encaja perfectamente con tu visión.",
+                "buttons": {
+                    "next": "Siguiente",
+                    "back": "Atrás",
+                    "start": "Comenzar Test",
+                    "close": "Cerrar"
+                },
+                "form": {
+                    "scarcity": "Cupos de asesoría gratuita limitados para esta semana.",
+                    "name": "Nombre",
+                    "email": "Email",
+                    "phone": "Teléfono",
+                    "submit": "Quiero mi Asesoría de Regalo",
+                    "success": "¡Genial! Nos contactaremos a la brevedad para coordinar tu asesoría gratuita."
+                },
+                "questions": {
+                    "1": {
+                        "question": "Si tuvieras que elegir una paleta de colores para tu hogar, ¿cuál sería?",
+                        "options": {
+                            "A": "Blanco, gris y negro",
+                            "B": "Tonos tierra, maderas y verdes",
+                            "C": "Colores neutros con acentos metálicos y vidrio",
+                            "D": "Ladrillo a la vista, metales oscuros y grises"
+                        }
+                    },
+                    "2": {
+                        "question": "¿Qué tipo de materiales prefieres que destaquen en tu espacio?",
+                        "options": {
+                            "A": "Hormigón pulido y vidrio",
+                            "B": "Madera natural y piedra",
+                            "C": "Acero inoxidable y grandes ventanales",
+                            "D": "Ladrillo reciclado e Hierro Forjado"
+                        }
+                    },
+                    "3": {
+                        "question": "¿Cuál es el ambiente más importante para ti?",
+                        "options": {
+                            "A": "Un living amplio y despejado",
+                            "B": "Una zona exterior integrada a la naturaleza",
+                            "C": "Una cocina ultramoderna conectada",
+                            "D": "Un espacio tipo loft de doble altura"
+                        }
+                    },
+                    "4": {
+                        "question": "Cuando piensas en la fachada de tu casa ideal, imaginas...",
+                        "options": {
+                            "A": "Líneas rectas, volúmenes puros",
+                            "B": "Techos inclinados, madera y vegetación",
+                            "C": "Grandes ventanales, diseño asimétrico",
+                            "D": "Estructuras expuestas, texturas crudas"
+                        }
+                    },
+                    "5": {
+                        "question": "¿Ya contás con un terreno para tu proyecto?",
+                        "options": {
+                            "A": "Sí, ya lo tengo.",
+                            "B": "Estoy buscando / En proceso.",
+                            "C": "Todavía no, es para el futuro."
+                        }
+                    }
+                },
+                "results": {
+                    "Minimalista": "Minimalista",
+                    "Sustentable": "Orgánico / Sustentable",
+                    "Contemporaneo": "Contemporáneo",
+                    "Industrial": "Industrial"
+                },
+                "results_desc": {
+                    "Minimalista": "Sos una persona que valora la pureza de las formas, el orden y los espacios despejados sin distracciones visuales.",
+                    "Sustentable": "Tu conexión con la naturaleza es vital. Disfrutas de materiales cálidos, luz natural y un enfoque eco-amigable.",
+                    "Contemporaneo": "Buscas lo último en innovación. Te atraen los diseños limpios, la integración tecnológica y los grandes aventanamientos.",
+                    "Industrial": "Te identificas con el carácter, la historia y la crudeza estructural. Los espacios abiertos y materiales robustos son lo tuyo."
+                }
+            }
+        },
         "Testimonials": {
             "title": "Lo Que Dicen Nuestros Clientes",
             "subtitle": "La satisfacción de nuestros clientes es nuestro mayor logro",

@@ -457,6 +457,93 @@
             "errorTitle": "An error occurred",
             "errorMessage": "Please try sending your message again."
         },
+        "Quiz": {
+            "banner": {
+                "tag": "STYLE QUIZ",
+                "title": "What does your ideal home look like?",
+                "description": "Answer 4 quick questions to find out your architectural style and the viability of your project.",
+                "button": "Take the quiz now"
+            },
+            "modal": {
+                "title": "What does your ideal home look like?",
+                "introSubtitle": "Answer 4 quick questions to discover your architectural style.",
+                "processing": "Analyzing your architectural preferences...",
+                "resultTitle": "Your ideal style is: {result}",
+                "resultSubtitle": "We have analyzed your choices and this style perfectly fits your vision.",
+                "buttons": {
+                    "next": "Next",
+                    "back": "Back",
+                    "start": "Start Quiz",
+                    "close": "Close"
+                },
+                "form": {
+                    "scarcity": "Free consultation spots limited for this week.",
+                    "name": "Name",
+                    "email": "Email",
+                    "phone": "Phone",
+                    "submit": "Claim My Free Consultation",
+                    "success": "Great! We'll contact you shortly to schedule your free consultation."
+                },
+                "questions": {
+                    "1": {
+                        "question": "If you had to choose a color palette for your home, what would it be?",
+                        "options": {
+                            "A": "White, gray, and black",
+                            "B": "Earth tones, woods, and greens",
+                            "C": "Neutral colors with metallic accents and glass",
+                            "D": "Exposed brick, dark metals, and grays"
+                        }
+                    },
+                    "2": {
+                        "question": "What kind of materials do you prefer to stand out in your space?",
+                        "options": {
+                            "A": "Polished concrete and glass",
+                            "B": "Natural wood and stone",
+                            "C": "Stainless steel and large windows",
+                            "D": "Recycled brick and wrought iron"
+                        }
+                    },
+                    "3": {
+                        "question": "What is the most important room for you?",
+                        "options": {
+                            "A": "A spacious, decluttered living room",
+                            "B": "An outdoor area integrated with nature",
+                            "C": "An ultra-modern connected kitchen",
+                            "D": "An open double-height loft space"
+                        }
+                    },
+                    "4": {
+                        "question": "When you think of the facade of your ideal home, you imagine...",
+                        "options": {
+                            "A": "Straight lines, pure volumes",
+                            "B": "Pitched roofs, wood, and vegetation",
+                            "C": "Large windows, asymmetrical design",
+                            "D": "Exposed structures, raw textures"
+                        }
+                    },
+                    "5": {
+                        "question": "Do you already have a plot for your project?",
+                        "options": {
+                            "A": "Yes, I already have it.",
+                            "B": "I am looking for one.",
+                            "C": "Not yet, it's for the future."
+                        }
+                    }
+                },
+                "results": {
+                    "Minimalista": "Minimalist",
+                    "Sustentable": "Organic / Sustainable",
+                    "Contemporaneo": "Contemporary",
+                    "Industrial": "Industrial"
+                },
+                "results_desc": {
+                    "Minimalista": "You are a person who values the purity of forms, order, and clear spaces without visual distractions.",
+                    "Sustentable": "Your connection with nature is vital. You enjoy warm materials, natural light, and an eco-friendly approach.",
+                    "Contemporaneo": "You look for the latest in innovation. You are attracted to clean designs, technological integration, and large fenestrations.",
+                    "Industrial": "You identify with character, history, and structural rawness. Open spaces and robust materials are your style."
+                }
+            }
+        },
         "Testimonials": {
             "title": "What Our Clients Say",
             "subtitle": "Our clients' satisfaction is our greatest achievement",
