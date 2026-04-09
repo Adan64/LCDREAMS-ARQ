@@ -32,8 +32,8 @@ export async function POST(req: Request) {
       'Nombre': name,
       'Email': email,
       'Teléfono': phone || 'No proporcionado',
-      'Resultado Estilo': styleResult,
-      '¿Tiene Terreno?': landStatus || 'No especificado',
+      'Resultado': styleResult,
+      'Terreno': landStatus || 'No especificado',
       'Origen': 'Test de Estilo (Web)'
     });
 
