@@ -88,29 +88,36 @@ export default function StyleQuizModal({ isOpen, onClose }: StyleQuizModalProps)
     data.append('quiz_result', String(t(`results.${finalResult}`)));
     data.append('subject', 'Nuevo Lead - Test de Estilo Arquitectónico');
 
-    // Simulate API call to match ConsultationForm behavior until real endpoint is set
-    setTimeout(() => {
-      setFormStatus('success');
-      // Uncomment the below block when connecting to a real Formspree endpoint later.
-      /*
-      try {
-        const response = await fetch('https://formspree.io/f/mqbqpnwd', {
-          method: 'POST',
-          body: data,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-        if (response.ok) {
-          setFormStatus('success');
-        } else {
-          setFormStatus('error');
-        }
-      } catch (error) {
+    // Preparar el Payload
+    const payload = {
+      name: data.get('name'),
+      email: data.get('email'),
+      phone: data.get('phone'),
+      styleResult: String(t(`results.${finalResult}`)),
+      landStatus: q5Answer
+    };
+
+    try {
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+      
+      const responseData = await response.json();
+
+      if (response.ok && responseData.success) {
+        setFormStatus('success');
+      } else {
         setFormStatus('error');
+        console.error("API Error: ", responseData);
       }
-      */
-    }, 1500);
+    } catch (error) {
+      console.error('Error enviando lead:', error);
+      setFormStatus('error');
+    }
   };
 
   if (!isOpen) return null;
