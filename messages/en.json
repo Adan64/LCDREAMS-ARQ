@@ -591,14 +591,21 @@
             }
         },
         "Trust": {
-            "title": "Recognition and Experience",
-            "subtitle": "Our track record speaks for itself with years of excellence and industry recognition",
+            "title": "Professional Trajectory",
+            "subtitle": "We have been working, professionally evolving, and gaining experience since 2022. Results that back up our excellence.",
             "indicators": {
-                "1": "Years of Experience",
-                "2": "Projects Completed",
-                "3": "Satisfied Clients",
-                "4": "Awards Won"
+                "1": "Completed Projects",
+                "2": "Delivered on Time",
+                "3": "Total Satisfaction",
+                "4": "Cost Optimization"
             },
+            "indicator_descs": {
+                "1": "Experience in industrial, commercial, and residential architecture.",
+                "2": "Efficient planning and rigorous time management.",
+                "3": "Focused on meeting and exceeding expectations.",
+                "4": "Efficient design solutions, especially industrial."
+            },
+            "footer_desc": "Comprehensive accompaniment in all stages. From conception to final execution.",
             "awards": {
                 "title": "Recent Awards",
                 "items": {

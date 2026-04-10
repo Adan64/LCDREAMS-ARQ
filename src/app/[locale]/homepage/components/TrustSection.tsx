@@ -7,6 +7,7 @@ interface TrustIndicator {
   icon: string;
   value: string;
   label: string;
+  description: string;
 }
 
 interface Award {
@@ -22,29 +23,34 @@ const TrustSection = () => {
   const trustIndicators: TrustIndicator[] = [
     {
       id: 1,
-      icon: "CalendarDaysIcon",
-      value: "15+",
-      label: t('indicators.1')
+      icon: "BuildingOffice2Icon",
+      value: "+136",
+      label: t('indicators.1'),
+      description: t('indicator_descs.1')
     },
     {
       id: 2,
-      icon: "BuildingOffice2Icon",
-      value: "200+",
-      label: t('indicators.2')
+      icon: "ClockIcon",
+      value: "95%",
+      label: t('indicators.2'),
+      description: t('indicator_descs.2')
     },
     {
       id: 3,
       icon: "UserGroupIcon",
-      value: "150+",
-      label: t('indicators.3')
+      value: "90%",
+      label: t('indicators.3'),
+      description: t('indicator_descs.3')
     },
     {
       id: 4,
-      icon: "TrophyIcon",
-      value: "25+",
-      label: t('indicators.4')
+      icon: "ChartBarIcon",
+      value: "20%",
+      label: t('indicators.4'),
+      description: t('indicator_descs.4')
     }
   ];
+
 
   /* Note: Organizations hardcoded for now or could be translated if needed */
   const recentAwards: Award[] = [
@@ -92,11 +98,20 @@ const TrustSection = () => {
               <div className="font-headline text-4xl font-headline-bold text-white mb-2">
                 {indicator.value}
               </div>
-              <div className="font-body text-sm text-text-secondary font-body-regular uppercase tracking-wide">
+              <div className="font-body text-sm text-lcdream-gold font-body-semibold uppercase tracking-wide mb-3">
                 {indicator.label}
               </div>
+              <p className="font-body text-sm text-text-secondary font-body-regular leading-relaxed hidden sm:block">
+                {indicator.description}
+              </p>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mb-16">
+          <p className="font-body text-lg text-text-secondary font-body-regular max-w-2xl mx-auto italic">
+            "{t('footer_desc')}"
+          </p>
         </div>
 
         <div className="bg-card p-8 lg:p-12 rounded-lg">

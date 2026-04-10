@@ -356,33 +356,33 @@
         },
         "Services": {
             "title": "Nuestros Servicios",
-            "subtitle": "Ofrecemos soluciones arquitectónicas integrales desde el concepto inicial hasta la entrega final",
+            "subtitle": "Proyectos arquitectónicos y de diseño integrales adaptados a tu visión",
             "items": {
                 "1": {
-                    "title": "Diseño Arquitectónico",
-                    "description": "Desarrollo de planos arquitectónicos precisos, diseño conceptual e interiorismo estratégico.",
+                    "title": "Diseño y Planificación Integral",
+                    "description": "Transformando ideas en espacios únicos y funcionales a tu medida.",
                     "features": {
-                        "0": "Planos constructivos",
-                        "1": "Diseño de interiores",
-                        "2": "Análisis de viabilidad"
+                        "0": "Proyectos arquitectónicos a medida",
+                        "1": "Diseño y planificación integral",
+                        "2": "Análisis de viabilidad arquitectónica"
                     }
                 },
                 "2": {
-                    "title": "Visualización 3D Avanzada",
-                    "description": "Proyectos interactivos, renders fotorrealistas y simulaciones de espacios antes de construir.",
+                    "title": "Renovación y Visualización",
+                    "description": "Tecnología de vanguardia y espacios renovados estratégicamente.",
                     "features": {
-                        "0": "Renders fotorrealistas",
-                        "1": "Tours virtuales 360",
-                        "2": "Modelado BIM"
+                        "0": "Renderización y visualización 3D de alto impacto",
+                        "1": "Remodelaciones y ampliaciones estratégicas",
+                        "2": "Tours virtuales inmersivos"
                     }
                 },
                 "3": {
-                    "title": "Ejecución de Obras",
-                    "description": "Supervisión, gestión de proveedores y ejecución integral garantizando calidad y tiempos.",
+                    "title": "Construcción y Ejecución",
+                    "description": "Materializando tus proyectos con precisión técnica y calidad garantizada.",
                     "features": {
-                        "0": "Proyectos llave en mano",
-                        "1": "Dirección de obra",
-                        "2": "Control de presupuesto"
+                        "0": "Construcción y supervisión técnica de obras",
+                        "1": "Asesoramiento técnico especializado",
+                        "2": "Dirección integral de obra"
                     }
                 }
             },
@@ -581,14 +581,22 @@
             }
         },
         "Trust": {
-            "title": "Reconocimiento y Experiencia",
-            "subtitle": "Nuestra trayectoria habla por sí misma con años de excelencia y reconocimiento en la industria",
+            "title": "Trayectoria Profesional",
+            "subtitle": "Estamos trabajando, evolucionando profesionalmente y adquiriendo experiencia desde el 2022. Resultados que respaldan nuestra excelencia.",
             "indicators": {
-                "1": "Años de Experiencia",
-                "2": "Proyectos Completados",
-                "3": "Clientes Satisfechos",
-                "4": "Premios Ganados"
+                "1": "Proyectos Completados",
+                "2": "Entregados en Plazo",
+                "3": "Satisfacción Total",
+                "4": "Optimización en Costos"
             },
+            "indicator_descs": {
+                "1": "Experiencia en arquitectura industrial, comercial y residencial.",
+                "2": "Planificación eficiente y gestión rigurosa de tiempos.",
+                "3": "Enfocados en cumplir y superar las expectativas.",
+                "4": "Soluciones de diseño eficientes, sobre todo industriales."
+            },
+            "footer_desc": "Acompañamiento integral en todas las etapas. Desde la concepción hasta la ejecución final.",
+
             "awards": {
                 "title": "Premios Recientes",
                 "items": {

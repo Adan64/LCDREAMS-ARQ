@@ -100,33 +100,33 @@
         },
         "Services": {
             "title": "Nossos Serviços",
-            "subtitle": "Oferecemos soluções arquitetônicas integrais desde o conceito inicial até a entrega final",
+            "subtitle": "Projetos arquitetônicos e de design integrais adaptados à sua visão",
             "items": {
                 "1": {
-                    "title": "Design Arquitetônico",
-                    "description": "Desenvolvimento de plantas arquitetônicas precisas, design conceitual e interiores estratégicos.",
+                    "title": "Design e Planejamento Integral",
+                    "description": "Transformando ideias em espaços únicos e funcionais feitos para você.",
                     "features": {
-                        "0": "Projetos construtivos",
-                        "1": "Design de interiores",
-                        "2": "Análise de viabilidade"
+                        "0": "Projetos arquitetônicos sob medida",
+                        "1": "Design e planejamento integral",
+                        "2": "Análise de viabilidade arquitetônica"
                     }
                 },
                 "2": {
-                    "title": "Visualização 3D Avançada",
-                    "description": "Projetos interativos, renders fotorrealistas e simulações de espaços antes de construir.",
+                    "title": "Renovação e Visualização",
+                    "description": "Tecnologia de ponta e espaços renovados estrategicamente.",
                     "features": {
-                        "0": "Renders fotorrealistas",
-                        "1": "Tours virtuais 360",
-                        "2": "Modelagem BIM"
+                        "0": "Renderização e visualização 3D de alto impacto",
+                        "1": "Remodelações e ampliações estratégicas",
+                        "2": "Tours virtuais imersivos"
                     }
                 },
                 "3": {
-                    "title": "Execução de Obras",
-                    "description": "Supervisão, gestão de fornecedores e execução integral garantindo qualidade e prazos.",
+                    "title": "Construção e Execução",
+                    "description": "Materializando os seus projetos com precisão técnica e qualidade garantida.",
                     "features": {
-                        "0": "Projetos chave na mão",
-                        "1": "Direção de obra",
-                        "2": "Controle de orçamento"
+                        "0": "Construção e supervisão técnica de obras",
+                        "1": "Assessoria técnica especializada",
+                        "2": "Acompanhamento integral da obra"
                     }
                 }
             },
@@ -327,14 +327,21 @@
             }
         },
         "Trust": {
-            "title": "Reconhecimento e Experiência",
-            "subtitle": "Nossa trajetória fala por si só com anos de excelência e reconhecimento na indústria",
+            "title": "Trajetória Profissional",
+            "subtitle": "Estamos trabalhando, evoluindo profissionalmente e adquirindo experiência desde 2022. Resultados que apoiam a nossa excelência.",
             "indicators": {
-                "1": "Anos de Experiência",
-                "2": "Projetos Concluídos",
-                "3": "Clientes Satisfeitos",
-                "4": "Prêmios Ganhos"
+                "1": "Projetos Concluídos",
+                "2": "Entregues no Prazo",
+                "3": "Satisfação Total",
+                "4": "Otimização de Custos"
             },
+            "indicator_descs": {
+                "1": "Experiência em arquitetura industrial, comercial e residencial.",
+                "2": "Planejamento eficiente e gestão rigorosa de prazos.",
+                "3": "Focados em cumprir e superar as expectativas.",
+                "4": "Soluções de design eficientes, sobretudo industriais."
+            },
+            "footer_desc": "Acompanhamento integral em todas as etapas. Desde a concepção até a execução final.",
             "awards": {
                 "title": "Prêmios Recentes",
                 "items": {
