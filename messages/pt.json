@@ -1339,13 +1339,13 @@
     },
     "About": {
         "metadata": {
-            "title": "Sobre Nós - LC+DREAM",
-            "description": "Conheça a história por trás da fusão entre LC Arquitectura e Dream.arq, nossa missão de transformar sonhos em realidade e a equipe que torna isso possível."
+            "title": "Sobre Nós - DREAMWORK",
+            "description": "Conheça a história por trás do DREAMWORK, a aliança entre LC Arquitetura e Dream.arq. Nossa missão: transformar sonhos em espaços reais por meio do design, funcionalidade e excelência."
         },
         "hero": {
-            "title": "Projetamos e construímos espaços que inspiram",
+            "title": "Dream+Work: onde os sonhos se tornam arquitetura real",
             "subtitle": "Arquitetura – Design – Construção",
-            "description": "LC+DREAM surge da colaboração estratégica entre LC Arquitectura e Dream.arq, dois estúdios que compartilham uma visão comum: projetar espaços que inspirem e transformem a vida das pessoas."
+            "description": "Dream simboliza a visão, as ideias e as aspirações de cada cliente; Work reflete o processo técnico, a disciplina e a execução precisa que permite realizá-las."
         },
         "profile": {
             "name": "Elena Martínez",
@@ -1367,22 +1367,26 @@
         },
         "origin": {
             "title": "Quem Somos",
-            "subtitle": "A Fusão de Dois Mundos",
-            "description": "LC+DREAM surge da colaboração estratégica entre LC Arquitectura e Dream.arq, dois estúdios que compartilham uma visão comum: projetar espaços que inspirem e transformem a vida das pessoas.",
-            "lc_contribution": "LC Arquitectura traz sua solidez técnica e experiência em gestão.",
-            "dream_contribution": "Dream.arq contribui com sua sensibilidade criativa e abordagem estética contemporânea.",
-            "synergy": "Hoje, formamos uma equipe interdisciplinar que funde inovação, precisão técnica e uma profunda compreensão das necessidades de nossos clientes. O resultado são espaços únicos, impregnados de identidade, propósito e equilíbrio.",
-            "closing": "Na LC+DREAM, estamos na vanguarda de qualquer desafio, porque compreendemos profundamente os sonhos e desejos de nossos clientes. Cada projeto é uma oportunidade de fundir criatividade e funcionalidade, transformando ideias em espaços tangíveis que inspiram e melhoram a qualidade de vida."
+            "subtitle": "História",
+            "description": "DREAMWORK nasce da aliança estratégica entre LC Arquitetura e Dream.arq, dois estúdios unidos por uma visão compartilhada: projetar espaços que inspirem e transformem a vida das pessoas.",
+            "lc_contribution": "LC Arquitetura traz sua solidez técnica e uma gestão impecável.",
+            "dream_contribution": "Dream.arq integra sua sensibilidade criativa e uma abordagem estética contemporânea.",
+            "synergy": "Hoje, consolidamos uma equipe interdisciplinar que funde inovação, rigor técnico e escuta ativa das necessidades de nossos clientes. O resultado são espaços únicos com identidade própria, projetados sob um equilíbrio perfeito entre propósito e estética.",
+            "closing": "Na Dreamwork, situamo-nos na vanguarda do design e da construção porque entendemos que cada projeto nasce de uma aspiração profunda. Não apenas edificamos estruturas; fundimos criatividade e funcionalidade para transformar ideias em espaços tangíveis que elevam a qualidade de vida e inspiram quem os habita."
         },
         "philosophy": {
-            "title": "Missão e Visão",
+            "title": "Filosofia Institucional",
+            "concept": {
+                "title": "Dream+Work",
+                "description": "Dream+Work representa a essência do nosso estúdio: a união entre o sonho e o trabalho. Entendemos a arquitetura como uma ponte entre o que se imagina e o que se constrói. Cada projeto nasce de uma colaboração próxima, onde transformamos ideias em propostas sólidas, alinhadas com as necessidades, o estilo de vida e a identidade de quem confia em nós. Na Dream+Work, cada projeto é único. Trabalhamos de forma personalizada, acompanhando nossos clientes em cada etapa, desde a concepção até a execução."
+            },
             "mission": {
                 "title": "Missão",
-                "description": "Na LC+DREAM projetamos e construímos espaços que combinam estética, funcionalidade e bem-estar, apoiando nossos clientes desde a ideia inicial até a entrega final com soluções personalizadas. Nosso compromisso é converter sonhos em realidades arquitetônicas duradouras, cuidando de cada detalhe com responsabilidade e excelência."
+                "description": "Projetar e construir espaços que equilibrem estética, bem-estar e funcionalidade, acompanhando nossos clientes de forma integral desde a concepção até a entrega final através de soluções personalizadas e de excelência."
             },
             "vision": {
                 "title": "Visão",
-                "description": "Ser referência em arquitetura e construção, reconhecidos pela qualidade, criatividade e eficiência, promovendo uma arquitetura humana, sustentável e contemporânea que melhore a vida e o desenvolvimento das comunidades."
+                "description": "Consolidar-nos como referência no setor de arquitetura e construção, destacando-nos pela nossa inovação, sustentabilidade e uma abordagem humana que impulsione o desenvolvimento de comunidades contemporâneas."
             }
         },
         "whyUs": {
