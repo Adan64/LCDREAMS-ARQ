@@ -1,91 +1,89 @@
-# Next.js
+# LCDREAMS ARQ | Architecture & Design Studio
 
-A modern Next.js 15 application built with TypeScript and Tailwind CSS.
+A professional architectural platform built with Next.js 15, featuring immersive project visualization, interactive lead generation tools, and a secure client portal.
 
-## 🚀 Features
+## 🌟 Overview
 
-- **Next.js 15** - Latest version with improved performance and features
-- **React 19** - Latest React version with enhanced capabilities
-- **Tailwind CSS** - Utility-first CSS framework for rapid UI development
+**LCDREAMS ARQ** is founded on the **Dream+Work** philosophy—the synergy between creative vision (Dream) and technical execution (Work). This platform serves as a bridge for clients to explore architectural possibilities through modern technology.
 
-## 🛠️ Installation
+## 🚀 Key Features
 
-1. Install dependencies:
-  ```bash
-  npm install
-  # or
-  yarn install
-  ```
+- **Immersive Portfolio**: High-impact gallery showcasing residential, commercial, and industrial projects with support for 360° virtual tours.
+- **Architectural Style Quiz**: An interactive lead-generation tool that analyzes user preferences to determine their ideal architectural style.
+- **Client Portal**: A secure, dedicated space for clients to track project progress, phases, and documentation in real-time.
+- **Multilingual Experience**: Fully localized in Spanish (ES), English (EN), and Portuguese (PT) using `next-intl`.
+- **Advanced Animations**: Premium UI experience powered by Framer Motion for smooth, professional transitions.
 
-2. Start the development server:
-  ```bash
-  npm run dev
-  # or
-  yarn dev
-  ```
-3. Open [http://localhost:4028](http://localhost:4028) with your browser to see the result.
+## 🛠️ Technical Architecture
 
-## 📁 Project Structure
+The application leverages the latest **Next.js 15 App Router** architecture with a focus on performance, scalability, and type safety.
 
-```
-nextjs/
-├── public/             # Static assets
-├── src/
-│   ├── app/            # App router components
-│   │   ├── layout.tsx  # Root layout component
-│   │   └── page.tsx    # Main page component
-│   ├── components/     # Reusable UI components
-│   ├── styles/         # Global styles and Tailwind configuration
-├── next.config.mjs     # Next.js configuration
-├── package.json        # Project dependencies and scripts
-├── postcss.config.js   # PostCSS configuration
-└── tailwind.config.js  # Tailwind CSS configuration
+### Directory Structure
 
+```text
+src/
+├── app/
+│   ├── [locale]/             # Internationalized route segments
+│   │   ├── (admin)/          # Protected administrative dashboard
+│   │   ├── homepage/         # Modular homepage components
+│   │   ├── portfolio-gallery/# Dynamic project showcase
+│   │   └── client-portal/    # Secure client area
+│   └── api/                  # Backend endpoints (Leads, Auth, etc.)
+├── components/
+│   ├── admin/                # Dashboard-specific components
+│   ├── common/               # Layout elements (Header, Footer, i18n)
+│   └── ui/                   # Reusable atomic design components
+├── lib/
+│   └── supabase/             # Triple-tiered client setup (Admin/Client/Server)
+├── actions/                  # Next.js Server Actions for secure mutations
+└── i18n/                     # Internationalization routing logic
 ```
 
-## 🧩 Page Editing
+### Core Technologies
 
-You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: [Next.js 15](https://nextjs.org/), [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/), [Framer Motion](https://www.framer.com/motion/)
+- **Backend & Auth**: [Supabase](https://supabase.com/)
+- **Data Integration**: Google Spreadsheet API (for seamless lead management)
+- **Internationalization**: [next-intl](https://next-intl-docs.vercel.app/)
 
-## 🎨 Styling
+## 🔧 Getting Started
 
-This project uses Tailwind CSS for styling with the following features:
-- Utility-first approach for rapid development
-- Custom theme configuration
-- Responsive design utilities
-- PostCSS and Autoprefixer integration
+### 1. Requirements
+- Node.js 18+ 
+- npm / yarn / pnpm
+
+### 2. Installation
+```bash
+npm install
+```
+
+### 3. Environment Setup
+Create a `.env.local` file in the root directory and add the following keys (placeholders):
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+GOOGLE_SERVICE_ACCOUNT_EMAIL=your_google_email
+GOOGLE_PRIVATE_KEY=your_private_key
+```
+
+### 4. Development
+```bash
+npm run dev
+```
+The application will be available at [http://localhost:4028](http://localhost:4028).
 
 ## 📦 Available Scripts
 
 - `npm run dev` - Start development server on port 4028
 - `npm run build` - Build the application for production
-- `npm run start` - Start the development server
-- `npm run serve` - Start the production server
-- `npm run lint` - Run ESLint to check code quality
-- `npm run lint:fix` - Fix ESLint issues automatically
+- `npm run serve` - Start the production server (next start)
+- `npm run lint` - Run ESLint checks
 - `npm run format` - Format code with Prettier
-
-## 📱 Deployment
-
-Build the application for production:
-
-  ```bash
-  npm run build
-  ```
-
-## 📚 Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial
-
-You can check out the [Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `npm run type-check` - Run TypeScript compiler checks
 
 ## 🙏 Acknowledgments
 
-- Built with [Rocket.new](https://rocket.new)
-- Powered by Next.js and React
-- Styled with Tailwind CSS
-
-Built with ❤️ on Rocket.new
+- **LC Arquitectura** & **Dream.arq** alliance.
+- Built with ❤️ by the LCDREAMS team.
