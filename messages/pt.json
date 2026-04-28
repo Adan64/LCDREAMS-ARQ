@@ -1278,6 +1278,7 @@
         },
         "grid": {
             "title": "Todos os Artigos",
+            "noArticles": "Nenhum artigo encontrado.",
             "categories": {
                 "all": "Todos",
                 "trends": "Tendências",
@@ -1660,10 +1661,10 @@
             "items": {
                 "0": "Projetos arquitetônicos sob medida",
                 "1": "Design e planejamento integral",
-                "2": "Renderização e visualização 3D",
-                "3": "Construção e supervisão de obras",
-                "4": "Remodelações e ampliações",
-                "5": "Consultoria técnica"
+                "2": "Renderização e visualização 3D de alto impacto",
+                "3": "Construção e supervisão técnica de obras",
+                "4": "Remodelações e ampliações estratégicas",
+                "5": "Assessoria técnica especializada"
             }
         },
         "team": {
