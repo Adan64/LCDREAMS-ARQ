@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Icon from '@/components/ui/AppIcon';
 
@@ -123,13 +123,13 @@ export default function StyleQuizModal({ isOpen, onClose, isEmbedded = false }: 
 
   if (!isEmbedded && !isOpen) return null;
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.4, ease: "easeOut" } },
     exit: { opacity: 0, scale: 0.95, transition: { duration: 0.3 } }
   };
 
-  const contentVariants = {
+  const contentVariants: Variants = {
     hidden: { opacity: 0, x: 20 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.4, delay: 0.1 } },
     exit: { opacity: 0, x: -20, transition: { duration: 0.3 } }
@@ -423,7 +423,6 @@ export default function StyleQuizModal({ isOpen, onClose, isEmbedded = false }: 
                       </div>
                     </>
                   )}
-                </motion.div>
                 </motion.div>
               )}
             </AnimatePresence>
