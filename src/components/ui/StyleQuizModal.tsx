@@ -8,12 +8,13 @@ import Icon from '@/components/ui/AppIcon';
 interface StyleQuizModalProps {
   isOpen: boolean;
   onClose: () => void;
+  isEmbedded?: boolean;
 }
 
 type OptionKey = 'A' | 'B' | 'C' | 'D';
 type ResultKey = 'Minimalista' | 'Sustentable' | 'Contemporaneo' | 'Industrial';
 
-export default function StyleQuizModal({ isOpen, onClose }: StyleQuizModalProps) {
+export default function StyleQuizModal({ isOpen, onClose, isEmbedded = false }: StyleQuizModalProps) {
   const t = useTranslations('Homepage.Quiz.modal');
   const [step, setStep] = useState(0); // 0 = start, 1-5 = questions, 6 = processing, 7 = result
   const [answers, setAnswers] = useState<OptionKey[]>([]);
@@ -23,14 +24,14 @@ export default function StyleQuizModal({ isOpen, onClose }: StyleQuizModalProps)
 
   // Reset state when modal is opened/closed
   useEffect(() => {
-    if (!isOpen) {
+    if (!isEmbedded && !isOpen) {
       setTimeout(() => {
         setStep(0);
         setAnswers([]);
         setFormStatus('idle');
       }, 300);
     }
-  }, [isOpen]);
+  }, [isOpen, isEmbedded]);
 
   // Handle auto-progress when analyzing
   useEffect(() => {
@@ -120,7 +121,7 @@ export default function StyleQuizModal({ isOpen, onClose }: StyleQuizModalProps)
     }
   };
 
-  if (!isOpen) return null;
+  if (!isEmbedded && !isOpen) return null;
 
   const containerVariants = {
     hidden: { opacity: 0, scale: 0.95 },
@@ -134,35 +135,25 @@ export default function StyleQuizModal({ isOpen, onClose }: StyleQuizModalProps)
     exit: { opacity: 0, x: -20, transition: { duration: 0.3 } }
   };
 
-  return (
-    <AnimatePresence>
-      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-hidden">
-        {/* Backdrop */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+  const content = (
+    <motion.div
+      variants={!isEmbedded ? containerVariants : undefined}
+      initial={!isEmbedded ? "hidden" : undefined}
+      animate={!isEmbedded ? "visible" : undefined}
+      exit={!isEmbedded ? "exit" : undefined}
+      className={`relative w-full max-w-2xl bg-lcdream-dark-bg border border-lcdream-gold/20 rounded-2xl shadow-elevated flex flex-col ${isEmbedded ? 'min-h-[600px]' : 'overflow-hidden max-h-[90vh]'}`}
+    >
+      {/* Close Button */}
+      {!isEmbedded && (
+        <button
           onClick={onClose}
-          className="absolute inset-0 bg-black/60 backdrop-blur-md"
-        />
-
-        {/* Modal Container */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          className="relative w-full max-w-2xl bg-lcdream-dark-bg border border-lcdream-gold/20 rounded-2xl shadow-elevated overflow-hidden flex flex-col max-h-[90vh]"
+          className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 text-lcdream-gray-light hover:text-white transition-colors"
         >
-          {/* Close Button */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 text-lcdream-gray-light hover:text-white transition-colors"
-          >
-            <Icon name="XMarkIcon" size={24} />
-          </button>
+          <Icon name="XMarkIcon" size={24} />
+        </button>
+      )}
 
-          {/* Progress Bar (only in questions) */}
+      {/* Progress Bar (only in questions) */}
           {step > 0 && step < 6 && (
             <div className="absolute top-0 left-0 w-full h-1 bg-lcdream-gold/10">
               <motion.div
@@ -433,10 +424,29 @@ export default function StyleQuizModal({ isOpen, onClose }: StyleQuizModalProps)
                     </>
                   )}
                 </motion.div>
+                </motion.div>
               )}
             </AnimatePresence>
           </div>
-        </motion.div>
+    </motion.div>
+  );
+
+  if (isEmbedded) {
+    return <div className="w-full flex justify-center py-12 px-4">{content}</div>;
+  }
+
+  return (
+    <AnimatePresence>
+      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-hidden">
+        {/* Backdrop */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+          className="absolute inset-0 bg-black/60 backdrop-blur-md"
+        />
+        {content}
       </div>
     </AnimatePresence>
   );
