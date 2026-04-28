@@ -470,7 +470,8 @@
                     "next": "Próximo",
                     "back": "Voltar",
                     "start": "Iniciar Teste",
-                    "close": "Fechar"
+                    "close": "Fechar",
+                    "backToHome": "Voltar ao Início"
                 },
                 "form": {
                     "scarcity": "Vagas gratuitas de consultoria limitadas para esta semana.",

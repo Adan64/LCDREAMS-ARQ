@@ -340,7 +340,7 @@ export default function StyleQuizModal({ isOpen, onClose, isEmbedded = false }: 
                         onClick={onClose}
                         className="mt-8 px-8 py-4 bg-lcdream-white/10 hover:bg-lcdream-white/20 text-white font-cta rounded-md transition-colors"
                       >
-                        {t('buttons.close')}
+                        {isEmbedded ? t('buttons.backToHome') : t('buttons.close')}
                       </button>
                     </div>
                   ) : (

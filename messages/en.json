@@ -478,7 +478,8 @@
                     "next": "Next",
                     "back": "Back",
                     "start": "Start Quiz",
-                    "close": "Close"
+                    "close": "Close",
+                    "backToHome": "Back to Homepage"
                 },
                 "form": {
                     "scarcity": "Free consultation spots limited for this week.",

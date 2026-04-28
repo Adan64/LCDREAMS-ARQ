@@ -3,9 +3,11 @@
 import React from 'react';
 import StyleQuizModal from '@/components/ui/StyleQuizModal';
 import { useTranslations } from 'next-intl';
+import { useRouter } from '@/i18n/routing';
 
 export default function QuizPage() {
   const t = useTranslations('Homepage.Quiz.modal');
+  const router = useRouter();
 
   return (
     <div className="min-h-screen bg-black pt-24 pb-12 bg-grid-white/[0.02] relative">
@@ -22,7 +24,7 @@ export default function QuizPage() {
         
         <StyleQuizModal 
           isOpen={true} 
-          onClose={() => {}} 
+          onClose={() => router.push('/')} 
           isEmbedded={true} 
         />
       </div>

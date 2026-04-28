@@ -468,7 +468,8 @@
                     "next": "Siguiente",
                     "back": "Atrás",
                     "start": "Comenzar Test",
-                    "close": "Cerrar"
+                    "close": "Cerrar",
+                    "backToHome": "Volver al Inicio"
                 },
                 "form": {
                     "scarcity": "Cupos de asesoría gratuita limitados para esta semana.",
