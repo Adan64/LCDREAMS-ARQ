@@ -862,7 +862,27 @@
             "related": {
                 "title": "Proyectos Relacionados",
                 "description": "Descubre más de nuestro trabajo innovador",
-                "viewCaseStudy": "Ver Caso de Estudio"
+                "viewCaseStudy": "Ver Caso de Estudio",
+                "items": {
+                    "loft": {
+                        "title": "Loft Urbano Minimalista",
+                        "category": "Residencial",
+                        "alt": "Interior de loft moderno",
+                        "location": "Barcelona"
+                    },
+                    "resort": {
+                        "title": "Eco-Resort Costero",
+                        "category": "Hospitalidad",
+                        "alt": "Eco-resort frente al mar",
+                        "location": "Islas Baleares"
+                    },
+                    "office": {
+                        "title": "Sede Corporativa Sostenible",
+                        "category": "Comercial",
+                        "alt": "Edificio corporativo moderno",
+                        "location": "Madrid"
+                    }
+                }
             },
             "cta": {
                 "title": "¿Listo para Transformar Tu Espacio?",
@@ -2017,6 +2037,15 @@
             "dragDrop": "Arrastra archivos aquí o haz clic",
             "noDocuments": "No hay documentos aún.",
             "deleteConfirm": "¿Eliminar este documento?"
+        },
+        "ResourcesBlog": {
+            "grid": {
+                "title": "Recursos y Noticias",
+                "categories": {
+                    "all": "Todos"
+                },
+                "noArticles": "No se encontraron artículos."
+            }
         },
         "Blog": {
             "title": "Gestión del Blog",

@@ -85,9 +85,11 @@
             "expertiseTitle": "Expertise",
             "members": {
                 "1": {
+                    "name": "Carlos Rodríguez",
+                    "alt": "Photo of Carlos Rodríguez",
                     "role": "Senior Architect",
-                    "specialization": "Commercial & Mixed-Use Design",
-                    "bio": "Carlos brings 12 years of experience in large-scale commercial projects, with a special focus on creating dynamic spaces that foster community interaction.",
+                    "specialization": "Commercial and Mixed-Use Design",
+                    "bio": "Carlos brings 12 years of experience in large-scale commercial projects, with a special focus on creating dynamic spaces that promote community interaction.",
                     "expertise": {
                         "0": "Urban Planning",
                         "1": "Commercial Architecture",
@@ -96,9 +98,11 @@
                     }
                 },
                 "2": {
+                    "name": "Isabel Fernández",
+                    "alt": "Photo of Isabel Fernández",
                     "role": "Lead Interior Designer",
-                    "specialization": "Residential & Hospitality Interiors",
-                    "bio": "Isabel's talent for creating welcoming interiors that reflect her clients' personalities has made her one of the region's most sought-after designers.",
+                    "specialization": "Residential and Hospitality Interiors",
+                    "bio": "Isabel's talent for creating welcoming interiors that reflect her clients' personalities has made her one of the most sought-after designers in the region.",
                     "expertise": {
                         "0": "Interior Design",
                         "1": "Space Planning",
@@ -107,9 +111,11 @@
                     }
                 },
                 "3": {
+                    "name": "Miguel Silva",
+                    "alt": "Photo of Miguel Silva",
                     "role": "Sustainability Consultant",
-                    "specialization": "Green Building & LEED Certification",
-                    "bio": "Miguel is our sustainability expert, ensuring every project meets the highest environmental standards.",
+                    "specialization": "Green Buildings and LEED Certification",
+                    "bio": "Miguel is our expert in sustainability, ensuring that every project meets the highest environmental standards.",
                     "expertise": {
                         "0": "LEED Certification",
                         "1": "Sustainable Materials",
@@ -118,12 +124,14 @@
                     }
                 },
                 "4": {
+                    "name": "Ana María López",
+                    "alt": "Photo of Ana María López",
                     "role": "Project Manager",
-                    "specialization": "Construction Administration & Client Relations",
-                    "bio": "Ana María ensures seamless project execution from concept to completion. Her exceptional organizational skills guarantee on-time and on-budget delivery.",
+                    "specialization": "Construction Administration and Client Relations",
+                    "bio": "Ana María ensures perfect project execution, from concept to completion. Her exceptional organizational skills ensure on-time and on-budget delivery.",
                     "expertise": {
                         "0": "Project Management",
-                        "1": "Construction Supervision",
+                        "1": "Construction Oversight",
                         "2": "Client Communication",
                         "3": "Budget Management"
                     }
@@ -393,46 +401,28 @@
             "cta": "View Full Portfolio",
             "items": {
                 "1": {
-                    "title": "Excellence in Sustainable Design Award",
-                    "organization": "International Architecture Foundation",
-                    "project": "EcoVista Residence",
-                    "category": "Residential Architecture",
-                    "description": "Recognized for innovative integration of passive solar design, rainwater harvesting systems, and locally-sourced materials."
+                    "title": "Horizon House",
+                    "category": "Residential",
+                    "location": "Valencia, Spain",
+                    "description": "Contemporary residence maximizing panoramic sea views"
                 },
                 "2": {
-                    "title": "Best Commercial Space Design",
-                    "organization": "European Design Council",
-                    "project": "TechHub Innovation Center",
-                    "category": "Commercial Architecture",
-                    "description": "Awarded for creating a dynamic workspace that fosters collaboration and creativity while maintaining exceptional energy efficiency."
+                    "title": "Urban Creative Studio",
+                    "category": "Commercial",
+                    "location": "Seville, Spain",
+                    "description": "Flexible workspace fostering innovation and collaboration"
                 },
                 "3": {
-                    "title": "Urban Regeneration Excellence",
-                    "organization": "Global Cities Initiative",
-                    "project": "The Harbour District",
-                    "category": "Urban Design",
-                    "description": "Honored for transforming an underutilized industrial area into a vibrant mixed-use community that respects historical context."
+                    "title": "Renovated Industrial Loft",
+                    "category": "Residential",
+                    "location": "Bilbao, Spain",
+                    "description": "Transformation of an industrial space into a modern and cozy home"
                 },
                 "4": {
-                    "title": "LEED Platinum Certification",
-                    "organization": "U.S. Green Building Council",
-                    "project": "Vertex Tower",
-                    "category": "Sustainable Building",
-                    "description": "Achieved the highest level of LEED certification for a 12-story office building featuring advanced green building technologies."
-                },
-                "5": {
-                    "title": "Architectural Innovation Award",
-                    "organization": "Modern Living Magazine",
-                    "project": "Cliffside Retreat",
-                    "category": "Residential Design",
-                    "description": "Recognized for pushing boundaries in luxury residential design with innovative use of glass, steel, and natural materials."
-                },
-                "6": {
-                    "title": "Heritage Preservation Excellence",
-                    "organization": "National Trust for Historic Preservation",
-                    "project": "Old Mill Arts Centre",
-                    "category": "Restoration & Adaptive Reuse",
-                    "description": "Awarded for sensitive restoration and adaptive reuse of a 19th-century mill building, preserving historical character."
+                    "title": "Sustainable Wellness Center",
+                    "category": "Commercial",
+                    "location": "Granada, Spain",
+                    "description": "Biophilic design integrating nature and well-being"
                 }
             }
         },
@@ -871,7 +861,27 @@
             "related": {
                 "title": "Related Projects",
                 "description": "Discover more of our innovative work",
-                "viewCaseStudy": "View Case Study"
+                "viewCaseStudy": "View Case Study",
+                "items": {
+                    "loft": {
+                        "title": "Minimalist Urban Loft",
+                        "category": "Residential",
+                        "alt": "Modern loft interior",
+                        "location": "Barcelona"
+                    },
+                    "resort": {
+                        "title": "Coastal Eco-Resort",
+                        "category": "Hospitality",
+                        "alt": "Oceanfront eco-resort",
+                        "location": "Balearic Islands"
+                    },
+                    "office": {
+                        "title": "Sustainable Corporate Headquarters",
+                        "category": "Commercial",
+                        "alt": "Modern corporate building",
+                        "location": "Madrid"
+                    }
+                }
             },
             "cta": {
                 "title": "Ready to Transform Your Space?",
@@ -2016,7 +2026,8 @@
             "completed": "Completed",
             "pending": "Pending",
             "in_progress": "In Progress",
-            "deleteConfirm": "Delete this phase?"
+            "deleteConfirm": "Delete this phase?",
+            "add": "Add Phase"
         },
         "Documents": {
             "title": "Project Documents",

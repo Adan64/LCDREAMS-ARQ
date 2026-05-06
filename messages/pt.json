@@ -433,8 +433,6 @@
                 "schedule": "Agendar Consulta Gratuita",
                 "portfolio": "Explorar Portfólio"
             },
-            "schedule": "Agendar Consulta",
-            "portfolio": "Ver Nosso Portfólio",
             "contact": {
                 "call": "Ligue para nós",
                 "email": "Escreva para nós",
@@ -2275,8 +2273,9 @@
             "status": "Status",
             "completed": "Concluída",
             "pending": "Pendente",
-            "in_progress": "Em Andamento",
-            "deleteConfirm": "Excluir esta fase?"
+            "in_progress": "Em Curso",
+            "deleteConfirm": "Excluir esta fase?",
+            "add": "Adicionar Fase"
         },
         "Documents": {
             "title": "Documentos do Projeto",
@@ -2285,6 +2284,15 @@
             "dragDrop": "Arraste arquivos aqui ou clique",
             "noDocuments": "Nenhum documento ainda.",
             "deleteConfirm": "Excluir este documento?"
+        },
+        "ResourcesBlog": {
+            "grid": {
+                "title": "Recursos e Notícias",
+                "categories": {
+                    "all": "Todos"
+                },
+                "noArticles": "Nenhum artigo encontrado."
+            }
         },
         "Blog": {
             "title": "Gestão do Blog",
