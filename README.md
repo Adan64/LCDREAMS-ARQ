@@ -14,6 +14,10 @@ A professional architectural platform built with Next.js 15, featuring immersive
 - **Multilingual Experience**: Fully localized in Spanish (ES), English (EN), and Portuguese (PT) using `next-intl`.
 - **Advanced Animations**: Premium UI experience powered by Framer Motion for smooth, professional transitions.
 
+## 🖼️ Application Preview
+
+![Homepage](public/assets/images/homepage_screenshot.webp)
+
 ## 🛠️ Technical Architecture
 
 The application leverages the latest **Next.js 15 App Router** architecture with a focus on performance, scalability, and type safety.
@@ -73,6 +77,17 @@ GOOGLE_PRIVATE_KEY=your_private_key
 npm run dev
 ```
 The application will be available at [http://localhost:4028](http://localhost:4028).
+
+## 📦 Version History
+
+| Version | Date | Key Features Implemented |
+|---------|------|--------------------------|
+| **Consolidacion_con_Excel** | 2024-09-15 | Multilingual JSON translation files (EN, ES, PT) |
+| **Primer_Cambio** | 2024-08-21 | Basic project scaffold, initial README |
+| **Segundos_Cambios** | 2024-08-28 | Minor updates and bug fixes |
+| **Tercer_Cambio** | 2024-09-05 | Minor updates and bug fixes |
+| **i18n** | 2024-09-12 | Full internationalization (next-intl), locale routing, locale switcher |
+| **correcciones_1** | 2024-07-30 | Dynamic project case-study page, CTA component |
 
 ## 📦 Available Scripts
 
